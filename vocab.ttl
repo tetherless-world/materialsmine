@@ -17,3 +17,5 @@
 @prefix graphene: <http://vocab.rpi.edu/graphene/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 
+<http://nanomine.tw.rpi.edu/ns/Visualization> a owl:Class;
+graphene:hasView "visualization.html".

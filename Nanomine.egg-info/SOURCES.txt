@@ -1,0 +1,5 @@
+README.md
+Nanomine.egg-info/PKG-INFO
+Nanomine.egg-info/SOURCES.txt
+Nanomine.egg-info/dependency_links.txt
+Nanomine.egg-info/top_level.txt
