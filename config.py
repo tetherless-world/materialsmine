@@ -39,11 +39,11 @@ Config = dict(
     SECRET_KEY = "VOJ12a53NB9HOURFLNDOIWQZZ8YuFpMc",
 
     nanopub_archive = {
-        'depot.storage_path' : "/data/nanopublications",
+        'depot.storage_path' : "/apps/NanomineVizNanopub/nanopublications",
     },
 
     file_archive = {
-        'depot.storage_path' : '/data/files',
+        'depot.storage_path' : '/apps/NanomineViz/data',
         'cache_max_age' : 3600*24*7,
     },
     vocab_file = "/apps/NanomineViz/vocab.ttl",

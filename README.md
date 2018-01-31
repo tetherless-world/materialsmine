@@ -7,9 +7,52 @@ visualization for nanomine project
 - ubuntu 14.04 LTS or 16.04 LTS
 
 # Installation
-- install satoru first
-    - its installation directory: /apps/satoru
-- make sure the virtual environment is activated. (venv) before the prompt indicates that it's on. Otherwise type ```source /apps/satoru/venv/bin/activate``` to activate it): 
+- install satoru, its default installation directory is /apps/satoru
+- make sure the virtual environment is activated. (venv) before the prompt indicates that it's on. Otherwise type ```source /apps/satoru/venv/bin/activate``` to activate it.
+- configure satoru
+  ```
+  sudo su - satoru
+  cd /apps/satoru
+  python manage.py configue
+  project_name [My Knowledge Graph]: Nanomineviz 
+  project_short_description [An example knowledge graph configuration.]: a visualization web app for nanomine project
+  project_slug [my_knowledge_graph]: nv
+  location [/apps/my_knowledge_graph]: /apps/NanomineViz
+  author [J. Doe]: Rui Yan
+  email [j.doe@example.com]: yanr2@rpi.edu 
+  linked_data_prefix [http://localhost]: 
+  version [0.1]: 
+  packages []: 
+  SECRET_KEY [J00F5f80rGSbvpUo9oBFAtksmrd7ef8u]: 
+  SECURITY_PASSWORD_SALT [JDyCyPu0KEu/fdJr4CbG65VhCtGugwCu]: 
+  ```
+  This will create a project folder named NanomineViz and all its necessary files:
+    - config.py --> main configuration file for NanomineViz app within satoru
+    - vocab.ttl --> vocabulary file for configuring custom Satoru views
+    - templates/ --> directory for storing Satoru view templates
+    - Nanomineviz/ --> project source directory, put any python code in here
+        - agent.py --> an empty inference agent module
+    - static/ --> files that are served up at {linked_data_prefix}/cdn/ as static files
+        - css/ --> project-specific CSS files
+            - Nanomineviz.css --> default empty project-specific CSS file
+        - html/ --> project-specific static HTML files, like for Angular.js templates
+        - js/ --> project-specific javascript files
+            - NanomineViz.js --> default empty project-specific javascript file
+    - setup.py --> file for installation using pip
+- configure loading data directory
+    - edit config.py file, change the following values:
+  ```
+    nanopub_archive = {
+        'depot.storage_path' : "/apps/NanomineVizNanopub/nanopublications",
+    },
+
+    file_archive = {
+        'depot.storage_path' : '/apps/NanomineViz/data',
+        'cache_max_age' : 3600*24*7,
+    },
+  ```
+     in this way, Satoru will load the data from /apps/NanomineViz/data directory.
+- install NanomineViz app
   ```
   cd /apps
   sudo git clone https://github.com/raymondino/NanomineViz.git
