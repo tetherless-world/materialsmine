@@ -404,6 +404,8 @@
                     });
                 });
                 
+                $("#home").attr("title", "Nanomine HomePage");
+
                 // material specturm dashboard
                 $("#ms").click(function() {
                     dashboard.empty();
@@ -634,14 +636,16 @@
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand">Nanomine Visualization Dashboard</a>
+                        <a href="http://nanomine-vis.oit.duke.edu/viz" class="navbar-brand">Nanomine Data Dashboard</a>
                     </div>
                     <!--add option buttons here-->
                     <ul class="nav navbar-nav"></ul>
-                    <button type="button" class="btn btn-primary navbar-btn" id="db">Database Overview</button>
-                    <button type="button" class="btn btn-primary navbar-btn" id="mp">Material Property Dashboard</button>
+                    <a href="http://nanomine.northwestern.edu:8000/" class="btn navbar-btn btn-info" role="button"><span class = "glyphicon glyphicon-home" title="Nanomine HomePage"></span></a>
                     <button type="button" class="btn btn-primary navbar-btn" id="fp">Filler Descriptor vs Material Property</button>
+                    <button type="button" class="btn btn-primary navbar-btn" id="mp">Material Property Dashboard</button>
                     <button type="button" class="btn btn-primary navbar-btn" id="ms">Material Spectrum</button>
+                    <button type="button" class="btn btn-primary navbar-btn" id="db">Database Overview (under construction)</button>
+
                 </div>
             </nav>
         </div>
@@ -651,6 +655,9 @@
               <h1 class="display-3">Nanomine Visualization Dashboard</h1>
               <p class="lead">Welcome! Explore a series of visualization revealing data information by clicking on the buttons in the navigation bar.</p>
             </div>
+                          <p>Here Data in NanoMine are visualized as points in various ways. You can determine the way they are plotted at your interests. Among the four functions in the navigation bar, Database Overview (currently under construction) offers you a visual summary of the data in NanoMine. Material Property Dashboard enables you to explore the correlations of two properties. By plotting the features of fillers versus the properties of the corresponding composites in the section of Filler Descriptors vs. Material Property, impacts of the filler features on the final properties can be examined. In Material Spectrum section, you can examine the relations of the features and the properties of a specific composites of a certain matrix or filler of interests. Examples of the visualization plots you are expecting to get are as shown below</p>
+
+                          <p> some image down here </p>
         </div>
     </body>
 </html>
