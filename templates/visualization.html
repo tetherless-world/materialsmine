@@ -195,14 +195,14 @@
                         success:function(responseText){
                             if(responseText.results.bindings.length == 0) alert("data in the database is not complete");
                             else {
+                                var xUnit = " ";
+                                var yUnit = " ";
                                 for(var i = 0; i < responseText.results.bindings.length; i++) {
                                     var sample = responseText.results.bindings[i].sample.value.substring(samplePrefix.length, responseText.results.bindings[i].sample.value.length);
                                     var x = parseFloat(responseText.results.bindings[i].x.value);
                                     var y = parseFloat(responseText.results.bindings[i].y.value);
-                                    var xUnit = " ";
-                                    var yUnit = " ";
-                                    if(responseText.results.bindings[i].hasOwnProperty('xUnit')) xUnit += responseText.results.bindings[i].xUnit.value.substring(unitPrefix.length, responseText.results.bindings[i].xUnit.value.length);
-                                    if(responseText.results.bindings[i].hasOwnProperty('yUnit')) yUnit += responseText.results.bindings[i].yUnit.value.substring(unitPrefix.length, responseText.results.bindings[i].yUnit.value.length);
+                                    if(responseText.results.bindings[i].hasOwnProperty('xUnit')) xUnit = responseText.results.bindings[i].xUnit.value.substring(unitPrefix.length, responseText.results.bindings[i].xUnit.value.length);
+                                    if(responseText.results.bindings[i].hasOwnProperty('yUnit')) yUnit = responseText.results.bindings[i].yUnit.value.substring(unitPrefix.length, responseText.results.bindings[i].yUnit.value.length);
                                     var matrixPolymer = responseText.results.bindings[i].matrixPolymer.value.substring(compoundPrefix.length, responseText.results.bindings[i].matrixPolymer.value.length).replace(/([A-Z]+)/g," $1").replace(/^./,function(str){return str.toUpperCase();});;
                                     var fillerPolymer = responseText.results.bindings[i].fillerPolymer.value.substring(compoundPrefix.length, responseText.results.bindings[i].fillerPolymer.value.length).replace(/([A-Z]+)/g," $1").replace(/^./,function(str){return str.toUpperCase();});;
                                     var fillerProperty = responseText.results.bindings[i].fillerProperty.value.substring(nanoPrefix.length, responseText.results.bindings[i].fillerProperty.value.length);
@@ -213,11 +213,13 @@
                                     var title = responseText.results.bindings[i].title.value;
                                     chartData.push([sample, x, y, 'control-' + x, 1, x + xUnit, y + yUnit, matrixPolymer, fillerPolymer, fillerProperty, fillerProperty + ": " + fillerPropertyValue + fillerPropertyUnit, doi, title]);
                                 }
+                                if(xUnit != "") xUnit = " (" + xUnit + ")";
+                                if(yUnit != "") yUnit = " (" + yUnit + ")";
                                 var sampleCategoryFilter = new google.visualization.ControlWrapper({'controlType':'CategoryFilter', 'containerId':'sampleFilter', 'options':{'filterColumnIndex':0, 'ui':{'caption':'search/choose a sample', 'selectedValuesLayout':'belowWrapping',},},});
                                 var matrixlCategoryFilter = new google.visualization.ControlWrapper({'controlType':'CategoryFilter', 'containerId':'matrixFilter', 'options':{'filterColumnIndex':7, 'ui':{'caption':'search/choose a matrix', 'selectedValuesLayout':'belowWrapping',},},});
                                 var fillerCategoryFilter = new google.visualization.ControlWrapper({'controlType':'CategoryFilter', 'containerId':'fillerFilter', 'options':{'filterColumnIndex':8, 'ui':{'caption':'search/choose a filler', 'selectedValuesLayout':'belowWrapping',},},});
                                 var fillerPropertyCategoryFilter = new google.visualization.ControlWrapper({'controlType':'CategoryFilter', 'containerId':'fillerPropertyFilter', 'options':{'filterColumnIndex':9, 'ui':{'caption':'search/choose a sample', 'selectedValuesLayout':'belowWrapping',},},});
-                                var bubbleChart = new google.visualization.ChartWrapper({'chartType':'BubbleChart','containerId':'propertyChart','options':{'title': 'Material Property Chart (series by matrix): ' + mp_x + ' vs ' + mp_y,'titlePosition':'out','titleTextStyle':{'color':'red','fontSize':16,'bold':true,},'hAxis':{'title':mp_x},'vAxis':{'title':mp_y},'sizeAxis':{'minValue':0,'maxSize':5},'height':chartHeight,'width':chartWidth,'legend':'top','explorer':{'keepInBounds':true,'actions':['dragToZoom', 'rightClickToReset'],'maxZoomIn':0.05,'maxZoomOut':1,},},'view':{'columns':[0, 1, 2, 7]},});
+                                var bubbleChart = new google.visualization.ChartWrapper({'chartType':'BubbleChart','containerId':'propertyChart','options':{'title': 'Material Property Chart (series by matrix): ' + mp_x + xUnit + ' vs ' + mp_y + yUnit,'titlePosition':'out','titleTextStyle':{'color':'red','fontSize':16,'bold':true,},'hAxis':{'title':mp_x + xUnit},'vAxis':{'title':mp_y + yUnit},'sizeAxis':{'minValue':0,'maxSize':5},'height':chartHeight,'width':chartWidth,'legend':'top','explorer':{'keepInBounds':true,'actions':['dragToZoom', 'rightClickToReset'],'maxZoomIn':0.05,'maxZoomOut':1,},},'view':{'columns':[0, 1, 2, 7]},});
                                 var tableChart= new google.visualization.ChartWrapper({'chartType':'Table','containerId':'propertyTable','options':{'height':tableHeight,'width':tableWidth,},'view':{'columns':[0, 5, 6, 7, 8, 10, 11, 12]},});
                                 new google.visualization.Dashboard(dashboard.get(0)).bind([sampleCategoryFilter, matrixlCategoryFilter, fillerCategoryFilter, fillerPropertyCategoryFilter], [bubbleChart, tableChart]).draw(chartData);
                                 dashboard.append('<button class="btn-primary" style="width:300px;" onClick="exportTableToCSV(\'nanomineData.csv\')">Download Data Table as CSV</button>');
@@ -377,24 +379,26 @@
                         success:function(responseText){
                             if(responseText.results.bindings.length == 0) alert("data in the database is not complete");
                             else {
+                                var xUnit = "";
+                                var yUnit = "";
                                 for(var i = 0; i < responseText.results.bindings.length; i++) {
                                     var sample = responseText.results.bindings[i].sample.value.substring(samplePrefix.length, responseText.results.bindings[i].sample.value.length);
                                     var x = parseFloat(responseText.results.bindings[i].x.value);
                                     var y = parseFloat(responseText.results.bindings[i].y.value);
-                                    var xUnit = " ";
-                                    var yUnit = " ";
-                                    if(responseText.results.bindings[i].hasOwnProperty('xUnit')) xUnit += responseText.results.bindings[i].xUnit.value.substring(unitPrefix.length, responseText.results.bindings[i].xUnit.value.length);
-                                    if(responseText.results.bindings[i].hasOwnProperty('yUnit')) yUnit += responseText.results.bindings[i].yUnit.value.substring(unitPrefix.length, responseText.results.bindings[i].yUnit.value.length);
+                                    if(responseText.results.bindings[i].hasOwnProperty('xUnit')) xUnit = responseText.results.bindings[i].xUnit.value.substring(unitPrefix.length, responseText.results.bindings[i].xUnit.value.length);
+                                    if(responseText.results.bindings[i].hasOwnProperty('yUnit')) yUnit = responseText.results.bindings[i].yUnit.value.substring(unitPrefix.length, responseText.results.bindings[i].yUnit.value.length);
                                     var matrixPolymer = responseText.results.bindings[i].matrixPolymer.value.substring(compoundPrefix.length, responseText.results.bindings[i].matrixPolymer.value.length);
                                     var fillerPolymer = responseText.results.bindings[i].fillerPolymer.value.substring(compoundPrefix.length, responseText.results.bindings[i].fillerPolymer.value.length);
                                     var doi = responseText.results.bindings[i].doi.value;
                                     var title = responseText.results.bindings[i].title.value;
                                     chartData.push([sample, x, y, 'control-'+x, 1, x + xUnit, y + yUnit, matrixPolymer, fillerPolymer, doi, title]);
                                 }
+                                if(xUnit != "") xUnit = " (" + xUnit + ")";
+                                if(yUnit != "") yUnit = " (" + yUnit + ")";
                                 var sampleCategoryFilter = new google.visualization.ControlWrapper({'controlType':'CategoryFilter', 'containerId':'sampleFilter', 'options':{'filterColumnIndex':0, 'ui':{'caption':'search/choose a sample', 'selectedValuesLayout':'belowWrapping',},},});
                                 var matrixlCategoryFilter = new google.visualization.ControlWrapper({'controlType':'CategoryFilter', 'containerId':'matrixFilter', 'options':{'filterColumnIndex':7, 'ui':{'caption':'search/choose a matrix', 'selectedValuesLayout':'belowWrapping',},},});
                                 var fillerCategoryFilter = new google.visualization.ControlWrapper({'controlType':'CategoryFilter', 'containerId':'fillerFilter', 'options':{'filterColumnIndex':8, 'ui':{'caption':'search/choose a filler', 'selectedValuesLayout':'belowWrapping',},},});
-                                var bubbleChart = new google.visualization.ChartWrapper({'chartType':'BubbleChart','containerId':'propertyChart','options':{'title': 'Filler Property Chart (series by martix): ' + fp_x + ' vs ' + mp_y,'titlePosition':'out','titleTextStyle':{'color':'red','fontSize':16,'bold':true,},'hAxis':{'title':fp_x},'vAxis':{'title':mp_y},'sizeAxis':{'minValue':0,'maxSize':5},'height':chartHeight,'width':chartWidth,'legend':'top','explorer':{'keepInBounds':true,'actions':['dragToZoom', 'rightClickToReset'],'maxZoomIn':0.05,'maxZoomOut':1,},},'view':{'columns':[0, 1, 2, 7]},});
+                                var bubbleChart = new google.visualization.ChartWrapper({'chartType':'BubbleChart','containerId':'propertyChart','options':{'title': 'Filler Property Chart (series by martix): ' + fp_x + xUnit + ' vs ' + mp_y + yUnit,'titlePosition':'out','titleTextStyle':{'color':'red','fontSize':16,'bold':true,},'hAxis':{'title':fp_x + xUnit},'vAxis':{'title':mp_y + yUnit},'sizeAxis':{'minValue':0,'maxSize':5},'height':chartHeight,'width':chartWidth,'legend':'top','explorer':{'keepInBounds':true,'actions':['dragToZoom', 'rightClickToReset'],'maxZoomIn':0.05,'maxZoomOut':1,},},'view':{'columns':[0, 1, 2, 7]},});
                                 var tableChart= new google.visualization.ChartWrapper({'chartType':'Table','containerId':'propertyTable','options':{'height':tableHeight,'width':tableWidth,},'view':{'columns':[0, 5, 6, 7, 8, 9, 10]},});
                                 new google.visualization.Dashboard(dashboard.get(0)).bind([sampleCategoryFilter, matrixlCategoryFilter, fillerCategoryFilter], [bubbleChart, tableChart]).draw(chartData);
                                 dashboard.append('<button class="btn-primary" style="width:300px;" onClick="exportTableToCSV(\'nanomineData.csv\')">Download Data Table as CSV</button>');
@@ -575,7 +579,6 @@
                           ?sample sio:hasComponentPart [a <' + matrixListMap.get($('#matrix-select').val()) + '>] . \n\
                           ?sample sio:hasComponentPart [a <' + fillerListMap.get($('#filler-select').val()) + '>]. \n\
                         }';
-                    console.log(query);
                     $.ajax({
                         url:databaseURL,
                         async:false,
