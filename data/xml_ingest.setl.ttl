@@ -125,7 +125,7 @@ def result(s, *args, **kwargs):
                           "@if" : "(particle.find('PubChemRef') is None or particle.find('PubChemRef').text is None) and particle.find('ChemicalName').text is not None",
                           "@id" : "compound:{{camelcase(particle.find('ChemicalName').text)}}",
                           "@type" : "owl:Class",
-                          "rdfs:label" : "{{particle.find('ChemicalName').text}}"
+                          "rdfs:label" : "{{particle.find('Abbreviation').text}}"
                         },
                         {
                           "@if" : "(particle.find('PubChemRef') is None or particle.find('PubChemRef').text is None) and particle.find('ChemicalName').text is None",
@@ -342,7 +342,7 @@ def result(s, *args, **kwargs):
                           "@if" : "(polymer.find('PubChemRef') is None or polymer.find('PubChemRef').text is None) and polymer.find('ChemicalName').text is not None",
                           "@id" : "compound:{{camelcase(polymer.find('ChemicalName').text)}}",
                           "@type" : "owl:Class",
-                          "rdfs:label" : "{{polymer.find('ChemicalName').text}}"
+                          "rdfs:label" : "{{polymer.find('Abbreviation').text}}"
                         },
                         {
                           "@if" : "(polymer.find('PubChemRef') is None or polymer.find('PubChemRef').text is None) and polymer.find('ChemicalName').text is None",
@@ -548,7 +548,9 @@ def result(s, *args, **kwargs):
       ]
     }
   }
-}]"""
+}
+"and polymer.find('Abbreviation').text is not None"
+]"""
   ].
 
 <nanopublications.trig> a pv:File;
