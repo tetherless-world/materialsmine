@@ -1,58 +1,13 @@
 # NanomineViz
 visualization for nanomine project
 
-# Pre-request
-- satoru
-    - [installation](http://tetherless-world.github.io/satoru/install): (bash < <(curl -skL https://raw.githubusercontent.com/tetherless-world/satoru/master/install.sh))
-- ubuntu 14.04 LTS or 16.04 LTS
-
 # Installation
-- install satoru, its default installation directory is /apps/satoru
-- make sure the virtual environment is activated. (venv) before the prompt indicates that it's on. Otherwise type ```source /apps/satoru/venv/bin/activate``` to activate it.
-- configure satoru
+- install [satoru](http://tetherless-world.github.io/satoru/install) using this command
   ```
-  sudo su - satoru
-  cd /apps/satoru
-  python manage.py configue
-  project_name [My Knowledge Graph]: Nanomineviz 
-  project_short_description [An example knowledge graph configuration.]: a visualization web app for nanomine project
-  project_slug [my_knowledge_graph]: nv
-  location [/apps/my_knowledge_graph]: /apps/NanomineViz
-  author [J. Doe]: Rui Yan
-  email [j.doe@example.com]: yanr2@rpi.edu 
-  linked_data_prefix [http://localhost]: 
-  version [0.1]: 
-  packages []: 
-  SECRET_KEY [J00F5f80rGSbvpUo9oBFAtksmrd7ef8u]: 
-  SECURITY_PASSWORD_SALT [JDyCyPu0KEu/fdJr4CbG65VhCtGugwCu]: 
+  bash < <(curl -skL https://raw.githubusercontent.com/tetherless-world/satoru/master/install.sh)
   ```
-  This will create a project folder named NanomineViz and all its necessary files:
-    - config.py --> main configuration file for NanomineViz app within satoru
-    - vocab.ttl --> vocabulary file for configuring custom Satoru views
-    - templates/ --> directory for storing Satoru view templates
-    - Nanomineviz/ --> project source directory, put any python code in here
-        - agent.py --> an empty inference agent module
-    - static/ --> files that are served up at {linked_data_prefix}/cdn/ as static files
-        - css/ --> project-specific CSS files
-            - Nanomineviz.css --> default empty project-specific CSS file
-        - html/ --> project-specific static HTML files, like for Angular.js templates
-        - js/ --> project-specific javascript files
-            - NanomineViz.js --> default empty project-specific javascript file
-    - setup.py --> file for installation using pip
-- configure loading data directory
-    - edit config.py file, change the following values:
-  ```
-    nanopub_archive = {
-        'depot.storage_path' : "/apps/NanomineVizNanopub/nanopublications",
-    },
-
-    file_archive = {
-        'depot.storage_path' : '/apps/NanomineViz/data',
-        'cache_max_age' : 3600*24*7,
-    },
-  ```
-     in this way, Satoru will load the data from /apps/NanomineViz/data directory.
-- install NanomineViz app
+- satoru will be installed in /apps/satoru
+- install NanomineViz app following:
   ```
   cd /apps
   sudo git clone https://github.com/raymondino/NanomineViz.git
@@ -84,3 +39,21 @@ visualization for nanomine project
   ```
 - go to http://localhost/ to login with your credentials during "createuser" command
 - go to http://localhost/viz to access the visualization
+
+# Developing mode
+Each time a change is made on the visualization, apache2 and celeryd service have to be restarted manually. 
+This is very troublesome. Satoru has a developing mode that help you allevate this pain. 
+```
+sudo su - satoru
+cd /app/satoru
+python manage.py runserver -h 0.0.0.0
+``` 
+The visualization then will be accessed on "http://localhost:5000/viz".
+Then, you only need to refresh your webpage to see your changes immediately after you make changes to the visualization. 
+After you finished the visualization changes, you can shutdown the developing mode with CTRL+c.
+Then you have to restart apache2 and celeryd service by
+```
+sudo service apache2 restart
+sudo service celeryd restart
+```
+After this, the updated visualization app will show up at "http://localhost/viz".
