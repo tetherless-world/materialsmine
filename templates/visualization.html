@@ -179,7 +179,7 @@
                                 ?fillerAttribute sio:hasValue ?fillerPropertyValue . \n\
                                 optional{?fillerAttribute sio:hasUnit ?fillerPropertyUnit.} \n\
                               } \n\
-                              ?nanopub np:hasPublicationInfo ?pg. \n\
+                              ?nanopub np:hasProvenance ?pg. \n\
                               graph ?pg { \n\
                                 ?doi dcterms:isPartOf ?journal. \n\
                                 ?doi dcterms:title ?title. \n\
@@ -193,7 +193,7 @@
                         dataType:"json",
                         cache:false,
                         success:function(responseText){
-                            if(responseText.results.bindings.length == 0) alert("data in the database is not complete");
+                            if(responseText.results.bindings.length == 0) alert("this visualization doesn't make sense");
                             else {
                                 var xUnit = " ";
                                 var yUnit = " ";
@@ -313,6 +313,7 @@
                           ?filler sio:hasAttribute [a <' + fillerPropertyMap.get($("#filler-property-select-x").val()) + '>]. \n\
                         }\n\
                         group by ?materialProperty order by desc(?count)';
+                    console.log(query);
                     var materialY = [];
                     $.ajax({
                         url:databaseURL,
@@ -363,12 +364,13 @@
                                 ?fillerAttribute sio:hasValue ?x .\n\
                                 optional{?fillerAttribute sio:hasUnit ?xUnit.}\n\
                               } \n\
-                              ?nanopub np:hasPublicationInfo ?pg. \n\
+                              ?nanopub np:hasProvenance ?pg. \n\
                               graph ?pg { \n\
                                 ?doi dcterms:isPartOf ?journal. \n\
                                 ?doi dcterms:title ?title. \n\
                               } \n\
                             }';
+                    console.log(fpmpQuery);
                     $.ajax({
                         url:databaseURL,
                         async:false,
@@ -377,7 +379,7 @@
                         dataType:"json",
                         cache:false,
                         success:function(responseText){
-                            if(responseText.results.bindings.length == 0) alert("data in the database is not complete");
+                            if(responseText.results.bindings.length == 0) alert("this visualization doesn't make sense");
                             else {
                                 var xUnit = "";
                                 var yUnit = "";
