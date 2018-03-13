@@ -56,4 +56,3 @@ Then you have to restart apache2 and celeryd service by
 sudo service apache2 restart
 sudo service celeryd restart
 ```
-After this, the updated visualization app will show up at "http://localhost/viz".
