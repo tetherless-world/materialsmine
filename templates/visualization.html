@@ -378,7 +378,7 @@
                         dataType:"json",
                         cache:false,
                         success:function(responseText){
-                            if(responseText.results.bindings.length == 0) alert("this visualization doesn't make sense");
+                            if(responseText.results.bindings.length == 0) alert("one axis you have selected includes an array of data, which cannot be visualized with this chart. Try to use Material Spectrum instead.");
                             else {
                                 var xUnit = "";
                                 var yUnit = "";
