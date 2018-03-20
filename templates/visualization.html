@@ -569,7 +569,7 @@
                 $(document).on('click', '#viz-ms', function() {
                     var sx = $('#specialization-x').val();
                     var sy = $('#specialization-y').val();
-                    var chartData = [['sample', sx, sy, 'control', 'bubble size', 'doi', 'title']];
+                    var chartData = [['sample', sx, sy, 'sample', 'bubble size', 'doi', 'title']];
                     var query = '\n\
                         prefix sio:<http://semanticscience.org/resource/> \n\
                         prefix ns:<http://nanomine.tw.rpi.edu/ns/> \n\
@@ -610,7 +610,7 @@
                                     var t = responseText.results.bindings[i].title.value;
                                     chartData.push([s, x, y, s, 1, d, t]);
                                 }
-                                var bubbleChart = new google.visualization.ChartWrapper({'chartType':'BubbleChart','containerId':'propertyChart','options':{'title': sx + ' vs ' + sy,'titlePosition':'out','titleTextStyle':{'color':'red','fontSize':16,'bold':true,},'hAxis':{'title':sx},'vAxis':{'title':sy},'sizeAxis':{'minValue':0,'maxSize':5},'height':chartHeight,'width':chartWidth,'legend':'top','explorer':{'keepInBounds':true,'actions':['dragToZoom', 'rightClickToReset'],'maxZoomIn':0.05,'maxZoomOut':1,},},'view':{'columns':[0, 1, 2, 3]},});
+                                var bubbleChart = new google.visualization.ChartWrapper({'chartType':'BubbleChart','containerId':'propertyChart','options':{'title': sx + ' vs ' + sy,'titlePosition':'out','titleTextStyle':{'color':'red','fontSize':16,'bold':true,},'hAxis':{'scaletype':'log', 'title':sx},'vAxis':{'scaleType':'log','title':sy},'sizeAxis':{'minValue':0,'maxSize':5},'height':chartHeight,'width':chartWidth,'legend':'top','explorer':{'keepInBounds':true,'actions':['dragToZoom', 'rightClickToReset'],'maxZoomIn':0.05,'maxZoomOut':1,},},'view':{'columns':[0, 1, 2, 3]},});
                                 var tableChart= new google.visualization.ChartWrapper({'chartType':'Table','containerId':'propertyTable','options':{'height':tableHeight,'width':tableWidth,},'view':{'columns':[0, 1, 2, 5, 6]},});
                                 var sampleCategoryFilter = new google.visualization.ControlWrapper({'controlType':'CategoryFilter', 'containerId':'sampleFilter', 'options':{'filterColumnIndex':0, 'ui':{'caption':'search/choose a sample', 'selectedValuesLayout':'belowWrapping',},},});
                                 new google.visualization.Dashboard(dashboard.get(0)).bind([sampleCategoryFilter], [bubbleChart, tableChart]).draw(chartData);
