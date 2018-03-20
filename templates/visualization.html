@@ -505,7 +505,7 @@
                               ?filler a <' + fillerListMap.get($('#filler-select').val()) + '> . \n\
                               ?sample ^prov:specializationOf [sio:hasAttribute [a ?materialProperty]] . \n\
                             } order by ?materialProperty';
-                    var xList = [];
+                    var xList = ['-'];
                     $.ajax({
                         url:databaseURL,
                         async:false,
@@ -545,7 +545,7 @@
                               ?sample ^prov:specializationOf [sio:hasAttribute [a ?materialProperty]] . \n\
                               filter(?materialProperty != <' + materialPropertyMap.get($('#specialization-x').val())+ '>) \n\
                             } order by ?materialProperty';
-                    var yList = [];
+                    var yList = ['-'];
                     $.ajax({
                         url:databaseURL,
                         async:false,
