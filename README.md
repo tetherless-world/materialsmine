@@ -4,22 +4,22 @@ visualization for nanomine project
 # Installation
 - install [whyis](http://tetherless-world.github.io/whyis/install) using this command
   ```
-  bash < <(curl -skL https://raw.githubusercontent.com/tetherless-world/satoru/master/install.sh)
+  bash < <(curl -skL https://raw.githubusercontent.com/tetherless-world/whyis/master/install.sh)
   ```
-- satoru will be installed in /apps/satoru
+- whyis will be installed in /apps/whyis
 - install NanomineViz app following:
   ```
   cd /apps
   sudo git clone https://github.com/raymondino/NanomineViz.git
-  sudo chown -R satoru:satoru /apps/NanomineViz
-  sudo su - satoru
+  sudo chown -R whyis:whyis /apps/NanomineViz
+  sudo su - whyis
   cd /apps/NanomineViz
   pip install -e .
   exit
   sudo service apache2 restart
   sudo service celeryd restart
-  sudo su - satoru
-  cd /apps/satoru
+  sudo su - whyis
+  cd /apps/whyis
   python manage.py createuser -e (email) -p (password) -f (frstname) -l (lastname) -u (username) --roles=admin
   python manage.py load -i /apps/NanomineViz/data/viz.ttl -f turtle
   cd /apps
@@ -33,7 +33,7 @@ visualization for nanomine project
   ```
 - after you edit the .netrc file, in your terminal type:
   ```
-  cd /apps/satoru
+  cd /apps/whyis
   python manage.py load -i /apps/NanomineViz/data/ontology.setl.ttl -f turtle
   python manage.py load -i /apps/NanomineViz/data/xml_ingest.setl.ttl -f turtle
   ```
@@ -42,10 +42,10 @@ visualization for nanomine project
 
 # Developing mode
 Each time a change is made on the visualization, apache2 and celeryd service have to be restarted manually. 
-This is very troublesome. Satoru has a developing mode that help you allevate this pain. 
+This is very troublesome. whyis has a developing mode that help you allevate this pain. 
 ```
-sudo su - satoru
-cd /app/satoru
+sudo su - whyis
+cd /app/whyis
 python manage.py runserver -h 0.0.0.0
 ``` 
 The visualization then will be accessed on "http://localhost:5000/viz".
