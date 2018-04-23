@@ -12,8 +12,8 @@ visualization for nanomine project
   cd /apps
   sudo git clone https://github.com/raymondino/NanomineViz.git
   cd /apps/NanomineViz/data
-  wget https://raw.githubusercontent.com/tetherless-world/nanomine-ontology/master/xml_ingest.setl.ttl
-  wget https://raw.githubusercontent.com/tetherless-world/nanomine-ontology/master/ontology.setl.ttl
+  sudo wget https://raw.githubusercontent.com/tetherless-world/nanomine-ontology/master/xml_ingest.setl.ttl
+  sudo wget https://raw.githubusercontent.com/tetherless-world/nanomine-ontology/master/ontology.setl.ttl
   sudo chown -R whyis:whyis /apps/NanomineViz
   sudo su - whyis
   cd /apps/NanomineViz
