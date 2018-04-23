@@ -2,7 +2,7 @@
 visualization for nanomine project
 
 # Installation
-- install [satoru](http://tetherless-world.github.io/satoru/install) using this command
+- install [whyis](http://tetherless-world.github.io/whyis/install) using this command
   ```
   bash < <(curl -skL https://raw.githubusercontent.com/tetherless-world/satoru/master/install.sh)
   ```
