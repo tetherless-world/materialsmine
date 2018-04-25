@@ -27,7 +27,7 @@ Config = dict(
 
     site_name = "Nanomine",
 
-    root_path = '/apps/satoru',
+    root_path = '/apps/whyis',
 
     # use TESTING mode?
     TESTING = False,
@@ -47,10 +47,10 @@ Config = dict(
         'cache_max_age' : 3600*24*7,
     },
     vocab_file = "/apps/NanomineViz/vocab.ttl",
-    SATORU_TEMPLATE_DIR = [
+    WHYIS_TEMPLATE_DIR = [
         "/apps/NanomineViz/templates",
     ],
-    SATORU_CDN_DIR = "/apps/NanomineViz/static",
+    WHYIS_CDN_DIR = "/apps/NanomineViz/static",
 
     # LOGGING
     LOGGER_NAME = "%s_log" % project_name,
