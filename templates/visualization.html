@@ -369,7 +369,6 @@
                                 ?doi dcterms:title ?title. \n\
                               } \n\
                             }';
-                    console.log(fpmpQuery);
                     $.ajax({
                         url:databaseURL,
                         async:false,
@@ -569,13 +568,13 @@
                 $(document).on('click', '#viz-ms', function() {
                     var sx = $('#specialization-x').val();
                     var sy = $('#specialization-y').val();
-                    var chartData = [['sample', sx, sy, 'sample', 'bubble size', 'doi', 'title']];
+                    var chartData = [['sample', sx, sy, 'sample', 'control', 'bubble size', 'doi', 'title']];
                     var query = '\n\
                         prefix sio:<http://semanticscience.org/resource/> \n\
                         prefix ns:<http://nanomine.tw.rpi.edu/ns/> \n\
                         prefix np: <http://www.nanopub.org/nschema#> \n\
                         prefix dcterms: <http://purl.org/dc/terms/> \n\
-                        select distinct ?sample ?x ?y ?doi ?title \n\
+                        select distinct ?sample ?control ?x ?y ?doi ?title \n\
                         where { \n\
                           ?nanopub np:hasAssertion ?ag. \n\
                           graph ?ag { \n\
@@ -583,7 +582,8 @@
                               ?ac sio:hasAttribute [a <' + materialPropertyMap.get($('#specialization-x').val())+ '>; sio:hasValue ?x]. \n\
                               ?ac sio:hasAttribute [a <' + materialPropertyMap.get($('#specialization-y').val())+ '>; sio:hasValue ?y]. \n\
                               ?sample sio:hasComponentPart [a <' + matrixListMap.get($('#matrix-select').val()) + '>] . \n\
-                              ?sample sio:hasComponentPart [a <' + fillerListMap.get($('#filler-select').val()) + '>]. \n\
+                              optional {?sample sio:hasComponentPart [a <' + fillerListMap.get($('#filler-select').val()) + '>].} \n\
+                              ?control sio:hasRole [a sio:ControlRole; sio:inRelationTo ?sample].\n\
                           } \n\
                           ?nanopub np:hasProvenance ?pg. \n\
                           graph ?pg {\n\
@@ -591,6 +591,7 @@
                              ?doi dcterms:title ?title.\n\
                           }\n\
                         }';
+                    console.log(query);
                     $.ajax({
                         url:databaseURL,
                         async:false,
@@ -601,17 +602,18 @@
                         success:function(responseText){
                             if(responseText.results.bindings.length == 0) alert("no such data");
                             else {
-                                console.log(responseText);
                                 for(var i = 0; i < responseText.results.bindings.length; i++) {
                                     var s = responseText.results.bindings[i].sample.value.substring(samplePrefix.length, responseText.results.bindings[i].sample.value.length);
+                                    var c = responseText.results.bindings[i].control.value.substring(samplePrefix.length, responseText.results.bindings[i].control.value.length)
                                     var x = parseFloat(responseText.results.bindings[i].x.value);
                                     var y = parseFloat(responseText.results.bindings[i].y.value);
                                     var d = responseText.results.bindings[i].doi.value;
                                     var t = responseText.results.bindings[i].title.value;
-                                    chartData.push([s, x, y, s, 1, d, t]);
+                                    if(s == c) {s += '(control)'; c+='(control)';}
+                                    chartData.push([s, x, y, s, c, 1, d, t]);
                                 }
                                 var bubbleChart = new google.visualization.ChartWrapper({'chartType':'BubbleChart','containerId':'propertyChart','options':{'title': sx + ' vs ' + sy,'titlePosition':'out','titleTextStyle':{'color':'red','fontSize':16,'bold':true,},'hAxis':{'scaletype':'log', 'title':sx},'vAxis':{'scaleType':'log','title':sy},'sizeAxis':{'minValue':0,'maxSize':5},'height':chartHeight,'width':chartWidth,'legend':'top','explorer':{'keepInBounds':true,'actions':['dragToZoom', 'rightClickToReset'],'maxZoomIn':0.05,'maxZoomOut':1,},},'view':{'columns':[0, 1, 2, 3]},});
-                                var tableChart= new google.visualization.ChartWrapper({'chartType':'Table','containerId':'propertyTable','options':{'height':tableHeight,'width':tableWidth,},'view':{'columns':[0, 1, 2, 5, 6]},});
+                                var tableChart= new google.visualization.ChartWrapper({'chartType':'Table','containerId':'propertyTable','options':{'height':tableHeight,'width':tableWidth,},'view':{'columns':[0, 4, 1, 2, 6, 7]},});
                                 var sampleCategoryFilter = new google.visualization.ControlWrapper({'controlType':'CategoryFilter', 'containerId':'sampleFilter', 'options':{'filterColumnIndex':0, 'ui':{'caption':'search/choose a sample', 'selectedValuesLayout':'belowWrapping',},},});
                                 new google.visualization.Dashboard(dashboard.get(0)).bind([sampleCategoryFilter], [bubbleChart, tableChart]).draw(chartData);
                                 if($('#download').length == 0) dashboard.append('<button id="download" class="btn-primary" style="width:300px;" onClick="exportTableToCSV(\'nanomineData.csv\')">Download Data Table as CSV</button>');
