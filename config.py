@@ -13,7 +13,7 @@ import rdflib
 from datetime import datetime
 
 # Set to be custom for your project
-LOD_PREFIX = 'http://localhost'
+LOD_PREFIX = 'http://nanomine.org'
 #os.getenv('lod_prefix') if os.getenv('lod_prefix') else 'http://hbgd.tw.rpi.edu'
 
 skos = rdflib.Namespace("http://www.w3.org/2004/02/skos/core#")
@@ -39,18 +39,18 @@ Config = dict(
     SECRET_KEY = "VOJ12a53NB9HOURFLNDOIWQZZ8YuFpMc",
 
     nanopub_archive = {
-        'depot.storage_path' : "/apps/NanomineVizNanopub/nanopublications",
+        'depot.storage_path' : "/data/nanopublications",
     },
 
     file_archive = {
-        'depot.storage_path' : '/apps/NanomineViz/data',
+        'depot.storage_path' : '/data/files',
         'cache_max_age' : 3600*24*7,
     },
-    vocab_file = "/apps/NanomineViz/vocab.ttl",
+    vocab_file = "/apps/nanomine-graph/vocab.ttl",
     WHYIS_TEMPLATE_DIR = [
         "/apps/NanomineViz/templates",
     ],
-    WHYIS_CDN_DIR = "/apps/NanomineViz/static",
+    WHYIS_CDN_DIR = "/apps/nanomine-graph/static",
 
     # LOGGING
     LOGGER_NAME = "%s_log" % project_name,
@@ -76,7 +76,7 @@ Config = dict(
     BLUEPRINTS = [],
 
     lod_prefix = LOD_PREFIX,
-    SECURITY_EMAIL_SENDER = "rui <yanr2@rpi.edu>",
+    SECURITY_EMAIL_SENDER = "rui <admin@nanomine.org>",
     SECURITY_FLASH_MESSAGES = True,
     SECURITY_CONFIRMABLE = False,
     SECURITY_CHANGEABLE = True,
