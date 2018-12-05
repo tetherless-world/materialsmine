@@ -10,11 +10,11 @@ visualization for nanomine project
 - install NanomineViz app following:
   ```
   cd /apps
-  sudo git clone https://github.com/raymondino/NanomineViz.git
-  cd /apps/NanomineViz/data
+  sudo git clone https://github.com/raymondino/nanomine-graph.git
+  cd /apps/nanomine-graph/data
   sudo wget https://raw.githubusercontent.com/tetherless-world/nanomine-ontology/master/xml_ingest.setl.ttl
   sudo wget https://raw.githubusercontent.com/tetherless-world/nanomine-ontology/master/ontology.setl.ttl
-  sudo chown -R whyis:whyis /apps/NanomineViz
+  sudo chown -R whyis:whyis /apps/nanomine-graph
   sudo su - whyis
   cd /apps/NanomineViz
   pip install -e .
