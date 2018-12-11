@@ -7,16 +7,12 @@ visualization for nanomine project
   bash < <(curl -skL https://raw.githubusercontent.com/tetherless-world/whyis/release/install.sh)
   ```
 - whyis will be installed in /apps/whyis
-- install NanomineViz app following:
+- install nanomine-graph app following:
   ```
-  cd /apps
-  sudo git clone https://github.com/raymondino/nanomine-graph.git
-  cd /apps/nanomine-graph/data
-  sudo wget https://raw.githubusercontent.com/tetherless-world/nanomine-ontology/master/xml_ingest.setl.ttl
-  sudo wget https://raw.githubusercontent.com/tetherless-world/nanomine-ontology/master/ontology.setl.ttl
-  sudo chown -R whyis:whyis /apps/nanomine-graph
   sudo su - whyis
-  cd /apps/NanomineViz
+  cd /apps
+  git clone https://github.com/tetherless-world/nanomine-graph.git
+  cd /apps/nanomine-graph
   pip install -e .
   exit
   sudo service apache2 restart
@@ -24,7 +20,6 @@ visualization for nanomine project
   sudo su - whyis
   cd /apps/whyis
   python manage.py createuser -e (email) -p (password) -f (frstname) -l (lastname) -u (username) --roles=admin
-  python manage.py load -i /apps/NanomineViz/data/viz.ttl -f turtle
   cd /apps
   touch .netrc
   ```
@@ -37,11 +32,10 @@ visualization for nanomine project
 - after you edit the .netrc file, in your terminal type:
   ```
   cd /apps/whyis
-  python manage.py load -i /apps/NanomineViz/data/ontology.setl.ttl -f turtle
-  python manage.py load -i /apps/NanomineViz/data/xml_ingest.setl.ttl -f turtle
+  python manage.py load -i /apps/nanomine-graph/setl/ontology.setl.ttl -f turtle
+  python manage.py load -i /apps/nanomine-graph/setl/xml_ingest.setl.ttl -f turtle
   ```
 - go to http://localhost/ to login with your credentials during "createuser" command
-- go to http://localhost/viz to access the visualization
 
 # Developing mode
 Each time a change is made on the visualization, apache2 and celeryd service have to be restarted manually. 
@@ -51,7 +45,6 @@ sudo su - whyis
 cd /app/whyis
 python manage.py runserver -h 0.0.0.0
 ``` 
-The visualization then will be accessed on "http://localhost:5000/viz".
 Then, you only need to refresh your webpage to see your changes immediately after you make changes to the visualization. 
 After you finished the visualization changes, you can shutdown the developing mode with CTRL+c.
 Then you have to restart apache2 and celeryd service by
@@ -59,4 +52,3 @@ Then you have to restart apache2 and celeryd service by
 sudo service apache2 restart
 sudo service celeryd restart
 ```
-After this, the updated visualization app will show up at "http://localhost/viz".

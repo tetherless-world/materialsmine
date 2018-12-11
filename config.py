@@ -20,6 +20,8 @@ skos = rdflib.Namespace("http://www.w3.org/2004/02/skos/core#")
 
 from nanomine.agent import *
 
+from authenticator import JWTAuthenticator
+
 # base config class; extend it to your needs.
 Config = dict(
     # use DEBUG mode?
@@ -38,6 +40,8 @@ Config = dict(
     WTF_CSRF_ENABLED = True,
     SECRET_KEY = "VOJ12a53NB9HOURFLNDOIWQZZ8YuFpMc",
 
+    base_rate_probability = 0.8,
+    
     nanopub_archive = {
         'depot.storage_path' : "/data/nanopublications",
     },
@@ -99,6 +103,10 @@ Config = dict(
     knowledge_queryEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
     knowledge_updateEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
 
+    authenticators = [
+        JWTAuthenticator(key=os.environ['NM_AUTH_SECRET'])
+    ],
+    
     LOGIN_USER_TEMPLATE = "auth/login.html",
     CELERY_BROKER_URL = 'redis://localhost:6379/0',
     CELERY_RESULT_BACKEND = 'redis://localhost:6379/0',
@@ -139,6 +147,7 @@ Config = dict(
     ],
     inferencers = {
         "SETLr": autonomic.SETLr(),
+        "SETLMaker": autonomic.SETLMaker(),
 #        "HTML2Text" : nlp.HTML2Text(),
 #        "EntityExtractor" : nlp.EntityExtractor(),
 #        "EntityResolver" : nlp.EntityResolver(),
