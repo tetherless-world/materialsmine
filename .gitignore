@@ -1,5 +1,3 @@
 *.pyc
-*.trig
-*.ttl
 *.DS_Store
 /data/*.setl.ttl
