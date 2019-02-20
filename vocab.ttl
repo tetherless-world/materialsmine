@@ -476,3 +476,15 @@ rdfs:label flaskld:fieldName "name" .
 
 <http://nanomine.tw.rpi.edu/ns/Visualization> a owl:Class;
 whyis:hasView "visualization.html".
+
+<http://nanomine.org/ns/PolymerNanocomposite> a <http://nanomine.org/ns/PNCClass>.
+
+<http://nanomine.org/ns/PNCClass> rdfs:subClassOf owl:Class.
+
+<http://nanomine.org/ns/PNCClass> a owl:Class;
+  whyis:hasConstraints "class_constraints.json";
+  whyis:hasOutgoing "outgoing_class.json";
+  whyis:hasIncoming "incoming_class.json";
+  whyis:newInstanceView "new_instance_view.html";
+  whyis:hasView "class_view.html";
+  whyis:hasFacets "pnc_facets.json".

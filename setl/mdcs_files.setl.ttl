@@ -24,9 +24,9 @@
   api_vocab:selector "item";
   prov:wasGeneratedBy [
      a setl:Extract;
-#     prov:used <http://129.105.90.149:8000/rest/explore/select?title=L206_S22_Cho_2005.xml&dataformat=xml>
+     prov:used <http://129.105.90.149:8000/rest/explore/select?schema=5abe807ce74a1d06fd9943a0&dataformat=xml>
 #     prov:used <http://129.105.90.149:8000/rest/explore/select?title=L193_S1_Palmeri_2010.xml&dataformat=xml>
-     prov:used <http://129.105.90.149:8000/rest/explore/select/all?dataformat=xml>;
+#     prov:used <http://129.105.90.149:8000/rest/explore/select/all?dataformat=xml>;
   ].
 
 :b64encode a owl:Class, prov:SoftwareAgent, setl:PythonScript;
@@ -83,9 +83,9 @@ from base64 import b64encode as result
 }]"""
   ].
 
-#<nanopubs.trig> a pv:File;
-#    dcterms:format "application/trig";
-#    prov:wasGeneratedBy [
-#      a setl:Load;
-#      prov:used :nanopubs ;
-#    ].
+<nanopubs.trig> a pv:File;
+    dcterms:format "application/trig";
+    prov:wasGeneratedBy [
+      a setl:Load;
+      prov:used :nanopubs ;
+    ].

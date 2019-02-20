@@ -29,8 +29,12 @@ Config = dict(
 
     site_name = "Nanomine",
 
+    site_description = "Material Informatics for Polymer Nanocomposites",
+
     root_path = '/apps/whyis',
 
+    site_header_image = 'static/images/random_network.png',
+    
     # use TESTING mode?
     TESTING = False,
 
@@ -52,7 +56,7 @@ Config = dict(
     },
     vocab_file = "/apps/nanomine-graph/vocab.ttl",
     WHYIS_TEMPLATE_DIR = [
-        "/apps/NanomineViz/templates",
+        "/apps/nanomine-graph/templates",
     ],
     WHYIS_CDN_DIR = "/apps/nanomine-graph/static",
 
@@ -104,7 +108,7 @@ Config = dict(
     knowledge_updateEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
 
     authenticators = [
-        JWTAuthenticator(key=os.environ['NM_AUTH_SECRET'])
+#        JWTAuthenticator(key=os.environ['NM_AUTH_SECRET'])
     ],
     
     LOGIN_USER_TEMPLATE = "auth/login.html",
