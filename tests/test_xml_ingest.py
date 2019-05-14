@@ -1,3 +1,6 @@
+import sys
+sys.path = ['/apps/whyis'] + sys.path
+
 from testcase import WhyisTestCase
 
 from base64 import b64encode

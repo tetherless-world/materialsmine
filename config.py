@@ -33,6 +33,8 @@ Config = dict(
 
     root_path = '/apps/whyis',
 
+    app_path = '/apps/nanomine-graph',
+
     site_header_image = 'static/images/random_network.png',
     
     # use TESTING mode?
