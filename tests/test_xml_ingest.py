@@ -5,7 +5,6 @@ from base64 import b64encode
 from rdflib import *
 
 import json
-from StringIO import StringIO
 
 import nanopub
 
@@ -40,10 +39,10 @@ class XMLIngestTest(WhyisTestCase):
 
         setlr = autonomic.SETLr()
 
-        print len(self.app.db)
+        print(len(self.app.db))
         for setlr_np in results:
             setlr_results = self.run_agent(setlr, nanopublication=setlr_np)
 
         nanocomposites = list(self.app.db.subjects(RDF.type,URIRef("http://nanomine.org/ns/PolymerNanocomposite")))
-        print nanocomposites, len(self.app.db)
+        print(nanocomposites, len(self.app.db))
         self.assertEquals(len(nanocomposites),1)
