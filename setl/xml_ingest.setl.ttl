@@ -54,6 +54,7 @@
     prov:qualifiedUsage [ a prov:Usage; prov:entity :property_classes_table; prov:hadRole [ dcterms:identifier "properties"]];
     prov:qualifiedUsage [ a prov:Usage; prov:entity :characterization_methods_table; prov:hadRole [ dcterms:identifier "methods"]];
     setl:hasContext """{
+  "owl" : "http://www.w3.org/2002/07/owl#",
   "sio" :     "http://semanticscience.org/resource/",
   "skos" :    "http://www.w3.org/2004/02/skos/core#",
   "dcterms" :    "http://purl.org/dc/terms/",
