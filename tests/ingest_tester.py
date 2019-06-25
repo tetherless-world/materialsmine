@@ -99,6 +99,16 @@ def autoparse(file_under_test):
     expected_data["manufac"] += [rdflib.Literal(elem.text)
                                  for elem in root.iter(".//Filler//ManufacturerOrSourceName")]
 
+    #Viscoleastic Properties,hardness, hardnessteststandard - Neha
+    expected_data["viscoelastic_measurement_mode"] = [rdflib.Literal(elem.text)
+                                      for elem in root.iter(".//Viscoelastic/DynamicProperties/MeasurementMode")]   
+     
+    expected_data["hardness"] = [rdflib.Literal(elem.text)
+                                  for elem in root.iter("Hardness")]
+     
+    expected_data["hardnessteststandard"] = [rdflib.Literal(elem.text)
+                                              for elem in root.iter(".//HardnessTestStandard")]
+
     # Check that matrix and filler components are properly constructed
     def build_component_dict(component):
         material = dict()
@@ -171,7 +181,6 @@ def autoparse(file_under_test):
     for node in root.iter("Temperature"):
         expected_data["temps"] += [rdflib.Literal(val.text, datatype=rdflib.XSD.double)
                                    for val in node.iter("value")]
-
     temp.close()
     return expected_data
 
@@ -442,6 +451,14 @@ def test_filler_processing(runner, expected_process=None):
         expected_process = runner.expected_data["filler_processing"]
     runner.assertCountEqual(expected_process, process)  # TODO figure out how to query ordering in process order
 
+def test_viscoelastic_measurement_mode(runner, expected_mode=None):
+    print("Testing viscoelastic measurement mode")
+    mode = list(runner.app.db.objects(
+        None, rdflib.URIRef("http://nanomine.org/ns/MeasurementMode")))
+    if expected_mode is None:
+        expected_mode = runner.expected_data["viscoelastic_measurement_mode"]
+    runner.assertCountEqual(expected_mode, viscoelastic_measurement_mode)
+    print("Expected mode Found")
 
 def print_triples(runner):
     print("Printing SPO Triples")

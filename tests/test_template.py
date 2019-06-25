@@ -57,3 +57,13 @@ class IngestTestTests(IngestTestSetup):
 
     def test_filler_processing(self):
         ingest_tester.test_filler_processing(self)
+
+    # added by Neha on 25th June 19
+    def test_viscoelastic_measurement_mode(self):
+        ingest_tester.test_viscoelastic_measurement_mode(self)
+
+   # def test_hardness_properties(self):
+    #    ingest_tester.test_viscoelastic_properties(self)
+
+    #def test_hardness_test_standard(self):
+     #   ingest_tester.test_hardness_test_standard(self)
