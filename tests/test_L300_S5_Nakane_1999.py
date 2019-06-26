@@ -13,4 +13,8 @@ class L300_S5_Nakane_1999(test_template.IngestTestSetup):
         ingest_tester.test_viscoelastic_measurement_mode(self, expected_properties)
         ingest_tester.test_viscoelastic_measurement_mode(self)
 
+#    def test_triples(self):
+ #       ingest_tester.print_triples(self)
 
+    def test_stress(self):
+        ingest_tester.test_stress(self, [rdflib.Literal(0.0792094406024)])

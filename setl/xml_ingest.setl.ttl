@@ -89,7 +89,7 @@
           "@type" : "nanopub:Nanopublication",
           "nanopub:hasAssertion" : {
             "@id": "entry:{{id.text.replace(' ','')}}_assertion",
-            "@type": "nanopub:Assertion",
+           "@type": "nanopub:Assertion",
             "@graph" : [
               {
                 "@if" : "row.findtext('Control_ID') is not None",
@@ -106,8 +106,8 @@
                 "@id" : "sample:{{slugify(id.text.replace(' ',''))}}",
                 "@type" : [
                   "nanomine:PolymerNanocomposite"
-                ],
-                "sio:hasComponentPart" : [
+		],
+		"sio:hasComponentPart" : [
                   { "@for" : "fc, particle in enumerate(row.findall('MATERIALS/Filler/FillerComponent'))",
                     "@do" : {
                       "@id" : "sample:{{slugify(id.text.replace(' ',''))}}_filler_{{fc}}",
@@ -206,16 +206,16 @@
                           }
                         },
                         {
-                         "@if" : "particle.find('SphericalParticleDiameter')"'
-                         "@for" : "diameter in particle.findall('SphericalParticleDiameter')", 
-                         "@do": {
-                           "@type" : "obo:PATO_0001334",
-                           "sio:hasValue" : {
-                               "@value" : "{{diameter.find('value').text}}",
-                               "@type" : "xsd:double"
-                             },
-                           "sio:hasUnit" : [
-                             { "@if" : "area.find('unit') is not None",
+                          "@for" : "ratio in particle.findall('ParticleAspectRatio')",
+                          "@do" : {
+                            "@type" : "sio:AspectRatio",
+                            "sio:hasValue" : {
+                                "@value" : "{{ratio.find('value').text}}",
+                                "@type" : "xsd:double"
+                              },
+                            "sio:hasUnit" : [
+                              { "@if" : "ratio.find('unit') is not None",
+                                "@id" : "unit:{{slugify(ratio.find('unit').text)}}",
                                "@id" : "unit:{{slugify(diameter.find('unit').text}}",
                                "rdfs:label" : "{{area.find('unit').text}}"
                              }
@@ -231,37 +231,11 @@
                                "sio:hasValue" : { "@value" : "{{size.find('.//uncertainty/value').text}}", "@type" : "xsd:double"}
                               }
                             ]
-                         }
-                        },
-                        {
-                          "@for" : "ratio in particle.findall('ParticleAspectRatio')",
-                          "@do" : {
-                            "@type" : "sio:AspectRatio",
-                            "sio:hasValue" : {
-                                "@value" : "{{ratio.find('value').text}}",
-                                "@type" : "xsd:double"
-                              },
-                            "sio:hasUnit" : [
-                              { "@if" : "ratio.find('unit') is not None",
-                                "@id" : "unit:{{slugify(ratio.find('unit').text)}}",
-                                "rdfs:label" : "{{ratio.find('unit').text}}"
-                              }
-                            ],
-                            "sio:hasAttribute" : [
-                              {
-                                "@if" : "ratio.find('.//uncertainty')",
-                                "@type" : [
-                                  "sio:UncertaintyValue",
-                                  { "@if" : "ratio.find('.//uncertainty/type').text == 'relative'", "@id" : "sio:Ratio" },
-                                  { "@if" : "ratio.find('.//uncertainty/type').text == 'absolute'", "@id" : "sio:StandardDeviation" }
-                                ],
-                                "sio:hasValue" : { "@value" : "{{ratio.find('.//uncertainty/value').text}}", "@type" : "xsd:double"}
-                              }
-                            ]
+                         
                           }
                         },
                         {
-                          "@for" : "size in particle.findall('ParticleSize')",
+                          "@for" : "size in particle.findall('SphericalParticleDiameter')",
                           "@do" : {
                             "@type" : "sio:Width",
                             "sio:hasValue" : {
@@ -287,6 +261,8 @@
                             ]
                           }
                         },
+
+                                        
                         {
                           "@for" : "phase in particle.findall('CrystalPhase')",
                           "@do" : {
@@ -342,61 +318,21 @@
                           }
                         }
                       ]
+                    
                     }
-                  },
-                  { "@for" : "polymer in row.findall('MATERIALS/Matrix/MatrixComponent')",
-                    "@do" : {
-                      "@id" : "sample:{{slugify(id.text.replace(' ',''))}}_matrix",
-                      "@type" : [
-                        {
-                          "@if" : "polymer.find('PubChemRef') is not None and polymer.find('PubChemRef').text is not None",
-                          "@id" : "pubchem:{{polymer.find('PubChemRef').text.replace(' ','')}}",
                           "@type" : "owl:Class",
-                          "rdfs:label" : [
-                              { 
-                                  "@value" : "{{polymer.find('ChemicalName').text}}", 
-                                  "@if" : "polymer.find('ChemicalName').text is not None"
-                              },
-                              { 
-                                  "@value" : "{{polymer.find('Abbreviation').text}}", 
-                                  "@if" : "polymer.find('ChemicalName').text is None and polymer.find('Abbreviation').text is not None"
-                              }
-                          ]
-                        },
-                        {
-                          "@if" : "(polymer.find('PubChemRef') is None or polymer.find('PubChemRef').text is None) and polymer.find('ChemicalName').text is not None",
-                          "@id" : "compound:{{camelcase(polymer.find('ChemicalName').text)}}",
-                          "@type" : "owl:Class",
-                          "rdfs:label" : "{{polymer.find('ChemicalName').text}}"
-                        },
-                        {
-                          "@if" : "(polymer.find('PubChemRef') is None or polymer.find('PubChemRef').text is None) and polymer.find('ChemicalName').text is None and polymer.find('Abbreviation').text is not None",
-                          "@id" : "compound:{{camelcase(polymer.find('Abbreviation').text)}}",
-                          "@type" : "owl:Class",
-                          "rdfs:label" : "{{polymer.find('Abbreviation').text}}"
+                          "rdfs:label" : "{{surface.find('Abbreviation').text}}"
                         }
-                      ],
-                      "sio:hasRole" : {
-                        "@type" : "nanomine:Matrix",
-                        "sio:inRelationTo" : {"@id":"sample:{{slugify(id.text.replace(' ',''))}}"}
-                      }
+                            ],
+                            "sio:hasRole" : {
+                              "@type" : "nanomine:SurfaceTreatment",
+                              "sio:inRelationTo" : {"@id":"sample:{{slugify(id.text.replace(' ',''))}}"}
+                            }
+                          }
+                        }
+                      ]
+                    
                     }
-                  }
-                ],
-                "@reverse": {
-                  "prov:specializationOf" : [
-                    {
-                      "@for" : "i, property in properties.iterrows()",
-                      "@do" : {
-                         "@if" : "not isempty(property.xpath) and row.find('PROPERTIES')",
-                         "@for" : "table in row.find('PROPERTIES').findall('.'+property.xpath+'//data')",
-                         "@do" : {
-                             "@for" : "row in table.findall('rows/row')",
-                             "@do" : [
-                               {
-                                 "@if" : "row.findall('column')[1].text is not None and row.findall('column')[0].text is not None",
-                                 "@id" : "sample:{{slugify(id.text.replace(' ',''))}}_{{slugify(property.uri)}}_{{row.attrib['id']}}",
-                                 "sio:hasAttribute" : [
                                    {
                                      "@type" : "{{property.uri}}",
                                      "sio:hasValue" : { "@value" : "{{float(row.findall('column')[1].text)}}", "@type": "xsd:double"}
@@ -655,3 +591,44 @@
 #      a setl:Load;
 #      prov:used :nanopubs ;
 #    ].
+@prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:          <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:           <http://www.w3.org/2002/07/owl#> .
+@prefix skos:          <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov:          <http://www.w3.org/ns/prov#> .
+@prefix sio:           <http://semanticscience.org/resource/> .
+@prefix dcat:          <http://www.w3.org/ns/dcat#> .
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix void:          <http://rdfs.org/ns/void#> .
+@prefix foaf:          <http://xmlns.com/foaf/0.1/> .
+@prefix ov:            <http://open.vocab.org/terms/> .
+@prefix setl:          <http://purl.org/twc/vocab/setl/> .
+@prefix csvw:          <http://www.w3.org/ns/csvw#> .
+@prefix pv:            <http://purl.org/net/provenance/ns#>.
+@prefix sp:            <http://spinrdf.org/sp#>.
+@prefix api_vocab: <http://purl.org/linked-data/api/vocab#>.
+
+@prefix :              <http://nanomine.org/setl/xml/> .
+
+@prefix nanopub: <http://www.nanopub.org/nschema#> .
+
+:property_classes_table a csvw:Table, setl:Table;
+  prov:wasGeneratedBy [
+    a setl:Extract;
+    prov:used <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=1806836834>;
+  ].
+
+:characterization_methods_table a csvw:Table, setl:Table;
+  prov:wasGeneratedBy [
+    a setl:Extract;
+    prov:used <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=798992913>;
+  ].
+
+:xml a setl:XML;
+  prov:wasGeneratedBy [
+     a setl:Extract;
+     prov:used [ a <http://nanomine.org/ns/NanomineXMLFile> ];
+  ].
+
+

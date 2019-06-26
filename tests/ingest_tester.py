@@ -52,6 +52,7 @@ def setUp(runner, file_under_test):
     temp.close()
 
 
+
 def autoparse(file_under_test):
     # Parses out information from the specified file for verification the the correct data
     # ends up in the graph
@@ -65,17 +66,17 @@ def autoparse(file_under_test):
     root = tree.getroot()
     expected_data = dict()
     # CommonFields Data
-    common_fields = next(root.iter("CommonFields"))
-    expected_data["authors"] = [
-        elem.text for elem in common_fields.iter("Author")]
-    expected_data["keywords"] = [elem.text.title()
-                                 for elem in common_fields.iter("Keyword")]
-    expected_data["DOI"] = [elem.text.title()
-                            for elem in common_fields.iter("DOI")]
-    expected_data["language"] = ["http://nanomine.org/language/" + elem.text.lower()
-                                 for elem in common_fields.iter("Language")]
-    expected_data["journ_vol"] = [
-        rdflib.Literal(int(val.text)) for val in common_fields.iter("Volume")]
+#    common_fields = next(root.iter("CommonFields"))
+#   expected_data["authors"] = [
+#        elem.text for elem in common_fields.iter("Author")]
+#    expected_data["keywords"] = [elem.text.title()
+#                                 for elem in common_fields.iter("Keyword")]
+#    expected_data["DOI"] = [elem.text.title()
+#                            for elem in common_fields.iter("DOI")]
+#    expected_data["language"] = ["http://nanomine.org/language/" + elem.text.lower()
+#                                 for elem in common_fields.iter("Language")]
+#    expected_data["journ_vol"] = [
+#        rdflib.Literal(int(val.text)) for val in common_fields.iter("Volume")]
 
     # Matrix Data
     # matrix_data = next(root.iter("Matrix"))
@@ -101,13 +102,17 @@ def autoparse(file_under_test):
 
     #Viscoleastic Properties,hardness, hardnessteststandard - Neha
     expected_data["viscoelastic_measurement_mode"] = [rdflib.Literal(elem.text)
-                                      for elem in root.iter(".//Viscoelastic/DynamicProperties/MeasurementMode")]   
+                                      for elem in root.iter(".//Viscoelastic//MeasurementMode")]   
      
     expected_data["hardness"] = [rdflib.Literal(elem.text)
                                   for elem in root.iter("Hardness")]
      
     expected_data["hardnessteststandard"] = [rdflib.Literal(elem.text)
                                               for elem in root.iter(".//HardnessTestStandard")]
+
+    expected_data["melt_viscosity_values"] = [rdflib.Literal(elem.text)
+                                               for elem in root.iter("Author")]
+
 
     # Check that matrix and filler components are properly constructed
     def build_component_dict(component):
@@ -454,11 +459,45 @@ def test_filler_processing(runner, expected_process=None):
 def test_viscoelastic_measurement_mode(runner, expected_mode=None):
     print("Testing viscoelastic measurement mode")
     mode = list(runner.app.db.objects(
-        None, rdflib.URIRef("http://nanomine.org/ns/MeasurementMode")))
+        None, rdflib.URIRef("http://nanomine.org/ns/tensile")))
     if expected_mode is None:
         expected_mode = runner.expected_data["viscoelastic_measurement_mode"]
-    runner.assertCountEqual(expected_mode, viscoelastic_measurement_mode)
+    runner.assertCountEqual(expected_mode, mode)
     print("Expected mode Found")
+
+def test_stress(runner, expected_value):
+    print("Stress value")
+    values = runner.app.db.query(
+    """
+    SELECT ?value
+    WHERE {
+        ?bnode <http://semanticscience.org/resource/hasValue> ?value .
+        ?bnode <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/Stress> .
+        <http://nanomine.org/sample/l300-s5-nakane-1999_nanomine-tensileloadingprofile_2> <http://semanticscience.org/resource/hasAttribute> ?bnode .
+    }
+    """
+    )
+    values = [value[0] for value in values]
+    runner.assertCountEqual(expected_value, values) 
+    print("Expected Stress  value Found") 
+
+def test_melt_viscosity(runner, expected_value=None):
+    print("\n\nMelt Viscosity")
+    value = runner.app.db.query(
+    """
+    SELECT ?value
+    WHERE {
+        <bnode:cfff5d04317445c49f22102e124ab68e> <http://semanticscience.org/resource/hasValue> ?value .
+        <bnode:cfff5d04317445c49f22102e124ab68e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/MeltVisocsity> .
+        <http://nanomine.org/sample/l256-s3-potschke-2004_nanomine-meltviscosity_9> <http://semanticscience.org/resource/hasAttribute> <bnode:cfff5d04317445c49f22102e124ab68e> .
+    }
+    """
+    )
+    values = [value[0] for value in values]
+    if expected_value is None:
+        expected_authors = runner.expected_data["melt_viscosity_data"]
+    runner.assertCountEqual(expected_value, values)
+    print("Expected Melt Viscosity values found")
 
 def print_triples(runner):
     print("Printing SPO Triples")
