@@ -65,39 +65,39 @@ def autoparse(file_under_test):
     root = tree.getroot()
     expected_data = dict()
     # CommonFields Data
-    common_fields = next(root.iter("CommonFields"))
+    # common_fields = next(root.iter("CommonFields"))
     expected_data["authors"] = [
-        elem.text for elem in common_fields.iter("Author")]
+        elem.text for elem in root.findall(".//CommonFields//Author")]
     expected_data["keywords"] = [elem.text.title()
-                                 for elem in common_fields.iter("Keyword")]
+                                 for elem in root.findall(".//CommonFields//Keyword")]
     expected_data["DOI"] = [elem.text.title()
-                            for elem in common_fields.iter("DOI")]
+                            for elem in root.findall(".//CommonFields//DOI")]
     expected_data["language"] = ["http://nanomine.org/language/" + elem.text.lower()
-                                 for elem in common_fields.iter("Language")]
+                                 for elem in root.findall(".//CommonFields//Language")]
     expected_data["journ_vol"] = [
-        rdflib.Literal(int(val.text)) for val in common_fields.iter("Volume")]
+        rdflib.Literal(int(val.text)) for val in root.findall(".//CommonFields//Volume")]
 
     # Matrix Data
     # matrix_data = next(root.iter("Matrix"))
     expected_data["m_name"] = [rdflib.Literal(elem.text)
                                for elem in root.findall(".//Matrix//ChemicalName")]
     expected_data["m_trd_name"] = [
-        rdflib.Literal(elem.text) for elem in root.iter(".//Matrix//TradeName")]
+        rdflib.Literal(elem.text) for elem in root.findall(".//Matrix//TradeName")]
     expected_data["abbrev"] = [rdflib.Literal(elem.text)
-                               for elem in root.iter(".//Matrix//Abbreviation")]
+                               for elem in root.findall(".//Matrix//Abbreviation")]
     expected_data["manufac"] = [
-        rdflib.Literal(elem.text) for elem in root.iter(".//Matrix//ManufacturerOrSourceName")]
+        rdflib.Literal(elem.text) for elem in root.findall(".//Matrix//ManufacturerOrSourceName")]
 
     # Filler data
     # filler_data = next(root.iter("Filler"))
     expected_data["f_name"] = [rdflib.Literal(elem.text)
                                for elem in root.findall(".//Filler//ChemicalName")]
     expected_data["f_trd_name"] = [
-        rdflib.Literal(elem.text) for elem in root.iter(".//Filler//TradeName")]
+        rdflib.Literal(elem.text) for elem in root.findall(".//Filler//TradeName")]
     expected_data["abbrev"] += [rdflib.Literal(elem.text)
-                                for elem in root.iter(".//Filler//Abbreviation")]
+                                for elem in root.findall(".//Filler//Abbreviation")]
     expected_data["manufac"] += [rdflib.Literal(elem.text)
-                                 for elem in root.iter(".//Filler//ManufacturerOrSourceName")]
+                                 for elem in root.findall(".//Filler//ManufacturerOrSourceName")]
 
     # Check that matrix and filler components are properly constructed
     def build_component_dict(component):
