@@ -1,0 +1,53 @@
+@prefix :              <http://example.com/setl/> .
+@prefix api_vocab:     <http://purl.org/linked-data/api/vocab#>.
+@prefix csvw:          <http://www.w3.org/ns/csvw#> .
+@prefix dcat:          <http://www.w3.org/ns/dcat#> .
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix nanomine:      <http://nanomine.org/ns/> .
+@prefix prov:          <http://www.w3.org/ns/prov#> .
+@prefix pv:            <http://purl.org/net/provenance/ns#> .
+@prefix setl:          <http://purl.org/twc/vocab/setl/> .
+@prefix void:          <http://rdfs.org/ns/void#> .
+
+# Extracts the data out of the specified json
+:table 
+    a setl:JSON;
+    api_vocab:selector "item";
+    prov:wasGeneratedBy [
+        a setl:Extract;
+        prov:used </apps/nanomine-graph/ChemDatabase/chemprops_example.json>
+    ].
+
+
+# Transformation
+:dataset 
+    a void:Dataset;
+    prov:wasGeneratedBy [
+        a setl:Transform, setl:JSLDT;
+        prov:used :table;
+        setl:hasContext '''
+        {
+            "sio": "http://semanticscience.org/resource/"
+        }
+        ''';
+        prov:value '''
+        [{
+            "@id": "http://example.com/{{slugify(row._stdname)}}",
+            "@type": "sio:ChemicalSubstance",
+            "nanomine:CU_Formula": "{{row._id.strip()}}",
+            "sio:Density": "{{row._density}}",
+            "rdfs:label": "{{row._stdname}}",
+            "@for": "abbrev in row._abbreviations",
+            "@do": {"nanomine:Abbreviation": "abbrev"}
+        }]
+        '''
+        ].
+
+# Load to file
+<chem_props.ttl>
+    a pv:File;
+    dcterms:format "text/turtle";
+    prov:wasGeneratedBy [
+        a setl:Load;
+        prov:used :dataset;
+    ] .
