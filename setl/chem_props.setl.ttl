@@ -32,13 +32,25 @@
         ''';
         prov:value '''
         [{
-            "@id": "http://example.com/{{slugify(row._stdname)}}",
+            "@id": "http://example.com/{{slugify(row['_id'])}}",
             "@type": "sio:ChemicalSubstance",
-            "nanomine:CU_Formula": "{{row._id.strip()}}",
-            "sio:Density": "{{row._density}}",
-            "rdfs:label": "{{row._stdname}}",
-            "@for": "abbrev in row._abbreviations",
-            "@do": {"nanomine:Abbreviation": "abbrev"}
+            "dcterms:identifier": "{{row['_id'].strip()}}",
+            "sio:hasAttribute" : {"@type": "sio:Density", "sio:hasValue": {"@value": "{{row['_density']}}", "@type": "xsd:double"}},
+            "rdfs:label": "{{row['_stdname']}}",
+            "skos:altLabel": [
+                {
+                    "@for": "name in row['_synonyms']",
+                    "@do": "{{name}}"
+                },
+                {
+                    "@for": "name in row['_tradenames']",
+                    "@do": "{{name}}"
+                }
+            ],
+            "skos:notation": [{
+                "@for": "abbrev in row['_abbreviations']",
+                "@do": "{{abbrev}}"
+            }]
         }]
         '''
         ].
