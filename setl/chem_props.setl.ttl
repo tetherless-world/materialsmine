@@ -1,11 +1,13 @@
-@prefix :              <http://example.com/setl/> .
+@prefix :              <http://nanomine.org/setl/json/> .
 @prefix api_vocab:     <http://purl.org/linked-data/api/vocab#>.
 @prefix csvw:          <http://www.w3.org/ns/csvw#> .
 @prefix dcat:          <http://www.w3.org/ns/dcat#> .
 @prefix dcterms:       <http://purl.org/dc/terms/> .
 @prefix nanomine:      <http://nanomine.org/ns/> .
+@prefix owl:           <http://www.w3.org/2002/07/owl#> .
 @prefix prov:          <http://www.w3.org/ns/prov#> .
 @prefix pv:            <http://purl.org/net/provenance/ns#> .
+@prefix rdfs:          <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix setl:          <http://purl.org/twc/vocab/setl/> .
 @prefix void:          <http://rdfs.org/ns/void#> .
 
@@ -15,19 +17,31 @@
     api_vocab:selector "item";
     prov:wasGeneratedBy [
         a setl:Extract;
-        prov:used </apps/nanomine-graph/ChemDatabase/chemprops_example.json>
+        prov:used [ a <http://nanomine.org/ns/NanomineJSONFile> ]
     ].
 
+:NanomineJSONImport rdfs:subClassOf setl:SemanticETLScript;
+    rdfs:label "Nanomine JSON Import SETL Script";
+    setl:hasTemplatePrefix "http://nanomine.org/setl/json/";
+    rdfs:subClassOf [ a owl:Restriction;
+        owl:onProperty prov:used;
+        owl:someValuesFrom <http://nanomine.org/ns/NanomineJSONFile>
+    ].
 
 # Transformation
 :dataset 
     a void:Dataset;
     prov:wasGeneratedBy [
-        a setl:Transform, setl:JSLDT;
+        a setl:Transform, setl:JSLDT, :NanomineJSONImport;
         prov:used :table;
         setl:hasContext '''
         {
-            "sio": "http://semanticscience.org/resource/"
+            "sio": "http://semanticscience.org/resource/",
+            "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+            "dcterms": "http://purl.org/dc/terms/",
+            "skos": "http://www.w3.org/2004/02/skos/core#",
+            "xsd": "http://www.w3.org/2001/XMLSchema#"
+
         }
         ''';
         prov:value '''
@@ -56,10 +70,10 @@
         ].
 
 # Load to file
-<chem_props.ttl>
-    a pv:File;
-    dcterms:format "text/turtle";
-    prov:wasGeneratedBy [
-        a setl:Load;
-        prov:used :dataset;
-    ] .
+#<chem_props.ttl>
+#    a pv:File;
+#    dcterms:format "text/turtle";
+#    prov:wasGeneratedBy [
+#        a setl:Load;
+#        prov:used :dataset;
+#    ] .
