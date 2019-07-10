@@ -66,17 +66,17 @@ def autoparse(file_under_test):
     root = tree.getroot()
     expected_data = dict()
     # CommonFields Data
-#    common_fields = next(root.iter("CommonFields"))
-#   expected_data["authors"] = [
-#        elem.text for elem in common_fields.iter("Author")]
-#    expected_data["keywords"] = [elem.text.title()
-#                                 for elem in common_fields.iter("Keyword")]
-#    expected_data["DOI"] = [elem.text.title()
-#                            for elem in common_fields.iter("DOI")]
-#    expected_data["language"] = ["http://nanomine.org/language/" + elem.text.lower()
-#                                 for elem in common_fields.iter("Language")]
-#    expected_data["journ_vol"] = [
-#        rdflib.Literal(int(val.text)) for val in common_fields.iter("Volume")]
+    common_fields = next(root.iter("CommonFields"))
+    expected_data["authors"] = [
+        elem.text for elem in common_fields.iter("Author")]
+    expected_data["keywords"] = [elem.text.title()
+                                for elem in common_fields.iter("Keyword")]
+    expected_data["DOI"] = [elem.text.title()
+                           for elem in common_fields.iter("DOI")]
+    expected_data["language"] = ["http://nanomine.org/language/" + elem.text.lower()
+                                for elem in common_fields.iter("Language")]
+    expected_data["journ_vol"] = [
+        rdflib.Literal(int(val.text)) for val in common_fields.iter("Volume")]
 
     # Matrix Data
     # matrix_data = next(root.iter("Matrix"))
