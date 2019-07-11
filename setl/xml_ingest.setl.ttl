@@ -174,12 +174,12 @@
 											}
 										},
 										{
-											"@if": "particle.find('SpecificSurfaceArea') is not None",
-											"@for": "area in particle.findall('SpecificSurfaceArea')",
+											"@if": "particle.find('SurfaceArea').find('specific') is not None",
+											"@for": "area in particle.findall('SurfaceArea')",
 											"@do": {
-												"@type": "sio:SurfaceArea",
+												"@type": "nanomine:SpecificSurfaceArea",
 												"sio:hasValue": {
-													"@value": "{{area.find('value').text}}",
+													"@value": "{{area.find('.//value').text}}",
 													"@type": "xsd:double"
 												},
 												"sio:hasUnit": [{

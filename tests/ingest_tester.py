@@ -499,6 +499,36 @@ def test_melt_viscosity(runner, expected_value=None):
     runner.assertCountEqual(expected_value, values)
     print("Expected Melt Viscosity values found")
 
+
+def test_rheometer_mode(runner, expected_modes=None):
+    print("\n\nTesting for Rheometer Mode")
+    modes = runner.app.db.objects(None, rdflib.URIRef("http://nanomine.org/ns/RheometerMode"))
+    modes = list(modes)
+    if expected_modes is None:
+        raise NotImplementedError
+    runner.assertCountEqual(expected_modes, modes)
+    print("Expected Rheometer Modes Found")
+
+
+def test_specific_surface_area(runner, expected_area=None, expected_units=None):
+    print("\n\nTesting for specific surface area")
+    surface_area = runner.app.db.query(
+        '''
+        SELECT ?area
+        WHERE
+        {
+            ?aNode a <http://nanomine.org/ns/SpecificSurfaceArea> .
+            ?aNode <http://semanticscience.org/resource/hasValue> ?area .
+        }
+        '''
+        )
+    surface_area =[a["area"] for a in surface_area]
+    if expected_area is None:
+        raise NotImplementedError
+    runner.assertCountEqual(expected_area, surface_area)
+
+
+
 def print_triples(runner):
     print("Printing SPO Triples")
     for s, p, o in runner.app.db.triples((None, None, None)):
