@@ -6,8 +6,6 @@ from rdflib import *
 
 import json
 
-from StringIO import StringIO
-
 import nanopub
 
 import autonomic
@@ -21,21 +19,21 @@ files = {
 
 class XMLIngestTest(WhyisTestCase):
 
-    def test_L168_S4_Luo_2013(self):
+    def test_L168_S3_Luo_2013(self):
         self.login(*self.create_user("user@example.com","password"))
-        upload = files['L168_S4_Luo_2013']
+        upload = files['L168_S3_Luo_2013']
         
         response = self.client.post("/pub", data=upload, content_type="text/turtle",follow_redirects=True)
         self.assertEquals(response.status,'201 CREATED')
 
         xml_content = self.client.get("/about",query_string={'uri':'http://nanomine.org/nmr/xml/L163_S4_Luo_2013.xml'}).data
-        print "the xml content ", xml_content
+        print("the xml content ", xml_content)
         
         response = self.client.post("/pub", data=open('/apps/nanomine-graph/setl/xml_ingest.setl.ttl','rb').read(), content_type="text/turtle", follow_redirects=True)
         self.assertEquals(response.status, '201 CREATED')
          
 #        xml_content = self.client.get("/about",query_string={'uri':'http://nanomine.org/nmr/xml/L102_S3_Hu_2007.xml'}).data
- #       print "the xml content ", xml_content
+ #       print("the xml content ", xml_content)
 
         setlmaker = autonomic.SETLMaker()
 
@@ -44,12 +42,12 @@ class XMLIngestTest(WhyisTestCase):
 
         setlr = autonomic.SETLr()
 
-        print len(self.app.db)
+        print(len(self.app.db))
         for setlr_np in results:
-            print "\nThe setlr_np is : ", setlr_np
+            print("\nThe setlr_np is : ", setlr_np)
             setlr_results = self.run_agent(setlr, nanopublication=setlr_np)
 
         nanocomposites = list(self.app.db.subjects(RDF.type,URIRef("http://nanomine.org/ns/PolymerNanocomposite")))
-        print nanocomposites, len(self.app.db)
+        print(nanocomposites, len(self.app.db))
         self.assertEquals(len(nanocomposites),1)
 

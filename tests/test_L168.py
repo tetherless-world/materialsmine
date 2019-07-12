@@ -1,10 +1,10 @@
 from . import ingest_tester
-from . import test_template
+from . import template
 import rdflib
 
 file_under_test = "L168_S4_Luo_2013"
 
-class L168Test(test_template.IngestTestTests):
+class L168Test(template.IngestTestTests):
     @classmethod
     def setUpClass(cls):
         cls.file_under_test = file_under_test

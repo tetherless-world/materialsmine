@@ -1,7 +1,7 @@
 from . import ingest_tester
 from . import template
 
-file_under_test = "L260_S5_Haggenmueller_2006"
+file_under_test = "L101_S11_Dang_2007"
 
 class IngestTestRunner(template.IngestTestSetup):
     first_run = bool()
