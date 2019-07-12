@@ -3,3 +3,4 @@
 /data/*.setl.ttl
 .vscode
 tests/output.txt
+xml_files/*

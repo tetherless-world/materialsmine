@@ -1,9 +1,9 @@
 from . import ingest_tester
-from . import test_template
+from . import template
 import rdflib
 
 
-class L102Test(test_template.IngestTestSetup):
+class L102Test(template.IngestTestSetup):
     @classmethod
     def setUpClass(cls):
         cls.file_under_test = "L102_S3_Hu_2007"

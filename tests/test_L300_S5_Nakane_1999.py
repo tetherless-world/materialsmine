@@ -1,8 +1,8 @@
 from . import ingest_tester
-from . import test_template
+from . import template
 import rdflib
 
-class L300_S5_Nakane_1999(test_template.IngestTestSetup):
+class L300_S5_Nakane_1999(template.IngestTestSetup):
     @classmethod
     def setUpClass(cls):
         cls.file_under_test = "L300_S5_Nakane_1999"
