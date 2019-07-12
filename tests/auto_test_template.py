@@ -4,7 +4,7 @@
 # as a starting point which can be worked from
 
 from . import ingest_tester
-from . import test_template
+from . import template
 
 file_under_test = "<FILENAME HERE>"
 

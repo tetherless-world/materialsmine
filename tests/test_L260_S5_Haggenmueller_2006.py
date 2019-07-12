@@ -1,9 +1,9 @@
 from . import ingest_tester
-from . import test_template
+from . import template
 
 file_under_test = "L260_S5_Haggenmueller_2006"
 
-class IngestTestRunner(test_template.IngestTestSetup):
+class IngestTestRunner(template.IngestTestSetup):
     first_run = bool()
     @classmethod
     def setUpClass(cls):
