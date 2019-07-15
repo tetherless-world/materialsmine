@@ -593,7 +593,7 @@
 										"@value": "{{value.find('Description').text}}"
 									}],
 									"prov:used": [{
-										"@for": "equipment in value.findall('./Equipment')",
+										"@for": "equipment in list(value.findall('./Equipment')) + list(value.findall('./EquipmentUsed'))",
 										"@do": {
 											"@type": [{
 													"@id": "nanomine:{{slugify(equipment.text)}}",
