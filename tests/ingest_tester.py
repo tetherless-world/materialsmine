@@ -454,6 +454,8 @@ def test_filler_processing(runner, expected_process=None):
     )
     if expected_process is None:
         expected_process = runner.expected_data["filler_processing"]
+    runner.assertTrue(expected_process is not None)
+    runner.assertTrue(process is not None)
     runner.assertCountEqual(expected_process, process)  # TODO figure out how to query ordering in process order
 
 def test_viscoelastic_measurement_mode(runner, expected_mode=None):
@@ -483,7 +485,7 @@ def test_stress(runner, expected_value):
 
 def test_melt_viscosity(runner, expected_value=None):
     print("\n\nMelt Viscosity")
-    value = runner.app.db.query(
+    values = runner.app.db.query(
     """
     SELECT ?value
     WHERE {
