@@ -289,6 +289,22 @@
 												]
 											}
 										},
+										{
+											"@for": "name in particle.findall('ManufacturerOrSourceName')",
+											"@do": {
+												"@type": [
+													"nanomine:ManufacturerOrSourceName",
+													{
+														"@id": "nanomine:{{camelcase(name.text)}}",
+														"@type": "owl:Class",
+														"rdfs:label": "{{name.text}}",
+														"rdfs:subClassOf": {
+															"@id": "nanomine:ManufacturerOrSourceName"
+														}
+													}
+												]
+											}
+										},
 									    {
                                             "@for": "shape in particle.findall('NonSphericalShape')",
                                             "@do": {
@@ -467,13 +483,32 @@
 											"@type": "owl:Class",
 											"rdfs:label": "{{polymer.find('Abbreviation').text}}"
 										}
+										
 									],
 									"sio:hasRole": {
 										"@type": "nanomine:Matrix",
 										"sio:inRelationTo": {
 											"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
 										}
-									}
+									},
+									"sio:hasAttribute": [
+										{
+											"@for": "name in polymer.findall('ManufacturerOrSourceName')",
+											"@do": {
+												"@type": [
+													"nanomine:ManufacturerOrSourceName",
+													{
+														"@id": "nanomine:{{camelcase(name.text)}}",
+														"@type": "owl:Class",
+														"rdfs:label": "{{name.text}}",
+														"rdfs:subClassOf": {
+															"@id": "nanomine:ManufacturerOrSourceName"
+														}
+													}
+												]
+											}
+										},
+									]
 								}
 							}
 						],
