@@ -290,108 +290,126 @@
 											}
 										},
 										{
-											"@for": "shape in particle.findall('NonSphericalShape')",
-											"@do": [
-
-												{
-													"@type": "sio:Width",
-													"sio:hasValue": {
-														"@value": "{{shape.find('value').text}}",
-														"@type": "xsd:double"
-													},
-													"sio:hasUnit": [{
-														"@if": "shape.find('unit') is not None",
-														"@id": "unit:{{slugify(shape.find('unit').text)}}",
-														"rdfs:label": "{{shape.find('unit').text}}"
-													}],
-													"sio:hasAttribute": [{
-														"@if": "shape.find('.//uncertainty') is not None",
-														"@type": [
-															"sio:UncertaintyValue",
-															{
-																"@if": "shape.find('.//uncertainty/type').text == 'relative'",
-																"@id": "sio:Ratio"
-															},
-															{
-																"@if": "shape.find('.//uncertainty/type').text == 'absolute'",
-																"@id": "sio:StandardDeviation"
-															}
-														],
-														"sio:hasValue": {
-															"@value": "{{shape.find('.//uncertainty/value').text}}",
-															"@type": "xsd:double"
+											"@for": "name in particle.findall('ManufacturerOrSourceName')",
+											"@do": {
+												"@type": [
+													"nanomine:ManufacturerOrSourceName",
+													{
+														"@id": "nanomine:{{camelcase(name.text)}}",
+														"@type": "owl:Class",
+														"rdfs:label": "{{name.text}}",
+														"rdfs:subClassOf": {
+															"@id": "nanomine:ManufacturerOrSourceName"
 														}
-													}]
+													}
+												]
+											}
+										},
+									    {
+                                            "@for": "shape in particle.findall('NonSphericalShape')",
+                                            "@do": {
+                                                "sio:hasAttribute": [{
+                                                        "@type": "nanomine:NonSpherical",
+                                                        "@id": "sio:Shape"
+                                                    },
+													{
+                                                        "@if": "shape.find('.//Width') is not None",
+                                                        "@type": "sio:Width",
+                                                        "sio:hasValue": {
+                                                            "@value": "{{shape.find('.//Width/value').text}}",
+                                                            "@type": "xsd:double"
+                                                        },
+                                                        "sio:hasUnit": [{
+                                                            "@if": "shape.find('.//Width/unit') is not None",
+                                                            "@id": "unit:{{slugify(shape.find('.//Width/unit').text)}}",
+                                                            "rdfs:label": "{{shape.find('.//Width/unit').text}}"
+                                                        }],
+                                                        "sio:hasAttribute": [{
+                                                            "@if": "shape.find('.//Width/uncertainty') is not None",
+                                                            "@type": [
+                                                                "sio:UncertaintyValue",
+                                                                {
+                                                                    "@if": "shape.find('.//Width/uncertainty/type').text == 'relative'",
+                                                                    "@id": "sio:Ratio"
+                                                                },
+                                                                {
+                                                                    "@if": "shape.find('.//Width/uncertainty/type').text == 'absolute'",
+                                                                    "@id": "sio:StandardDeviation"
+                                                                }
+                                                            ],
+                                                            "sio:hasValue": {
+                                                                "@value": "{{shape.find('.//Width/uncertainty/value').text}}",
+                                                                "@type": "xsd:double"
+                                                            }
+                                                        }]
+                                                    },
+													{
+                                                        "@if": "shape.find('.//Length') is not None",
+                                                        "@type": "sio:Length",
+                                                        "sio:hasValue": {
+                                                            "@value": "{{shape.find('.//Length/value').text}}",
+                                                            "@type": "xsd:double"
+                                                        },
+                                                        "sio:hasUnit": [{
+                                                            "@if": "shape.find('.//Length/unit') is not None",
+                                                            "@id": "unit:{{slugify(shape.find('.//Length/unit').text)}}",
+                                                            "rdfs:label": "{{shape.find('.//Length/unit').text}}"
+                                                        }],
+                                                        "sio:hasAttribute": [{
+                                                            "@if": "shape.find('.//Length/uncertainty') is not None",
+                                                            "@type": [
+                                                                "sio:UncertaintyValue",
+                                                                {
+                                                                    "@if": "shape.find('.//Length/uncertainty/type').text == 'relative'",
+                                                                    "@id": "sio:Ratio"
+                                                                },
+                                                                {
+                                                                    "@if": "shape.find('.//Length/uncertainty/type').text == 'absolute'",
+                                                                    "@id": "sio:StandardDeviation"
+                                                                }
+                                                            ],
+                                                            "sio:hasValue": {
+                                                                "@value": "{{shape.find('.//Length/uncertainty/value').text}}",
+                                                                "@type": "xsd:double"
+                                                            }
+                                                        }]
+                                                    },
+													{
+                                                        "@if": "shape.find('.//Depth') is not None",
+                                                        "@type": "sio:Depth",
+                                                        "sio:hasValue": {
+                                                            "@value": "{{shape.find('.//Depth/value').text}}",
+                                                            "@type": "xsd:double"
+                                                        },
+                                                        "sio:hasUnit": [{
+                                                            "@if": "shape.find('.//Depth/unit') is not None",
+                                                            "@id": "unit:{{slugify(shape.find('.//Depth/unit').text)}}",
+                                                            "rdfs:label": "{{shape.find('.//Depth/unit').text}}"
+                                                        }],
+                                                        "sio:hasAttribute": [{
+                                                            "@if": "shape.find('.//Depth/uncertainty') is not None",
+                                                            "@type": [
+                                                                "sio:UncertaintyValue",
+                                                                {
+                                                                    "@if": "shape.find('.//Depth/uncertainty/type').text == 'relative'",
+                                                                    "@id": "sio:Ratio"
+                                                                },
+                                                                {
+                                                                    "@if": "shape.find('.//Depth/uncertainty/type').text == 'absolute'",
+                                                                    "@id": "sio:StandardDeviation"
+                                                                }
+                                                            ],
+                                                            "sio:hasValue": {
+                                                                "@value": "{{shape.find('.//Depth/uncertainty/value').text}}",
+                                                                "@type": "xsd:double"
+                                                            }
+                                                        }]
+                                                    }
+                                                    
+                                               ]
+                                            }
+                                        }
 
-												},
-												{
-													"@type": "sio:Length",
-													"sio:hasValue": {
-														"@value": "{{shape.find('value').text}}",
-														"@type": "xsd:double"
-													},
-													"sio:hasUnit": [{
-														"@if": "shape.find('unit') is not None",
-														"@id": "unit:{{slugify(shape.find('unit').text)}}",
-														"rdfs:label": "{{shape.find('unit').text}}"
-													}],
-													"sio:hasAttribute": [{
-														"@if": "shape.find('.//uncertainty') is not None",
-														"@type": [
-															"sio:UncertaintyValue",
-															{
-																"@if": "shape.find('.//uncertainty/type').text == 'relative'",
-																"@id": "sio:Ratio"
-															},
-															{
-																"@if": "shape.find('.//uncertainty/type').text == 'absolute'",
-																"@id": "sio:StandardDeviation"
-															}
-														],
-														"sio:hasValue": {
-															"@value": "{{shape.find('.//uncertainty/value').text}}",
-															"@type": "xsd:double"
-														}
-													}]
-
-												},
-												{
-													"@type": "sio:Depth",
-													"sio:hasValue": {
-														"@value": "{{shape.find('value').text}}",
-														"@type": "xsd:double"
-													},
-													"sio:hasUnit": [{
-														"@if": "shape.find('unit') is not None",
-														"@id": "unit:{{slugify(shape.find('unit').text)}}",
-														"rdfs:label": "{{shape.find('unit').text}}"
-													}],
-													"sio:hasAttribute": [{
-														"@if": "shape.find('.//uncertainty') is not None",
-														"@type": [
-															"sio:UncertaintyValue",
-															{
-																"@if": "shape.find('.//uncertainty/type').text == 'relative'",
-																"@id": "sio:Ratio"
-															},
-															{
-																"@if": "shape.find('.//uncertainty/type').text == 'absolute'",
-																"@id": "sio:StandardDeviation"
-															}
-														],
-														"sio:hasValue": {
-															"@value": "{{shape.find('.//uncertainty/value').text}}",
-															"@type": "xsd:double"
-														}
-													}]
-
-												}
-
-
-											]
-
-
-										}
 
 									],
 									"sio:isSurroundedBy": [{
@@ -465,13 +483,32 @@
 											"@type": "owl:Class",
 											"rdfs:label": "{{polymer.find('Abbreviation').text}}"
 										}
+										
 									],
 									"sio:hasRole": {
 										"@type": "nanomine:Matrix",
 										"sio:inRelationTo": {
 											"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
 										}
-									}
+									},
+									"sio:hasAttribute": [
+										{
+											"@for": "name in polymer.findall('ManufacturerOrSourceName')",
+											"@do": {
+												"@type": [
+													"nanomine:ManufacturerOrSourceName",
+													{
+														"@id": "nanomine:{{camelcase(name.text)}}",
+														"@type": "owl:Class",
+														"rdfs:label": "{{name.text}}",
+														"rdfs:subClassOf": {
+															"@id": "nanomine:ManufacturerOrSourceName"
+														}
+													}
+												]
+											}
+										},
+									]
 								}
 							}
 						],
