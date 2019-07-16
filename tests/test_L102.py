@@ -69,7 +69,7 @@ class L102Test(template.IngestTestSetup):
                                   "trade": rdflib.Literal("Topas 8007S-04")})
         
         expected_material.append({"abbrev": rdflib.Literal("BST"),
-                                  "manufac": rdflib.Literal("Sigma&#8211;Aldrich Chemie GmbH, Germany"),
+                                  "manufac": rdflib.Literal("Sigma–Aldrich Chemie GmbH, Germany"),
                                   "name": rdflib.Literal("barium strontium titanate"),
                                   "trade": None})
 
