@@ -166,6 +166,14 @@
 											}
 										},
 										{
+											"@if": "particle.find('TradeName') is not None",
+											"@for": "tradename in particle.findall('TradeName')",
+											"@do":{
+												"@type": "nanomine:TradeName",
+												"sio:hasValue": "{{tradename.text}}"
+											}
+										},
+										{
 											"@if": "particle.find('Density')",
 											"@for": "density in particle.findall('Density')",
 											"@do": {
@@ -489,6 +497,14 @@
 										"@do": {
 											"@type": "nanomine:Manufacturer",
 											"sio:hasValue": "{{manufacturer.text}}"
+										}
+									},
+									{
+										"@if": "polymer.find('TradeName') is not None",
+										"@for": "tradename in polymer.findall('TradeName')",
+										"@do":{
+											"@type": "nanomine:TradeName",
+											"sio:hasValue": "{{tradename.text}}"
 										}
 									}
 									]

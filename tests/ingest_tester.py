@@ -298,14 +298,16 @@ def test_matrix_chemical_names(runner, expected_names=None):
 
 def test_matrix_trade_names(runner, expected_names=None):
     # Check if the names of the chemicals are present
-    print("\n\nMatrix Chemical Names")
+    print("\n\nMatrix Trade Names")
     names = runner.app.db.query(
-        """
-    SELECT ?tradeName WHERE {
-        ?matrix <http://semanticscience.org/resource/hasRole> ?bnode .
-        ?matrix a ?chemURI .
-        ?bnode a <http://nanomine.org/ns/Matrix> .
-        ?chemURI <http://nanomine.org/ns/TradeName> ?tradeName .
+    """
+    SELECT ?trade
+    WHERE {
+        ?mat <http://semanticscience.org/resource/hasRole> ?bnode_mat .
+        ?bnode_mat a <http://nanomine.org/ns/Matrix> .
+        ?mat <http://semanticscience.org/resource/hasAttribute> ?prop .
+        ?prop a <http://nanomine.org/ns/TradeName> .
+        ?prop <http://semanticscience.org/resource/hasValue> ?trade .
     }
     """
     )
@@ -338,17 +340,19 @@ def test_filler_chemical_names(runner, expected_names=None):
 
 def test_filler_trade_names(runner, expected_names=None):
     # Check if the names of the chemicals are present
-    print("\n\nFiller Chemical Names")
-    names = runner.app.db.query(
-        """
-    SELECT ?tradeName WHERE {
-        ?Filler <http://semanticscience.org/resource/hasRole> ?bnode .
-        ?Filler a ?chemURI .
-        ?bnode a <http://nanomine.org/ns/Filler> .
-        ?chemURI <http://nanomine.org/ns/TradeName> ?tradeName .
+    print("\n\nFiller Trade Names")
+    names = list(runner.app.db.query(
+    """
+    SELECT ?trade
+    WHERE {
+        ?mat <http://semanticscience.org/resource/hasRole> ?bnode_mat .
+        ?bnode_mat a <http://nanomine.org/ns/Filler> .
+        ?mat <http://semanticscience.org/resource/hasAttribute> ?prop .
+        ?prop a <http://nanomine.org/ns/TradeName> .
+        ?prop <http://semanticscience.org/resource/hasValue> ?trade .
     }
     """
-    )
+    ))
     names = [name[0] for name in names]
     if expected_names is None:
         expected_names = runner.expected_data["f_trd_name"]
@@ -402,7 +406,7 @@ def test_complete_material(runner, expected_materials=None):
         ?mat <http://semanticscience.org/resource/hasRole> ?bnode_mat .
         ?mat a ?compound .
         { ?bnode_mat a <http://nanomine.org/ns/Matrix> } UNION { ?bnode_mat a <http://nanomine.org/ns/Filler> } .
-        OPTIONAL {?compound <http://semanticscience.org/resource/hasAttribute> ?bnode_abbrev .
+        OPTIONAL {?mat <http://semanticscience.org/resource/hasAttribute> ?bnode_abbrev .
                   ?bnode_abbrev a <http://nanomine.org/ns/Abbreviation> .
                   ?bnode_abbrev <http://semanticscience.org/resource/hasValue> ?abbrev} .
 
@@ -413,9 +417,9 @@ def test_complete_material(runner, expected_materials=None):
         OPTIONAL {?compound <http://www.w3.org/2000/01/rdf-schema#label> ?name} .
 
 
-        OPTIONAL {?compound <http://semanticscience.org/resource/hasAttribute> ?bnode_trade .
+        OPTIONAL {?mat <http://semanticscience.org/resource/hasAttribute> ?bnode_trade .
                   ?bnode_trade a <http://nanomine.org/ns/TradeName> .
-                  ?bnode_trace <http://semanticscience.org/resource/hasValue> ?trade} .
+                  ?bnode_trade <http://semanticscience.org/resource/hasValue> ?trade} .
     }
     """
     )

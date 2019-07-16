@@ -47,7 +47,7 @@ class L102Test(template.IngestTestSetup):
         ingest_tester.test_matrix_chemical_names(self)
 
     def test_matrix_trade_names(self):
-        expected_names = [rdflib.Literal("Topas 8007s-04")]
+        expected_names = [rdflib.Literal("Topas 8007S-04")]
         ingest_tester.test_matrix_trade_names(self, expected_names)
         ingest_tester.test_matrix_trade_names(self)
 
@@ -81,4 +81,4 @@ class L102Test(template.IngestTestSetup):
 
 
     # def test_print_triples(self):
-        # ingest_tester.print_triples(self)
+    #     ingest_tester.print_triples(self)
