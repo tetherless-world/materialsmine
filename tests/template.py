@@ -55,8 +55,8 @@ class IngestTestTests(IngestTestSetup):
     def test_complete_material(self):
         ingest_tester.test_complete_material(self)
 
-    def test_filler_processing(self):
-        ingest_tester.test_filler_processing(self)
+    # def test_filler_processing(self):
+    #     ingest_tester.test_filler_processing(self)
 
     # added by Neha on 25th June 19
     def test_viscoelastic_measurement_mode(self):

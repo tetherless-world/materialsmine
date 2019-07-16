@@ -4,6 +4,7 @@ import tempfile
 import xml.etree.ElementTree as ET
 import pandas as pd
 import rdflib
+import slugify
 
 import autonomic
 
@@ -177,7 +178,7 @@ def autoparse(file_under_test):
                                   for elem in root.iter("EquipmentUsed")]
     expected_data["equipment"] += [elem.text.lower()
                                    for elem in root.iter("Equipment")]
-    expected_data["equipment"] = ["http://nanomine.org/ns/" + elem.replace(" ", "-")
+    expected_data["equipment"] = ["http://nanomine.org/ns/" + slugify.slugify(elem)
                                   for elem in expected_data["equipment"]]
     expected_data["values"] = [
         rdflib.Literal(val.text, datatype=rdflib.XSD.double) for val in root.iter("value")]
@@ -372,8 +373,16 @@ def test_temperatures(runner, expected_temperatures=None):
 
 def test_abbreviations(runner, expected_abbreviations=None):
     print("Checking if the expected abbreviations are present")
-    abbreviations = list(runner.app.db.objects(
-        None, rdflib.URIRef("http://nanomine.org/ns/Abberviation")))
+    abbreviations = list(runner.app.db.query(
+    """
+    SELECT ?abbrev
+    WHERE {
+        ?prop a <http://nanomine.org/ns/Abbreviation> .
+        ?prop <http://semanticscience.org/resource/hasValue> ?abbrev .
+    }
+    """
+    ))
+    abbreviations = [a[0] for a in abbreviations]
     if expected_abbreviations is None:
         expected_abbreviations = runner.expected_data["abbrev"]
     runner.assertCountEqual(expected_abbreviations, abbreviations)
