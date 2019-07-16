@@ -4,6 +4,7 @@ import tempfile
 import xml.etree.ElementTree as ET
 import pandas as pd
 import rdflib
+import slugify
 
 import autonomic
 
@@ -177,7 +178,7 @@ def autoparse(file_under_test):
                                   for elem in root.iter("EquipmentUsed")]
     expected_data["equipment"] += [elem.text.lower()
                                    for elem in root.iter("Equipment")]
-    expected_data["equipment"] = ["http://nanomine.org/ns/" + elem.replace(" ", "-")
+    expected_data["equipment"] = ["http://nanomine.org/ns/" + slugify.slugify(elem)
                                   for elem in expected_data["equipment"]]
     expected_data["values"] = [
         rdflib.Literal(val.text, datatype=rdflib.XSD.double) for val in root.iter("value")]
@@ -298,14 +299,16 @@ def test_matrix_chemical_names(runner, expected_names=None):
 
 def test_matrix_trade_names(runner, expected_names=None):
     # Check if the names of the chemicals are present
-    print("\n\nMatrix Chemical Names")
+    print("\n\nMatrix Trade Names")
     names = runner.app.db.query(
-        """
-    SELECT ?tradeName WHERE {
-        ?matrix <http://semanticscience.org/resource/hasRole> ?bnode .
-        ?matrix a ?chemURI .
-        ?bnode a <http://nanomine.org/ns/Matrix> .
-        ?chemURI <http://nanomine.org/ns/TradeName> ?tradeName .
+    """
+    SELECT ?trade
+    WHERE {
+        ?mat <http://semanticscience.org/resource/hasRole> ?bnode_mat .
+        ?bnode_mat a <http://nanomine.org/ns/Matrix> .
+        ?mat <http://semanticscience.org/resource/hasAttribute> ?prop .
+        ?prop a <http://nanomine.org/ns/TradeName> .
+        ?prop <http://semanticscience.org/resource/hasValue> ?trade .
     }
     """
     )
@@ -338,17 +341,19 @@ def test_filler_chemical_names(runner, expected_names=None):
 
 def test_filler_trade_names(runner, expected_names=None):
     # Check if the names of the chemicals are present
-    print("\n\nFiller Chemical Names")
-    names = runner.app.db.query(
-        """
-    SELECT ?tradeName WHERE {
-        ?Filler <http://semanticscience.org/resource/hasRole> ?bnode .
-        ?Filler a ?chemURI .
-        ?bnode a <http://nanomine.org/ns/Filler> .
-        ?chemURI <http://nanomine.org/ns/TradeName> ?tradeName .
+    print("\n\nFiller Trade Names")
+    names = list(runner.app.db.query(
+    """
+    SELECT ?trade
+    WHERE {
+        ?mat <http://semanticscience.org/resource/hasRole> ?bnode_mat .
+        ?bnode_mat a <http://nanomine.org/ns/Filler> .
+        ?mat <http://semanticscience.org/resource/hasAttribute> ?prop .
+        ?prop a <http://nanomine.org/ns/TradeName> .
+        ?prop <http://semanticscience.org/resource/hasValue> ?trade .
     }
     """
-    )
+    ))
     names = [name[0] for name in names]
     if expected_names is None:
         expected_names = runner.expected_data["f_trd_name"]
@@ -368,8 +373,16 @@ def test_temperatures(runner, expected_temperatures=None):
 
 def test_abbreviations(runner, expected_abbreviations=None):
     print("Checking if the expected abbreviations are present")
-    abbreviations = list(runner.app.db.objects(
-        None, rdflib.URIRef("http://nanomine.org/ns/Abberviation")))
+    abbreviations = list(runner.app.db.query(
+    """
+    SELECT ?abbrev
+    WHERE {
+        ?prop a <http://nanomine.org/ns/Abbreviation> .
+        ?prop <http://semanticscience.org/resource/hasValue> ?abbrev .
+    }
+    """
+    ))
+    abbreviations = [a[0] for a in abbreviations]
     if expected_abbreviations is None:
         expected_abbreviations = runner.expected_data["abbrev"]
     runner.assertCountEqual(expected_abbreviations, abbreviations)
@@ -378,8 +391,16 @@ def test_abbreviations(runner, expected_abbreviations=None):
 
 def test_manufacturers(runner, expected_manufacturers=None):
     print("Checking if the expected manufactures are present")
-    manufacturers = list(runner.app.db.objects(
-        None, rdflib.URIRef("http://nanomine.org/ns/Manufacturer")))
+    manufacturers = list(runner.app.db.query(
+        """
+        SELECT ?manufac
+        WHERE {
+            ?prop a <http://nanomine.org/ns/Manufacturer> .
+            ?prop <http://semanticscience.org/resource/hasValue> ?manufac .
+        }
+        """
+        ))
+    manufacturers = [m[0] for m in manufacturers]
     if expected_manufacturers is None:
         expected_manufacturers = runner.expected_data["manufac"]
     runner.assertCountEqual(expected_manufacturers, manufacturers)
@@ -394,10 +415,20 @@ def test_complete_material(runner, expected_materials=None):
         ?mat <http://semanticscience.org/resource/hasRole> ?bnode_mat .
         ?mat a ?compound .
         { ?bnode_mat a <http://nanomine.org/ns/Matrix> } UNION { ?bnode_mat a <http://nanomine.org/ns/Filler> } .
-        OPTIONAL {?compound <http://nanomine.org/ns/Abbreviation> ?abbrev} .
-        OPTIONAL {?compound <http://nanomine.org/ns/Manufacturer> ?manufac} .
+        OPTIONAL {?mat <http://semanticscience.org/resource/hasAttribute> ?bnode_abbrev .
+                  ?bnode_abbrev a <http://nanomine.org/ns/Abbreviation> .
+                  ?bnode_abbrev <http://semanticscience.org/resource/hasValue> ?abbrev} .
+
+        OPTIONAL {?mat <http://semanticscience.org/resource/hasAttribute> ?bnode_manufac .
+                  ?bnode_manufac a <http://nanomine.org/ns/Manufacturer> .
+                  ?bnode_manufac <http://semanticscience.org/resource/hasValue> ?manufac} .
+
         OPTIONAL {?compound <http://www.w3.org/2000/01/rdf-schema#label> ?name} .
-        OPTIONAL {?compound <http://nanomine.org/ns/TradeName> ?trade} .
+
+
+        OPTIONAL {?mat <http://semanticscience.org/resource/hasAttribute> ?bnode_trade .
+                  ?bnode_trade a <http://nanomine.org/ns/TradeName> .
+                  ?bnode_trade <http://semanticscience.org/resource/hasValue> ?trade} .
     }
     """
     )
@@ -500,6 +531,36 @@ def test_melt_viscosity(runner, expected_value=None):
         expected_authors = runner.expected_data["melt_viscosity_data"]
     runner.assertCountEqual(expected_value, values)
     print("Expected Melt Viscosity values found")
+
+
+def test_rheometer_mode(runner, expected_modes=None):
+    print("\n\nTesting for Rheometer Mode")
+    modes = runner.app.db.objects(None, rdflib.URIRef("http://nanomine.org/ns/RheometerMode"))
+    modes = list(modes)
+    if expected_modes is None:
+        raise NotImplementedError
+    runner.assertCountEqual(expected_modes, modes)
+    print("Expected Rheometer Modes Found")
+
+
+def test_specific_surface_area(runner, expected_area=None, expected_units=None):
+    print("\n\nTesting for specific surface area")
+    surface_area = runner.app.db.query(
+        '''
+        SELECT ?area
+        WHERE
+        {
+            ?aNode a <http://nanomine.org/ns/SpecificSurfaceArea> .
+            ?aNode <http://semanticscience.org/resource/hasValue> ?area .
+        }
+        '''
+        )
+    surface_area =[a["area"] for a in surface_area]
+    if expected_area is None:
+        raise NotImplementedError
+    runner.assertCountEqual(expected_area, surface_area)
+
+
 
 def print_triples(runner):
     print("Printing SPO Triples")

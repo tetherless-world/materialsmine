@@ -47,8 +47,8 @@ class L168Test(template.IngestTestTests):
         ingest_tester.test_abbreviations(self, expected_abbreviations)
         ingest_tester.test_abbreviations(self)
 
-    def test_filler_processing(self):
-        ingest_tester.test_filler_processing(self)
+    # def test_filler_processing(self):
+    #     ingest_tester.test_filler_processing(self)
 
     def test_manufacturers(self):
         expected_manufacturers = ["Shanghai 3F Co.",

@@ -8,7 +8,6 @@ class ChemPropsTest(WhyisTestCase):
         self.maxDiff = 10000
         self.login(*self.create_user("user@example.com", "password"))
 
-        # TODO define what the uploaded file is
         upload = '''<{}> a <http://nanomine.org/ns/NanomineJSONFile>, 
                         <https://www.iana.org/assignments/media-types/application/json> ,
                         <http://schema.org/DataDownload> ;
