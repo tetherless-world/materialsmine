@@ -378,8 +378,16 @@ def test_abbreviations(runner, expected_abbreviations=None):
 
 def test_manufacturers(runner, expected_manufacturers=None):
     print("Checking if the expected manufactures are present")
-    manufacturers = list(runner.app.db.objects(
-        None, rdflib.URIRef("http://nanomine.org/ns/Manufacturer")))
+    manufacturers = list(runner.app.db.query(
+        """
+        SELECT ?manufac
+        WHERE {
+            ?prop a <http://nanomine.org/ns/Manufacturer> .
+            ?prop <http://semanticscience.org/resource/hasValue> ?manufac .
+        }
+        """
+        ))
+    manufacturers = [m[0] for m in manufacturers]
     if expected_manufacturers is None:
         expected_manufacturers = runner.expected_data["manufac"]
     runner.assertCountEqual(expected_manufacturers, manufacturers)
@@ -394,10 +402,20 @@ def test_complete_material(runner, expected_materials=None):
         ?mat <http://semanticscience.org/resource/hasRole> ?bnode_mat .
         ?mat a ?compound .
         { ?bnode_mat a <http://nanomine.org/ns/Matrix> } UNION { ?bnode_mat a <http://nanomine.org/ns/Filler> } .
-        OPTIONAL {?compound <http://nanomine.org/ns/Abbreviation> ?abbrev} .
-        OPTIONAL {?compound <http://nanomine.org/ns/Manufacturer> ?manufac} .
+        OPTIONAL {?compound <http://semanticscience.org/resource/hasAttribute> ?bnode_abbrev .
+                  ?bnode_abbrev a <http://nanomine.org/ns/Abbreviation> .
+                  ?bnode_abbrev <http://semanticscience.org/resource/hasValue> ?abbrev} .
+
+        OPTIONAL {?mat <http://semanticscience.org/resource/hasAttribute> ?bnode_manufac .
+                  ?bnode_manufac a <http://nanomine.org/ns/Manufacturer> .
+                  ?bnode_manufac <http://semanticscience.org/resource/hasValue> ?manufac} .
+
         OPTIONAL {?compound <http://www.w3.org/2000/01/rdf-schema#label> ?name} .
-        OPTIONAL {?compound <http://nanomine.org/ns/TradeName> ?trade} .
+
+
+        OPTIONAL {?compound <http://semanticscience.org/resource/hasAttribute> ?bnode_trade .
+                  ?bnode_trade a <http://nanomine.org/ns/TradeName> .
+                  ?bnode_trace <http://semanticscience.org/resource/hasValue> ?trade} .
     }
     """
     )

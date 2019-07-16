@@ -158,6 +158,14 @@
 											}
 										},
 										{
+											"@if": "particle.find('ManufacturerOrSourceName') is not None",
+											"@for": "manufacturer in particle.findall('ManufacturerOrSourceName')",
+											"@do": {
+												"@type": "nanomine:Manufacturer",
+												"sio:hasValue": "{{manufacturer.text}}"
+											}
+										},
+										{
 											"@if": "particle.find('Density')",
 											"@for": "density in particle.findall('Density')",
 											"@do": {
@@ -284,22 +292,6 @@
 														"rdfs:label": "{{phase.text}}",
 														"rdfs:subClassOf": {
 															"@id": "nanomine:CrystalPhase"
-														}
-													}
-												]
-											}
-										},
-										{
-											"@for": "name in particle.findall('ManufacturerOrSourceName')",
-											"@do": {
-												"@type": [
-													"nanomine:ManufacturerOrSourceName",
-													{
-														"@id": "nanomine:{{camelcase(name.text)}}",
-														"@type": "owl:Class",
-														"rdfs:label": "{{name.text}}",
-														"rdfs:subClassOf": {
-															"@id": "nanomine:ManufacturerOrSourceName"
 														}
 													}
 												]
@@ -491,23 +483,14 @@
 											"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
 										}
 									},
-									"sio:hasAttribute": [
-										{
-											"@for": "name in polymer.findall('ManufacturerOrSourceName')",
-											"@do": {
-												"@type": [
-													"nanomine:ManufacturerOrSourceName",
-													{
-														"@id": "nanomine:{{camelcase(name.text)}}",
-														"@type": "owl:Class",
-														"rdfs:label": "{{name.text}}",
-														"rdfs:subClassOf": {
-															"@id": "nanomine:ManufacturerOrSourceName"
-														}
-													}
-												]
-											}
-										},
+									"sio:hasAttribute": [{
+										"@if": "polymer.find('ManufacturerOrSourceName') is not None",
+										"@for": "manufacturer in polymer.findall('ManufacturerOrSourceName')",
+										"@do": {
+											"@type": "nanomine:Manufacturer",
+											"sio:hasValue": "{{manufacturer.text}}"
+										}
+									}
 									]
 								}
 							}

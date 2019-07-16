@@ -75,13 +75,10 @@ class L102Test(template.IngestTestSetup):
 
         ingest_tester.test_complete_material(self, expected_material)
 
-                        
- 
 
+    def test_manufacturer(self):
+        ingest_tester.test_manufacturers(self)
 
 
     # def test_print_triples(self):
         # ingest_tester.print_triples(self)
-
-
-
