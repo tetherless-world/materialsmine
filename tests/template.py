@@ -43,8 +43,8 @@ class IngestTestTests(IngestTestSetup):
     def test_filler_trade_names(self):
         ingest_tester.test_filler_trade_names(self)
 
-    def test_temperatures(self):
-        ingest_tester.test_temperatures(self)
+    # def test_temperatures(self):
+    #     ingest_tester.test_temperatures(self)
 
     def test_abbreviations(self):
         ingest_tester.test_abbreviations(self)
