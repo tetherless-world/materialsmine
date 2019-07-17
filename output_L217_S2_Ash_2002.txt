@@ -1,0 +1,2 @@
+Could not configure logger, using defaults.
+Adding tests from /apps/nanomine-graph
