@@ -512,22 +512,36 @@ def test_viscoelastic_measurement_mode(runner, expected_mode=None):
     runner.assertCountEqual(expected_mode, mode)
     print("Expected mode Found")
 
-
-# TODO Refactor to remove usage of specific bnodes
-def test_stress(runner, expected_value):
+# TODO Add autoparsing
+def test_tensile_loading_profile(runner, expected_strain=None, expected_stress=None):
     print("Stress value")
     values = runner.app.db.query(
     """
-    SELECT ?value
+    SELECT ?strain ?stress
     WHERE {
-        ?bnode <http://semanticscience.org/resource/hasValue> ?value .
-        ?bnode <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/Stress> .
-        <http://nanomine.org/sample/l300-s5-nakane-1999_nanomine-tensileloadingprofile_2> <http://semanticscience.org/resource/hasAttribute> ?bnode .
+        ?common_node <http://semanticscience.org/resource/hasAttribute> ?type_node . 
+        ?type_node a <http://nanomine.org/ns/TensileLoadingProfile> .
+        ?common_node <http://semanticscience.org/resource/hasAttribute> ?strain_node .
+        ?common_node <http://semanticscience.org/resource/hasAttribute> ?stress_node .
+
+        ?strain_node a <http://nanomine.org/ns/Strain> .
+        ?strain_node <http://semanticscience.org/resource/hasValue> ?strain .
+        
+        ?stress_node a <http://nanomine.org/ns/Stress> .
+        ?stress_node <http://semanticscience.org/resource/hasValue> ?stress .
+
     }
     """
     )
-    values = [value[0] for value in values]
-    runner.assertCountEqual(expected_value, values) 
+    if expected_strain is None:
+        raise NotImplementedError
+    if expected_stress is None:
+        raise NotImplementedError
+    
+    strain = [value["strain"] for value in values]
+    stress = [value["stress"] for value in values]
+    # runner.assertCountEqual(expected_strain, strain) 
+    runner.assertCountEqual(expected_stress, stress) 
     print("Expected Stress  value Found") 
 
 
