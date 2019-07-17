@@ -4,3 +4,4 @@
 .vscode
 tests/output.txt
 xml_files/*
+output.*

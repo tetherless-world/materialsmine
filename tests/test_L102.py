@@ -47,7 +47,7 @@ class L102Test(template.IngestTestSetup):
         ingest_tester.test_matrix_chemical_names(self)
 
     def test_matrix_trade_names(self):
-        expected_names = [rdflib.Literal("Topas 8007s-04")]
+        expected_names = [rdflib.Literal("Topas 8007S-04")]
         ingest_tester.test_matrix_trade_names(self, expected_names)
         ingest_tester.test_matrix_trade_names(self)
 
@@ -69,19 +69,16 @@ class L102Test(template.IngestTestSetup):
                                   "trade": rdflib.Literal("Topas 8007S-04")})
         
         expected_material.append({"abbrev": rdflib.Literal("BST"),
-                                  "manufac": rdflib.Literal("Sigma&#8211;Aldrich Chemie GmbH, Germany"),
+                                  "manufac": rdflib.Literal("Sigma–Aldrich Chemie GmbH, Germany"),
                                   "name": rdflib.Literal("barium strontium titanate"),
                                   "trade": None})
 
         ingest_tester.test_complete_material(self, expected_material)
 
-                        
- 
 
+    def test_manufacturer(self):
+        ingest_tester.test_manufacturers(self)
 
 
     # def test_print_triples(self):
-        # ingest_tester.print_triples(self)
-
-
-
+    #     ingest_tester.print_triples(self)
