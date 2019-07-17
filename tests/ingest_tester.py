@@ -89,6 +89,10 @@ def autoparse(file_under_test):
                                for elem in root.findall(".//Matrix//Abbreviation")]
     expected_data["manufac"] = [
         rdflib.Literal(elem.text) for elem in root.findall(".//Matrix//ManufacturerOrSourceName")]
+    expected_data["specific_surface_area"] = [
+        rdflib.Literal(elem.text, datatype=rdflib.XSD.double) for elem in root.findall(".//Matrix//SurfaceArea/specific/value")]
+    expected_data["specific_surface_area_units"] = [
+        rdflib.Literal(elem.text) for elem in root.findall(".//Matrix//SurfaceArea/specific/unit")]
 
     # Filler data
     # filler_data = next(root.iter("Filler"))
@@ -100,6 +104,10 @@ def autoparse(file_under_test):
                                 for elem in root.findall(".//Filler//Abbreviation")]
     expected_data["manufac"] += [rdflib.Literal(elem.text)
                                  for elem in root.findall(".//Filler//ManufacturerOrSourceName")]
+    expected_data["specific_surface_area"] += [
+        rdflib.Literal(elem.text, datatype=rdflib.XSD.double) for elem in root.findall(".//Filler//SurfaceArea/specific/value")]
+    expected_data["specific_surface_area_units"] += [
+        rdflib.Literal(elem.text) for elem in root.findall(".//Filler//SurfaceArea/specific/unit")]
 
     #Viscoleastic Properties,hardness, hardnessteststandard - Neha
     expected_data["viscoelastic_measurement_mode"] = [rdflib.Literal(elem.text)
@@ -554,23 +562,28 @@ def test_rheometer_mode(runner, expected_modes=None):
     print("Expected Rheometer Modes Found")
 
 
-# TODO Add autoparsing
 def test_specific_surface_area(runner, expected_area=None, expected_units=None):
     print("\n\nTesting for specific surface area")
-    surface_area = runner.app.db.query(
+    query_results = runner.app.db.query(
         '''
-        SELECT ?area
+        SELECT ?area ?unit_label
         WHERE
         {
             ?aNode a <http://nanomine.org/ns/SpecificSurfaceArea> .
             ?aNode <http://semanticscience.org/resource/hasValue> ?area .
+            ?aNode <http://semanticscience.org/resource/hasUnit> ?unit .
+            ?unit <http://www.w3.org/2000/01/rdf-schema#label> ?unit_label .
         }
         '''
         )
-    surface_area =[a["area"] for a in surface_area]
+    surface_area =[result["area"] for result in query_results]
+    units = [result["unit_label"] for result in query_results]
     if expected_area is None:
-        raise NotImplementedError
+        expected_area = runner.expected_data["specific_surface_area"]
+    if expected_units is None:
+        expected_units = runner.expected_data["specific_surface_area_units"]
     runner.assertCountEqual(expected_area, surface_area)
+    runner.assertCountEqual(expected_units, units)
 
 
 

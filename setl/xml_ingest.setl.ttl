@@ -207,9 +207,9 @@
 													"@type": "xsd:double"
 												},
 												"sio:hasUnit": [{
-													"@if": "area.find('unit') is not None",
-													"@id": "unit:{{slugify(area.find('unit').text)}}",
-													"rdfs:label": "{{area.find('unit').text}}"
+													"@if": "area.find('.//unit') is not None",
+													"@id": "unit:{{slugify(area.find('.//unit').text)}}",
+													"rdfs:label": "{{area.find('.//unit').text}}"
 												}],
 												"sio:hasAttribute": [{
 													"@if": "area.find('.//uncertainty')",
