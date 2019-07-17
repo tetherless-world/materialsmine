@@ -361,6 +361,7 @@ def test_filler_trade_names(runner, expected_names=None):
     print("Expected Filler Chemical Trade Names found")
 
 
+# TODO Fix or remove
 def test_temperatures(runner, expected_temperatures=None):
     print("Checking if the expected temperatures are present")
     temperatures = list(runner.app.db.objects(
@@ -445,6 +446,7 @@ def test_complete_material(runner, expected_materials=None):
     runner.assertCountEqual(expected_materials, material_properties)
 
 
+# TODO Fix or remove
 def construct_table(runner):
     raise NotImplementedError
     data = runner.app.db.query(
@@ -459,6 +461,7 @@ def construct_table(runner):
     )
 
 
+# TODO Fix or remove
 def test_dielectric_real_permittivity(runner, expected_data=None):
     raise NotImplementedError
     print("Checking if the Dielectric Real Permittivity Table is as expected")
@@ -472,6 +475,7 @@ def test_dielectric_real_permittivity(runner, expected_data=None):
     )
 
 
+# TODO Fix or remove
 def test_filler_processing(runner, expected_process=None):
     print("Testing Filler Processing")
     process = runner.app.db.query(
@@ -489,6 +493,8 @@ def test_filler_processing(runner, expected_process=None):
     runner.assertTrue(process is not None)
     runner.assertCountEqual(expected_process, process)  # TODO figure out how to query ordering in process order
 
+
+# TODO Test further
 def test_viscoelastic_measurement_mode(runner, expected_mode=None):
     print("Testing viscoelastic measurement mode")
     mode = list(runner.app.db.objects(
@@ -498,6 +504,8 @@ def test_viscoelastic_measurement_mode(runner, expected_mode=None):
     runner.assertCountEqual(expected_mode, mode)
     print("Expected mode Found")
 
+
+# TODO Refactor to remove usage of specific bnodes
 def test_stress(runner, expected_value):
     print("Stress value")
     values = runner.app.db.query(
@@ -514,6 +522,8 @@ def test_stress(runner, expected_value):
     runner.assertCountEqual(expected_value, values) 
     print("Expected Stress  value Found") 
 
+
+# TODO Refactor to remove usage of specific bnodes
 def test_melt_viscosity(runner, expected_value=None):
     print("\n\nMelt Viscosity")
     values = runner.app.db.query(
@@ -533,6 +543,7 @@ def test_melt_viscosity(runner, expected_value=None):
     print("Expected Melt Viscosity values found")
 
 
+# TODO Add autoparsing
 def test_rheometer_mode(runner, expected_modes=None):
     print("\n\nTesting for Rheometer Mode")
     modes = runner.app.db.objects(None, rdflib.URIRef("http://nanomine.org/ns/RheometerMode"))
@@ -543,6 +554,7 @@ def test_rheometer_mode(runner, expected_modes=None):
     print("Expected Rheometer Modes Found")
 
 
+# TODO Add autoparsing
 def test_specific_surface_area(runner, expected_area=None, expected_units=None):
     print("\n\nTesting for specific surface area")
     surface_area = runner.app.db.query(
