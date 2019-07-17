@@ -1,0 +1,152 @@
+Spherical Particle diameter triples from L101_S11_Dang_2007
+
+<bnode:f0bbf4693e024e588b0c7a264d703964> <http://semanticscience.org/resource/hasValue> "0.7"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:f0bbf4693e024e588b0c7a264d703964> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Width> .
+<bnode:f0bbf4693e024e588b0c7a264d703964> <http://semanticscience.org/resource/hasUnit> <http://nanomine.org/ns/unit/micrometers> .
+<http://nanomine.org/sample/l101-s11-dang-2007_filler_0> <http://semanticscience.org/resource/hasAttribute> <bnode:f0bbf4693e024e588b0c7a264d703964> .
+
+Non Spherical Shape triples from L104_S4_He_2009
+
+<bnode:c4113781af454ab4b3c7c662930b4e11> <http://semanticscience.org/resource/hasValue> "12.25"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:f7af4fecde7645f499b7796bd93d17c9> <http://semanticscience.org/resource/hasValue> "12.25"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:46fdac49762c410b822f10d47d58e6a1> <http://semanticscience.org/resource/hasValue> "12.25"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<bnode:c4113781af454ab4b3c7c662930b4e11> <http://semanticscience.org/resource/hasValue> "12.25"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:c4113781af454ab4b3c7c662930b4e11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/UncertaintyValue> .
+<bnode:c4113781af454ab4b3c7c662930b4e11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/StandardDeviation> .
+<bnode:f54fd80934194127841382e40f671a4a> <http://semanticscience.org/resource/hasAttribute> <bnode:c4113781af454ab4b3c7c662930b4e11> . - length
+
+<bnode:f7af4fecde7645f499b7796bd93d17c9> <http://semanticscience.org/resource/hasValue> "12.25"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:f7af4fecde7645f499b7796bd93d17c9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/StandardDeviation> .
+<bnode:f7af4fecde7645f499b7796bd93d17c9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/UncertaintyValue> .
+<bnode:116f36619fed40a2991713f99ee81de0> <http://semanticscience.org/resource/hasAttribute> <bnode:f7af4fecde7645f499b7796bd93d17c9> . - Depth hence incorrect
+
+<bnode:d4fbe947578d465989b209c5ce89ab62> <http://semanticscience.org/resource/hasAttribute> <bnode:46fdac49762c410b822f10d47d58e6a1> .
+<bnode:46fdac49762c410b822f10d47d58e6a1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/StandardDeviation> .
+<bnode:46fdac49762c410b822f10d47d58e6a1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/UncertaintyValue> .
+<bnode:46fdac49762c410b822f10d47d58e6a1> <http://semanticscience.org/resource/hasValue> "12.25"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:d4fbe947578d465989b209c5ce89ab62> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Width> .
+<http://nanomine.org/sample/l104-s4-he-2009_filler_0> <http://semanticscience.org/resource/hasAttribute> <bnode:d4fbe947578d465989b209c5ce89ab62> .
+<bnode:d4fbe947578d465989b209c5ce89ab62> <http://semanticscience.org/resource/hasValue> ""^^<http://www.w3.org/2001/XMLSchema#double> .
+
+
+12 July 2019
+
+<bnode:2663b18940964ca4958742d0d6fab5ab> <http://semanticscience.org/resource/hasValue> "12.25"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:2663b18940964ca4958742d0d6fab5ab> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/UncertaintyValue> .
+<bnode:2dbed0e3e66a493d96e6e50896c1c0a2> <http://semanticscience.org/resource/hasAttribute> <bnode:2663b18940964ca4958742d0d6fab5ab> .
+<bnode:2663b18940964ca4958742d0d6fab5ab> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/StandardDeviation> .
+<bnode:2dbed0e3e66a493d96e6e50896c1c0a2> <http://semanticscience.org/resource/hasValue> ""^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:2dbed0e3e66a493d96e6e50896c1c0a2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Width> .
+<bnode:2dbed0e3e66a493d96e6e50896c1c0a2> <http://semanticscience.org/resource/Shape> <bnode:d71d01dce22a4c6a8f2e9998fef67a0b> .
+<http://nanomine.org/sample/l104-s4-he-2009_filler_0> <http://semanticscience.org/resource/hasAttribute> <bnode:2dbed0e3e66a493d96e6e50896c1c0a2> .
+<bnode:2dbed0e3e66a493d96e6e50896c1c0a2> <http://semanticscience.org/resource/hasAttribute> <bnode:2663b18940964ca4958742d0d6fab5ab> .
+<bnode:d71d01dce22a4c6a8f2e9998fef67a0b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/NonSpherical> .
+<bnode:d71d01dce22a4c6a8f2e9998fef67a0b> <http://www.w3.org/2000/01/rdf-schema#label> "NonSphericalShape" .
+
+
+"sio:hasAttribute": 
+												"sio:Shape": 
+												{
+													"@type": "nanomine:NonSpherical",
+													"rdfs:label": "NonSphericalShape"
+												},
+
+
+												{
+                                                        "@if": "shape.find('.//Width) is not None",
+                                                        "@type": "sio:Width",
+                                                        "sio:hasValue": {
+                                                            "@value": "{{shape.find('.//Width/value').text}}",
+                                                            "@type": "xsd:double"
+                                                        },
+                                                        "sio:hasUnit": [{
+                                                            "@if": "shape.find('.//Width/unit') is not None",
+                                                            "@id": "unit:{{slugify(shape.find('.//Width/unit').text)}}",
+                                                            "rdfs:label": "{{shape.find('.//Width/unit').text}}"
+                                                        }],
+                                                        "sio:hasAttribute": [{
+                                                            "@if": "shape.find('.//uncertainty') is not None",
+                                                            "@type": [
+                                                                "sio:UncertaintyValue",
+                                                                {
+                                                                    "@if": "shape.find('.//uncertainty/type').text == 'relative'",
+                                                                    "@id": "sio:Ratio"
+                                                                },
+                                                                {
+                                                                    "@if": "shape.find('.//uncertainty/type').text == 'absolute'",
+                                                                    "@id": "sio:StandardDeviation"
+                                                                }
+                                                            ],
+                                                            "sio:hasValue": {
+                                                                "@value": "{{shape.find('.//uncertainty/value').text}}",
+                                                                "@type": "xsd:double"
+                                                            }
+                                                        }]
+                                                    }
+
+
+
+<bnode:c5f8b731eb1f48e99bd02eba005dd8f5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Depth> .
+<bnode:13515af0871641db8a246c89901bfb00> <http://semanticscience.org/resource/hasValue> "20.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:13515af0871641db8a246c89901bfb00> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/UncertaintyValue> .
+<bnode:c5f8b731eb1f48e99bd02eba005dd8f5> <http://semanticscience.org/resource/hasAttribute> <bnode:13515af0871641db8a246c89901bfb00> .
+
+<bnode:bf3cf20864ff4ade990eedcdbf9a37f1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/ManufacturerOrSourceName> .
+<bnode:bf3cf20864ff4ade990eedcdbf9a37f1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/SigmaAldrichChemieGmbhGermany> .
+
+
+<http://nanomine.org/ns/SigmaAldrichChemieGmbhGermany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://nanomine.org/ns/TiconaGmbhGermany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<bnode:c4958dfd464c45e18080b160c4ab2c06> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/TiconaGmbhGermany> .
+<http://nanomine.org/ns/TiconaGmbhGermany> <http://www.w3.org/2000/01/rdf-schema#label> "" .
+<bnode:e3d65a3271d548d08e154b97fc5fa284> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/SigmaAldrichChemieGmbhGermany> .
+<http://nanomine.org/ns/SigmaAldrichChemieGmbhGermany> <http://www.w3.org/2000/01/rdf-schema#label> "" .
+
+<http://nanomine.org/ns/Amorphous> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://nanomine.org/ns/Amorphous> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://nanomine.org/ns/CrystalPhase> .
+<bnode:227dbd783cd9484c8e5123dfb35fd576> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/Amorphous> .
+<http://nanomine.org/ns/Amorphous> <http://www.w3.org/2000/01/rdf-schema#label> "Amorphous" .
+
+<bnode:2587795f79934bfaa9b15473f865281f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/Nissan> .
+<http://nanomine.org/ns/Nissan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://nanomine.org/ns/ManufacturerOrSourceName> .
+<http://nanomine.org/ns/Nissan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://nanomine.org/ns/Nissan> <http://www.w3.org/2000/01/rdf-schema#label> "Nissan" .
+
+
+<http://nanomine.org/ns/Nissan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://nanomine.org/ns/Nissan> <http://www.w3.org/2000/01/rdf-schema#label> "" .
+<bnode:16818dd97a73462ba4325e4e98eb25d0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/Nissan> .
+
+
+
+"sio:hasAttribute":
+									[
+										
+									{
+										
+											"@for": "manufacturer in polymer.findall('ManufacturerOrSourceName')",
+											"@do": {
+												"@type": [
+													"nanomine:ManufacturerOrSourceName",
+													{
+														"@id": "nanomine:{{camelcase(manufacturer.text)}}",
+														"@type": "owl:Class",
+											            "rdfs:label": [{
+															"@value": "{{manufacturer.find('ManufacturerOrSourceName').text}}",
+															"@if": "manufacturer.find('ManufacturerOrSourceName').text is not None"
+														}
+													}
+												]
+											}
+
+										
+									}
+									]
+
+<bnode:352fe414ef99482585d21798bf3480db> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/ManufacturerOrSourceName> .
+<bnode:352fe414ef99482585d21798bf3480db> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/HuntsmanCorporation> .
+<http://nanomine.org/sample/l141-s19-gao-2013_matrix> <http://semanticscience.org/resource/hasAttribute> <bnode:352fe414ef99482585d21798bf3480db> .
+
+
+<bnode:c77184fa685b4b0a8f7b69a2f8d6d696> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/ManufacturerOrSourceName> .

@@ -1,0 +1,955 @@
+Could not configure logger, using defaults.
+Adding tests from /apps/nanomine-graph
+Setting Up Class
+http://localhost:5000/Home None
+adding file tmpwr38rz0c
+Retired 0 nanopubs.
+Published 1 nanopubs
+Retired 0 nanopubs.
+Published 1 nanopubs
+Processing file:///tmp/tmpwr38rz0c <autonomic.SETLMaker object at 0x7f4ac70a9630>
+file:///tmp/tmpwr38rz0c
+Template NP http://localhost:5000/pub/a35fc84e-a732-11e9-babe-000c29406e9a 54
+Instance NP N6d6451c40a1e4db5b51de0894e733e67 50
+Output Graph N6d6451c40a1e4db5b51de0894e733e67 50
+78
+Processing http://localhost:5000/setl/MTkzOTg3LjIzMTY4Mzk1Nzk/NanomineXMLImport <autonomic.SETLr object at 0x7f4aaf518748>
+https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=798992913 None
+https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=1806836834 None
+file:///tmp/tmpwr38rz0c None
+Retired 0 nanopubs.
+http://nanomine.org/entry/L102_S3_Hu_2007_assertion
+Publishing http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a with 45 assertions.
+Retired 0 nanopubs.
+Published 1 nanopubs
+Published
+Output Graph N9ef5ec26116e4a75951e9c300df0e405 3
+Printing SPO Triples
+<bnode:ea5148b1a4a04404a11a27d2e8452c11> <http://semanticscience.org/resource/hasValue> "4.9"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://purl.org/dc/terms/created> "2007"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://nanomine.org/sample/l102-s3-hu-2007_filler_0> <http://semanticscience.org/resource/hasRole> <bnode:d4b97c3e7a114e2bb3e15e9382374cd4> .
+<http://nanomine.org/entry/L102_S3_Hu_2007_characterization_xray-diffraction-and-scattering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Measuring> .
+<http://nanomine.org/ns/siemens-d5000> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/Device> .
+<bnode:3af58e26d9c14cf39f5e5bf6b7d74d9b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/NanomineXMLFile> .
+<file:///tmp/tmpwr38rz0c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.iana.org/assignments/media-types/text/xml> .
+<http://nanomine.org/setl/xml/nanopubs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdfs.org/ns/void#Dataset> .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://www.w3.org/2000/01/rdf-schema#label> "Dielectric properties of BST/polymer composite" .
+<http://nanomine.org/sample/l102-s3-hu-2007> <http://www.w3.org/ns/prov#wasAttributedTo> <http://nanomine.org/author/juuti-jari> .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://purl.org/dc/terms/creator> <http://nanomine.org/author/jantunen-heli> .
+<http://localhost:5000/pub/a35fc84c-a732-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasAssertion> <http://localhost:5000/pub/a35fc84c-a732-11e9-babe-000c29406e9a_assertion> .
+<http://nanomine.org/author/hu-tao> <http://xmlns.com/foaf/0.1/name> "Hu, Tao" .
+<http://localhost:5000/pub/a35fc84e-a732-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasAssertion> <http://localhost:5000/pub/a35fc84e-a732-11e9-babe-000c29406e9a_assertion> .
+<http://localhost:5000/pub/a35fc84c-a732-11e9-babe-000c29406e9a_assertion> <http://purl.org/dc/terms/contributor> <http://localhost:5000/user/identifier> .
+_:N493517e7b4e045158f313991f1d1a6d5 <http://www.w3.org/ns/prov#used> <http://localhost:5000/pub/a35fc84f-a732-11e9-babe-000c29406e9a_assertion> .
+<http://nanomine.org/setl/xml/nanopubs> <http://www.w3.org/ns/prov#wasGeneratedBy> <bnode:fc8b997f027a4fcca32f1e7a5bf060ce> .
+<https://www.iana.org/assignments/media-types/text/xml> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/FileFormat> .
+<http://nanomine.org/compound/BariumStrontiumTitanate> <http://www.w3.org/2000/01/rdf-schema#label> "barium strontium titanate" .
+<http://localhost:5000/pub/a35fc84c-a732-11e9-babe-000c29406e9a> <http://semanticscience.org/resource/isAbout> <file:///tmp/tmpwr38rz0c> .
+<http://localhost:5000/pub/a35fc84c-a732-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasProvenance> <http://localhost:5000/pub/a35fc84c-a732-11e9-babe-000c29406e9a_provenance> .
+<file:///tmp/tmpwr38rz0c> <http://open.vocab.org/terms/hasContentType> "text/xml" .
+<bnode:b7f5c76a91214f42bfc23a508035e0d6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/agilent-e4991a> .
+<bnode:b6ef5c0784794b8abea5da5e35ce3b12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Device> .
+<bnode:b813054e10e4485a84d17edfd4a725fd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Usage> .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://semanticscience.org/resource/hasPart> <http://nanomine.org/sample/l102-s3-hu-2007> .
+<http://localhost:5000/pub/a35fc84e-a732-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasProvenance> <http://localhost:5000/pub/a35fc84e-a732-11e9-babe-000c29406e9a_provenance> .
+<http://nanomine.org/publication/journal-of-the-european-ceramic-society> <http://purl.org/dc/terms/publisher> <publisher:elsevier> .
+<http://nanomine.org/language/english> <http://www.w3.org/2000/01/rdf-schema#label> "English" .
+<http://nanomine.org/setl/xml/property_classes_table> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/Table> .
+<http://nanomine.org/author/juuti-jari> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<http://nanomine.org/sample/l102-s3-hu-2007> <http://semanticscience.org/resource/hasAttribute> <bnode:b5205351e7434fecab328118b07826a0> .
+<http://nanomine.org/ns/SigmaAldrichChemieGmbhGermany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<bnode:b6ef5c0784794b8abea5da5e35ce3b12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/siemens-d5000> .
+<bnode:053cd46c73e54dcb9059696647fd309d> <http://www.w3.org/ns/prov#used> <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=798992913> .
+<bnode:ea5148b1a4a04404a11a27d2e8452c11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Density> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasGeneratedBy> <http://nanomine.org/entry/L102_S3_Hu_2007_characterization_scanning-electron-microscopy> .
+<http://localhost:5000/pub/a35fc84e-a732-11e9-babe-000c29406e9a_assertion> <http://purl.org/dc/terms/contributor> <http://localhost:5000/user/identifier> .
+<http://localhost:5000/pub/a35fc84e-a732-11e9-babe-000c29406e9a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/vocab/frbr/core#Expression> .
+<bnode:788f74cab86942e2933a091645e76a4e> <http://www.w3.org/ns/prov#hadRole> <bnode:09308959c39d4705ab9d68aafd99c512> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Nanopublication> .
+<http://nanomine.org/ns/TiconaGmbhGermany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://nanomine.org/sample/l102-s3-hu-2007> <http://www.w3.org/ns/prov#wasAttributedTo> <http://nanomine.org/author/vilkman-taisto> .
+<http://nanomine.org/author/vilkman-taisto> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<http://localhost:5000/pub/a35fc84c-a732-11e9-babe-000c29406e9a_pubinfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#PublicationInfo> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasGeneratedBy> _:N493517e7b4e045158f313991f1d1a6d5 .
+<http://nanomine.org/author/vilkman-taisto> <http://www.w3.org/2000/01/rdf-schema#label> "Vilkman, Taisto" .
+<bnode:80a7c25f205e4e90b85e524875e60634> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Width> .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://purl.org/ontology/bibo/volume> "27"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://nanomine.org/author/juuti-jari> <http://www.w3.org/2000/01/rdf-schema#label> "Juuti, Jari" .
+<http://nanomine.org/compound/CycloOlefinCopolymer> <http://www.w3.org/2000/01/rdf-schema#label> "cyclo olefin copolymer" .
+<http://nanomine.org/sample/l102-s3-hu-2007_matrix> <http://semanticscience.org/resource/hasRole> <bnode:96a37f027a8d4cf9b8bdfaee408931c0> .
+<file:///tmp/tmpwr38rz0c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.iana.org/assignments/media-types/text> .
+<http://nanomine.org/sample/l102-s3-hu-2007_filler_0> <http://semanticscience.org/resource/hasAttribute> <bnode:ea5148b1a4a04404a11a27d2e8452c11> .
+<http://localhost:5000/pub/Mjc1MDY5LjU0MDYwMjY2Njcz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/vocab/frbr/core#Work> .
+<bnode:9ea639ef7d1f49619a3bc037e9199dca> <dc:description> "Loss Tangent at 1 GHz" .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://purl.org/dc/terms/title> "Dielectric properties of BST/polymer composite" .
+<http://nanomine.org/sample/l102-s3-hu-2007_filler_0_volume_fraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/VolumeFraction> .
+<http://nanomine.org/setl/xml/property_classes_table> <http://www.w3.org/ns/prov#wasGeneratedBy> <bnode:bd450217743645bbb42b78ec983a833c> .
+<http://nanomine.org/sample/l102-s3-hu-2007> <http://semanticscience.org/resource/hasComponentPart> <http://nanomine.org/sample/l102-s3-hu-2007_matrix> .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://purl.org/dc/terms/creator> <http://nanomine.org/author/vilkman-taisto> .
+<http://nanomine.org/entry/L102_S3_Hu_2007_characterization_scanning-electron-microscopy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/ScanningElectronMicroscopy> .
+<http://nanomine.org/sample/l102-s3-hu-2007> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/PolymerNanocomposite> .
+<bnode:c4958dfd464c45e18080b160c4ab2c06> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/TiconaGmbhGermany> .
+<http://localhost:5000/pub/a35fc84e-a732-11e9-babe-000c29406e9a_provenance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Provenance> .
+<http://nanomine.org/entry/L102_S3_Hu_2007_characterization_dielectric-and-impedance-spectroscopy-analysis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/vocab/frbr/core#Expression> .
+<bnode:fc8b997f027a4fcca32f1e7a5bf060ce> <http://www.w3.org/ns/prov#qualifiedUsage> <bnode:b813054e10e4485a84d17edfd4a725fd> .
+<http://nanomine.org/setl/xml/characterization_methods_table> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/csvw#Table> .
+_:N493517e7b4e045158f313991f1d1a6d5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://localhost:5000/setl/MTkzOTg3LjIzMTY4Mzk1Nzk/NanomineXMLImport> .
+<bnode:fc8b997f027a4fcca32f1e7a5bf060ce> <http://purl.org/twc/vocab/setl/hasContext> """{
+  "owl" : "http://www.w3.org/2002/07/owl#",
+  "sio" :     "http://semanticscience.org/resource/",
+  "skos" :    "http://www.w3.org/2004/02/skos/core#",
+  "dcterms" :    "http://purl.org/dc/terms/",
+  "prov" :    "http://www.w3.org/ns/prov#",
+  "rdfs" :    "http://www.w3.org/2000/01/rdf-schema#",
+  "doi" :    "http://dx.doi.org/",
+  "nanomine" :    "http://nanomine.org/ns/",
+  "unit" :    "http://nanomine.org/ns/unit/",
+  "author" :    "http://nanomine.org/author/",
+  "publication" :    "http://nanomine.org/publication/",
+  "bibo" : "http://purl.org/ontology/bibo/",
+  "foaf" : "http://xmlns.com/foaf/0.1/",
+  "nanopub" :    "http://www.nanopub.org/nschema#",
+  "entry" :    "http://nanomine.org/entry/",
+  "sample" :    "http://nanomine.org/sample/",
+  "article" :    "http://nanomine.org/article/",
+  "compound" :    "http://nanomine.org/compound/",
+  "location" :    "http://nanomine.org/location/",
+  "lang" :    "http://nanomine.org/language/",
+  "void" :    "http://rdfs.org/ns/void#",
+  "dcat" : "http://www.w3.org/ns/dcat#",
+  "xsd" : "http://www.w3.org/2001/XMLSchema#"
+}""" .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasAssertion> <http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_assertion> .
+<bnode:cf3a075c3aaf479faa18aa4256260068> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/setl/xml/NanomineXMLImport> .
+<http://nanomine.org/sample/l102-s3-hu-2007> <http://www.w3.org/ns/prov#wasAttributedTo> <http://nanomine.org/author/jantunen-heli> .
+<http://nanomine.org/entry/L102_S3_Hu_2007_characterization_xray-diffraction-and-scattering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/XRayDiffractionAndScattering> .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://purl.org/dc/terms/language> <http://nanomine.org/language/english> .
+<bnode:09308959c39d4705ab9d68aafd99c512> <http://purl.org/dc/terms/identifier> "methods" .
+<publisher:elsevier> <http://www.w3.org/ns/prov#atLocation> <http://nanomine.org/location/microelectronics-and-materials-physics-laboratories-empart-research-group-of-infotech-oulu-p-o-box-4500-fin-90014-university-of-oulu-finland> .
+<http://nanomine.org/sample/l102-s3-hu-2007_filler_0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/compound/BariumStrontiumTitanate> .
+<http://nanomine.org/author/jantunen-heli> <http://www.w3.org/2000/01/rdf-schema#label> "Jantunen, Heli" .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://www.w3.org/ns/dcat#keyword> "Dielectric Properties" .
+<http://localhost:5000/pub/a35fc84e-a732-11e9-babe-000c29406e9a_assertion> <http://purl.org/dc/terms/created> "2019-07-15T18:59:14.326702"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://nanomine.org/ns/TiconaGmbhGermany> <http://www.w3.org/2000/01/rdf-schema#label> "" .
+<http://nanomine.org/entry/L102_S3_Hu_2007_characterization_scanning-electron-microscopy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+<http://nanomine.org/location/microelectronics-and-materials-physics-laboratories-empart-research-group-of-infotech-oulu-p-o-box-4500-fin-90014-university-of-oulu-finland> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Location> .
+<bnode:e3d65a3271d548d08e154b97fc5fa284> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/SigmaAldrichChemieGmbhGermany> .
+<bnode:e3d65a3271d548d08e154b97fc5fa284> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/ManufacturerOrSourceName> .
+<file:///tmp/tmpwr38rz0c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DataDownload> .
+<http://nanomine.org/location/microelectronics-and-materials-physics-laboratories-empart-research-group-of-infotech-oulu-p-o-box-4500-fin-90014-university-of-oulu-finland> <http://www.w3.org/2000/01/rdf-schema#label> "Microelectronics and Materials Physics Laboratories, EMPART Research Group of Infotech Oulu, P.O. Box 4500, FIN-90014 University of Oulu, Finland" .
+<file:///tmp/tmpwr38rz0c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/NanomineXMLFile> .
+<http://nanomine.org/sample/l102-s3-hu-2007_filler_0> <http://semanticscience.org/resource/hasAttribute> <bnode:80a7c25f205e4e90b85e524875e60634> .
+<http://localhost:5000/pub/a35fc84e-a732-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Assertion> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasDerivedFrom> <http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_assertion> .
+<file:///tmp/tmpwr38rz0c> <http://purl.org/dc/terms/contributor> <http://localhost:5000/user/identifier> .
+<http://nanomine.org/author/jantunen-heli> <http://xmlns.com/foaf/0.1/name> "Jantunen, Heli" .
+<https://www.iana.org/assignments/media-types/text> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/FileFormat> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Assertion> .
+<bnode:b813054e10e4485a84d17edfd4a725fd> <http://www.w3.org/ns/prov#entity> <http://nanomine.org/setl/xml/property_classes_table> .
+<http://nanomine.org/sample/l102-s3-hu-2007> <http://semanticscience.org/resource/hasComponentPart> <http://nanomine.org/sample/l102-s3-hu-2007_filler_0> .
+<bnode:d4b97c3e7a114e2bb3e15e9382374cd4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/Filler> .
+<bnode:d4b97c3e7a114e2bb3e15e9382374cd4> <http://semanticscience.org/resource/inRelationTo> <http://nanomine.org/sample/l102-s3-hu-2007> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasProvenance> <http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_provenance> .
+<http://nanomine.org/setl/xml/characterization_methods_table> <http://www.w3.org/ns/prov#wasGeneratedBy> <bnode:053cd46c73e54dcb9059696647fd309d> .
+<http://nanomine.org/sample/l102-s1-hu-2007_control_role> <http://semanticscience.org/resource/inRelationTo> <http://nanomine.org/sample/l102-s3-hu-2007> .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://www.sciencedirect.com/science/article/pii/S0955221907001252?via%3Dihub> .
+<http://nanomine.org/compound/BariumStrontiumTitanate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://localhost:5000/pub/a35fc84c-a732-11e9-babe-000c29406e9a_provenance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Provenance> .
+<publisher:elsevier> <http://www.w3.org/2000/01/rdf-schema#label> "Elsevier" .
+<http://localhost:5000/pub/a35fc84c-a732-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasPublicationInfo> <http://localhost:5000/pub/a35fc84c-a732-11e9-babe-000c29406e9a_pubinfo> .
+<http://localhost:5000/pub/a35fc84e-a732-11e9-babe-000c29406e9a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Nanopublication> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasPublicationInfo> <http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_pubinfo> .
+<bnode:9ea639ef7d1f49619a3bc037e9199dca> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<bnode:6c697a153a8c4fbbbbe45c1f7c6cafa7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<bnode:bd450217743645bbb42b78ec983a833c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/Extract> .
+<bnode:fc8b997f027a4fcca32f1e7a5bf060ce> <http://www.w3.org/ns/prov#value> """[{
+	"@for": "id in row.findall('ID')",
+	"@do": {
+		"@if": "id.text.replace(' ','') is not None",
+		"@id": "entry:{{id.text.replace(' ','')}}",
+		"@graph": [{
+			"@id": "entry:{{id.text.replace(' ','')}}",
+			"@type": "nanopub:Nanopublication",
+			"nanopub:hasAssertion": {
+				"@id": "entry:{{id.text.replace(' ','')}}_assertion",
+				"@type": "nanopub:Assertion",
+				"@graph": [{
+						"@if": "row.findtext('Control_ID') is not None",
+						"@id": "sample:{{slugify(row.findtext('Control_ID').replace(' ',''))}}",
+						"sio:hasRole": {
+							"@type": "sio:ControlRole",
+							"@id": "sample:{{slugify(row.findtext('Control_ID').replace(' ',''))}}_control_role",
+							"sio:inRelationTo": {
+								"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
+							}
+						}
+					},
+					{
+						"@id": "sample:{{slugify(id.text.replace(' ',''))}}",
+						"@type": [
+							"nanomine:PolymerNanocomposite"
+						],
+						"sio:hasComponentPart": [{
+								"@for": "fc, particle in enumerate(row.findall('MATERIALS/Filler/FillerComponent'))",
+								"@do": {
+									"@id": "sample:{{slugify(id.text.replace(' ',''))}}_filler_{{fc}}",
+									"@type": [{
+											"@if": "particle.find('PubChemRef') is not None and particle.find('PubChemRef').text is not None",
+											"@id": "pubchem:{{particle.find('PubChemRef').text.replace(' ','')}}",
+											"@type": "owl:Class",
+											"rdfs:label": [{
+													"@value": "{{particle.find('ChemicalName').text}}",
+													"@if": "particle.find('ChemicalName').text is not None"
+												},
+												{
+													"@value": "{{particle.find('Abbreviation').text}}",
+													"@if": "particle.find('ChemicalName').text is None and particle.find('Abbreviation').text is not None"
+												}
+											]
+										},
+										{
+											"@if": "(particle.find('PubChemRef') is None or particle.find('PubChemRef').text is None) and particle.find('ChemicalName').text is not None",
+											"@id": "compound:{{camelcase(particle.find('ChemicalName').text)}}",
+											"@type": "owl:Class",
+											"rdfs:label": "{{particle.find('ChemicalName').text}}"
+										},
+										{
+											"@if": "(particle.find('PubChemRef') is None or particle.find('PubChemRef').text is None) and particle.find('ChemicalName').text is None and particle.find('Abbreviation').text is not None",
+											"@id": "compound:{{camelcase(particle.find('Abbreviation').text)}}",
+											"@type": "owl:Class",
+											"rdfs:label": "{{particle.find('Abbreviation').text}}"
+										}
+									],
+									"sio:hasRole": {
+										"@type": "nanomine:Filler",
+										"sio:inRelationTo": {
+											"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
+										}
+									},
+									"sio:hasAttribute": [{
+											"@for": ["fraction in [ x for x in [",
+												"particle.find('FillerComponentComposition/*'),",
+												"row.find('MATERIALS/Filler/FillerComposition/Fraction/*'),",
+												"] if x is not None][:1]"
+											],
+											"@do": {
+												"@id": "sample:{{slugify(id.text.replace(' ',''))}}_filler_{{fc}}_{{fraction.tag}}_fraction",
+												"sio:hasValue": {
+													"@value": "{{fraction.text}}",
+													"@type": "xsd:double"
+												},
+												"@type": "nanomine:{{fraction.tag.title()}}Fraction"
+											}
+										},
+										{
+											"@if": "particle.find('Density')",
+											"@for": "density in particle.findall('Density')",
+											"@do": {
+												"@type": "sio:Density",
+												"sio:hasValue": {
+													"@value": "{{density.find('value').text}}",
+													"@type": "xsd:double"
+												},
+												"sio:hasUnit": [{
+													"@if": "density.find('unit')",
+													"@id": "unit:{{slugify(density.find('unit').text)}}",
+													"rdfs:label": "{{density.find('unit').text}}"
+												}]
+											}
+										},
+										{
+											"@if": "particle.find('SpecificSurfaceArea') is not None",
+											"@for": "area in particle.findall('SpecificSurfaceArea')",
+											"@do": {
+												"@type": "sio:SurfaceArea",
+												"sio:hasValue": {
+													"@value": "{{area.find('value').text}}",
+													"@type": "xsd:double"
+												},
+												"sio:hasUnit": [{
+													"@if": "area.find('unit') is not None",
+													"@id": "unit:{{slugify(area.find('unit').text)}}",
+													"rdfs:label": "{{area.find('unit').text}}"
+												}],
+												"sio:hasAttribute": [{
+													"@if": "area.find('.//uncertainty')",
+													"@type": [
+														"sio:UncertaintyValue",
+														{
+															"@if": "area.find('.//uncertainty/type').text == 'relative'",
+															"@id": "sio:Ratio"
+														},
+														{
+															"@if": "area.find('.//uncertainty/type').text == 'absolute'",
+															"@id": "sio:StandardDeviation"
+														}
+													],
+													"sio:hasValue": {
+														"@value": "{{area.find('.//uncertainty/value').text}}",
+														"@type": "xsd:double"
+													}
+												}]
+											}
+										},
+										{
+											"@for": "ratio in particle.findall('ParticleAspectRatio')",
+											"@do": {
+												"@type": "sio:AspectRatio",
+												"sio:hasValue": {
+													"@value": "{{ratio.find('value').text}}",
+													"@type": "xsd:double"
+												},
+												"sio:hasUnit": [{
+													"@if": "ratio.find('unit') is not None",
+													"@id": "unit:{{slugify(ratio.find('unit').text)}}",
+													"rdfs:label": "{{ratio.find('unit').text}}"
+												}],
+												"sio:hasAttribute": [{
+													"@if": "ratio.find('.//uncertainty')",
+													"@type": [
+														"sio:UncertaintyValue",
+														{
+															"@if": "ratio.find('.//uncertainty/type').text == 'relative'",
+															"@id": "sio:Ratio"
+														},
+														{
+															"@if": "ratio.find('.//uncertainty/type').text == 'absolute'",
+															"@id": "sio:StandardDeviation"
+														}
+													],
+													"sio:hasValue": {
+														"@value": "{{ratio.find('.//uncertainty/value').text}}",
+														"@type": "xsd:double"
+													}
+												}]
+											}
+										},
+										{
+											"@for": "size in particle.findall('SphericalParticleDiameter')",
+											"@do": {
+												"@type": "sio:Width",
+												"sio:hasValue": {
+													"@value": "{{size.find('value').text}}",
+													"@type": "xsd:double"
+												},
+												"sio:hasUnit": [{
+													"@if": "size.find('unit') is not None",
+													"@id": "unit:{{slugify(size.find('unit').text)}}",
+													"rdfs:label": "{{size.find('unit').text}}"
+												}],
+												"sio:hasAttribute": [{
+													"@if": "size.find('.//uncertainty') is not None",
+													"@type": [
+														"sio:UncertaintyValue",
+														{
+															"@if": "size.find('.//uncertainty/type').text == 'relative'",
+															"@id": "sio:Ratio"
+														},
+														{
+															"@if": "size.find('.//uncertainty/type').text == 'absolute'",
+															"@id": "sio:StandardDeviation"
+														}
+													],
+													"sio:hasValue": {
+														"@value": "{{size.find('.//uncertainty/value').text}}",
+														"@type": "xsd:double"
+													}
+												}]
+											}
+										},
+										{
+											"@for": "phase in particle.findall('CrystalPhase')",
+											"@do": {
+												"@type": [
+													"nanomine:CrystalPhase",
+													{
+														"@id": "nanomine:{{camelcase(phase.text)}}",
+														"@type": "owl:Class",
+														"rdfs:label": "{{phase.text}}",
+														"rdfs:subClassOf": {
+															"@id": "nanomine:CrystalPhase"
+														}
+													}
+												]
+											}
+										},
+										{
+											"@for": "manufacturer in particle.findall('ManufacturerOrSourceName')",
+											"@do": {
+												"@type": [
+													"nanomine:ManufacturerOrSourceName",
+													{
+														"@id": "nanomine:{{camelcase(manufacturer.text)}}",
+														"@type": "owl:Class",
+											            "rdfs:label": "{{manufacturer.find('ManufacturerOrSourceName').text}}"
+													}
+												]
+											}
+
+										},
+									    {
+                                            "@for": "shape in particle.findall('NonSphericalShape')",
+                                            "@do": {
+                                                "sio:hasAttribute": [{
+                                                        "@type": "nanomine:NonSpherical",
+                                                        "@id": "sio:Shape"
+                                                    },
+													{
+                                                        "@if": "shape.find('.//Width') is not None",
+                                                        "@type": "sio:Width",
+                                                        "sio:hasValue": {
+                                                            "@value": "{{shape.find('.//Width/value').text}}",
+                                                            "@type": "xsd:double"
+                                                        },
+                                                        "sio:hasUnit": [{
+                                                            "@if": "shape.find('.//Width/unit') is not None",
+                                                            "@id": "unit:{{slugify(shape.find('.//Width/unit').text)}}",
+                                                            "rdfs:label": "{{shape.find('.//Width/unit').text}}"
+                                                        }],
+                                                        "sio:hasAttribute": [{
+                                                            "@if": "shape.find('.//Width/uncertainty') is not None",
+                                                            "@type": [
+                                                                "sio:UncertaintyValue",
+                                                                {
+                                                                    "@if": "shape.find('.//Width/uncertainty/type').text == 'relative'",
+                                                                    "@id": "sio:Ratio"
+                                                                },
+                                                                {
+                                                                    "@if": "shape.find('.//Width/uncertainty/type').text == 'absolute'",
+                                                                    "@id": "sio:StandardDeviation"
+                                                                }
+                                                            ],
+                                                            "sio:hasValue": {
+                                                                "@value": "{{shape.find('.//Width/uncertainty/value').text}}",
+                                                                "@type": "xsd:double"
+                                                            }
+                                                        }]
+                                                    },
+													{
+                                                        "@if": "shape.find('.//Length') is not None",
+                                                        "@type": "sio:Length",
+                                                        "sio:hasValue": {
+                                                            "@value": "{{shape.find('.//Length/value').text}}",
+                                                            "@type": "xsd:double"
+                                                        },
+                                                        "sio:hasUnit": [{
+                                                            "@if": "shape.find('.//Length/unit') is not None",
+                                                            "@id": "unit:{{slugify(shape.find('.//Length/unit').text)}}",
+                                                            "rdfs:label": "{{shape.find('.//Length/unit').text}}"
+                                                        }],
+                                                        "sio:hasAttribute": [{
+                                                            "@if": "shape.find('.//Length/uncertainty') is not None",
+                                                            "@type": [
+                                                                "sio:UncertaintyValue",
+                                                                {
+                                                                    "@if": "shape.find('.//Length/uncertainty/type').text == 'relative'",
+                                                                    "@id": "sio:Ratio"
+                                                                },
+                                                                {
+                                                                    "@if": "shape.find('.//Length/uncertainty/type').text == 'absolute'",
+                                                                    "@id": "sio:StandardDeviation"
+                                                                }
+                                                            ],
+                                                            "sio:hasValue": {
+                                                                "@value": "{{shape.find('.//Length/uncertainty/value').text}}",
+                                                                "@type": "xsd:double"
+                                                            }
+                                                        }]
+                                                    },
+													{
+                                                        "@if": "shape.find('.//Depth') is not None",
+                                                        "@type": "sio:Depth",
+                                                        "sio:hasValue": {
+                                                            "@value": "{{shape.find('.//Depth/value').text}}",
+                                                            "@type": "xsd:double"
+                                                        },
+                                                        "sio:hasUnit": [{
+                                                            "@if": "shape.find('.//Depth/unit') is not None",
+                                                            "@id": "unit:{{slugify(shape.find('.//Depth/unit').text)}}",
+                                                            "rdfs:label": "{{shape.find('.//Depth/unit').text}}"
+                                                        }],
+                                                        "sio:hasAttribute": [{
+                                                            "@if": "shape.find('.//Depth/uncertainty') is not None",
+                                                            "@type": [
+                                                                "sio:UncertaintyValue",
+                                                                {
+                                                                    "@if": "shape.find('.//Depth/uncertainty/type').text == 'relative'",
+                                                                    "@id": "sio:Ratio"
+                                                                },
+                                                                {
+                                                                    "@if": "shape.find('.//Depth/uncertainty/type').text == 'absolute'",
+                                                                    "@id": "sio:StandardDeviation"
+                                                                }
+                                                            ],
+                                                            "sio:hasValue": {
+                                                                "@value": "{{shape.find('.//Depth/uncertainty/value').text}}",
+                                                                "@type": "xsd:double"
+                                                            }
+                                                        }]
+                                                    }
+                                                    
+                                               ]
+                                            }
+                                        }
+
+
+									],
+									"sio:isSurroundedBy": [{
+										"@for": "surface in particle.findall('ParticleSurfaceTreatment') if len(particle.findall('ParticleSurfaceTreatment')) > 0 else particle.findall('ParticleSurfaceTreatment')",
+										"@do": {
+											"@id": "sample:{{slugify(id.text.replace(' ',''))}}_filler_{{fc}}_surfacetreatment",
+											"@type": [{
+													"@if": "surface.find('PubChemRef') is not None and surface.find('PubChemRef').text is not None",
+													"@id": "pubchem:{{surface.find('PubChemRef').text.replace(' ','')}}",
+													"@type": "owl:Class",
+													"rdfs:label": [{
+															"@value": "{{surface.find('ChemicalName').text}}",
+															"@if": "surface.find('ChemicalName').text is not None"
+														},
+														{
+															"@value": "{{surface.find('Abbreviation').text}}",
+															"@if": "surface.find('ChemicalName').text is None and surface.find('Abbreviation').text is not None"
+														}
+													]
+												},
+												{
+													"@if": "(surface.find('PubChemRef') is None or surface.find('PubChemRef').text is  None) and surface.find('ChemicalName').text is not None",
+													"@id": "compound:{{camelcase(surface.find('ChemicalName').text)}}",
+													"@type": "owl:Class",
+													"rdfs:label": "{{surface.find('ChemicalName').text}}"
+												},
+												{
+													"@if": "(surface.find('PubChemRef') is None or surface.find('PubChemRef').text is None) and surface.find('ChemicalName').text is None and surface.find('Abbreviation').text is not None",
+													"@id": "compound:{{camelcase(surface.find('Abbreviation').text)}}",
+													"@type": "owl:Class",
+													"rdfs:label": "{{surface.find('Abbreviation').text}}"
+												}
+											],
+											"sio:hasRole": {
+												"@type": "nanomine:SurfaceTreatment",
+												"sio:inRelationTo": {
+													"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
+												}
+											}
+										}
+									}]
+								}
+							},
+							{
+								"@for": "polymer in row.findall('MATERIALS/Matrix/MatrixComponent')",
+								"@do": {
+									"@id": "sample:{{slugify(id.text.replace(' ',''))}}_matrix",
+									"@type": [{
+											"@if": "polymer.find('PubChemRef') is not None and polymer.find('PubChemRef').text is not None",
+											"@id": "pubchem:{{polymer.find('PubChemRef').text.replace(' ','')}}",
+											"@type": "owl:Class",
+											"rdfs:label": [{
+													"@value": "{{polymer.find('ChemicalName').text}}",
+													"@if": "polymer.find('ChemicalName').text is not None"
+												},
+												{
+													"@value": "{{polymer.find('Abbreviation').text}}",
+													"@if": "polymer.find('ChemicalName').text is None and polymer.find('Abbreviation').text is not None"
+												}
+											]
+										},
+										{
+											"@if": "(polymer.find('PubChemRef') is None or polymer.find('PubChemRef').text is None) and polymer.find('ChemicalName').text is not None",
+											"@id": "compound:{{camelcase(polymer.find('ChemicalName').text)}}",
+											"@type": "owl:Class",
+											"rdfs:label": "{{polymer.find('ChemicalName').text}}"
+										},
+										{
+											"@if": "(polymer.find('PubChemRef') is None or polymer.find('PubChemRef').text is None) and polymer.find('ChemicalName').text is None and polymer.find('Abbreviation').text is not None",
+											"@id": "compound:{{camelcase(polymer.find('Abbreviation').text)}}",
+											"@type": "owl:Class",
+											"rdfs:label": "{{polymer.find('Abbreviation').text}}"
+										}
+										
+									],
+									"sio:hasRole": {
+										"@type": "nanomine:Matrix",
+										"sio:inRelationTo": {
+											"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
+										}
+									},
+									"sio:hasAttribute":
+									[
+										
+									{
+										
+											"@for": "manufacturer in polymer.findall('ManufacturerOrSourceName')",
+											"@do": {
+												"@type": [
+													"nanomine:ManufacturerOrSourceName",
+													{
+														"@id": "nanomine:{{camelcase(manufacturer.text)}}",
+														"@type": "owl:Class",
+											            "rdfs:label": "{{manufacturer.find('ManufacturerOrSourceName').text}}"
+													}
+												]
+											}
+
+										
+									}
+									]
+								}
+							}
+						],
+						"@reverse": {
+							"prov:specializationOf": [{
+								"@for": "i, property in properties.iterrows()",
+								"@do": {
+									"@if": "not isempty(property.xpath) and row.find('PROPERTIES')",
+									"@for": "table in row.find('PROPERTIES').findall('.'+property.xpath+'//data')",
+									"@do": {
+										"@for": "row in table.findall('rows/row')",
+										"@do": [{
+											"@if": "row.findall('column')[1].text is not None and row.findall('column')[0].text is not None",
+											"@id": "sample:{{slugify(id.text.replace(' ',''))}}_{{slugify(property.uri)}}_{{row.attrib['id']}}",
+											"sio:hasAttribute": [{
+													"@type": "{{property.uri}}",
+													"sio:hasValue": {
+														"@value": "{{float(row.findall('column')[1].text)}}",
+														"@type": "xsd:double"
+													}
+												},
+												{
+													"@type": [{
+															"@if": "not isempty(property.curveIndependentVar)",
+															"@id": "{{property.curveIndependentVar}}"
+														},
+														{
+															"@if": "isempty(property.curveIndependentVar) and table.findall('headers/column')[0].text is not None",
+															"@id": "nanomine:{{camelcase(table.findall('headers/column')[0].text)}}",
+															"@type": "owl:Class",
+															"rdfs:subClassOf": {
+																"@id": "sio:Quantity"
+															},
+															"rdfs:label": "{{table.findall('headers/column')[0].text}}"
+														}
+													],
+													"sio:hasValue": {
+														"@value": "{{row.findall('column')[0].text}}",
+														"@type": "xsd:double"
+													}
+												}
+											]
+										}]
+									}
+								}
+							}]
+						},
+						"sio:hasAttribute": [{
+							"@for": "i, property in properties.iterrows()",
+							"@do": {
+								"@if": "not isempty(property.xpath) and row.find('PROPERTIES') and not row.find('PROPERTIES').findall('.'+property.xpath+'/data')",
+								"@for": "value in row.find('PROPERTIES').findall('.'+property.xpath)",
+								"@do": [{
+									"@type": "{{property.uri}}",
+									"dc:description": [{
+										"@if": "value.find('description') is not None",
+										"@value": "{{value.find('description').text}}"
+									}],
+									"sio:hasValue": [{
+										"@if": "value.find('value') is not None",
+										"@value": "{{value.find('value').text}}",
+										"@type": "xsd:double"
+									}],
+									"sio:hasUnit": [{
+										"@if": "value.find('unit') is not None",
+										"@id": "unit:{{slugify(value.find('unit').text)}}",
+										"rdfs:label": "{{value.find('unit').text}}"
+									}],
+									"sio:hasAttribute": [{
+										"@for": "uncertainty in value.findall('uncertainty')",
+										"@do": {
+											"@type": [
+												"sio:UncertaintyValue",
+												{
+													"@if": "uncertainty.find('type').text == 'relative'",
+													"@id": "sio:Ratio"
+												},
+												{
+													"@if": "uncertainty.find('type').text == 'absolute'",
+													"@id": "sio:StandardDeviation"
+												}
+											],
+											"sio:hasValue": {
+												"@value": "{{uncertainty.find('value').text}}",
+												"@type": "xsd:double"
+											}
+										}
+									}]
+								}]
+							}
+						}]
+					}
+				]
+			},
+			"nanopub:hasPublicationInfo": {
+				"@id": "entry:{{id.text.replace(' ','')}}_pubinfo",
+				"@type": "nanopub:PublicationInfo",
+				"@graph": []
+			},
+			"nanopub:hasProvenance": {
+				"@id": "entry:{{id.text.replace(' ','')}}_provenance",
+				"@type": "nanopub:Provenance",
+				"@graph": [{
+						"@id": "entry:{{id.text.replace(' ','')}}_assertion",
+						"prov:wasGeneratedBy": [{
+							"@for": "i, method in methods.iterrows()",
+							"@do": {
+								"@if": "not isempty(method.xpath) and row.findall('.'+method.xpath)",
+								"@for": "value in row.findall('.'+method.xpath)",
+								"@do": [{
+									"@id": "entry:{{id.text.replace(' ','')}}_characterization_{{slugify(value.tag)}}",
+									"@type": [
+										"prov:Activity",
+										"sio:Measuring",
+										"{{method.uri}}"
+									],
+									"dc:description": [{
+										"@if": "value.find('Description')",
+										"@value": "{{value.find('Description').text}}"
+									}],
+									"prov:used": [{
+										"@for": "equipment in value.findall('./Equipment')",
+										"@do": {
+											"@type": [{
+													"@id": "nanomine:{{slugify(equipment.text)}}",
+													"@type": "owl:Class",
+													"rdfs:subClassOf": {
+														"@id": "sio:Device"
+													},
+													"rdfs:label": "{{equipment.text}}"
+												},
+												"sio:Device"
+											],
+											"sio:hasAttribute": [{
+												"@for": "i, method_attr in methods.iterrows()",
+												"@do": {
+													"@if": "not isempty('.'+method_attr.xpath) and value.findall('.'+method_attr.xpath)",
+													"@type": "method_attr.uri",
+													"sio:hasValue": {
+														"@value": "{{value.findall('.'+method_attr.xpath)[0].find('value').text}}",
+														"@type": "xsd:double"
+													},
+													"sio:hasUnit": [{
+														"@if": "value.findall('.'+method_attr.xpath)[0].find('unit') is not None",
+														"@id": "unit:{{slugify(value.findall('.'+method_attr.xpath)[0].find('unit').text)}}",
+														"rdfs:label": "{{value.findall('.'+method_attr.xpath)[0].find('unit').text}}"
+													}],
+													"sio:hasAttribute": [{
+														"@if": "value.findall('.'+method_attr.xpath)[0].find('.//uncertainty') is not None",
+														"@type": [
+															"sio:UncertaintyValue",
+															{
+																"@if": "value.findall('.'+method_attr.xpath)[0].find('.//uncertainty/type').text == 'relative'",
+																"@id": "sio:Ratio"
+															},
+															{
+																"@if": "value.findall('.'+method_attr.xpath)[0].find('.//uncertainty/type').text == 'absolute'",
+																"@id": "sio:StandardDeviation"
+															}
+														],
+														"sio:hasValue": {
+															"@value": "{{value.findall('.'+method_attr.xpath)[0].find('.//uncertainty/value').text}}",
+															"@type": "xsd:double"
+														}
+													}]
+												}
+											}]
+										}
+									}]
+								}]
+							}
+						}]
+					},
+					{
+						"@for": "citation in row.findall('DATA_SOURCE/Citation')",
+						"@do": {
+							"@id": "entry:{{id.text.replace(' ','')}}_assertion",
+							"prov:generatedAtTime": [{
+								"@if": "citation.find('CommonFields/DateOfCitation')",
+								"@type": "xsd:date",
+								"@value": "{{citation.find('CommonFields/DateOfCitation').text"
+							}],
+							"prov:wasQuotedFrom": [{
+								"@id": "{%if citation.find('CommonFields/DOI') != None %}doi:{{citation.find('CommonFields/DOI').text.replace('<','%3C').replace('>','%3E')}}{%else%}entry:{{id.text.replace(' ','-')}}{%endif%}",
+								"@type": [
+									"dcterms:BibliographicResource",
+									{
+										"@id": "{{ {'research article':'nanomine:ResearchArticle','conference proceeding':'nanomine:ProceedingsArticle','communication':'nanomine:Communication','review':'nanomine:ReviewArticle','letter':'bibo:Letter','technical comment':'nanomine:TechnicalComment'}[citation.find('CommonFields/CitationType').text] }}"
+									}
+								],
+								"dcterms:title": "{{citation.find('CommonFields/Title').text}}",
+								"rdfs:label": "{{citation.find('CommonFields/Title').text}}",
+								"rdfs:seeAlso": {
+									"@if": "citation.find('CommonFields/URL').text",
+									"@id": "{{citation.find('CommonFields/URL').text.replace('<','%3C').replace('>','%3E')}}"
+								},
+								"dcterms:created": {
+									"@value": "{{citation.find('CommonFields/PublicationYear').text}}",
+									"@type": "xsd:integer"
+								},
+								"bibo:volume": {
+									"@if": "citation.find('CommonFields/Volume').text",
+									"@value": "{{citation.find('CommonFields/Volume').text}}",
+									"@type": "xsd:integer"
+								},
+								"dcterms:language": {
+									"@if": "citation.find('CommonFields/Language').text",
+									"@id": "lang:{{slugify(citation.find('CommonFields/Language').text)}}",
+									"@type": "dcterms:LinguisticSystem",
+									"rdfs:label": "{{citation.find('CommonFields/Language').text}}"
+								},
+								"dcterms:creator": [{
+									"@for": "author in citation.findall('CommonFields/Author')",
+									"@do": {
+										"@id": "author:{{slugify(author.text)}}",
+										"@type": "prov:Agent",
+										"foaf:name": "{{author.text}}",
+										"rdfs:label": "{{author.text}}",
+										"@reverse": {
+											"prov:wasAttributedTo": {
+												"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
+											}
+										}
+									}
+								}],
+								"dcterms:isPartOf": {
+									"@if": "citation.find('CommonFields/Publication').text",
+									"@id": "publication:{{slugify(citation.find('CommonFields/Publication').text)}}",
+									"dcterms:title": "{{citation.find('CommonFields/Publication').text}}",
+									"dcterms:publisher": {
+										"@if": "citation.find('CommonFields/Publisher').text",
+										"@id": "publisher:{{slugify(citation.find('CommonFields/Publisher').text)}}",
+										"rdfs:label": "{{citation.find('CommonFields/Publisher').text}}",
+										"prov:atLocation": {
+											"@if": "citation.find('CommonFields/Location').text",
+											"@type": "dcterms:Location",
+											"@id": "location:{{slugify(citation.find('CommonFields/Location').text)}}",
+											"rdfs:label": "{{citation.find('CommonFields/Location').text}}"
+										}
+									}
+								},
+								"sio:hasPart": {
+									"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
+								},
+								"dcat:keyword": [{
+									"@for": "keyword in citation.findall('CommonFields/Keyword')",
+									"@do": [{
+											"@if": "';' in keyword.text",
+											"@for": "k in re.split('\\\\s*[;]\\\\s*', keyword.text)",
+											"@do": "{{k.strip().title()}}"
+										},
+										{
+											"@if": "';' not in keyword",
+											"@value": "{{keyword.text.strip().title()}}"
+										}
+									]
+								}]
+							}]
+						}
+					}
+				]
+			}
+		}]
+	}
+}]""" .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a> <http://purl.org/vocab/frbr/core#realizationOf> <http://localhost:5000/pub/MjcxOTMuNzA1NTUxNTI1NDQ> .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://purl.org/dc/terms/creator> <http://nanomine.org/author/juuti-jari> .
+<http://nanomine.org/ns/agilent-e4991a> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/Device> .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://www.w3.org/ns/dcat#keyword> "Bst-Coc" .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_pubinfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#PublicationInfo> .
+<bnode:fc8b997f027a4fcca32f1e7a5bf060ce> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/JSLDT> .
+<http://nanomine.org/author/juuti-jari> <http://xmlns.com/foaf/0.1/name> "Juuti, Jari" .
+<bnode:053cd46c73e54dcb9059696647fd309d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/Extract> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasQuotedFrom> <http://nanomine.org/entry/L102_S3_Hu_2007_assertion> .
+<http://nanomine.org/sample/l102-s1-hu-2007_control_role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/ControlRole> .
+<bnode:26d2577ad9df447bad8fae05cdd6228d> <http://purl.org/dc/terms/identifier> "properties" .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://www.w3.org/ns/dcat#keyword> "Composites" .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://purl.org/dc/terms/creator> <http://nanomine.org/author/hu-tao> .
+<http://nanomine.org/setl/xml/nanopubs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Dataset> .
+<http://localhost:5000/pub/NTA1Mjk4LjEwMTUwNDY0MTY0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/vocab/frbr/core#Work> .
+<http://localhost:5000/pub/a35fc84e-a732-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasPublicationInfo> <http://localhost:5000/pub/a35fc84e-a732-11e9-babe-000c29406e9a_pubinfo> .
+<bnode:9ea639ef7d1f49619a3bc037e9199dca> <http://semanticscience.org/resource/hasValue> "5e-05"^^<http://www.w3.org/2001/XMLSchema#double> .
+<file:///tmp/tmpwr38rz0c> <http://purl.org/dc/terms/created> "2019-07-15T18:59:14.275031"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://nanomine.org/ns/agilent-e4991a> <http://www.w3.org/2000/01/rdf-schema#label> "Agilent E4991A" .
+<bnode:6c697a153a8c4fbbbbe45c1f7c6cafa7> <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#used> .
+<http://localhost:5000/pub/a35fc84e-a732-11e9-babe-000c29406e9a> <http://purl.org/vocab/frbr/core#realizationOf> <http://localhost:5000/pub/NTA1Mjk4LjEwMTUwNDY0MTY0> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasAttributedTo> <http://localhost:5000/setl/MTkzOTg3LjIzMTY4Mzk1Nzk/NanomineXMLImport> .
+<http://nanomine.org/setl/xml/NanomineXMLImport> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <bnode:6c697a153a8c4fbbbbe45c1f7c6cafa7> .
+<bnode:5c7f22daed694b588cc347183f767e53> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/Extract> .
+<http://nanomine.org/sample/l102-s3-hu-2007_filler_0> <http://semanticscience.org/resource/hasAttribute> <bnode:e3d65a3271d548d08e154b97fc5fa284> .
+<http://nanomine.org/ns/unit/nm> <http://www.w3.org/2000/01/rdf-schema#label> "nm" .
+<http://nanomine.org/entry/L102_S3_Hu_2007_characterization_xray-diffraction-and-scattering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+<http://nanomine.org/setl/xml/characterization_methods_table> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/Table> .
+<http://nanomine.org/entry/L102_S3_Hu_2007_characterization_dielectric-and-impedance-spectroscopy-analysis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Measuring> .
+<http://nanomine.org/compound/CycloOlefinCopolymer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://nanomine.org/setl/xml/NanomineXMLImport> <http://purl.org/twc/vocab/setl/hasTemplatePrefix> "http://nanomine.org/setl/xml/" .
+<http://nanomine.org/sample/l102-s3-hu-2007_matrix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/compound/CycloOlefinCopolymer> .
+<bnode:96a37f027a8d4cf9b8bdfaee408931c0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/Matrix> .
+<bnode:6c697a153a8c4fbbbbe45c1f7c6cafa7> <http://www.w3.org/2002/07/owl#someValuesFrom> <http://nanomine.org/ns/NanomineXMLFile> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasGeneratedBy> <http://nanomine.org/entry/L102_S3_Hu_2007_characterization_dielectric-and-impedance-spectroscopy-analysis> .
+<http://nanomine.org/entry/L102_S3_Hu_2007_characterization_dielectric-and-impedance-spectroscopy-analysis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricandImpedanceSpectroscopyAnalysis> .
+<file:///tmp/tmpwr38rz0c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/net/provenance/ns#File> .
+<http://nanomine.org/setl/xml/NanomineXMLImport> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/twc/vocab/setl/SemanticETLScript> .
+<bnode:fc8b997f027a4fcca32f1e7a5bf060ce> <http://www.w3.org/ns/prov#used> <http://nanomine.org/setl/xml/xml> .
+<bnode:fc8b997f027a4fcca32f1e7a5bf060ce> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/Transform> .
+<file:///tmp/tmpwr38rz0c> <http://vocab.rpi.edu/whyis/hasFileID> "a35fc84d-a732-11e9-babe-000c29406e9a" .
+<http://nanomine.org/sample/l102-s3-hu-2007> <http://semanticscience.org/resource/hasAttribute> <bnode:9ea639ef7d1f49619a3bc037e9199dca> .
+<http://localhost:5000/pub/a35fc84c-a732-11e9-babe-000c29406e9a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/vocab/frbr/core#Expression> .
+<http://nanomine.org/author/jantunen-heli> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<http://nanomine.org/sample/l102-s1-hu-2007> <http://semanticscience.org/resource/hasRole> <http://nanomine.org/sample/l102-s1-hu-2007_control_role> .
+<http://nanomine.org/author/vilkman-taisto> <http://xmlns.com/foaf/0.1/name> "Vilkman, Taisto" .
+<http://nanomine.org/author/hu-tao> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<http://nanomine.org/author/hu-tao> <http://www.w3.org/2000/01/rdf-schema#label> "Hu, Tao" .
+<http://nanomine.org/entry/L102_S3_Hu_2007_characterization_xray-diffraction-and-scattering> <http://www.w3.org/ns/prov#used> <bnode:b6ef5c0784794b8abea5da5e35ce3b12> .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/ResearchArticle> .
+<http://nanomine.org/sample/l102-s3-hu-2007_filler_0_volume_fraction> <http://semanticscience.org/resource/hasValue> "0.05"^^<http://www.w3.org/2001/XMLSchema#double> .
+_:N493517e7b4e045158f313991f1d1a6d5 <http://www.w3.org/ns/prov#used> <http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_assertion> .
+<http://localhost:5000/pub/a35fc84c-a732-11e9-babe-000c29406e9a> <http://purl.org/vocab/frbr/core#realizationOf> <http://localhost:5000/pub/Mjc1MDY5LjU0MDYwMjY2Njcz> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasGeneratedBy> <http://nanomine.org/entry/L102_S3_Hu_2007_characterization_xray-diffraction-and-scattering> .
+<http://nanomine.org/entry/L102_S3_Hu_2007_characterization_dielectric-and-impedance-spectroscopy-analysis> <http://www.w3.org/ns/prov#used> <bnode:b7f5c76a91214f42bfc23a508035e0d6> .
+<http://nanomine.org/language/english> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/LinguisticSystem> .
+<bnode:bd450217743645bbb42b78ec983a833c> <http://www.w3.org/ns/prov#used> <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=1806836834> .
+<bnode:c4958dfd464c45e18080b160c4ab2c06> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/ManufacturerOrSourceName> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasDerivedFrom> <http://localhost:5000/pub/a35fc84f-a732-11e9-babe-000c29406e9a_assertion> .
+<http://nanomine.org/setl/xml/NanomineXMLImport> <http://www.w3.org/2000/01/rdf-schema#label> "Nanomine XML Import SETL Script" .
+<http://nanomine.org/setl/xml/xml> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/XML> .
+<http://nanomine.org/ns/siemens-d5000> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://nanomine.org/entry/L102_S3_Hu_2007_characterization_scanning-electron-microscopy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Measuring> .
+<http://localhost:5000/pub/a35fc84c-a732-11e9-babe-000c29406e9a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Nanopublication> .
+<http://nanomine.org/setl/xml/xml> <http://www.w3.org/ns/prov#wasGeneratedBy> <bnode:5c7f22daed694b588cc347183f767e53> .
+<http://localhost:5000/pub/MjcxOTMuNzA1NTUxNTI1NDQ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/vocab/frbr/core#Work> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_assertion> <http://purl.org/dc/terms/created> "2019-07-15T18:59:15.783273"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://localhost:5000/pub/a35fc84c-a732-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Assertion> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_provenance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Provenance> .
+<http://nanomine.org/ns/agilent-e4991a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<bnode:80a7c25f205e4e90b85e524875e60634> <http://semanticscience.org/resource/hasUnit> <http://nanomine.org/ns/unit/nm> .
+<bnode:788f74cab86942e2933a091645e76a4e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Usage> .
+<http://nanomine.org/sample/l102-s3-hu-2007> <http://www.w3.org/ns/prov#wasAttributedTo> <http://nanomine.org/author/hu-tao> .
+<bnode:b813054e10e4485a84d17edfd4a725fd> <http://www.w3.org/ns/prov#hadRole> <bnode:26d2577ad9df447bad8fae05cdd6228d> .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://purl.org/dc/terms/isPartOf> <http://nanomine.org/publication/journal-of-the-european-ceramic-society> .
+<bnode:b7f5c76a91214f42bfc23a508035e0d6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Device> .
+<http://localhost:5000/pub/a35fc850-a732-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasQuotedFrom> <http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> .
+<http://nanomine.org/setl/xml/nanopubs> <http://www.w3.org/ns/prov#wasGeneratedBy> <bnode:cf3a075c3aaf479faa18aa4256260068> .
+<http://nanomine.org/publication/journal-of-the-european-ceramic-society> <http://purl.org/dc/terms/title> "Journal of the European Ceramic Society" .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/BibliographicResource> .
+<http://nanomine.org/sample/l102-s3-hu-2007_matrix> <http://semanticscience.org/resource/hasAttribute> <bnode:c4958dfd464c45e18080b160c4ab2c06> .
+<http://nanomine.org/sample/l102-s3-hu-2007_filler_0> <http://semanticscience.org/resource/hasAttribute> <http://nanomine.org/sample/l102-s3-hu-2007_filler_0_volume_fraction> .
+<http://nanomine.org/setl/xml/property_classes_table> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/csvw#Table> .
+<http://localhost:5000/pub/a35fc84c-a732-11e9-babe-000c29406e9a_assertion> <http://purl.org/dc/terms/created> "2019-07-15T18:59:14.275349"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://localhost:5000/pub/a35fc84e-a732-11e9-babe-000c29406e9a_pubinfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#PublicationInfo> .
+<bnode:b5205351e7434fecab328118b07826a0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/ns/SigmaAldrichChemieGmbhGermany> <http://www.w3.org/2000/01/rdf-schema#label> "" .
+<http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082> <http://www.w3.org/ns/dcat#keyword> "Microstructure-Final" .
+<bnode:788f74cab86942e2933a091645e76a4e> <http://www.w3.org/ns/prov#entity> <http://nanomine.org/setl/xml/characterization_methods_table> .
+<bnode:96a37f027a8d4cf9b8bdfaee408931c0> <http://semanticscience.org/resource/inRelationTo> <http://nanomine.org/sample/l102-s3-hu-2007> .
+<bnode:fc8b997f027a4fcca32f1e7a5bf060ce> <http://www.w3.org/ns/prov#qualifiedUsage> <bnode:788f74cab86942e2933a091645e76a4e> .
+<bnode:5c7f22daed694b588cc347183f767e53> <http://www.w3.org/ns/prov#used> <bnode:3af58e26d9c14cf39f5e5bf6b7d74d9b> .
+<http://nanomine.org/ns/siemens-d5000> <http://www.w3.org/2000/01/rdf-schema#label> "Siemens D5000" .
+<bnode:80a7c25f205e4e90b85e524875e60634> <http://semanticscience.org/resource/hasValue> "200.0"^^<http://www.w3.org/2001/XMLSchema#double> .
