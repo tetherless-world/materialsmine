@@ -2,6 +2,6 @@
 *.DS_Store
 /data/*.setl.ttl
 .vscode
-tests/output.txt
+tests/output.txt*
 xml_files/*
 output.*
