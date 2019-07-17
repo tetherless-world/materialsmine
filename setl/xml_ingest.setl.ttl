@@ -564,6 +564,26 @@
 														"@value": "{{row.findall('column')[0].text}}",
 														"@type": "xsd:double"
 													}
+												},
+												{
+													"@type": [{
+															"@if": "not isempty(property.curveDependentVar)",
+															"@id": "{{property.curveDependentVar}}"
+														},
+														{
+															"@if": "isempty(property.curveDependentVar) and table.findall('headers/column')[1].text is not None",
+															"@id": "nanomine:{{camelcase(table.findall('headers/column')[1].text)}}",
+															"@type": "owl:Class",
+															"rdfs:subClassOf": {
+																"@id": "sio:Quantity"
+															},
+															"rdfs:label": "{{table.findall('headers/column')[1].text}}"
+														}
+													],
+													"sio:hasValue": {
+														"@value": "{{row.findall('column')[1].text}}",
+														"@type": "xsd:double"
+													}
 												}
 											]
 										}]
