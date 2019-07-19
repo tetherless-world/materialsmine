@@ -157,30 +157,30 @@
 												"@type": "nanomine:{{fraction.tag.title()}}Fraction"
 											}
 										},
-										{
-											"@if": "particle.find('ManufacturerOrSourceName') is not None",
-											"@for": "manufacturer in particle.findall('ManufacturerOrSourceName')",
-											"@do": {
-												"@type": "nanomine:Manufacturer",
-												"sio:hasValue": "{{manufacturer.text}}"
-											}
-										},
-										{
-											"@if": "particle.find('TradeName') is not None",
-											"@for": "tradename in particle.findall('TradeName')",
-											"@do":{
-												"@type": "nanomine:TradeName",
-												"sio:hasValue": "{{tradename.text}}"
-											}
-										},
-										{
-											"@if": "particle.find('Abbreviation') is not None",
-											"@for": "abbrev in particle.findall('Abbreviation')",
-											"@do":{
-												"@type": "nanomine:Abbreviation",
-												"sio:hasValue": "{{abbrev.text}}"
-											}
-										},
+										# {
+										# 	"@if": "particle.find('ManufacturerOrSourceName') is not None",
+										# 	"@for": "manufacturer in particle.findall('ManufacturerOrSourceName')",
+										# 	"@do": {
+										# 		"@type": "nanomine:Manufacturer",
+										# 		"sio:hasValue": "{{manufacturer.text}}"
+										# 	}
+										# },
+										# {
+										# 	"@if": "particle.find('TradeName') is not None",
+										# 	"@for": "tradename in particle.findall('TradeName')",
+										# 	"@do":{
+										# 		"@type": "nanomine:TradeName",
+										# 		"sio:hasValue": "{{tradename.text}}"
+										# 	}
+										# },
+										# {
+										# 	"@if": "particle.find('Abbreviation') is not None",
+										# 	"@for": "abbrev in particle.findall('Abbreviation')",
+										# 	"@do":{
+										# 		"@type": "nanomine:Abbreviation",
+										# 		"sio:hasValue": "{{abbrev.text}}"
+										# 	}
+										# },
 										{
 											"@if": "particle.find('Density')",
 											"@for": "density in particle.findall('Density')",
@@ -499,31 +499,31 @@
 											"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
 										}
 									},
-									"sio:hasAttribute": [{
-										"@if": "polymer.find('ManufacturerOrSourceName') is not None",
-										"@for": "manufacturer in polymer.findall('ManufacturerOrSourceName')",
-										"@do": {
-											"@type": "nanomine:Manufacturer",
-											"sio:hasValue": "{{manufacturer.text}}"
-										}
-									},
-									{
-										"@if": "polymer.find('TradeName') is not None",
-										"@for": "tradename in polymer.findall('TradeName')",
-										"@do":{
-											"@type": "nanomine:TradeName",
-											"sio:hasValue": "{{tradename.text}}"
-										}
-									},
-									{
-										"@if": "polymer.find('Abbreviation') is not None",
-										"@for": "abbrev in polymer.findall('Abbreviation')",
-										"@do":{
-											"@type": "nanomine:Abbreviation",
-											"sio:hasValue": "{{abbrev.text}}"
-										}
-									}
-									]
+									# "sio:hasAttribute": [{
+									# 	"@if": "polymer.find('ManufacturerOrSourceName') is not None",
+									# 	"@for": "manufacturer in polymer.findall('ManufacturerOrSourceName')",
+									# 	"@do": {
+									# 		"@type": "nanomine:Manufacturer",
+									# 		"sio:hasValue": "{{manufacturer.text}}"
+									# 	}
+									# },
+									# {
+									# 	"@if": "polymer.find('TradeName') is not None",
+									# 	"@for": "tradename in polymer.findall('TradeName')",
+									# 	"@do":{
+									# 		"@type": "nanomine:TradeName",
+									# 		"sio:hasValue": "{{tradename.text}}"
+									# 	}
+									# },
+									# # {
+									# # 	"@if": "polymer.find('Abbreviation') is not None",
+									# # 	"@for": "abbrev in polymer.findall('Abbreviation')",
+									# # 	"@do":{
+									# # 		"@type": "nanomine:Abbreviation",
+									# # 		"sio:hasValue": "{{abbrev.text}}"
+									# # 	}
+									# # }
+									# ]
 								}
 							}
 						],
