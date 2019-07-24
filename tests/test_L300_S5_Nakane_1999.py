@@ -64,4 +64,3 @@ class L300_S5_Nakane_1999(template.IngestTestSetup):
     
     def test_triples(self):
         ingest_tester.print_triples(self)
-
