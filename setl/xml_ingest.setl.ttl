@@ -477,6 +477,33 @@
 										"sio:inRelationTo": {
 											"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
 										}
+<<<<<<< HEAD
+=======
+									},
+									"sio:hasAttribute": [{
+										"@if": "polymer.find('ManufacturerOrSourceName') is not None",
+										"@for": "manufacturer in polymer.findall('ManufacturerOrSourceName')",
+										"@do": {
+											"@type": "nanomine:Manufacturer",
+											"sio:hasValue": "{{manufacturer.text}}"
+										}
+									},
+									{
+										"@if": "polymer.find('TradeName') is not None", 
+										"@for": "tradename in polymer.findall('TradeName')",
+										"@do":{
+											"@type": "nanomine:TradeName",
+											"sio:hasValue": "{{tradename.text}}"
+										}
+									},
+									{
+										"@if": "polymer.find('Abbreviation') is not None",
+										"@for": "abbrev in polymer.findall('Abbreviation')",
+										"@do":{
+											"@type": "nanomine:Abbreviation",
+											"sio:hasValue": "{{abbrev.text}}"
+										}
+>>>>>>> Add_features
 									}
 
 
