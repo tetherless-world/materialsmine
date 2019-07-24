@@ -508,7 +508,7 @@
 										}
 									},
 									{
-										"@if": "polymer.find('TradeName') is not None",
+										"@if": "polymer.find('TradeName') is not None", 
 										"@for": "tradename in polymer.findall('TradeName')",
 										"@do":{
 											"@type": "nanomine:TradeName",
