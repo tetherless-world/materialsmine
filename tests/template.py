@@ -66,6 +66,7 @@ class IngestTestTests(IngestTestSetup):
     def test_filler_trade_names(self):
         ingest_tester.test_filler_trade_names(self)
 
+    # TODO Fix or remove
     def test_temperatures(self):
         ingest_tester.test_temperatures(self)
 
@@ -78,15 +79,16 @@ class IngestTestTests(IngestTestSetup):
     def test_complete_material(self):
         ingest_tester.test_complete_material(self)
 
+    # TODO Fix or remove
     def test_filler_processing(self):
         ingest_tester.test_filler_processing(self)
 
-    # added by Neha on 25th June 19
     def test_viscoelastic_measurement_mode(self):
         ingest_tester.test_viscoelastic_measurement_mode(self)
 
-   # def test_hardness_properties(self):
-    #    ingest_tester.test_viscoelastic_properties(self)
-
-    #def test_hardness_test_standard(self):
-     #   ingest_tester.test_hardness_test_standard(self)
+    # TODO add the following tests once completed
+        # test_stress
+        # test_melt_viscosity
+        # test_rheometer_mode
+        # test_specific_surface_area
+        # test_dielectric_real_permittivity
