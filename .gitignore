@@ -5,3 +5,4 @@
 tests/output.txt*
 xml_files/*
 output*
+tests/outputs/*
