@@ -1,0 +1,1722 @@
+Could not configure logger, using defaults.
+Adding tests from /apps/nanomine-graph
+Setting Up Class
+http://localhost:5000/Home None
+adding file tmp9nhezjc5
+Retired 0 nanopubs.
+Published 1 nanopubs
+Retired 0 nanopubs.
+Published 1 nanopubs
+Processing file:///tmp/tmp9nhezjc5 <autonomic.SETLMaker object at 0x7faa4a866278>
+file:///tmp/tmp9nhezjc5
+Template NP http://localhost:5000/pub/bc5747ee-ad5b-11e9-babe-000c29406e9a 54
+Instance NP N61e0ce0fb15d45aab5faed75c74164aa 50
+Output Graph N61e0ce0fb15d45aab5faed75c74164aa 50
+78
+Processing http://localhost:5000/setl/MTgyMzIzLjEwOTk5NDY3NA/NanomineXMLImport <autonomic.SETLr object at 0x7faa4a717c50>
+https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=1806836834 None
+https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=798992913 None
+file:///tmp/tmp9nhezjc5 None
+Retired 0 nanopubs.
+http://nanomine.org/entry/L155_S2_Roy_2005_assertion
+Publishing http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a with 754 assertions.
+Retired 0 nanopubs.
+Published 1 nanopubs
+Published
+Output Graph N8a18fb2aa03c4a4b866cb4af8b2276a0 3
+Printing SPO Triples
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_11> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_13> <http://semanticscience.org/resource/hasAttribute> <bnode:dba52e7e76ca4b5aa5f5c5366193cb6a> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_8> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasGeneratedBy> <http://nanomine.org/entry/L155_S2_Roy_2005_characterization_scanning-electron-microscopy> .
+<bnode:2deaa66c466f4a6085149c65f05ac905> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/setl/xml/nanopubs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Dataset> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_2> <http://semanticscience.org/resource/hasAttribute> <bnode:bdb010d9ce4143c48e5f77e8cf82cffa> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_0> <http://semanticscience.org/resource/hasAttribute> <bnode:e0d23bd2b01f4ccfb6c4306231afa6af> .
+<bnode:868d16d4ae824f3281b124ed61938bb0> <http://semanticscience.org/resource/hasValue> "460.021956525"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasGeneratedBy> <http://nanomine.org/entry/L155_S2_Roy_2005_characterization_heatingrate> .
+<http://localhost:5000/pub/MTIwNTYwLjE5MTE4NTQwNTkz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/vocab/frbr/core#Work> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_19> <http://semanticscience.org/resource/hasAttribute> <bnode:4f99abe0efd64189a572b1a189d02dab> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_11> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:cc82daec3ffc4dfd84d21fca59de84be> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasGeneratedBy> _:N77720922f1254004870262070d006dbd .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_8> <http://semanticscience.org/resource/hasAttribute> <bnode:2a125edbd5b045a4a9782c27744f6e7f> .
+<bnode:88883bcad3b4497ba3f287735c3b0903> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:5dff33a32cdd4de68d6fba74820afd5f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_11> <http://semanticscience.org/resource/hasAttribute> <bnode:6682314b4e8c4a88ad2b94cd170089ae> .
+<bnode:4de9b9926cf04c21b2bc720fb27e39a5> <http://semanticscience.org/resource/hasValue> "2.025"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:6522fa2323454e0aabb7be20ad9877e3> <http://semanticscience.org/resource/hasValue> "81.0239571"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_0> <http://semanticscience.org/resource/hasAttribute> <bnode:cff40d7d669b4567bd93f5a61e7f559b> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_12> <http://semanticscience.org/resource/hasAttribute> <bnode:48a41e2996dc43efaea85f27dd133d53> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_13> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_6> <http://semanticscience.org/resource/hasAttribute> <bnode:737f2b37307c453ab091123f43f5d886> .
+<bnode:0bc8394c43084207a4f1401ace90f38f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:025d7ff7b3be4fc0aa7741d2b091a808> <http://semanticscience.org/resource/hasValue> "93.3498204"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_21> <http://semanticscience.org/resource/hasAttribute> <bnode:971e041882e94b9eaf46f81d5ad48d75> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_7> <http://semanticscience.org/resource/hasAttribute> <bnode:854685b5fa21415c9d4005e51006d806> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_18> <http://semanticscience.org/resource/hasAttribute> <bnode:f9c22b545e964738a3678f6814fb7000> .
+<bnode:3a731611f37a4f0eba920ff7ec4dc9c6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:887a7f5bac564b1094d5a35cb76f9e49> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<bnode:ff5bea58476e45efa1eb8dda0b5e799c> <http://semanticscience.org/resource/hasValue> "0.010122411"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/setl/xml/property_classes_table> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/Table> .
+<http://nanomine.org/sample/l155-s2-roy-2005> <http://semanticscience.org/resource/hasAttribute> <bnode:3a731611f37a4f0eba920ff7ec4dc9c6> .
+<bnode:952e3ab3a30b454d84504ab29c69fe92> <http://semanticscience.org/resource/hasValue> "0.007768362"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://localhost:5000/pub/bc5747ec-ad5b-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasPublicationInfo> <http://localhost:5000/pub/bc5747ec-ad5b-11e9-babe-000c29406e9a_pubinfo> .
+<bnode:ce8c083571404bea9667a97042f56737> <http://semanticscience.org/resource/hasAttribute> <bnode:5e14cd48136a4d4790bc33407807e1e8> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_12> <http://semanticscience.org/resource/hasAttribute> <bnode:cc82daec3ffc4dfd84d21fca59de84be> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_10> <http://semanticscience.org/resource/hasAttribute> <bnode:d5ee0ad038ec4c0e9c0537471d838e95> .
+<bnode:9112cb0a89b6447bb0c01772d37971a9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_xray-photoelectron-spectroscopy> <http://www.w3.org/ns/prov#used> <bnode:0d7410bd82c941df9989dd1abbbaca2a> .
+<http://nanomine.org/ns/BreakdownStrengthKvMm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/Quantity> .
+<bnode:ce8c083571404bea9667a97042f56737> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/rheometric-scientific-dmta-model-v> .
+<bnode:9093e9939aac4c5c9539894f54e76708> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/setl/xml/property_classes_table> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/csvw#Table> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_5> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:2a125edbd5b045a4a9782c27744f6e7f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/WeibullPlot> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_1> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:589301892e0e4282b01256c246ebf7f6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://nanomine.org/author/maccrone-r-k> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Space Charge Distribution" .
+<bnode:b45f17ba046d49078fa31f990c08a5d8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<bnode:6b22699c430e491b9ca17e9d57dc8561> <http://semanticscience.org/resource/hasValue> "2.595"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:a24bd697fa954f1981743553cf7064d2> <http://semanticscience.org/resource/hasValue> "271.6654549"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/author/reed-c-w> <http://www.w3.org/2000/01/rdf-schema#label> "Reed, C.W." .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_2> <http://semanticscience.org/resource/hasAttribute> <bnode:f64fb5c5c2e04bf6929ce25f5571560b> .
+<http://localhost:5000/pub/bc5747ee-ad5b-11e9-babe-000c29406e9a_pubinfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#PublicationInfo> .
+<bnode:ae1b1ce2773f48629fb4a44d4d70337b> <http://semanticscience.org/resource/hasValue> "0.093691149"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_15> <http://semanticscience.org/resource/hasAttribute> <bnode:94dd41a542d04abbb4a82037b3e6d970> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_12> <http://semanticscience.org/resource/hasAttribute> <bnode:640e05719cf94bbeb82614a8403d5988> .
+<bnode:b47e7e91c431427ea8af0c8c09062cb0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_6> <http://semanticscience.org/resource/hasAttribute> <bnode:bd2d93992c7f4d44ada0e3509cc0912c> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_10> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_3> <http://semanticscience.org/resource/hasAttribute> <bnode:1a63dc2b16b1428baade75d3e79442e0> .
+<bnode:fa4d4ef3d5dc49f9ad0c9e092880670b> <http://semanticscience.org/resource/hasValue> "43.73113085"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_7> <http://semanticscience.org/resource/hasAttribute> <bnode:bffc5fe5da4b49f79a96745b8a4842f6> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_coolingrate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Measuring> .
+<bnode:7eabafdf11b0436f812599c457d33bd2> <http://semanticscience.org/resource/hasValue> "4909.468555"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:9abbdd42e92544808dada1fe58867a14> <http://semanticscience.org/resource/hasValue> "318.9462293"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:913fdffcaf6848819da59117bc69742a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/WeibullPlot> .
+<publisher:ieee> <http://www.w3.org/ns/prov#atLocation> <http://nanomine.org/location/rensselaer-polytech-inst-troy-ny-usa> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasDerivedFrom> <http://localhost:5000/pub/bc5747ef-ad5b-11e9-babe-000c29406e9a_assertion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_19> <http://semanticscience.org/resource/hasAttribute> <bnode:afb88186c1744c03a79d973e4e717a39> .
+<bnode:0bc8394c43084207a4f1401ace90f38f> <http://semanticscience.org/resource/hasValue> "1.92"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:3d47cdbdae594f9d9c75c94ce5728e40> <http://semanticscience.org/resource/hasValue> "-0.113483282254"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_8> <http://semanticscience.org/resource/hasAttribute> <bnode:e49d058c53574089afe0731e50795920> .
+<bnode:f92b1c025a6a403c8e54868d36cc47e4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_10> <http://semanticscience.org/resource/hasAttribute> <bnode:f80f55fd05994c45bbb6b47e833b75a7> .
+<bnode:8a475acde098440392f8c4797b7133b6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<bnode:d7a8c557abbc4cd4a2ff3577c4f5a9f5> <http://semanticscience.org/resource/hasValue> "281.4043353"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/ns/unit/celsius> <http://www.w3.org/2000/01/rdf-schema#label> "Celsius" .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_heatingrate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/HeatingRate> .
+<bnode:1eafd78920524a5f8a499428751fb460> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:54d7f51837ec47c3bc11f81196b4a688> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Voltage Endurance" .
+<bnode:6682314b4e8c4a88ad2b94cd170089ae> <http://semanticscience.org/resource/hasValue> "0.007768362"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:4fa38d09841341db94ead5387b38ba8b> <http://semanticscience.org/resource/hasValue> "68.73755053"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_2> <http://semanticscience.org/resource/hasAttribute> <bnode:42d38162a4724f99a1a6d082e3ae8900> .
+<bnode:64ce71b1592f4952afafbd021ee69160> <http://semanticscience.org/resource/hasValue> "773.5276395"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:99847578cfcf487eaf16ce6f8afba420> <http://semanticscience.org/resource/hasValue> "56.22166161"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_4> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:31eae23bda0946bc8f061fb5d897d64a> <http://semanticscience.org/resource/hasValue> "2.1"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:d5ee0ad038ec4c0e9c0537471d838e95> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<bnode:ecfaea5c3c27446bb8a815394681302c> <http://semanticscience.org/resource/hasValue> "31.18775889"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:50c982e0f653448e9dd83f4be5477277> <http://semanticscience.org/resource/hasValue> "12430.33287"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_13> <http://semanticscience.org/resource/hasAttribute> <bnode:6a331c43070249eebe54da0c23f1b4d5> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_15> <http://semanticscience.org/resource/hasAttribute> <bnode:0fc305761910465aa337045b1c02b98c> .
+<http://nanomine.org/sample/l155-s2-roy-2005_filler_0> <http://semanticscience.org/resource/hasRole> <bnode:d7703774249d4ea9b7097526ba07dfaf> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_1> <http://semanticscience.org/resource/hasAttribute> <bnode:3fcbc9cfca314757a9d57e235dccf41e> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://purl.org/dc/terms/title> "Polymer nanocomposite dielectrics-the role of the interface" .
+<bnode:066e246bf1674707a501843f61ac7a8c> <http://semanticscience.org/resource/hasValue> "0.209594224"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:dba52e7e76ca4b5aa5f5c5366193cb6a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:fdc20446dba74252bad077981d3a76e3> <http://semanticscience.org/resource/hasValue> "0.002589454"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:60f5130b7f444c37b81e2f311c57062b> <http://semanticscience.org/resource/hasValue> "37.44027712"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:68273737e9694fd8a0a029ef3af7c7c0> <http://www.w3.org/ns/prov#value> """[{
+	"@for": "id in row.findall('ID')",
+	"@do": {
+		"@if": "id.text.replace(' ','') is not None",
+		"@id": "entry:{{id.text.replace(' ','')}}",
+		"@graph": [{
+			"@id": "entry:{{id.text.replace(' ','')}}",
+			"@type": "nanopub:Nanopublication",
+			"nanopub:hasAssertion": {
+				"@id": "entry:{{id.text.replace(' ','')}}_assertion",
+				"@type": "nanopub:Assertion",
+				"@graph": [{
+						"@if": "row.findtext('Control_ID') is not None",
+						"@id": "sample:{{slugify(row.findtext('Control_ID').replace(' ',''))}}",
+						"sio:hasRole": {
+							"@type": "sio:ControlRole",
+							"@id": "sample:{{slugify(row.findtext('Control_ID').replace(' ',''))}}_control_role",
+							"sio:inRelationTo": {
+								"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
+							}
+						}
+					},
+					{
+						"@id": "sample:{{slugify(id.text.replace(' ',''))}}",
+						"@type": [
+							"nanomine:PolymerNanocomposite"
+						],
+						"sio:hasComponentPart": [{
+								"@for": "fc, particle in enumerate(row.findall('MATERIALS/Filler/FillerComponent'))",
+								"@do": {
+									"@id": "sample:{{slugify(id.text.replace(' ',''))}}_filler_{{fc}}",
+									"@type": [{
+											"@if": "particle.find('PubChemRef') is not None and particle.find('PubChemRef').text is not None",
+											"@id": "pubchem:{{particle.find('PubChemRef').text.replace(' ','')}}",
+											"@type": "owl:Class",
+											"rdfs:label": [{
+													"@value": "{{particle.find('ChemicalName').text}}",
+													"@if": "particle.find('ChemicalName').text is not None"
+												},
+												{
+													"@value": "{{particle.find('Abbreviation').text}}",
+													"@if": "particle.find('ChemicalName').text is None and particle.find('Abbreviation').text is not None"
+												}
+											]
+										},
+										{
+											"@if": "(particle.find('PubChemRef') is None or particle.find('PubChemRef').text is None) and particle.find('ChemicalName').text is not None",
+											"@id": "compound:{{camelcase(particle.find('ChemicalName').text)}}",
+											"@type": "owl:Class",
+											"rdfs:label": "{{particle.find('ChemicalName').text}}"
+										},
+										{
+											"@if": "(particle.find('PubChemRef') is None or particle.find('PubChemRef').text is None) and particle.find('ChemicalName').text is None and particle.find('Abbreviation').text is not None",
+											"@id": "compound:{{camelcase(particle.find('Abbreviation').text)}}",
+											"@type": "owl:Class",
+											"rdfs:label": "{{particle.find('Abbreviation').text}}"
+										}
+									],
+									"sio:hasRole": {
+										"@type": "nanomine:Filler",
+										"sio:inRelationTo": {
+											"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
+										}
+									},
+									"sio:hasAttribute": [{
+											"@for": ["fraction in [ x for x in [",
+												"particle.find('FillerComponentComposition/*'),",
+												"row.find('MATERIALS/Filler/FillerComposition/Fraction/*'),",
+												"] if x is not None][:1]"
+											],
+											"@do": {
+												"@id": "sample:{{slugify(id.text.replace(' ',''))}}_filler_{{fc}}_{{fraction.tag}}_fraction",
+												"sio:hasValue": {
+													"@value": "{{fraction.text}}",
+													"@type": "xsd:double"
+												},
+												"@type": "nanomine:{{fraction.tag.title()}}Fraction"
+											}
+										},
+
+
+
+										{
+											"@if": "particle.find('Density')",
+											"@for": "density in particle.findall('Density')",
+											"@do": {
+												"@type": "sio:Density",
+												"sio:hasValue": {
+													"@value": "{{density.find('value').text}}",
+													"@type": "xsd:double"
+												},
+												"sio:hasUnit": [{
+													"@if": "density.find('unit')",
+													"@id": "unit:{{slugify(density.find('unit').text)}}",
+													"rdfs:label": "{{density.find('unit').text}}"
+												}]
+											}
+										},
+										{
+											"@if": "particle.find('SurfaceArea').find('specific') is not None",
+											"@for": "area in particle.findall('SurfaceArea')",
+											"@do": {
+												"@type": "nanomine:SpecificSurfaceArea",
+												"sio:hasValue": {
+													"@value": "{{area.find('.//value').text}}",
+													"@type": "xsd:double"
+												},
+												"sio:hasUnit": [{
+													"@if": "area.find('unit') is not None",
+													"@id": "unit:{{slugify(area.find('unit').text)}}",
+													"rdfs:label": "{{area.find('unit').text}}"
+												}],
+												"sio:hasAttribute": [{
+													"@if": "area.find('.//uncertainty')",
+													"@type": [
+														"sio:UncertaintyValue",
+														{
+															"@if": "area.find('.//uncertainty/type').text == 'relative'",
+															"@id": "sio:Ratio"
+														},
+														{
+															"@if": "area.find('.//uncertainty/type').text == 'absolute'",
+															"@id": "sio:StandardDeviation"
+														}
+													],
+													"sio:hasValue": {
+														"@value": "{{area.find('.//uncertainty/value').text}}",
+														"@type": "xsd:double"
+													}
+												}]
+											}
+										},
+										{
+											"@for": "ratio in particle.findall('ParticleAspectRatio')",
+											"@do": {
+												"@type": "sio:AspectRatio",
+												"sio:hasValue": {
+													"@value": "{{ratio.find('value').text}}",
+													"@type": "xsd:double"
+												},
+												"sio:hasUnit": [{
+													"@if": "ratio.find('unit') is not None",
+													"@id": "unit:{{slugify(ratio.find('unit').text)}}",
+													"rdfs:label": "{{ratio.find('unit').text}}"
+												}],
+												"sio:hasAttribute": [{
+													"@if": "ratio.find('.//uncertainty')",
+													"@type": [
+														"sio:UncertaintyValue",
+														{
+															"@if": "ratio.find('.//uncertainty/type').text == 'relative'",
+															"@id": "sio:Ratio"
+														},
+														{
+															"@if": "ratio.find('.//uncertainty/type').text == 'absolute'",
+															"@id": "sio:StandardDeviation"
+														}
+													],
+													"sio:hasValue": {
+														"@value": "{{ratio.find('.//uncertainty/value').text}}",
+														"@type": "xsd:double"
+													}
+												}]
+											}
+										},
+										{
+											"@for": "size in particle.findall('SphericalParticleDiameter')",
+											"@do": {
+												"@type": "sio:Width",
+												"sio:hasValue": {
+													"@value": "{{size.find('value').text}}",
+													"@type": "xsd:double"
+												},
+												"sio:hasUnit": [{
+													"@if": "size.find('unit') is not None",
+													"@id": "unit:{{slugify(size.find('unit').text)}}",
+													"rdfs:label": "{{size.find('unit').text}}"
+												}],
+												"sio:hasAttribute": [{
+													"@if": "size.find('.//uncertainty') is not None",
+													"@type": [
+														"sio:UncertaintyValue",
+														{
+															"@if": "size.find('.//uncertainty/type').text == 'relative'",
+															"@id": "sio:Ratio"
+														},
+														{
+															"@if": "size.find('.//uncertainty/type').text == 'absolute'",
+															"@id": "sio:StandardDeviation"
+														}
+													],
+													"sio:hasValue": {
+														"@value": "{{size.find('.//uncertainty/value').text}}",
+														"@type": "xsd:double"
+													}
+												}]
+											}
+										},
+										{
+											"@for": "phase in particle.findall('CrystalPhase')",
+											"@do": {
+												"@type": [
+													"nanomine:CrystalPhase",
+													{
+														"@id": "nanomine:{{camelcase(phase.text)}}",
+														"@type": "owl:Class",
+														"rdfs:label": "{{phase.text}}",
+														"rdfs:subClassOf": {
+															"@id": "nanomine:CrystalPhase"
+														}
+													}
+												]
+											}
+										},
+										{
+											"@for": "shape in particle.findall('NonSphericalShape')",
+											"@do": {
+												"sio:hasAttribute": [{
+														"@type": "nanomine:NonSpherical",
+														"@id": "sio:Shape"
+													},
+													{
+														"@if": "shape.find('.//Width') is not None",
+														"@type": "sio:Width",
+														"sio:hasValue": {
+															"@value": "{{shape.find('.//Width/value').text}}",
+															"@type": "xsd:double"
+														},
+														"sio:hasUnit": [{
+															"@if": "shape.find('.//Width/unit') is not None",
+															"@id": "unit:{{slugify(shape.find('.//Width/unit').text)}}",
+															"rdfs:label": "{{shape.find('.//Width/unit').text}}"
+														}],
+														"sio:hasAttribute": [{
+															"@if": "shape.find('.//Width/uncertainty') is not None",
+															"@type": [
+																"sio:UncertaintyValue",
+																{
+																	"@if": "shape.find('.//Width/uncertainty/type').text == 'relative'",
+																	"@id": "sio:Ratio"
+																},
+																{
+																	"@if": "shape.find('.//Width/uncertainty/type').text == 'absolute'",
+																	"@id": "sio:StandardDeviation"
+																}
+															],
+															"sio:hasValue": {
+																"@value": "{{shape.find('.//Width/uncertainty/value').text}}",
+																"@type": "xsd:double"
+															}
+														}]
+													},
+													{
+														"@if": "shape.find('.//Length') is not None",
+														"@type": "sio:Length",
+														"sio:hasValue": {
+															"@value": "{{shape.find('.//Length/value').text}}",
+															"@type": "xsd:double"
+														},
+														"sio:hasUnit": [{
+															"@if": "shape.find('.//Length/unit') is not None",
+															"@id": "unit:{{slugify(shape.find('.//Length/unit').text)}}",
+															"rdfs:label": "{{shape.find('.//Length/unit').text}}"
+														}],
+														"sio:hasAttribute": [{
+															"@if": "shape.find('.//Length/uncertainty') is not None",
+															"@type": [
+																"sio:UncertaintyValue",
+																{
+																	"@if": "shape.find('.//Length/uncertainty/type').text == 'relative'",
+																	"@id": "sio:Ratio"
+																},
+																{
+																	"@if": "shape.find('.//Length/uncertainty/type').text == 'absolute'",
+																	"@id": "sio:StandardDeviation"
+																}
+															],
+															"sio:hasValue": {
+																"@value": "{{shape.find('.//Length/uncertainty/value').text}}",
+																"@type": "xsd:double"
+															}
+														}]
+													},
+													{
+														"@if": "shape.find('.//Depth') is not None",
+														"@type": "sio:Depth",
+														"sio:hasValue": {
+															"@value": "{{shape.find('.//Depth/value').text}}",
+															"@type": "xsd:double"
+														},
+														"sio:hasUnit": [{
+															"@if": "shape.find('.//Depth/unit') is not None",
+															"@id": "unit:{{slugify(shape.find('.//Depth/unit').text)}}",
+															"rdfs:label": "{{shape.find('.//Depth/unit').text}}"
+														}],
+														"sio:hasAttribute": [{
+															"@if": "shape.find('.//Depth/uncertainty') is not None",
+															"@type": [
+																"sio:UncertaintyValue",
+																{
+																	"@if": "shape.find('.//Depth/uncertainty/type').text == 'relative'",
+																	"@id": "sio:Ratio"
+																},
+																{
+																	"@if": "shape.find('.//Depth/uncertainty/type').text == 'absolute'",
+																	"@id": "sio:StandardDeviation"
+																}
+															],
+															"sio:hasValue": {
+																"@value": "{{shape.find('.//Depth/uncertainty/value').text}}",
+																"@type": "xsd:double"
+															}
+														}]
+													}
+
+												]
+											}
+										}
+
+
+									],
+									"sio:isSurroundedBy": [{
+										"@for": "surface in particle.findall('ParticleSurfaceTreatment') if len(particle.findall('ParticleSurfaceTreatment')) > 0 else particle.findall('ParticleSurfaceTreatment')",
+										"@do": {
+											"@id": "sample:{{slugify(id.text.replace(' ',''))}}_filler_{{fc}}_surfacetreatment",
+											"@type": [{
+													"@if": "surface.find('PubChemRef') is not None and surface.find('PubChemRef').text is not None",
+													"@id": "pubchem:{{surface.find('PubChemRef').text.replace(' ','')}}",
+													"@type": "owl:Class",
+													"rdfs:label": [{
+															"@value": "{{surface.find('ChemicalName').text}}",
+															"@if": "surface.find('ChemicalName').text is not None"
+														},
+														{
+															"@value": "{{surface.find('Abbreviation').text}}",
+															"@if": "surface.find('ChemicalName').text is None and surface.find('Abbreviation').text is not None"
+														}
+													]
+												},
+												{
+													"@if": "(surface.find('PubChemRef') is None or surface.find('PubChemRef').text is  None) and surface.find('ChemicalName').text is not None",
+													"@id": "compound:{{camelcase(surface.find('ChemicalName').text)}}",
+													"@type": "owl:Class",
+													"rdfs:label": "{{surface.find('ChemicalName').text}}"
+												},
+												{
+													"@if": "(surface.find('PubChemRef') is None or surface.find('PubChemRef').text is None) and surface.find('ChemicalName').text is None and surface.find('Abbreviation').text is not None",
+													"@id": "compound:{{camelcase(surface.find('Abbreviation').text)}}",
+													"@type": "owl:Class",
+													"rdfs:label": "{{surface.find('Abbreviation').text}}"
+												}
+											],
+											"sio:hasRole": {
+												"@type": "nanomine:SurfaceTreatment",
+												"sio:inRelationTo": {
+													"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
+												}
+											}
+										}
+									}]
+								}
+							},
+							{
+								"@for": "polymer in row.findall('MATERIALS/Matrix/MatrixComponent')",
+								"@do": {
+									"@id": "sample:{{slugify(id.text.replace(' ',''))}}_matrix",
+									"@type": [{
+											"@if": "polymer.find('PubChemRef') is not None and polymer.find('PubChemRef').text is not None",
+											"@id": "pubchem:{{polymer.find('PubChemRef').text.replace(' ','')}}",
+											"@type": "owl:Class",
+											"rdfs:label": [{
+													"@value": "{{polymer.find('ChemicalName').text}}",
+													"@if": "polymer.find('ChemicalName').text is not None"
+												},
+												{
+													"@value": "{{polymer.find('Abbreviation').text}}",
+													"@if": "polymer.find('ChemicalName').text is None and polymer.find('Abbreviation').text is not None"
+												}
+											]
+										},
+										{
+											"@if": "(polymer.find('PubChemRef') is None or polymer.find('PubChemRef').text is None) and polymer.find('ChemicalName').text is not None",
+											"@id": "compound:{{camelcase(polymer.find('ChemicalName').text)}}",
+											"@type": "owl:Class",
+											"rdfs:label": "{{polymer.find('ChemicalName').text}}"
+										},
+										{
+											"@if": "(polymer.find('PubChemRef') is None or polymer.find('PubChemRef').text is None) and polymer.find('ChemicalName').text is None and polymer.find('Abbreviation').text is not None",
+											"@id": "compound:{{camelcase(polymer.find('Abbreviation').text)}}",
+											"@type": "owl:Class",
+											"rdfs:label": "{{polymer.find('Abbreviation').text}}"
+										}
+
+									],
+									"sio:hasRole": {
+										"@type": "nanomine:Matrix",
+										"sio:inRelationTo": {
+											"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
+										}
+									}
+
+
+								}
+							}
+						],
+						"@reverse": {
+							"prov:specializationOf": [{
+								"@for": "i, property in properties.iterrows()",
+								"@do": {
+									"@if": "not isempty(property.xpath) and row.find('PROPERTIES')",
+									"@for": "table in row.find('PROPERTIES').findall('.'+property.xpath+'//data')",
+									"@do": {
+										"@for": "row in table.findall('rows/row')",
+										"@do": [{
+											"@if": "row.findall('column')[1].text is not None and row.findall('column')[0].text is not None",
+											"@id": "sample:{{slugify(id.text.replace(' ',''))}}_{{slugify(property.uri)}}_{{row.attrib['id']}}",
+											"sio:hasAttribute": [{
+													"@type": "{{property.uri}}",
+													"sio:hasValue": {
+														"@value": "{{float(row.findall('column')[1].text)}}",
+														"@type": "xsd:double"
+													}
+												},
+												{
+													"@type": [{
+															"@if": "not isempty(property.curveIndependentVar)",
+															"@id": "{{property.curveIndependentVar}}"
+														},
+														{
+															"@if": "isempty(property.curveIndependentVar) and table.findall('headers/column')[0].text is not None",
+															"@id": "nanomine:{{camelcase(table.findall('headers/column')[0].text)}}",
+															"@type": "owl:Class",
+															"rdfs:subClassOf": {
+																"@id": "sio:Quantity"
+															},
+															"rdfs:label": "{{table.findall('headers/column')[0].text}}"
+														}
+													],
+													"sio:hasValue": {
+														"@value": "{{row.findall('column')[0].text}}",
+														"@type": "xsd:double"
+													}
+												}
+											]
+										}]
+									}
+								}
+							}]
+						},
+						"sio:hasAttribute": [{
+							"@for": "i, property in properties.iterrows()",
+							"@do": {
+								"@if": "not isempty(property.xpath) and row.find('PROPERTIES') and not row.find('PROPERTIES').findall('.'+property.xpath+'/data')",
+								"@for": "value in row.find('PROPERTIES').findall('.'+property.xpath)",
+								"@do": [{
+									"@type": "{{property.uri}}",
+									"dc:description": [{
+										"@if": "value.find('description') is not None",
+										"@value": "{{value.find('description').text}}"
+									}],
+									"sio:hasValue": [{
+										"@if": "value.find('value') is not None",
+										"@value": "{{value.find('value').text}}",
+										"@type": "xsd:double"
+									}],
+									"sio:hasUnit": [{
+										"@if": "value.find('unit') is not None",
+										"@id": "unit:{{slugify(value.find('unit').text)}}",
+										"rdfs:label": "{{value.find('unit').text}}"
+									}],
+									"sio:hasAttribute": [{
+										"@for": "uncertainty in value.findall('uncertainty')",
+										"@do": {
+											"@type": [
+												"sio:UncertaintyValue",
+												{
+													"@if": "uncertainty.find('type').text == 'relative'",
+													"@id": "sio:Ratio"
+												},
+												{
+													"@if": "uncertainty.find('type').text == 'absolute'",
+													"@id": "sio:StandardDeviation"
+												}
+											],
+											"sio:hasValue": {
+												"@value": "{{uncertainty.find('value').text}}",
+												"@type": "xsd:double"
+											}
+										}
+									}]
+								}]
+							}
+						}]
+					}
+				]
+			},
+			"nanopub:hasPublicationInfo": {
+				"@id": "entry:{{id.text.replace(' ','')}}_pubinfo",
+				"@type": "nanopub:PublicationInfo",
+				"@graph": []
+			},
+			"nanopub:hasProvenance": {
+				"@id": "entry:{{id.text.replace(' ','')}}_provenance",
+				"@type": "nanopub:Provenance",
+				"@graph": [{
+						"@id": "entry:{{id.text.replace(' ','')}}_assertion",
+						"prov:wasGeneratedBy": [{
+							"@for": "i, method in methods.iterrows()",
+							"@do": {
+								"@if": "not isempty(method.xpath) and row.findall('.'+method.xpath)",
+								"@for": "value in row.findall('.'+method.xpath)",
+								"@do": [{
+									"@id": "entry:{{id.text.replace(' ','')}}_characterization_{{slugify(value.tag)}}",
+									"@type": [
+										"prov:Activity",
+										"sio:Measuring",
+										"{{method.uri}}"
+									],
+									"dc:description": [{
+										"@if": "value.find('Description')",
+										"@value": "{{value.find('Description').text}}"
+									}],
+									"prov:used": [{
+										"@for": "equipment in list(value.findall('./Equipment')) + list(value.findall('./EquipmentUsed'))",
+										"@do": {
+											"@type": [{
+													"@id": "nanomine:{{slugify(equipment.text)}}",
+													"@type": "owl:Class",
+													"rdfs:subClassOf": {
+														"@id": "sio:Device"
+													},
+													"rdfs:label": "{{equipment.text}}"
+												},
+												"sio:Device"
+											],
+											"sio:hasAttribute": [{
+												"@for": "i, method_attr in methods.iterrows()",
+												"@do": {
+													"@if": "not isempty('.'+method_attr.xpath) and value.findall('.'+method_attr.xpath)",
+													"@type": "method_attr.uri",
+													"sio:hasValue": {
+														"@value": "{{value.findall('.'+method_attr.xpath)[0].find('value').text}}",
+														"@type": "xsd:double"
+													},
+													"sio:hasUnit": [{
+														"@if": "value.findall('.'+method_attr.xpath)[0].find('unit') is not None",
+														"@id": "unit:{{slugify(value.findall('.'+method_attr.xpath)[0].find('unit').text)}}",
+														"rdfs:label": "{{value.findall('.'+method_attr.xpath)[0].find('unit').text}}"
+													}],
+													"sio:hasAttribute": [{
+														"@if": "value.findall('.'+method_attr.xpath)[0].find('.//uncertainty') is not None",
+														"@type": [
+															"sio:UncertaintyValue",
+															{
+																"@if": "value.findall('.'+method_attr.xpath)[0].find('.//uncertainty/type').text == 'relative'",
+																"@id": "sio:Ratio"
+															},
+															{
+																"@if": "value.findall('.'+method_attr.xpath)[0].find('.//uncertainty/type').text == 'absolute'",
+																"@id": "sio:StandardDeviation"
+															}
+														],
+														"sio:hasValue": {
+															"@value": "{{value.findall('.'+method_attr.xpath)[0].find('.//uncertainty/value').text}}",
+															"@type": "xsd:double"
+														}
+													}]
+												}
+											}]
+										}
+									}]
+								}]
+							}
+						}]
+					},
+					{
+						"@for": "citation in row.findall('DATA_SOURCE/Citation')",
+						"@do": {
+							"@id": "entry:{{id.text.replace(' ','')}}_assertion",
+							"prov:generatedAtTime": [{
+								"@if": "citation.find('CommonFields/DateOfCitation')",
+								"@type": "xsd:date",
+								"@value": "{{citation.find('CommonFields/DateOfCitation').text"
+							}],
+							"prov:wasQuotedFrom": [{
+								"@id": "{%if citation.find('CommonFields/DOI') != None %}doi:{{citation.find('CommonFields/DOI').text.replace('<','%3C').replace('>','%3E')}}{%else%}entry:{{id.text.replace(' ','-')}}{%endif%}",
+								"@type": [
+									"dcterms:BibliographicResource",
+									{
+										"@id": "{{ {'research article':'nanomine:ResearchArticle','conference proceeding':'nanomine:ProceedingsArticle','communication':'nanomine:Communication','review':'nanomine:ReviewArticle','letter':'bibo:Letter','technical comment':'nanomine:TechnicalComment'}[citation.find('CommonFields/CitationType').text] }}"
+									}
+								],
+								"dcterms:title": "{{citation.find('CommonFields/Title').text}}",
+								"rdfs:label": "{{citation.find('CommonFields/Title').text}}",
+								"rdfs:seeAlso": {
+									"@if": "citation.find('CommonFields/URL').text",
+									"@id": "{{citation.find('CommonFields/URL').text.replace('<','%3C').replace('>','%3E')}}"
+								},
+								"dcterms:created": {
+									"@value": "{{citation.find('CommonFields/PublicationYear').text}}",
+									"@type": "xsd:integer"
+								},
+								"bibo:volume": {
+									"@if": "citation.find('CommonFields/Volume').text",
+									"@value": "{{citation.find('CommonFields/Volume').text}}",
+									"@type": "xsd:integer"
+								},
+								"dcterms:language": {
+									"@if": "citation.find('CommonFields/Language').text",
+									"@id": "lang:{{slugify(citation.find('CommonFields/Language').text)}}",
+									"@type": "dcterms:LinguisticSystem",
+									"rdfs:label": "{{citation.find('CommonFields/Language').text}}"
+								},
+								"dcterms:creator": [{
+									"@for": "author in citation.findall('CommonFields/Author')",
+									"@do": {
+										"@id": "author:{{slugify(author.text)}}",
+										"@type": "prov:Agent",
+										"foaf:name": "{{author.text}}",
+										"rdfs:label": "{{author.text}}",
+										"@reverse": {
+											"prov:wasAttributedTo": {
+												"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
+											}
+										}
+									}
+								}],
+								"dcterms:isPartOf": {
+									"@if": "citation.find('CommonFields/Publication').text",
+									"@id": "publication:{{slugify(citation.find('CommonFields/Publication').text)}}",
+									"dcterms:title": "{{citation.find('CommonFields/Publication').text}}",
+									"dcterms:publisher": {
+										"@if": "citation.find('CommonFields/Publisher').text",
+										"@id": "publisher:{{slugify(citation.find('CommonFields/Publisher').text)}}",
+										"rdfs:label": "{{citation.find('CommonFields/Publisher').text}}",
+										"prov:atLocation": {
+											"@if": "citation.find('CommonFields/Location').text",
+											"@type": "dcterms:Location",
+											"@id": "location:{{slugify(citation.find('CommonFields/Location').text)}}",
+											"rdfs:label": "{{citation.find('CommonFields/Location').text}}"
+										}
+									}
+								},
+								"sio:hasPart": {
+									"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
+								},
+								"dcat:keyword": [{
+									"@for": "keyword in citation.findall('CommonFields/Keyword')",
+									"@do": [{
+											"@if": "';' in keyword.text",
+											"@for": "k in re.split('\\\\s*[;]\\\\s*', keyword.text)",
+											"@do": "{{k.strip().title()}}"
+										},
+										{
+											"@if": "';' not in keyword",
+											"@value": "{{keyword.text.strip().title()}}"
+										}
+									]
+								}]
+							}]
+						}
+					}
+				]
+			}
+		}]
+	}
+}]""" .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_13> <http://semanticscience.org/resource/hasAttribute> <bnode:9abbdd42e92544808dada1fe58867a14> .
+<bnode:987691d1d0864a3ba1c3ceac98cb5856> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrength> .
+<bnode:971e041882e94b9eaf46f81d5ad48d75> <http://semanticscience.org/resource/hasValue> "489390.0918"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:ea8c76f8d6da46629c23540faa061718> <http://www.w3.org/ns/prov#hadRole> <bnode:82636b8d5f1d4be6a498d7d2ec35cb83> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_6> <http://semanticscience.org/resource/hasAttribute> <bnode:cccceab85fc446b8961883e4f4561679> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_7> <http://semanticscience.org/resource/hasAttribute> <bnode:7adc5149ea5945a6911d919d0314d8ee> .
+<bnode:8d4b01b3e68e4832a7be55782b64f84d> <http://semanticscience.org/resource/hasValue> "135.4974638"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/setl/xml/nanopubs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdfs.org/ns/void#Dataset> .
+<bnode:0e1e9cead44542dcb5d53ff91a8bed99> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:bd2d93992c7f4d44ada0e3509cc0912c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Nanopublication> .
+<bnode:e49d058c53574089afe0731e50795920> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/ns/FrequencyHz> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/Quantity> .
+<bnode:ced724ed19d741abbe194e7de3f3b65c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Electric Breakdown" .
+<bnode:5c97995eb6e84a37aeb1a9cb25105624> <http://semanticscience.org/resource/hasValue> "78688.41195"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:234c375e0ccd49b8b9084b2621d47c4f> <http://semanticscience.org/resource/hasValue> "0.010122411"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:556c9bdff5f3475fb938f5e0d3d19ecf> <http://semanticscience.org/resource/hasValue> "0.013182674"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:1a63dc2b16b1428baade75d3e79442e0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_11> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:370f5b18310145b08ef4f8953945aa58> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_20> <http://semanticscience.org/resource/hasAttribute> <bnode:0bc8394c43084207a4f1401ace90f38f> .
+<http://localhost:5000/pub/MjAwNDA1LjgyNTE0MjI2Mzc4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/vocab/frbr/core#Work> .
+<bnode:9093e9939aac4c5c9539894f54e76708> <http://semanticscience.org/resource/hasValue> "0.512905286"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:d0d39ab17d35467090cdff1297864f6c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:4f99abe0efd64189a572b1a189d02dab> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_3> <http://semanticscience.org/resource/hasAttribute> <bnode:ae1b1ce2773f48629fb4a44d4d70337b> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_11> <http://semanticscience.org/resource/hasAttribute> <bnode:100b668af292477db20e1ce6c4d4a91d> .
+<bnode:13ce2dea52aa41fc8110b75cc71196b6> <http://semanticscience.org/resource/hasValue> "0.003060264"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_9> <http://semanticscience.org/resource/hasAttribute> <bnode:d7a8c557abbc4cd4a2ff3577c4f5a9f5> .
+<bnode:cf03cfbb758a4293969324e74f35838f> <http://semanticscience.org/resource/hasValue> "0.082305244"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_2> <http://semanticscience.org/resource/hasAttribute> <bnode:006f3462b36e4d56bacdbb10781a85eb> .
+<bnode:caeb69a835e54ab2a2ae3e702a88066b> <http://semanticscience.org/resource/hasValue> "0.013287653"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_0> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:d7a8c557abbc4cd4a2ff3577c4f5a9f5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://nanomine.org/ns/BreakdownStrengthKvMm> <http://www.w3.org/2000/01/rdf-schema#label> "Breakdown Strength (kV/mm)" .
+<bnode:4186996b165745c38b4d36cc37ace11c> <http://semanticscience.org/resource/hasValue> "0.003060264"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:7f6dce4f738c43d2875ee5d10c78e00c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://localhost:5000/pub/bc5747ec-ad5b-11e9-babe-000c29406e9a> <http://purl.org/vocab/frbr/core#realizationOf> <http://localhost:5000/pub/MjAwNDA1LjgyNTE0MjI2Mzc4> .
+<bnode:164d69ae3b2043f19b5d2ff24d4fd667> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_5> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasGeneratedBy> <http://nanomine.org/entry/L155_S2_Roy_2005_characterization_coolingrate> .
+<http://nanomine.org/publication/ieee-transactions-on-dielectrics-and-electrical-insulation> <http://purl.org/dc/terms/title> "IEEE Transactions on Dielectrics and Electrical Insulation" .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasPublicationInfo> <http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_pubinfo> .
+<bnode:8a475acde098440392f8c4797b7133b6> <http://semanticscience.org/resource/hasValue> "87.5667591"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:5dff33a32cdd4de68d6fba74820afd5f> <http://semanticscience.org/resource/hasValue> "0.08278107"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a> <http://purl.org/vocab/frbr/core#realizationOf> <http://localhost:5000/pub/NTk5NTE4LjgyMjIxNDI5MTM> .
+<bnode:f64fb5c5c2e04bf6929ce25f5571560b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Permittivity" .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_7> <http://semanticscience.org/resource/hasAttribute> <bnode:99847578cfcf487eaf16ce6f8afba420> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_6> <http://semanticscience.org/resource/hasAttribute> <bnode:f3f66d32c40e4e6a9f839ec7a91e00bb> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasGeneratedBy> <http://nanomine.org/entry/L155_S2_Roy_2005_characterization_pulsed-electro-acoustic> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_13> <http://semanticscience.org/resource/hasAttribute> <bnode:39f832c7e57448f7965ed1856fdce098> .
+<bnode:1b9e71e074a74d8488c85c077a94369f> <http://semanticscience.org/resource/hasValue> "0.013287653"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_19> <http://semanticscience.org/resource/hasAttribute> <bnode:5c97995eb6e84a37aeb1a9cb25105624> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_4> <http://semanticscience.org/resource/hasAttribute> <bnode:887a7f5bac564b1094d5a35cb76f9e49> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_5> <http://semanticscience.org/resource/hasAttribute> <bnode:43db0dc0105647e6900264de1b5ca78e> .
+<http://nanomine.org/author/reed-c-w> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<bnode:f3f66d32c40e4e6a9f839ec7a91e00bb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_10> <http://semanticscience.org/resource/hasAttribute> <bnode:b129b577ab354f0d84cd13ca28a67e64> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_provenance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Provenance> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_17> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:0d7410bd82c941df9989dd1abbbaca2a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Device> .
+<bnode:bef6a01f81c847d4bf643a2532f14208> <http://semanticscience.org/resource/hasValue> "134.381128734"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:dee73dd080e9417aa2aacde74f895db7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/StandardDeviation> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://purl.org/dc/terms/isPartOf> <http://nanomine.org/publication/ieee-transactions-on-dielectrics-and-electrical-insulation> .
+<bnode:03e787dc6bd848c98346f07111e59548> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<bnode:6c970dcf99e84e968971442f7a022dd8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<bnode:2235da5f12de4056af5f335e1cb486fd> <http://semanticscience.org/resource/hasValue> "37.44027712"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:6682314b4e8c4a88ad2b94cd170089ae> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_14> <http://semanticscience.org/resource/hasAttribute> <bnode:9d11a7e21cbd44ef99560ba4541b55cf> .
+<bnode:94dd41a542d04abbb4a82037b3e6d970> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:a0014317c1cb41f3926574c13f6812a9> <http://semanticscience.org/resource/hasValue> "168.8625957"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Electrical Insulation" .
+<bnode:89268f5e05484879a618c333fa978c4e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:a08f291f1eec46aaa40904bfc2a780e1> <http://semanticscience.org/resource/hasValue> "0.002589454"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_16> <http://semanticscience.org/resource/hasAttribute> <bnode:80635e09766642fe81bcfa0d74f8626c> .
+<bnode:5211cb74d97c4f4e88731ebbea9575bf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/Extract> .
+<bnode:24d16d9e8cf34c9fa71d35b7a4f93ba0> <http://semanticscience.org/resource/hasValue> "0.013207416"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/setl/xml/nanopubs> <http://www.w3.org/ns/prov#wasGeneratedBy> <bnode:e7b771b26f31495ab56a731e29459fd3> .
+<bnode:b3d98becf32948f5a2f169a2f7323393> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_4> <http://semanticscience.org/resource/hasAttribute> <bnode:fb6711e1178542a2a7bc24d2bf9a6313> .
+<bnode:29ff25f01b9d45efacc312f63a8fdb1d> <http://semanticscience.org/resource/hasValue> "137.9047896"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_14> <http://semanticscience.org/resource/hasAttribute> <bnode:d3aa3c7e6283434abbabc22101161165> .
+<http://nanomine.org/author/keefe-r> <http://www.w3.org/2000/01/rdf-schema#label> "Keefe, R." .
+<bnode:cff40d7d669b4567bd93f5a61e7f559b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrength> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_10> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/setl/xml/property_classes_table> <http://www.w3.org/ns/prov#wasGeneratedBy> <bnode:5211cb74d97c4f4e88731ebbea9575bf> .
+<bnode:046c93c1fd1c4339b35263fd16cdde0d> <http://semanticscience.org/resource/hasValue> "-0.486164138659"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:006f3462b36e4d56bacdbb10781a85eb> <http://semanticscience.org/resource/hasValue> "136.6958274"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:ff5bea58476e45efa1eb8dda0b5e799c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_3> <http://semanticscience.org/resource/hasAttribute> <bnode:6c4243eefa9643a2acbe88e75576ce88> .
+<bnode:641f0eff75704899b830901775c043f0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/WeibullPlot> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_2> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<file:///tmp/tmp9nhezjc5> <http://purl.org/dc/terms/contributor> <http://localhost:5000/user/identifier> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_0> <http://semanticscience.org/resource/hasAttribute> <bnode:f5ff47eca2ac479697b9e552c90870e1> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://purl.org/dc/terms/created> "2005"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasGeneratedBy> <http://nanomine.org/entry/L155_S2_Roy_2005_characterization_differential-scanning-calorimetry> .
+<bnode:ca524b068e2c4984ab6b0f9a1b27e559> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<bnode:143779a3d91244f195da1d7cfb6e46bd> <http://semanticscience.org/resource/hasValue> "788.0462816"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:47aad74f09284ada9dc5d49cd8bb5e31> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:29c56ff4f3514e9ab0180ddaa102b0fa> <http://semanticscience.org/resource/hasValue> "148.839039321"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:1ad22909e4144081a064fe2ad357fe25> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+_:N77720922f1254004870262070d006dbd <http://www.w3.org/ns/prov#used> <http://localhost:5000/pub/bc5747ef-ad5b-11e9-babe-000c29406e9a_assertion> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Spectroscopy" .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_10> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_fourier-transform-infrared-spectroscopy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FourierTransformInfraredSpectroscopy> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_5> <http://semanticscience.org/resource/hasAttribute> <bnode:38dfea95aa72430aa72075646e7501b1> .
+<bnode:5bb62f512be741d2979d9b7f62683287> <http://semanticscience.org/resource/hasValue> "93.3498204"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_2> <http://semanticscience.org/resource/hasAttribute> <bnode:caeb69a835e54ab2a2ae3e702a88066b> .
+<bnode:bffc5fe5da4b49f79a96745b8a4842f6> <http://semanticscience.org/resource/hasValue> "0.02306968"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_0> <http://semanticscience.org/resource/hasAttribute> <bnode:739df60f2a5f49339873fba157086a97> .
+<bnode:322af95df7c844fda9f1e67ac5d443d6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Device> .
+<http://nanomine.org/sample/l155-s2-roy-2005> <http://semanticscience.org/resource/hasAttribute> <bnode:a96de6b6152e45fa9a0a1cc47958e884> .
+<bnode:bdb010d9ce4143c48e5f77e8cf82cffa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_7> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Nanoparticles" .
+<bnode:025d7ff7b3be4fc0aa7741d2b091a808> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<bnode:7a2864f0805d4c50809fad010610374e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_3> <http://semanticscience.org/resource/hasAttribute> <bnode:685ac26b73db45cb8ba64bf4a46f9391> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Electron Paramagnetic Resonance" .
+<bnode:f22795f8be274560b239bc061a0ec6b8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/ns/rheometric-scientific-dmta-model-v> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/Device> .
+<http://nanomine.org/sample/l155-s2-roy-2005> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/PolymerNanocomposite> .
+<bnode:6dd197b4d752427b9ac5b54fb1ddf47a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_4> <http://semanticscience.org/resource/hasAttribute> <bnode:cf03cfbb758a4293969324e74f35838f> .
+<bnode:363b66d1036d447cbf67b45a32a2798f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_15> <http://semanticscience.org/resource/hasAttribute> <bnode:036a359c84174be692d518b2a7a08ee2> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://purl.org/dc/terms/creator> <http://nanomine.org/author/schadler-l-s> .
+<bnode:60f5130b7f444c37b81e2f311c57062b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<bnode:d0d39ab17d35467090cdff1297864f6c> <http://semanticscience.org/resource/hasValue> "1.92"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:72413a4daf2749208ec0f6ea795dacf2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:4186996b165745c38b4d36cc37ace11c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_heatingrate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+<bnode:4be296bc592d4655a8a7a9662c48d159> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<bnode:7c8a56f547904da6a013a9fa644696af> <http://semanticscience.org/resource/hasValue> "150.5983687"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_5> <http://semanticscience.org/resource/hasAttribute> <bnode:02d9c9b19ca94e538173244cb7fd3352> .
+<bnode:53573679a4714554b653fc3c5a2afe84> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/MeltingTemperature> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_xray-photoelectron-spectroscopy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Measuring> .
+<http://nanomine.org/sample/l155-s2-roy-2005> <http://www.w3.org/ns/prov#wasAttributedTo> <http://nanomine.org/author/nelson-j-k> .
+<bnode:4de9b9926cf04c21b2bc720fb27e39a5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_21> <http://semanticscience.org/resource/hasAttribute> <bnode:6db63b2b09cc411eb0c8805e66f0562e> .
+<bnode:6db63b2b09cc411eb0c8805e66f0562e> <http://semanticscience.org/resource/hasValue> "0.002354049"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_3> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_1> <http://semanticscience.org/resource/hasAttribute> <bnode:37526e36b0e747b5a1d7e9feeccfe6aa> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_8> <http://semanticscience.org/resource/hasAttribute> <bnode:12250c61f6ac43e7ac3ee5613990a785> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_8> <http://semanticscience.org/resource/hasAttribute> <bnode:7474c22efcbd472ea548275447e8f6cd> .
+<file:///tmp/tmp9nhezjc5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.iana.org/assignments/media-types/text/xml> .
+<bnode:72a08f802633438a8a4d468fef327f38> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrength> .
+<bnode:fe039a6913374dcbb6151964ed08bbda> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_2> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:166a37acd79544c38df5f2e34585d533> <http://semanticscience.org/resource/hasValue> "1.9275"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_11> <http://semanticscience.org/resource/hasAttribute> <bnode:380084dc61074d1fb08a91ed6ea8dfcf> .
+<bnode:b47e7e91c431427ea8af0c8c09062cb0> <http://semanticscience.org/resource/hasValue> "554.3522963"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_3> <http://semanticscience.org/resource/hasAttribute> <bnode:ecfaea5c3c27446bb8a815394681302c> .
+<bnode:b0ec8de9ab5b4062a86542237c3dfa5f> <http://semanticscience.org/resource/hasValue> "0.004237288"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/ns/unit/celsius-minute> <http://www.w3.org/2000/01/rdf-schema#label> "Celsius/minute" .
+<bnode:5e14cd48136a4d4790bc33407807e1e8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:///apps/whyis/method_attr.uri> .
+<bnode:685ac26b73db45cb8ba64bf4a46f9391> <http://semanticscience.org/resource/hasValue> "2.385"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:38dfea95aa72430aa72075646e7501b1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/WeibullPlot> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_15> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:04be7f72d96f4d33b22e96e17f75aa0b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_10> <http://semanticscience.org/resource/hasAttribute> <bnode:17ff60e806684938a5d47b99a69040a0> .
+<bnode:6693c2628f9c4ff8974847d93a59b0ef> <http://purl.org/dc/terms/identifier> "properties" .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_11> <http://semanticscience.org/resource/hasAttribute> <bnode:2deaa66c466f4a6085149c65f05ac905> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://purl.org/dc/terms/creator> <http://nanomine.org/author/maccrone-r-k> .
+<https://www.iana.org/assignments/media-types/text> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/FileFormat> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_2> <http://semanticscience.org/resource/hasAttribute> <bnode:24d16d9e8cf34c9fa71d35b7a4f93ba0> .
+<bnode:9e014898908e403e9c6b8d751febbea0> <http://semanticscience.org/resource/hasValue> "81.0239571"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:d6db18c03bd5496289d10580fdd8a2d7> <http://semanticscience.org/resource/hasValue> "0.02306968"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_19> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:5bb62f512be741d2979d9b7f62683287> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/WeibullPlot> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_xray-photoelectron-spectroscopy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/XRay_Photoelectron_Spectroscopy> .
+<bnode:9112cb0a89b6447bb0c01772d37971a9> <http://semanticscience.org/resource/hasValue> "0.08278107"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_12> <http://semanticscience.org/resource/hasAttribute> <bnode:cdf490889b3b47b697b2605296f30c2d> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_18> <http://semanticscience.org/resource/hasAttribute> <bnode:5eec5e7ba7734f00811522999c13e1bf> .
+<http://localhost:5000/pub/bc5747ec-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Assertion> .
+<bnode:322af95df7c844fda9f1e67ac5d443d6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/novocontrol-alpha-analyzer-type-k-in-combination-with-a-novocontrol-active-bds-1200-sample-cell> .
+<bnode:c013005e43cc468dbd284e4f13fb282a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:42d38162a4724f99a1a6d082e3ae8900> <http://semanticscience.org/resource/hasValue> "24.93299398"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:6582e93136a94e3eb38d698117b87f6e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:ae88a62e244a45b3b86fdb875df700a2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_0> <http://semanticscience.org/resource/hasAttribute> <bnode:3cce9c76ab7e4449a9c2548e7558d991> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_2> <http://semanticscience.org/resource/hasAttribute> <bnode:1b9e71e074a74d8488c85c077a94369f> .
+<http://nanomine.org/sample/l155-s2-roy-2005> <http://www.w3.org/ns/prov#wasAttributedTo> <http://nanomine.org/author/keefe-r> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_18> <http://semanticscience.org/resource/hasAttribute> <bnode:f92b1c025a6a403c8e54868d36cc47e4> .
+<http://nanomine.org/ns/nicolet-nexus-470-esp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<bnode:c85c81d69d304e4c97908e61c7662f39> <http://semanticscience.org/resource/hasValue> "1966.949018"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_matrix> <http://semanticscience.org/resource/hasRole> <bnode:c6095fbf330a46bab3514d90b2519710> .
+<bnode:17ff60e806684938a5d47b99a69040a0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://nanomine.org/author/nelson-j-k> <http://xmlns.com/foaf/0.1/name> "Nelson, J.K." .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_1> <http://semanticscience.org/resource/hasAttribute> <bnode:a7281958a7314e819850185ac31c10df> .
+<http://nanomine.org/sample/l155-s2-roy-2005_filler_0_mass_fraction> <http://semanticscience.org/resource/hasValue> "0.05"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:7adc5149ea5945a6911d919d0314d8ee> <http://semanticscience.org/resource/hasValue> "1.305756117"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_0> <http://semanticscience.org/resource/hasAttribute> <bnode:a33b3d9cbaeb48c09e54719eb957d4f0> .
+<bnode:b3eb73782fb64da5ae71c802afa5cb79> <http://semanticscience.org/resource/hasValue> "49.92556641"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_18> <http://semanticscience.org/resource/hasAttribute> <bnode:fdc20446dba74252bad077981d3a76e3> .
+<bnode:3cce9c76ab7e4449a9c2548e7558d991> <http://semanticscience.org/resource/hasValue> "12.5086297"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:952e3ab3a30b454d84504ab29c69fe92> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_0> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005> <http://semanticscience.org/resource/hasAttribute> <bnode:53573679a4714554b653fc3c5a2afe84> .
+<bnode:1d43fe4db5504b45a0ce54a468c68767> <http://semanticscience.org/resource/hasValue> "0.003295669"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/author/keefe-r> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<http://nanomine.org/sample/l155-s1-roy-2005_control_role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/ControlRole> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_xray-photoelectron-spectroscopy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/XRayPhotoelectronSpectroscopy> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_20> <http://semanticscience.org/resource/hasAttribute> <bnode:29867053a0f84d17bc3ba546e5cb362c> .
+<bnode:30071068dc1e4ce986f7d704893798f6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_dielectric-and-impedance-spectroscopy-analysis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+<file:///tmp/tmp9nhezjc5> <http://open.vocab.org/terms/hasContentType> "text/xml" .
+<http://localhost:5000/pub/bc5747ee-ad5b-11e9-babe-000c29406e9a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Nanopublication> .
+<http://localhost:5000/pub/bc5747ec-ad5b-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasProvenance> <http://localhost:5000/pub/bc5747ec-ad5b-11e9-babe-000c29406e9a_provenance> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_4> <http://semanticscience.org/resource/hasAttribute> <bnode:5dff33a32cdd4de68d6fba74820afd5f> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_1> <http://semanticscience.org/resource/hasAttribute> <bnode:e389ef05f31048f0be2d4a13aceb6529> .
+<bnode:dbbe3b889e2645188b317f5fc27dbfb2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/nicolet-nexus-470-esp> .
+<http://nanomine.org/ns/rheometric-scientific-dmta-model-v> <http://www.w3.org/2000/01/rdf-schema#label> "Rheometric Scientific DMTA (Model - V)" .
+<bnode:39f832c7e57448f7965ed1856fdce098> <http://semanticscience.org/resource/hasValue> "1.95"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:a33b3d9cbaeb48c09e54719eb957d4f0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:dee73dd080e9417aa2aacde74f895db7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/UncertaintyValue> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_8> <http://semanticscience.org/resource/hasAttribute> <bnode:98afd61e8bcf4d28a6a353e5f5721e31> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_2> <http://semanticscience.org/resource/hasAttribute> <bnode:72a08f802633438a8a4d468fef327f38> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_dielectric-and-impedance-spectroscopy-analysis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricandImpedanceSpectroscopyAnalysis> .
+<bnode:c013005e43cc468dbd284e4f13fb282a> <http://semanticscience.org/resource/hasValue> "489390.0918"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_9> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005> <http://www.w3.org/ns/prov#wasAttributedTo> <http://nanomine.org/author/roy-m> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://purl.org/ontology/bibo/volume> "12"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<bnode:b6df6e775f06401d98fa660e3161654c> <http://semanticscience.org/resource/hasValue> "0.12405838"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:629db2a65d1f465ca32383492a47284f> <http://semanticscience.org/resource/hasValue> "0.002589454"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:036a359c84174be692d518b2a7a08ee2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<bnode:274598fee2224161867847133a85e98c> <http://semanticscience.org/resource/hasValue> "460.765468"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_0> <http://semanticscience.org/resource/hasAttribute> <bnode:1346152f8b534c8cafb4a1cc64169897> .
+<bnode:82636b8d5f1d4be6a498d7d2ec35cb83> <http://purl.org/dc/terms/identifier> "methods" .
+<bnode:fe5dd1c51a9d475f8c4012c5b243ec81> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+_:N77720922f1254004870262070d006dbd <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://localhost:5000/setl/MTgyMzIzLjEwOTk5NDY3NA/NanomineXMLImport> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_1> <http://semanticscience.org/resource/hasAttribute> <bnode:451f14203a0e430f8b80d4db5b5ed52e> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasQuotedFrom> <http://dx.doi.org/10.1109/TDEI.2005.1511089> .
+<bnode:7474c22efcbd472ea548275447e8f6cd> <http://semanticscience.org/resource/hasValue> "0.0569624088792"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:32796cefffa3400582697da825e325a6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_4> <http://semanticscience.org/resource/hasAttribute> <bnode:216c39c386af4ecfb69a2ec42e45e70b> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_10> <http://semanticscience.org/resource/hasAttribute> <bnode:c3ff9272814747919873bb34a3c2caba> .
+<bnode:2deaa66c466f4a6085149c65f05ac905> <http://semanticscience.org/resource/hasValue> "50.20459806"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Silicon Compounds" .
+<bnode:2235da5f12de4056af5f335e1cb486fd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/WeibullPlot> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_13> <http://semanticscience.org/resource/hasAttribute> <bnode:27e768903f1a41e689bfb3f0f18a8e5d> .
+<bnode:6582e93136a94e3eb38d698117b87f6e> <http://semanticscience.org/resource/hasValue> "0.032015066"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_11> <http://semanticscience.org/resource/hasAttribute> <bnode:6522fa2323454e0aabb7be20ad9877e3> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Assertion> .
+<http://localhost:5000/pub/bc5747ec-ad5b-11e9-babe-000c29406e9a> <http://semanticscience.org/resource/isAbout> <file:///tmp/tmp9nhezjc5> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_16> <http://semanticscience.org/resource/hasAttribute> <bnode:47aad74f09284ada9dc5d49cd8bb5e31> .
+<publisher:ieee> <http://www.w3.org/2000/01/rdf-schema#label> "IEEE" .
+<bnode:58a0bb439d3e4d748f3dc6ee51322697> <http://semanticscience.org/resource/hasValue> "0.003295669"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:c3ff9272814747919873bb34a3c2caba> <http://semanticscience.org/resource/hasValue> "20.30421516"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_3> <http://semanticscience.org/resource/hasAttribute> <bnode:29ff25f01b9d45efacc312f63a8fdb1d> .
+<bnode:64ce71b1592f4952afafbd021ee69160> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:8fde2f717efb45109ca2761b485ce12f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:72a08f802633438a8a4d468fef327f38> <http://semanticscience.org/resource/hasValue> "136.6958274"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:98afd61e8bcf4d28a6a353e5f5721e31> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_16> <http://semanticscience.org/resource/hasAttribute> <bnode:58a0bb439d3e4d748f3dc6ee51322697> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Silica Nanoparticles" .
+<bnode:1346152f8b534c8cafb4a1cc64169897> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Polymer Nanocomposite Dielectrics" .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_11> <http://semanticscience.org/resource/hasAttribute> <bnode:868d16d4ae824f3281b124ed61938bb0> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_3> <http://semanticscience.org/resource/hasAttribute> <bnode:54d7f51837ec47c3bc11f81196b4a688> .
+<bnode:c68ac63b80484680ab3769f4405f2f84> <http://semanticscience.org/resource/hasValue> "0.006355932"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_pulsed-electro-acoustic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+<bnode:cff40d7d669b4567bd93f5a61e7f559b> <http://semanticscience.org/resource/hasValue> "134.3096058"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_17> <http://semanticscience.org/resource/hasAttribute> <bnode:930794349b8040519d937447c6272357> .
+<bnode:e389ef05f31048f0be2d4a13aceb6529> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_12> <http://semanticscience.org/resource/hasAttribute> <bnode:902d89b69ae94bbd8fd984c11140257e> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_1> <http://semanticscience.org/resource/hasAttribute> <bnode:8416fa651c8a4f07a0857de887421d62> .
+<bnode:10b626492df341d2bb8f67a6a9e1aa35> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<bnode:48a41e2996dc43efaea85f27dd133d53> <http://semanticscience.org/resource/hasValue> "-0.265666935051"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:03e787dc6bd848c98346f07111e59548> <http://semanticscience.org/resource/hasValue> "68.73755053"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:5211cb74d97c4f4e88731ebbea9575bf> <http://www.w3.org/ns/prov#used> <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=1806836834> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_14> <http://semanticscience.org/resource/hasAttribute> <bnode:143779a3d91244f195da1d7cfb6e46bd> .
+<bnode:100b668af292477db20e1ce6c4d4a91d> <http://semanticscience.org/resource/hasValue> "50.67894742"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://purl.org/dc/terms/language> <http://nanomine.org/language/english> .
+<bnode:8bc9effc2d954a5db45be984515ecd80> <http://semanticscience.org/resource/hasValue> "940.2240538"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_12> <http://semanticscience.org/resource/hasAttribute> <bnode:27a1e160d3834e1099b19d7a9ef5dd73> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_19> <http://semanticscience.org/resource/hasAttribute> <bnode:d0d39ab17d35467090cdff1297864f6c> .
+<bnode:a08f291f1eec46aaa40904bfc2a780e1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_matrix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/compound/Polyethylene> .
+<bnode:216c39c386af4ecfb69a2ec42e45e70b> <http://semanticscience.org/resource/hasValue> "2.2425"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Nanoscale Fillers" .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Polymers" .
+<bnode:cc82daec3ffc4dfd84d21fca59de84be> <http://semanticscience.org/resource/hasValue> "126.4937202"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_fourier-transform-infrared-spectroscopy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Measuring> .
+<bnode:ea8c76f8d6da46629c23540faa061718> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Usage> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_scanning-electron-microscopy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_7> <http://semanticscience.org/resource/hasAttribute> <bnode:32796cefffa3400582697da825e325a6> .
+<http://localhost:5000/pub/bc5747ee-ad5b-11e9-babe-000c29406e9a> <http://purl.org/vocab/frbr/core#realizationOf> <http://localhost:5000/pub/MTIwNTYwLjE5MTE4NTQwNTkz> .
+<bnode:60e1b33b23bb4ae2b4f2b0bc0c6a2887> <http://semanticscience.org/resource/hasValue> "0.189265537"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:18add12b65e445c1bb551a6079665ad0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:053ecd9203fc447aa2ddefba81f47f3e> <http://semanticscience.org/resource/hasValue> "0.066148776"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:81fcd4a823264ea98842b50c21aba9b7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/perkin-elmer-model-5500> .
+<bnode:29867053a0f84d17bc3ba546e5cb362c> <http://semanticscience.org/resource/hasValue> "0.002354049"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_20> <http://semanticscience.org/resource/hasAttribute> <bnode:6ccbc231abae4513b48513f14d3fb5eb> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_9> <http://semanticscience.org/resource/hasAttribute> <bnode:6000b3ad846848f1a760875f0d3e784f> .
+<bnode:4a0ffb5ff27c4b2e881788d2c674eba5> <http://www.w3.org/ns/prov#used> <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=798992913> .
+<bnode:29ff25f01b9d45efacc312f63a8fdb1d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrength> .
+<bnode:6c4243eefa9643a2acbe88e75576ce88> <http://semanticscience.org/resource/hasValue> "137.9047896"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:58a0bb439d3e4d748f3dc6ee51322697> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_pulsed-electro-acoustic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Measuring> .
+<bnode:b129b577ab354f0d84cd13ca28a67e64> <http://semanticscience.org/resource/hasValue> "74.97001936"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:5209298732c1484caf99ea3c65713b0b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/Extract> .
+<bnode:0d7410bd82c941df9989dd1abbbaca2a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/perkin-elmer-model-5500> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_9> <http://semanticscience.org/resource/hasAttribute> <bnode:ced724ed19d741abbe194e7de3f3b65c> .
+<http://nanomine.org/author/roy-m> <http://www.w3.org/2000/01/rdf-schema#label> "Roy, M." .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_xray-photoelectron-spectroscopy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_14> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<file:///tmp/tmp9nhezjc5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/NanomineXMLFile> .
+<bnode:31c55e5ac7d94296987fb463239e9d1e> <http://semanticscience.org/resource/hasValue> "940.2240538"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:bc437a8c68fe4913ba1f89f997fc52b6> <http://semanticscience.org/resource/hasValue> "50.67894742"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://localhost:5000/pub/NTk5NTE4LjgyMjIxNDI5MTM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/vocab/frbr/core#Work> .
+<bnode:1eafd78920524a5f8a499428751fb460> <http://semanticscience.org/resource/hasValue> "3.21"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:8fb49af2e1584403840e208708d0f104> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/WeibullPlot> .
+<bnode:fe039a6913374dcbb6151964ed08bbda> <http://semanticscience.org/resource/hasValue> "2.01"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:8e08f0f5dc654e7991d6cdc176eef2f0> <http://semanticscience.org/resource/hasValue> "559.2550864"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:8bc9effc2d954a5db45be984515ecd80> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrength> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://ieeexplore.ieee.org:80/document/1511089/?reload=true> .
+<bnode:8ba545dc353b491787b0a6d09f94a710> <http://semanticscience.org/resource/hasValue> "460.765468"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_0> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:640e05719cf94bbeb82614a8403d5988> <http://semanticscience.org/resource/hasValue> "0.006355932"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/compound/Polyethylene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://nanomine.org/ns/rheometric-scientific-dmta-model-v> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<bnode:e7816be60dd84dd4a5f29529ee09ba2b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_21> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_3> <http://semanticscience.org/resource/hasAttribute> <bnode:8fb49af2e1584403840e208708d0f104> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Dielectrics" .
+<http://nanomine.org/author/schadler-l-s> <http://xmlns.com/foaf/0.1/name> "Schadler, L.S." .
+<http://nanomine.org/author/nelson-j-k> <http://www.w3.org/2000/01/rdf-schema#label> "Nelson, J.K." .
+<bnode:dee73dd080e9417aa2aacde74f895db7> <http://semanticscience.org/resource/hasValue> "0.5"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_17> <http://semanticscience.org/resource/hasAttribute> <bnode:4186996b165745c38b4d36cc37ace11c> .
+<bnode:bef6a01f81c847d4bf643a2532f14208> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_12> <http://semanticscience.org/resource/hasAttribute> <bnode:89268f5e05484879a618c333fa978c4e> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Polyethylene" .
+<bnode:4fa38d09841341db94ead5387b38ba8b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/WeibullPlot> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_9> <http://semanticscience.org/resource/hasAttribute> <bnode:1fe53e0b663143cfae762feb751464ae> .
+<bnode:363b66d1036d447cbf67b45a32a2798f> <http://semanticscience.org/resource/hasValue> "0.016949153"^^<http://www.w3.org/2001/XMLSchema#double> .
+<file:///tmp/tmp9nhezjc5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/net/provenance/ns#File> .
+<bnode:b0ec8de9ab5b4062a86542237c3dfa5f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<http://nanomine.org/setl/xml/characterization_methods_table> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/csvw#Table> .
+<bnode:c85c81d69d304e4c97908e61c7662f39> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/sample/l155-s2-roy-2005_filler_0_mass_fraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/MassFraction> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_scanning-electron-microscopy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Measuring> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_13> <http://semanticscience.org/resource/hasAttribute> <bnode:31c55e5ac7d94296987fb463239e9d1e> .
+<bnode:83ec09b614794c2b89220285761fc404> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<bnode:15bee294ff2e49a293ffbe630ae540d5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Interfacial Region" .
+<bnode:f80f55fd05994c45bbb6b47e833b75a7> <http://semanticscience.org/resource/hasValue> "0.18885490797"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasGeneratedBy> <http://nanomine.org/entry/L155_S2_Roy_2005_characterization_fourier-transform-infrared-spectroscopy> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_21> <http://semanticscience.org/resource/hasAttribute> <bnode:f4f0cc0020c8410387e60221979b3679> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_differential-scanning-calorimetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DifferentialScanningCalorimetry> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_4> <http://semanticscience.org/resource/hasAttribute> <bnode:60f5130b7f444c37b81e2f311c57062b> .
+<bnode:3fcbc9cfca314757a9d57e235dccf41e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrength> .
+<bnode:e49d058c53574089afe0731e50795920> <http://semanticscience.org/resource/hasValue> "3.25914324"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://localhost:5000/pub/bc5747ec-ad5b-11e9-babe-000c29406e9a_provenance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Provenance> .
+<http://nanomine.org/setl/xml/characterization_methods_table> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/Table> .
+<http://nanomine.org/setl/xml/xml> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/XML> .
+<bnode:43b1dd65c48b41ca89ea60c289b73ab8> <http://semanticscience.org/resource/hasValue> "190546.0718"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_18> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005> <http://www.w3.org/ns/prov#wasAttributedTo> <http://nanomine.org/author/reed-c-w> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_3> <http://semanticscience.org/resource/hasAttribute> <bnode:83ec09b614794c2b89220285761fc404> .
+<bnode:053ecd9203fc447aa2ddefba81f47f3e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasGeneratedBy> <http://nanomine.org/entry/L155_S2_Roy_2005_characterization_xray-photoelectron-spectroscopy> .
+<bnode:a95e010c77094dfb83ccddc63e59e7d5> <http://semanticscience.org/resource/hasValue> "1949.677704"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:b43c3ee69c8042599cd54c66a4740a7d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+_:N77720922f1254004870262070d006dbd <http://www.w3.org/ns/prov#used> <http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://purl.org/dc/terms/creator> <http://nanomine.org/author/roy-m> .
+<http://nanomine.org/ns/perkin-elmer-model-5500> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/Device> .
+<bnode:e7816be60dd84dd4a5f29529ee09ba2b> <http://semanticscience.org/resource/hasValue> "0.002589454"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:056730136121411a8b656d1bdd9b63ce> <http://semanticscience.org/resource/hasValue> "0.148948972348"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_dielectric-and-impedance-spectroscopy-analysis> <http://www.w3.org/ns/prov#used> <bnode:322af95df7c844fda9f1e67ac5d443d6> .
+<bnode:0fc305761910465aa337045b1c02b98c> <http://semanticscience.org/resource/hasValue> "1966.949018"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:b45f17ba046d49078fa31f990c08a5d8> <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#used> .
+<bnode:9d11a7e21cbd44ef99560ba4541b55cf> <http://semanticscience.org/resource/hasValue> "0.004237288"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:37526e36b0e747b5a1d7e9feeccfe6aa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_0> <http://semanticscience.org/resource/hasAttribute> <bnode:15bee294ff2e49a293ffbe630ae540d5> .
+<http://nanomine.org/ns/nicolet-nexus-470-esp> <http://www.w3.org/2000/01/rdf-schema#label> "Nicolet NEXUS 470-ESP" .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_16> <http://semanticscience.org/resource/hasAttribute> <bnode:85fbc9df8fdd4c15ad3ef4012f807cff> .
+<bnode:53573679a4714554b653fc3c5a2afe84> <http://semanticscience.org/resource/hasAttribute> <bnode:dee73dd080e9417aa2aacde74f895db7> .
+<bnode:27a1e160d3834e1099b19d7a9ef5dd73> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_heatingrate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Measuring> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://purl.org/dc/terms/creator> <http://nanomine.org/author/reed-c-w> .
+<bnode:2cdac3e3fd204028bb3db95e51e9f79d> <http://semanticscience.org/resource/hasValue> "150.5983687"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_10> <http://semanticscience.org/resource/hasAttribute> <bnode:274598fee2224161867847133a85e98c> .
+<http://nanomine.org/setl/xml/xml> <http://www.w3.org/ns/prov#wasGeneratedBy> <bnode:5209298732c1484caf99ea3c65713b0b> .
+<bnode:930794349b8040519d937447c6272357> <http://semanticscience.org/resource/hasValue> "12386.16334"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:80635e09766642fe81bcfa0d74f8626c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://localhost:5000/pub/bc5747ec-ad5b-11e9-babe-000c29406e9a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/vocab/frbr/core#Expression> .
+<bnode:e5f341f7fb054c9f96b4681b59fb031f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:8d4b01b3e68e4832a7be55782b64f84d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<bnode:30071068dc1e4ce986f7d704893798f6> <http://semanticscience.org/resource/hasValue> "481012.2468"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/setl/xml/NanomineXMLImport> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <bnode:b45f17ba046d49078fa31f990c08a5d8> .
+<bnode:f9c22b545e964738a3678f6814fb7000> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_4> <http://semanticscience.org/resource/hasAttribute> <bnode:053ecd9203fc447aa2ddefba81f47f3e> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_20> <http://semanticscience.org/resource/hasAttribute> <bnode:88883bcad3b4497ba3f287735c3b0903> .
+<bnode:a33b3d9cbaeb48c09e54719eb957d4f0> <http://semanticscience.org/resource/hasValue> "0.002132876"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:c6095fbf330a46bab3514d90b2519710> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/Matrix> .
+<bnode:4a0ffb5ff27c4b2e881788d2c674eba5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/Extract> .
+<bnode:bd3d709d1158422e899cf230afe9b242> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:61ae82b9dd774fc19a802a04a02cd4e3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/vocab/frbr/core#Expression> .
+<file:///tmp/tmp9nhezjc5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.iana.org/assignments/media-types/text> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_3> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:12250c61f6ac43e7ac3ee5613990a785> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:3fcbc9cfca314757a9d57e235dccf41e> <http://semanticscience.org/resource/hasValue> "135.4974638"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:6505f29e25e3424a88c9d05726649810> <http://semanticscience.org/resource/hasUnit> <http://nanomine.org/ns/unit/celsius-minute> .
+<bnode:787c2f1062ae4ecd814468e829460199> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrength> .
+<bnode:6505f29e25e3424a88c9d05726649810> <http://semanticscience.org/resource/hasValue> "10.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_9> <http://semanticscience.org/resource/hasAttribute> <bnode:a936bcdb271142608b3e04302dc221d8> .
+<bnode:cc4f205c8a0a418086ffed70cde4a53e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_13> <http://semanticscience.org/resource/hasAttribute> <bnode:025d7ff7b3be4fc0aa7741d2b091a808> .
+<bnode:4f99abe0efd64189a572b1a189d02dab> <http://semanticscience.org/resource/hasValue> "77440.03084"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/setl/xml/characterization_methods_table> <http://www.w3.org/ns/prov#wasGeneratedBy> <bnode:4a0ffb5ff27c4b2e881788d2c674eba5> .
+<bnode:66366c9a88ca4123a3acd4d103eb734e> <http://semanticscience.org/resource/hasValue> "3.25914324"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://localhost:5000/pub/bc5747ec-ad5b-11e9-babe-000c29406e9a_assertion> <http://purl.org/dc/terms/created> "2019-07-23T15:08:32.505259"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://localhost:5000/pub/bc5747ec-ad5b-11e9-babe-000c29406e9a_pubinfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#PublicationInfo> .
+<bnode:ce8c083571404bea9667a97042f56737> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Device> .
+<bnode:31c55e5ac7d94296987fb463239e9d1e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_13> <http://semanticscience.org/resource/hasAttribute> <bnode:8bc9effc2d954a5db45be984515ecd80> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_7> <http://semanticscience.org/resource/hasAttribute> <bnode:7a2864f0805d4c50809fad010610374e> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_9> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasGeneratedBy> <http://nanomine.org/entry/L155_S2_Roy_2005_characterization_dielectric-and-impedance-spectroscopy-analysis> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_15> <http://semanticscience.org/resource/hasAttribute> <bnode:a95e010c77094dfb83ccddc63e59e7d5> .
+<bnode:2a125edbd5b045a4a9782c27744f6e7f> <http://semanticscience.org/resource/hasValue> "62.45004225"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:f3bbbcd141ba4a5b82117e01cbabe7f8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_5> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:47aad74f09284ada9dc5d49cd8bb5e31> <http://semanticscience.org/resource/hasValue> "4914.165902"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:99847578cfcf487eaf16ce6f8afba420> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/WeibullPlot> .
+<http://nanomine.org/ns/novocontrol-alpha-analyzer-type-k-in-combination-with-a-novocontrol-active-bds-1200-sample-cell> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/Device> .
+<bnode:c6095fbf330a46bab3514d90b2519710> <http://semanticscience.org/resource/inRelationTo> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:04be7f72d96f4d33b22e96e17f75aa0b> <http://semanticscience.org/resource/hasValue> "2.055"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_9> <http://semanticscience.org/resource/hasAttribute> <bnode:fe039a6913374dcbb6151964ed08bbda> .
+<bnode:1fe53e0b663143cfae762feb751464ae> <http://semanticscience.org/resource/hasValue> "8.134761557"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://purl.org/dc/terms/creator> <http://nanomine.org/author/keefe-r> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_2> <http://semanticscience.org/resource/hasAttribute> <bnode:046c93c1fd1c4339b35263fd16cdde0d> .
+<http://nanomine.org/publication/ieee-transactions-on-dielectrics-and-electrical-insulation> <http://purl.org/dc/terms/publisher> <publisher:ieee> .
+<bnode:a95e010c77094dfb83ccddc63e59e7d5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:6db63b2b09cc411eb0c8805e66f0562e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_9> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:490b563fc2be4ed18d1fc2f0388a4fd6> <http://semanticscience.org/resource/hasValue> "126.4937202"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_4> <http://semanticscience.org/resource/hasAttribute> <bnode:6dd197b4d752427b9ac5b54fb1ddf47a> .
+<bnode:975d7688649744699d81d90be9c996a2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<bnode:8fde2f717efb45109ca2761b485ce12f> <http://semanticscience.org/resource/hasValue> "1.935"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:0e1e9cead44542dcb5d53ff91a8bed99> <http://semanticscience.org/resource/hasValue> "0.002132876"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_8> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/ResearchArticle> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Dielectric Spectroscopy" .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_coolingrate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/CoolingRate> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_0> <http://semanticscience.org/resource/hasAttribute> <bnode:0e1e9cead44542dcb5d53ff91a8bed99> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/2000/01/rdf-schema#label> "Polymer nanocomposite dielectrics-the role of the interface" .
+<bnode:056730136121411a8b656d1bdd9b63ce> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<bnode:43db0dc0105647e6900264de1b5ca78e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://purl.org/dc/terms/created> "2019-07-23T15:08:33.856889"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://nanomine.org/sample/l155-s1-roy-2005_control_role> <http://semanticscience.org/resource/inRelationTo> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_5> <http://semanticscience.org/resource/hasAttribute> <bnode:9402b2e8802e4ee69d169da839292a22> .
+<http://nanomine.org/sample/l155-s2-roy-2005_filler_0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/compound/Nanosilica> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_12> <http://semanticscience.org/resource/hasAttribute> <bnode:490b563fc2be4ed18d1fc2f0388a4fd6> .
+<bnode:1346152f8b534c8cafb4a1cc64169897> <http://semanticscience.org/resource/hasValue> "0.002078949"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_11> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:bffc5fe5da4b49f79a96745b8a4842f6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<bnode:cccceab85fc446b8961883e4f4561679> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<http://localhost:5000/pub/bc5747ee-ad5b-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasProvenance> <http://localhost:5000/pub/bc5747ee-ad5b-11e9-babe-000c29406e9a_provenance> .
+<bnode:cf03cfbb758a4293969324e74f35838f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:88883bcad3b4497ba3f287735c3b0903> <http://semanticscience.org/resource/hasValue> "190546.0718"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_12> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:83ec09b614794c2b89220285761fc404> <http://semanticscience.org/resource/hasValue> "136.496879483"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Breakdown Voltage" .
+<bnode:68273737e9694fd8a0a029ef3af7c7c0> <http://purl.org/twc/vocab/setl/hasContext> """{
+  "owl" : "http://www.w3.org/2002/07/owl#",
+  "sio" :     "http://semanticscience.org/resource/",
+  "skos" :    "http://www.w3.org/2004/02/skos/core#",
+  "dcterms" :    "http://purl.org/dc/terms/",
+  "prov" :    "http://www.w3.org/ns/prov#",
+  "rdfs" :    "http://www.w3.org/2000/01/rdf-schema#",
+  "doi" :    "http://dx.doi.org/",
+  "nanomine" :    "http://nanomine.org/ns/",
+  "unit" :    "http://nanomine.org/ns/unit/",
+  "author" :    "http://nanomine.org/author/",
+  "publication" :    "http://nanomine.org/publication/",
+  "bibo" : "http://purl.org/ontology/bibo/",
+  "foaf" : "http://xmlns.com/foaf/0.1/",
+  "nanopub" :    "http://www.nanopub.org/nschema#",
+  "entry" :    "http://nanomine.org/entry/",
+  "sample" :    "http://nanomine.org/sample/",
+  "article" :    "http://nanomine.org/article/",
+  "compound" :    "http://nanomine.org/compound/",
+  "location" :    "http://nanomine.org/location/",
+  "lang" :    "http://nanomine.org/language/",
+  "void" :    "http://rdfs.org/ns/void#",
+  "dcat" : "http://www.w3.org/ns/dcat#",
+  "xsd" : "http://www.w3.org/2001/XMLSchema#"
+}""" .
+<http://nanomine.org/ns/FrequencyHz> <http://www.w3.org/2000/01/rdf-schema#label> "Frequency (Hz)" .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "X-Ray Photoelectron Spectroscopy" .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_3> <http://semanticscience.org/resource/hasAttribute> <bnode:6703b2368c774f4cb9b33d8a3c4cf5d6> .
+<bnode:07f562c68ca94a5eb1a323933418375a> <http://semanticscience.org/resource/hasValue> "0.005323618"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_5> <http://semanticscience.org/resource/hasAttribute> <bnode:7c8a56f547904da6a013a9fa644696af> .
+<bnode:68273737e9694fd8a0a029ef3af7c7c0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/JSLDT> .
+<bnode:1b9e71e074a74d8488c85c077a94369f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:640e05719cf94bbeb82614a8403d5988> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<bnode:f130a0db97a24ef7a1b08389436cfd87> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrength> .
+<bnode:868d16d4ae824f3281b124ed61938bb0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://localhost:5000/pub/bc5747ec-ad5b-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasAssertion> <http://localhost:5000/pub/bc5747ec-ad5b-11e9-babe-000c29406e9a_assertion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_0> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_6> <http://semanticscience.org/resource/hasAttribute> <bnode:a0014317c1cb41f3926574c13f6812a9> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_7> <http://semanticscience.org/resource/hasAttribute> <bnode:f3bbbcd141ba4a5b82117e01cbabe7f8> .
+<bnode:50c982e0f653448e9dd83f4be5477277> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:89268f5e05484879a618c333fa978c4e> <http://semanticscience.org/resource/hasValue> "1.95"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_13> <http://semanticscience.org/resource/hasAttribute> <bnode:ebb7e042dd644a09986378a679f7a7c9> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_7> <http://semanticscience.org/resource/hasAttribute> <bnode:d6db18c03bd5496289d10580fdd8a2d7> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_dielectric-and-impedance-spectroscopy-analysis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Measuring> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_6> <http://semanticscience.org/resource/hasAttribute> <bnode:b3eb73782fb64da5ae71c802afa5cb79> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_10> <http://semanticscience.org/resource/hasAttribute> <bnode:ff5bea58476e45efa1eb8dda0b5e799c> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_2> <http://semanticscience.org/resource/hasAttribute> <bnode:b6df6e775f06401d98fa660e3161654c> .
+<bnode:5e14cd48136a4d4790bc33407807e1e8> <http://semanticscience.org/resource/hasUnit> <http://nanomine.org/ns/unit/celsius-minute> .
+<bnode:739df60f2a5f49339873fba157086a97> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_6> <http://semanticscience.org/resource/hasAttribute> <bnode:9093e9939aac4c5c9539894f54e76708> .
+<bnode:6b22699c430e491b9ca17e9d57dc8561> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_6> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_10> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:60e1b33b23bb4ae2b4f2b0bc0c6a2887> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<bnode:02d9c9b19ca94e538173244cb7fd3352> <http://semanticscience.org/resource/hasValue> "0.203493333"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:a2a2202116034f0fb8bc263ae5a4123c> <http://semanticscience.org/resource/hasValue> "1.965"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_21> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:caeb69a835e54ab2a2ae3e702a88066b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_9> <http://semanticscience.org/resource/hasAttribute> <bnode:fb0dbccbc83b4b2b99195f0a43a0d03e> .
+<bnode:e0d23bd2b01f4ccfb6c4306231afa6af> <http://semanticscience.org/resource/hasValue> "-0.856815879695"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:f5ff47eca2ac479697b9e552c90870e1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<bnode:ced724ed19d741abbe194e7de3f3b65c> <http://semanticscience.org/resource/hasValue> "547.84911383"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_4> <http://semanticscience.org/resource/hasAttribute> <bnode:29c56ff4f3514e9ab0180ddaa102b0fa> .
+<http://nanomine.org/location/rensselaer-polytech-inst-troy-ny-usa> <http://www.w3.org/2000/01/rdf-schema#label> "Rensselaer Polytech. Inst., Troy, NY, USA" .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "X-Ray Photoelectron Spectra" .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_9> <http://semanticscience.org/resource/hasAttribute> <bnode:4fa38d09841341db94ead5387b38ba8b> .
+<bnode:f64fb5c5c2e04bf6929ce25f5571560b> <http://semanticscience.org/resource/hasValue> "24.93299398"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_11> <http://semanticscience.org/resource/hasAttribute> <bnode:952e3ab3a30b454d84504ab29c69fe92> .
+<bnode:6000b3ad846848f1a760875f0d3e784f> <http://semanticscience.org/resource/hasValue> "0.013182674"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_4> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Infrared Spectra" .
+<bnode:451f14203a0e430f8b80d4db5b5ed52e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_8> <http://semanticscience.org/resource/hasAttribute> <bnode:b43c3ee69c8042599cd54c66a4740a7d> .
+<bnode:81fcd4a823264ea98842b50c21aba9b7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Device> .
+<bnode:f4f0cc0020c8410387e60221979b3679> <http://semanticscience.org/resource/hasValue> "1.905"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_12> <http://semanticscience.org/resource/hasAttribute> <bnode:8e08f0f5dc654e7991d6cdc176eef2f0> .
+<bnode:6c4243eefa9643a2acbe88e75576ce88> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_7> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_0> <http://semanticscience.org/resource/hasAttribute> <bnode:60e1b33b23bb4ae2b4f2b0bc0c6a2887> .
+<http://nanomine.org/sample/l155-s2-roy-2005> <http://www.w3.org/ns/prov#wasAttributedTo> <http://nanomine.org/author/maccrone-r-k> .
+<http://localhost:5000/pub/bc5747ee-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Assertion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_14> <http://semanticscience.org/resource/hasAttribute> <bnode:a0556e181a6d441eab6a255b93c6f9ec> .
+<http://nanomine.org/ns/novocontrol-alpha-analyzer-type-k-in-combination-with-a-novocontrol-active-bds-1200-sample-cell> <http://www.w3.org/2000/01/rdf-schema#label> "Novocontrol Alpha Analyzer (type K) in combination with a Novocontrol active BDS-1200 sample cell" .
+<http://localhost:5000/pub/bc5747ee-ad5b-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasAssertion> <http://localhost:5000/pub/bc5747ee-ad5b-11e9-babe-000c29406e9a_assertion> .
+<bnode:bc437a8c68fe4913ba1f89f997fc52b6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:5e14cd48136a4d4790bc33407807e1e8> <http://semanticscience.org/resource/hasValue> "10.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_14> <http://semanticscience.org/resource/hasAttribute> <bnode:64ce71b1592f4952afafbd021ee69160> .
+<bnode:32796cefffa3400582697da825e325a6> <http://semanticscience.org/resource/hasValue> "0.00961638356449"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:8416fa651c8a4f07a0857de887421d62> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_16> <http://semanticscience.org/resource/hasAttribute> <bnode:7eabafdf11b0436f812599c457d33bd2> .
+<bnode:ca524b068e2c4984ab6b0f9a1b27e559> <http://semanticscience.org/resource/hasValue> "56.22166161"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:9402b2e8802e4ee69d169da839292a22> <http://semanticscience.org/resource/hasValue> "2.175"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:f9c22b545e964738a3678f6814fb7000> <http://semanticscience.org/resource/hasValue> "30585.61668"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:6000b3ad846848f1a760875f0d3e784f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:d3aa3c7e6283434abbabc22101161165> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:7e0050ff63014dc29c4d48811ca918fd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Usage> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_10> <http://semanticscience.org/resource/hasAttribute> <bnode:234c375e0ccd49b8b9084b2621d47c4f> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_12> <http://semanticscience.org/resource/hasAttribute> <bnode:913fdffcaf6848819da59117bc69742a> .
+<http://nanomine.org/setl/xml/NanomineXMLImport> <http://www.w3.org/2000/01/rdf-schema#label> "Nanomine XML Import SETL Script" .
+<bnode:f70320c316a34ca3b97c605ddd8eda4a> <http://semanticscience.org/resource/hasValue> "12.5086297"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:216c39c386af4ecfb69a2ec42e45e70b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/author/reed-c-w> <http://xmlns.com/foaf/0.1/name> "Reed, C.W." .
+<http://nanomine.org/language/english> <http://www.w3.org/2000/01/rdf-schema#label> "English" .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasAttributedTo> <http://localhost:5000/setl/MTgyMzIzLjEwOTk5NDY3NA/NanomineXMLImport> .
+<bnode:5c97995eb6e84a37aeb1a9cb25105624> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://localhost:5000/pub/bc5747ec-ad5b-11e9-babe-000c29406e9a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Nanopublication> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_1> <http://semanticscience.org/resource/hasAttribute> <bnode:07f562c68ca94a5eb1a323933418375a> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Fourier Transformed Infrared Spectroscopy" .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_1> <http://semanticscience.org/resource/hasAttribute> <bnode:641f0eff75704899b830901775c043f0> .
+<bnode:94dd41a542d04abbb4a82037b3e6d970> <http://semanticscience.org/resource/hasValue> "0.003766478"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:143779a3d91244f195da1d7cfb6e46bd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:006f3462b36e4d56bacdbb10781a85eb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://nanomine.org/ns/perkin-elmer-model-5500> <http://www.w3.org/2000/01/rdf-schema#label> "Perkin Elmer (Model # 5500)" .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Fourier Transform Spectroscopy" .
+<bnode:43b1dd65c48b41ca89ea60c289b73ab8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_10> <http://semanticscience.org/resource/hasAttribute> <bnode:72413a4daf2749208ec0f6ea795dacf2> .
+<bnode:b45f17ba046d49078fa31f990c08a5d8> <http://www.w3.org/2002/07/owl#someValuesFrom> <http://nanomine.org/ns/NanomineXMLFile> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_13> <http://semanticscience.org/resource/hasAttribute> <bnode:5bb62f512be741d2979d9b7f62683287> .
+<bnode:b43c3ee69c8042599cd54c66a4740a7d> <http://semanticscience.org/resource/hasValue> "280.292146886"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_5> <http://semanticscience.org/resource/hasAttribute> <bnode:066e246bf1674707a501843f61ac7a8c> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_16> <http://semanticscience.org/resource/hasAttribute> <bnode:1d43fe4db5504b45a0ce54a468c68767> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_fourier-transform-infrared-spectroscopy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_20> <http://semanticscience.org/resource/hasAttribute> <bnode:43b1dd65c48b41ca89ea60c289b73ab8> .
+<bnode:53573679a4714554b653fc3c5a2afe84> <http://semanticscience.org/resource/hasValue> "109.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/language/english> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/LinguisticSystem> .
+<bnode:cccceab85fc446b8961883e4f4561679> <http://semanticscience.org/resource/hasValue> "-0.0505807057642"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:61f2ea2b43a1450ea9653e5c3f6677df> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/novocontrol-alpha-analyzer-type-k-in-combination-with-a-novocontrol-active-bds-1200-sample-cell> .
+<bnode:31eae23bda0946bc8f061fb5d897d64a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://purl.org/dc/terms/creator> <http://nanomine.org/author/nelson-j-k> .
+<bnode:fa8a82bbe6984c94b65bf9a4a6579476> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:fa4d4ef3d5dc49f9ad0c9e092880670b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_11> <http://semanticscience.org/resource/hasAttribute> <bnode:164d69ae3b2043f19b5d2ff24d4fd667> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_15> <http://semanticscience.org/resource/hasAttribute> <bnode:8fde2f717efb45109ca2761b485ce12f> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Filled Polymers" .
+<bnode:6dd197b4d752427b9ac5b54fb1ddf47a> <http://semanticscience.org/resource/hasValue> "0.066148776"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:d6db18c03bd5496289d10580fdd8a2d7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:f4f0cc0020c8410387e60221979b3679> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_5> <http://semanticscience.org/resource/hasAttribute> <bnode:3d47cdbdae594f9d9c75c94ce5728e40> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_17> <http://semanticscience.org/resource/hasAttribute> <bnode:18add12b65e445c1bb551a6079665ad0> .
+<bnode:18add12b65e445c1bb551a6079665ad0> <http://semanticscience.org/resource/hasValue> "1.935"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_differential-scanning-calorimetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+<http://nanomine.org/sample/l155-s2-roy-2005> <http://www.w3.org/ns/prov#wasAttributedTo> <http://nanomine.org/author/schadler-l-s> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_13> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/ns/novocontrol-alpha-analyzer-type-k-in-combination-with-a-novocontrol-active-bds-1200-sample-cell> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<bnode:556c9bdff5f3475fb938f5e0d3d19ecf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Breakdown Strength" .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_pulsed-electro-acoustic> <http://www.w3.org/ns/prov#used> <bnode:61f2ea2b43a1450ea9653e5c3f6677df> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_10> <http://semanticscience.org/resource/hasAttribute> <bnode:8ba545dc353b491787b0a6d09f94a710> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_11> <http://semanticscience.org/resource/hasAttribute> <bnode:a2a2202116034f0fb8bc263ae5a4123c> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_9> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:902d89b69ae94bbd8fd984c11140257e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://nanomine.org/author/keefe-r> <http://xmlns.com/foaf/0.1/name> "Keefe, R." .
+<bnode:53573679a4714554b653fc3c5a2afe84> <http://semanticscience.org/resource/hasUnit> <http://nanomine.org/ns/unit/celsius> .
+<bnode:9e014898908e403e9c6b8d751febbea0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_2> <http://semanticscience.org/resource/hasAttribute> <bnode:6b22699c430e491b9ca17e9d57dc8561> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_1> <http://semanticscience.org/resource/hasAttribute> <bnode:61ae82b9dd774fc19a802a04a02cd4e3> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_12> <http://semanticscience.org/resource/hasAttribute> <bnode:8a475acde098440392f8c4797b7133b6> .
+<bnode:971e041882e94b9eaf46f81d5ad48d75> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Polyethylene Insulation" .
+<bnode:787c2f1062ae4ecd814468e829460199> <http://semanticscience.org/resource/hasValue> "168.8625957"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_2> <http://semanticscience.org/resource/hasAttribute> <bnode:4be296bc592d4655a8a7a9662c48d159> .
+<http://nanomine.org/sample/l155-s1-roy-2005> <http://semanticscience.org/resource/hasRole> <http://nanomine.org/sample/l155-s1-roy-2005_control_role> .
+<bnode:3d47cdbdae594f9d9c75c94ce5728e40> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<http://nanomine.org/ns/perkin-elmer-model-5500> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Bonding" .
+<bnode:68273737e9694fd8a0a029ef3af7c7c0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/twc/vocab/setl/Transform> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_fourier-transform-infrared-spectroscopy> <http://www.w3.org/ns/prov#used> <bnode:dbbe3b889e2645188b317f5fc27dbfb2> .
+<bnode:046c93c1fd1c4339b35263fd16cdde0d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_21> <http://semanticscience.org/resource/hasAttribute> <bnode:c013005e43cc468dbd284e4f13fb282a> .
+<http://localhost:5000/pub/bc5747ee-ad5b-11e9-babe-000c29406e9a_provenance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#Provenance> .
+<bnode:930794349b8040519d937447c6272357> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:ae88a62e244a45b3b86fdb875df700a2> <http://semanticscience.org/resource/hasValue> "0.002354049"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:975d7688649744699d81d90be9c996a2> <http://semanticscience.org/resource/hasValue> "49.92556641"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:fb6711e1178542a2a7bc24d2bf9a6313> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrength> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_13> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Bonding Processes" .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_5> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_1> <http://semanticscience.org/resource/hasAttribute> <bnode:8d4b01b3e68e4832a7be55782b64f84d> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_5> <http://semanticscience.org/resource/hasAttribute> <bnode:b3d98becf32948f5a2f169a2f7323393> .
+<bnode:7474c22efcbd472ea548275447e8f6cd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<bnode:72413a4daf2749208ec0f6ea795dacf2> <http://semanticscience.org/resource/hasValue> "1.995"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_21> <http://semanticscience.org/resource/hasAttribute> <bnode:30071068dc1e4ce986f7d704893798f6> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasAssertion> <http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> .
+<http://nanomine.org/author/maccrone-r-k> <http://www.w3.org/2000/01/rdf-schema#label> "MacCrone, R.K." .
+<bnode:61f2ea2b43a1450ea9653e5c3f6677df> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Device> .
+<bnode:68273737e9694fd8a0a029ef3af7c7c0> <http://www.w3.org/ns/prov#qualifiedUsage> <bnode:7e0050ff63014dc29c4d48811ca918fd> .
+<bnode:887a7f5bac564b1094d5a35cb76f9e49> <http://semanticscience.org/resource/hasValue> "145.3864394"^^<http://www.w3.org/2001/XMLSchema#double> .
+<file:///tmp/tmp9nhezjc5> <http://vocab.rpi.edu/whyis/hasFileID> "bc5747ed-ad5b-11e9-babe-000c29406e9a" .
+<bnode:48a41e2996dc43efaea85f27dd133d53> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<bnode:a24bd697fa954f1981743553cf7064d2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<bnode:854685b5fa21415c9d4005e51006d806> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_8> <http://semanticscience.org/resource/hasAttribute> <bnode:363b66d1036d447cbf67b45a32a2798f> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_5> <http://semanticscience.org/resource/hasAttribute> <bnode:2cdac3e3fd204028bb3db95e51e9f79d> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_15> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_12> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:066e246bf1674707a501843f61ac7a8c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_6> <http://semanticscience.org/resource/hasAttribute> <bnode:787c2f1062ae4ecd814468e829460199> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_8> <http://semanticscience.org/resource/hasAttribute> <bnode:4de9b9926cf04c21b2bc720fb27e39a5> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Paramagnetic Resonance" .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_5> <http://semanticscience.org/resource/hasAttribute> <bnode:589301892e0e4282b01256c246ebf7f6> .
+<http://nanomine.org/author/schadler-l-s> <http://www.w3.org/2000/01/rdf-schema#label> "Schadler, L.S." .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_12> <http://semanticscience.org/resource/hasAttribute> <bnode:c68ac63b80484680ab3769f4405f2f84> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_7> <http://semanticscience.org/resource/hasAttribute> <bnode:987691d1d0864a3ba1c3ceac98cb5856> .
+<bnode:24d16d9e8cf34c9fa71d35b7a4f93ba0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:afb88186c1744c03a79d973e4e717a39> <http://semanticscience.org/resource/hasValue> "77440.03084"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:27a1e160d3834e1099b19d7a9ef5dd73> <http://semanticscience.org/resource/hasValue> "126.540773"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:902d89b69ae94bbd8fd984c11140257e> <http://semanticscience.org/resource/hasValue> "144.972830719"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:589301892e0e4282b01256c246ebf7f6> <http://semanticscience.org/resource/hasValue> "167.598110021"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:854685b5fa21415c9d4005e51006d806> <http://semanticscience.org/resource/hasValue> "1.305756117"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_10> <http://semanticscience.org/resource/hasAttribute> <bnode:370f5b18310145b08ef4f8953945aa58> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_3> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:e7b771b26f31495ab56a731e29459fd3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/setl/xml/NanomineXMLImport> .
+<bnode:38dfea95aa72430aa72075646e7501b1> <http://semanticscience.org/resource/hasValue> "43.73113085"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:9abbdd42e92544808dada1fe58867a14> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:8fb49af2e1584403840e208708d0f104> <http://semanticscience.org/resource/hasValue> "31.18775889"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:685ac26b73db45cb8ba64bf4a46f9391> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:cdf490889b3b47b697b2605296f30c2d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrength> .
+<bnode:37526e36b0e747b5a1d7e9feeccfe6aa> <http://semanticscience.org/resource/hasValue> "2.88"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_17> <http://semanticscience.org/resource/hasAttribute> <bnode:63fc3ee375c04634b4e9474dbe67ad8b> .
+<bnode:6a331c43070249eebe54da0c23f1b4d5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<bnode:e0d23bd2b01f4ccfb6c4306231afa6af> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<bnode:164d69ae3b2043f19b5d2ff24d4fd667> <http://semanticscience.org/resource/hasValue> "0.104984805984"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_16> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:370f5b18310145b08ef4f8953945aa58> <http://semanticscience.org/resource/hasValue> "20.30583336"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/author/nelson-j-k> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<http://nanomine.org/compound/Nanosilica> <http://www.w3.org/2000/01/rdf-schema#label> "nanosilica" .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_8> <http://semanticscience.org/resource/hasAttribute> <bnode:f130a0db97a24ef7a1b08389436cfd87> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_14> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_14> <http://semanticscience.org/resource/hasAttribute> <bnode:b0ec8de9ab5b4062a86542237c3dfa5f> .
+<http://nanomine.org/author/schadler-l-s> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<bnode:6c970dcf99e84e968971442f7a022dd8> <http://semanticscience.org/resource/hasValue> "206.482712325"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:6703b2368c774f4cb9b33d8a3c4cf5d6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:dba52e7e76ca4b5aa5f5c5366193cb6a> <http://semanticscience.org/resource/hasValue> "0.005178908"^^<http://www.w3.org/2001/XMLSchema#double> .
+<file:///tmp/tmp9nhezjc5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/DataDownload> .
+<http://localhost:5000/pub/bc5747ee-ad5b-11e9-babe-000c29406e9a_assertion> <http://purl.org/dc/terms/created> "2019-07-23T15:08:32.580832"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_18> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:739df60f2a5f49339873fba157086a97> <http://semanticscience.org/resource/hasValue> "0.189265537"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:dbbe3b889e2645188b317f5fc27dbfb2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Device> .
+<bnode:27e768903f1a41e689bfb3f0f18a8e5d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:a936bcdb271142608b3e04302dc221d8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrength> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_1> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_16> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:fb0dbccbc83b4b2b99195f0a43a0d03e> <http://semanticscience.org/resource/hasValue> "8.134761557"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_6> <http://semanticscience.org/resource/hasAttribute> <bnode:6582e93136a94e3eb38d698117b87f6e> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_19> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:913fdffcaf6848819da59117bc69742a> <http://semanticscience.org/resource/hasValue> "87.5667591"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:9d11a7e21cbd44ef99560ba4541b55cf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_filler_0> <http://semanticscience.org/resource/hasAttribute> <http://nanomine.org/sample/l155-s2-roy-2005_filler_0_mass_fraction> .
+<bnode:c3ff9272814747919873bb34a3c2caba> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://localhost:5000/pub/bc5747ee-ad5b-11e9-babe-000c29406e9a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/vocab/frbr/core#Expression> .
+<bnode:cc4f205c8a0a418086ffed70cde4a53e> <http://semanticscience.org/resource/hasValue> "190839.8845"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasDerivedFrom> <http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> .
+<bnode:80635e09766642fe81bcfa0d74f8626c> <http://semanticscience.org/resource/hasValue> "4909.468555"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:f80f55fd05994c45bbb6b47e833b75a7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_13> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:2cdac3e3fd204028bb3db95e51e9f79d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrength> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_pubinfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.nanopub.org/nschema#PublicationInfo> .
+<http://nanomine.org/ns/BreakdownStrengthKvMm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<bnode:29867053a0f84d17bc3ba546e5cb362c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:5209298732c1484caf99ea3c65713b0b> <http://www.w3.org/ns/prov#used> <bnode:cd0b221a7a8f49a49cb8b81435700ee9> .
+<bnode:cd0b221a7a8f49a49cb8b81435700ee9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/NanomineXMLFile> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_11> <http://semanticscience.org/resource/hasAttribute> <bnode:b47e7e91c431427ea8af0c8c09062cb0> .
+<bnode:85fbc9df8fdd4c15ad3ef4012f807cff> <http://semanticscience.org/resource/hasValue> "1.9275"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_8> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:5eec5e7ba7734f00811522999c13e1bf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:68273737e9694fd8a0a029ef3af7c7c0> <http://www.w3.org/ns/prov#used> <http://nanomine.org/setl/xml/xml> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_7> <http://semanticscience.org/resource/hasAttribute> <bnode:04be7f72d96f4d33b22e96e17f75aa0b> .
+<bnode:afb88186c1744c03a79d973e4e717a39> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/author/roy-m> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<http://nanomine.org/location/rensselaer-polytech-inst-troy-ny-usa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Location> .
+<http://nanomine.org/ns/nicolet-nexus-470-esp> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/Device> .
+<bnode:13ce2dea52aa41fc8110b75cc71196b6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_8> <http://semanticscience.org/resource/hasAttribute> <bnode:a24bd697fa954f1981743553cf7064d2> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_8> <http://semanticscience.org/resource/hasAttribute> <bnode:66366c9a88ca4123a3acd4d103eb734e> .
+<bnode:fe5dd1c51a9d475f8c4012c5b243ec81> <http://semanticscience.org/resource/hasValue> "-0.184502320226"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_10> <http://semanticscience.org/resource/hasAttribute> <bnode:e5f341f7fb054c9f96b4681b59fb031f> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_18> <http://semanticscience.org/resource/hasAttribute> <bnode:166a37acd79544c38df5f2e34585d533> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_5> <http://semanticscience.org/resource/hasAttribute> <bnode:fa8a82bbe6984c94b65bf9a4a6579476> .
+<bnode:e5f341f7fb054c9f96b4681b59fb031f> <http://semanticscience.org/resource/hasValue> "20.30421516"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_9> <http://semanticscience.org/resource/hasAttribute> <bnode:f22795f8be274560b239bc061a0ec6b8> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_21> <http://semanticscience.org/resource/hasAttribute> <bnode:ae88a62e244a45b3b86fdb875df700a2> .
+<bnode:66366c9a88ca4123a3acd4d103eb734e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://localhost:5000/pub/bc5747ec-ad5b-11e9-babe-000c29406e9a_assertion> <http://purl.org/dc/terms/contributor> <http://localhost:5000/user/identifier> .
+<bnode:a2a2202116034f0fb8bc263ae5a4123c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_6> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:1ad22909e4144081a064fe2ad357fe25> <http://semanticscience.org/resource/hasValue> "1.292778627"^^<http://www.w3.org/2001/XMLSchema#double> .
+<file:///tmp/tmp9nhezjc5> <http://purl.org/dc/terms/created> "2019-07-23T15:08:32.504892"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<bnode:f92b1c025a6a403c8e54868d36cc47e4> <http://semanticscience.org/resource/hasValue> "30623.82819"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_17> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:17ff60e806684938a5d47b99a69040a0> <http://semanticscience.org/resource/hasValue> "558.490395869"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:f22795f8be274560b239bc061a0ec6b8> <http://semanticscience.org/resource/hasValue> "7.902591204"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:27e768903f1a41e689bfb3f0f18a8e5d> <http://semanticscience.org/resource/hasValue> "315.7259981"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/setl/xml/nanopubs> <http://www.w3.org/ns/prov#wasGeneratedBy> <bnode:68273737e9694fd8a0a029ef3af7c7c0> .
+<bnode:43db0dc0105647e6900264de1b5ca78e> <http://semanticscience.org/resource/hasValue> "0.209594224"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_7> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_20> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:54d7f51837ec47c3bc11f81196b4a688> <http://semanticscience.org/resource/hasValue> "0.033289313"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_20> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:9402b2e8802e4ee69d169da839292a22> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_pulsed-electro-acoustic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/PulsedElectroAcoustic> .
+<bnode:1fe53e0b663143cfae762feb751464ae> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:737f2b37307c453ab091123f43f5d886> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:c93a26590ae847b38598d876932910ec> <http://semanticscience.org/resource/hasValue> "0.033643142"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:f5ff47eca2ac479697b9e552c90870e1> <http://semanticscience.org/resource/hasValue> "134.3096058"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:6522fa2323454e0aabb7be20ad9877e3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/WeibullPlot> .
+<bnode:8e08f0f5dc654e7991d6cdc176eef2f0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_coolingrate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_4> <http://semanticscience.org/resource/hasAttribute> <bnode:9112cb0a89b6447bb0c01772d37971a9> .
+<bnode:12250c61f6ac43e7ac3ee5613990a785> <http://semanticscience.org/resource/hasValue> "3.258450684"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:737f2b37307c453ab091123f43f5d886> <http://semanticscience.org/resource/hasValue> "0.523143327"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:451f14203a0e430f8b80d4db5b5ed52e> <http://semanticscience.org/resource/hasValue> "0.005239995"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_19> <http://semanticscience.org/resource/hasAttribute> <bnode:a08f291f1eec46aaa40904bfc2a780e1> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/BibliographicResource> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_15> <http://semanticscience.org/resource/hasAttribute> <bnode:c85c81d69d304e4c97908e61c7662f39> .
+<bnode:6a331c43070249eebe54da0c23f1b4d5> <http://semanticscience.org/resource/hasValue> "0.005178908"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/author/roy-m> <http://xmlns.com/foaf/0.1/name> "Roy, M." .
+<bnode:29c56ff4f3514e9ab0180ddaa102b0fa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_4> <http://semanticscience.org/resource/hasAttribute> <bnode:2235da5f12de4056af5f335e1cb486fd> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_3> <http://semanticscience.org/resource/hasAttribute> <bnode:bd3d709d1158422e899cf230afe9b242> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_6> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:7eabafdf11b0436f812599c457d33bd2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_0> <http://semanticscience.org/resource/hasAttribute> <bnode:f70320c316a34ca3b97c605ddd8eda4a> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_12> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:3cce9c76ab7e4449a9c2548e7558d991> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_1> <http://semanticscience.org/resource/hasAttribute> <bnode:7f6dce4f738c43d2875ee5d10c78e00c> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_17> <http://semanticscience.org/resource/hasAttribute> <bnode:13ce2dea52aa41fc8110b75cc71196b6> .
+<bnode:d7703774249d4ea9b7097526ba07dfaf> <http://semanticscience.org/resource/inRelationTo> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:bdb010d9ce4143c48e5f77e8cf82cffa> <http://semanticscience.org/resource/hasValue> "0.12405838"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_7> <http://semanticscience.org/resource/hasAttribute> <bnode:1ad22909e4144081a064fe2ad357fe25> .
+<bnode:ecfaea5c3c27446bb8a815394681302c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<bnode:15bee294ff2e49a293ffbe630ae540d5> <http://semanticscience.org/resource/hasValue> "134.527754422"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_1> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_9> <http://semanticscience.org/resource/hasAttribute> <bnode:556c9bdff5f3475fb938f5e0d3d19ecf> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_19> <http://semanticscience.org/resource/hasAttribute> <bnode:e7816be60dd84dd4a5f29529ee09ba2b> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_1> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:e389ef05f31048f0be2d4a13aceb6529> <http://semanticscience.org/resource/hasValue> "18.69779897"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:cdf490889b3b47b697b2605296f30c2d> <http://semanticscience.org/resource/hasValue> "559.2550864"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:d5ee0ad038ec4c0e9c0537471d838e95> <http://semanticscience.org/resource/hasValue> "74.97001936"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_8> <http://semanticscience.org/resource/hasAttribute> <bnode:10b626492df341d2bb8f67a6a9e1aa35> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_6> <http://semanticscience.org/resource/hasAttribute> <bnode:31eae23bda0946bc8f061fb5d897d64a> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_4> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:39f832c7e57448f7965ed1856fdce098> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_11> <http://semanticscience.org/resource/hasAttribute> <bnode:9e014898908e403e9c6b8d751febbea0> .
+<bnode:02d9c9b19ca94e538173244cb7fd3352> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Dielectric Permittivity" .
+<bnode:b6df6e775f06401d98fa660e3161654c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<bnode:6703b2368c774f4cb9b33d8a3c4cf5d6> <http://semanticscience.org/resource/hasValue> "0.093691149"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:ae1b1ce2773f48629fb4a44d4d70337b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_differential-scanning-calorimetry> <http://www.w3.org/ns/prov#used> <bnode:ce8c083571404bea9667a97042f56737> .
+<bnode:100b668af292477db20e1ce6c4d4a91d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:b3eb73782fb64da5ae71c802afa5cb79> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/WeibullPlot> .
+<bnode:a0556e181a6d441eab6a255b93c6f9ec> <http://semanticscience.org/resource/hasValue> "1.95"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_0> <http://semanticscience.org/resource/hasAttribute> <bnode:1eafd78920524a5f8a499428751fb460> .
+<bnode:1d43fe4db5504b45a0ce54a468c68767> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_9> <http://semanticscience.org/resource/hasAttribute> <bnode:03e787dc6bd848c98346f07111e59548> .
+<http://nanomine.org/setl/xml/NanomineXMLImport> <http://purl.org/twc/vocab/setl/hasTemplatePrefix> "http://nanomine.org/setl/xml/" .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_18> <http://semanticscience.org/resource/hasAttribute> <bnode:629db2a65d1f465ca32383492a47284f> .
+<bnode:6ccbc231abae4513b48513f14d3fb5eb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<bnode:85fbc9df8fdd4c15ad3ef4012f807cff> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:42d38162a4724f99a1a6d082e3ae8900> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/WeibullPlot> .
+<http://nanomine.org/sample/l155-s2-roy-2005> <http://semanticscience.org/resource/hasComponentPart> <http://nanomine.org/sample/l155-s2-roy-2005_filler_0> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_2> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://semanticscience.org/resource/hasPart> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_xray-photoelectron-spectroscopy> <http://www.w3.org/ns/prov#used> <bnode:81fcd4a823264ea98842b50c21aba9b7> .
+<bnode:fdc20446dba74252bad077981d3a76e3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricLossTangent> .
+<bnode:ebb7e042dd644a09986378a679f7a7c9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:ebb7e042dd644a09986378a679f7a7c9> <http://semanticscience.org/resource/hasValue> "315.7259981"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_scanning-electron-microscopy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/ScanningElectronMicroscopy> .
+<bnode:61ae82b9dd774fc19a802a04a02cd4e3> <http://semanticscience.org/resource/hasValue> "0.152777778"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/compound/Polyethylene> <http://www.w3.org/2000/01/rdf-schema#label> "Polyethylene" .
+<bnode:fb6711e1178542a2a7bc24d2bf9a6313> <http://semanticscience.org/resource/hasValue> "145.3864394"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:b129b577ab354f0d84cd13ca28a67e64> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/WeibullPlot> .
+<bnode:1a63dc2b16b1428baade75d3e79442e0> <http://semanticscience.org/resource/hasValue> "-0.365093588212"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_12> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<http://localhost:5000/pub/bc5747ee-ad5b-11e9-babe-000c29406e9a_assertion> <http://purl.org/dc/terms/contributor> <http://localhost:5000/user/identifier> .
+<bnode:490b563fc2be4ed18d1fc2f0388a4fd6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<http://nanomine.org/compound/Nanosilica> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Particle-Polymer Bonding" .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_7> <http://semanticscience.org/resource/hasAttribute> <bnode:ca524b068e2c4984ab6b0f9a1b27e559> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_2> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:d3aa3c7e6283434abbabc22101161165> <http://semanticscience.org/resource/hasValue> "788.0462816"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:a7281958a7314e819850185ac31c10df> <http://semanticscience.org/resource/hasValue> "0.152777778"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_6> <http://semanticscience.org/resource/hasAttribute> <bnode:975d7688649744699d81d90be9c996a2> .
+<http://localhost:5000/pub/bc5747ee-ad5b-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasPublicationInfo> <http://localhost:5000/pub/bc5747ee-ad5b-11e9-babe-000c29406e9a_pubinfo> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_17> <http://semanticscience.org/resource/hasAttribute> <bnode:50c982e0f653448e9dd83f4be5477277> .
+<bnode:f3bbbcd141ba4a5b82117e01cbabe7f8> <http://semanticscience.org/resource/hasValue> "208.5987317"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:63fc3ee375c04634b4e9474dbe67ad8b> <http://semanticscience.org/resource/hasValue> "12430.33287"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:4be296bc592d4655a8a7a9662c48d159> <http://semanticscience.org/resource/hasValue> "136.248706873"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Micron Scale Fillers" .
+<bnode:c93a26590ae847b38598d876932910ec> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:bd3d709d1158422e899cf230afe9b242> <http://semanticscience.org/resource/hasValue> "0.033643142"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:629db2a65d1f465ca32383492a47284f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:f130a0db97a24ef7a1b08389436cfd87> <http://semanticscience.org/resource/hasValue> "271.6654549"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-weibullplot_4> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:987691d1d0864a3ba1c3ceac98cb5856> <http://semanticscience.org/resource/hasValue> "208.5987317"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_4> <http://semanticscience.org/resource/hasAttribute> <bnode:fe5dd1c51a9d475f8c4012c5b243ec81> .
+<http://nanomine.org/ns/FrequencyHz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<bnode:c68ac63b80484680ab3769f4405f2f84> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_3> <http://semanticscience.org/resource/hasAttribute> <bnode:c93a26590ae847b38598d876932910ec> .
+<bnode:fa8a82bbe6984c94b65bf9a4a6579476> <http://semanticscience.org/resource/hasValue> "0.045433145"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_8> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:7c8a56f547904da6a013a9fa644696af> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<bnode:b3d98becf32948f5a2f169a2f7323393> <http://semanticscience.org/resource/hasValue> "0.045433145"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:166a37acd79544c38df5f2e34585d533> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_6> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:ea8c76f8d6da46629c23540faa061718> <http://www.w3.org/ns/prov#entity> <http://nanomine.org/setl/xml/characterization_methods_table> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_5> <http://semanticscience.org/resource/hasAttribute> <bnode:fa4d4ef3d5dc49f9ad0c9e092880670b> .
+<bnode:a0014317c1cb41f3926574c13f6812a9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<bnode:a96de6b6152e45fa9a0a1cc47958e884> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/DielectricBreakdownStrength> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_assertion> <http://www.w3.org/ns/prov#wasQuotedFrom> <http://nanomine.org/entry/L155_S2_Roy_2005_assertion> .
+<bnode:6505f29e25e3424a88c9d05726649810> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:///apps/whyis/method_attr.uri> .
+<bnode:234c375e0ccd49b8b9084b2621d47c4f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:fb0dbccbc83b4b2b99195f0a43a0d03e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:380084dc61074d1fb08a91ed6ea8dfcf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrength> .
+<bnode:ce8c083571404bea9667a97042f56737> <http://semanticscience.org/resource/hasAttribute> <bnode:6505f29e25e3424a88c9d05726649810> .
+<bnode:bd2d93992c7f4d44ada0e3509cc0912c> <http://semanticscience.org/resource/hasValue> "0.032015066"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:10b626492df341d2bb8f67a6a9e1aa35> <http://semanticscience.org/resource/hasValue> "62.45004225"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_1> <http://semanticscience.org/resource/hasAttribute> <bnode:bef6a01f81c847d4bf643a2532f14208> .
+<bnode:380084dc61074d1fb08a91ed6ea8dfcf> <http://semanticscience.org/resource/hasValue> "554.3522963"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:7e0050ff63014dc29c4d48811ca918fd> <http://www.w3.org/ns/prov#hadRole> <bnode:6693c2628f9c4ff8974847d93a59b0ef> .
+<bnode:a936bcdb271142608b3e04302dc221d8> <http://semanticscience.org/resource/hasValue> "281.4043353"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectriclosstangent_11> <http://semanticscience.org/resource/hasAttribute> <bnode:bc437a8c68fe4913ba1f89f997fc52b6> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-ac-dielectricdispersion_20> <http://semanticscience.org/resource/hasAttribute> <bnode:cc4f205c8a0a418086ffed70cde4a53e> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_3> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:63fc3ee375c04634b4e9474dbe67ad8b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:f3f66d32c40e4e6a9f839ec7a91e00bb> <http://semanticscience.org/resource/hasValue> "0.523143327"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:5eec5e7ba7734f00811522999c13e1bf> <http://semanticscience.org/resource/hasValue> "30585.61668"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:0fc305761910465aa337045b1c02b98c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:8416fa651c8a4f07a0857de887421d62> <http://semanticscience.org/resource/hasValue> "-0.640376906827"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:641f0eff75704899b830901775c043f0> <http://semanticscience.org/resource/hasValue> "18.69779897"^^<http://www.w3.org/2001/XMLSchema#double> .
+<bnode:036a359c84174be692d518b2a7a08ee2> <http://semanticscience.org/resource/hasValue> "0.003766478"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_9> <http://semanticscience.org/resource/hasAttribute> <bnode:056730136121411a8b656d1bdd9b63ce> .
+<bnode:7f6dce4f738c43d2875ee5d10c78e00c> <http://semanticscience.org/resource/hasValue> "0.005323618"^^<http://www.w3.org/2001/XMLSchema#double> .
+<https://www.iana.org/assignments/media-types/text/xml> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/FileFormat> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_6> <http://semanticscience.org/resource/hasAttribute> <bnode:6c970dcf99e84e968971442f7a022dd8> .
+<bnode:7a2864f0805d4c50809fad010610374e> <http://semanticscience.org/resource/hasValue> "269.668610582"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/sample/l155-s2-roy-2005> <http://semanticscience.org/resource/hasComponentPart> <http://nanomine.org/sample/l155-s2-roy-2005_matrix> .
+<bnode:d7703774249d4ea9b7097526ba07dfaf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/Filler> .
+<bnode:07f562c68ca94a5eb1a323933418375a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:f70320c316a34ca3b97c605ddd8eda4a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/WeibullPlot> .
+<bnode:7adc5149ea5945a6911d919d0314d8ee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/FrequencyHz> .
+<bnode:68273737e9694fd8a0a029ef3af7c7c0> <http://www.w3.org/ns/prov#qualifiedUsage> <bnode:ea8c76f8d6da46629c23540faa061718> .
+<bnode:a0556e181a6d441eab6a255b93c6f9ec> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<http://nanomine.org/setl/xml/NanomineXMLImport> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/twc/vocab/setl/SemanticETLScript> .
+<http://nanomine.org/sample/l155-s2-roy-2005_nanomine-dielectricbreakdownstrength_7> <http://www.w3.org/ns/prov#specializationOf> <http://nanomine.org/sample/l155-s2-roy-2005> .
+<bnode:8ba545dc353b491787b0a6d09f94a710> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrengthKvMm> .
+<http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a> <http://www.nanopub.org/nschema#hasProvenance> <http://localhost:5000/pub/bc5747f0-ad5b-11e9-babe-000c29406e9a_provenance> .
+<bnode:274598fee2224161867847133a85e98c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/BreakdownStrength> .
+<http://nanomine.org/entry/L155_S2_Roy_2005_characterization_differential-scanning-calorimetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Measuring> .
+<bnode:7e0050ff63014dc29c4d48811ca918fd> <http://www.w3.org/ns/prov#entity> <http://nanomine.org/setl/xml/property_classes_table> .
+<bnode:a7281958a7314e819850185ac31c10df> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://nanomine.org/ns/AC_DielectricDispersion> .
+<bnode:6ccbc231abae4513b48513f14d3fb5eb> <http://semanticscience.org/resource/hasValue> "0.002354049"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dx.doi.org/10.1109/TDEI.2005.1511089> <http://www.w3.org/ns/dcat#keyword> "Nanocomposites" .
+<bnode:98afd61e8bcf4d28a6a353e5f5721e31> <http://semanticscience.org/resource/hasValue> "0.016949153"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://nanomine.org/author/maccrone-r-k> <http://xmlns.com/foaf/0.1/name> "MacCrone, R.K." .
