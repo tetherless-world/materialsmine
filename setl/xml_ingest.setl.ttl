@@ -501,9 +501,7 @@
 											"@type": "nanomine:Abbreviation",
 											"sio:hasValue": "{{abbrev.text}}"
 										}
-									}
-
-
+									}]
 								}
 							}
 						],
