@@ -477,8 +477,6 @@
 										"sio:inRelationTo": {
 											"@id": "sample:{{slugify(id.text.replace(' ',''))}}"
 										}
-<<<<<<< HEAD
-=======
 									},
 									"sio:hasAttribute": [{
 										"@if": "polymer.find('ManufacturerOrSourceName') is not None",
@@ -503,7 +501,6 @@
 											"@type": "nanomine:Abbreviation",
 											"sio:hasValue": "{{abbrev.text}}"
 										}
->>>>>>> Add_features
 									}
 
 
