@@ -5,6 +5,7 @@ import xml.etree.ElementTree as ET
 import pandas as pd
 import rdflib
 import slugify
+import os
 
 import autonomic
 
@@ -602,6 +603,7 @@ def test_specific_surface_area(runner, expected_area=None, expected_units=None):
 
 
 def print_triples(runner):
-    print("Printing SPO Triples")
-    for s, p, o in runner.app.db.triples((None, None, None)):
-        print(str(s.n3()) + " " + str(p.n3()) + " " + str(o.n3()) + " .")
+    if os.getenv("CI") is None:
+        print("Printing SPO Triples")
+        for s, p, o in runner.app.db.triples((None, None, None)):
+            print(str(s.n3()) + " " + str(p.n3()) + " " + str(o.n3()) + " .")
