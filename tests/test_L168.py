@@ -1,10 +1,10 @@
 from . import ingest_tester
-from . import test_template
+from . import template
 import rdflib
 
 file_under_test = "L168_S4_Luo_2013"
 
-class L168Test(test_template.IngestTestTests):
+class L168Test(template.IngestTestTests):
     @classmethod
     def setUpClass(cls):
         cls.file_under_test = file_under_test
@@ -47,8 +47,8 @@ class L168Test(test_template.IngestTestTests):
         ingest_tester.test_abbreviations(self, expected_abbreviations)
         ingest_tester.test_abbreviations(self)
 
-    def test_filler_processing(self):
-        ingest_tester.test_filler_processing(self)
+    # def test_filler_processing(self):
+    #     ingest_tester.test_filler_processing(self)
 
     def test_manufacturers(self):
         expected_manufacturers = ["Shanghai 3F Co.",
