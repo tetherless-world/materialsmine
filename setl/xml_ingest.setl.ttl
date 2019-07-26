@@ -510,56 +510,63 @@
 								"@for": "i, property in properties.iterrows()",
 								"@do": {
 									"@if": "not isempty(property.xpath) and row.find('PROPERTIES')",
-									"@for": "table in row.find('PROPERTIES').findall('.'+property.xpath+'//data')",
+									"@for": "i, table in enumerate(row.find('PROPERTIES').findall('.'+property.xpath+'//data'))",
 									"@do": {
-										"@for": "row in table.findall('rows/row')",
-										"@do": [{
-											"@if": "row.findall('column')[1].text is not None and row.findall('column')[0].text is not None",
-											"@id": "sample:{{slugify(id.text.replace(' ',''))}}_{{slugify(property.uri)}}_{{row.attrib['id']}}",
-											"sio:hasAttribute": [{
-													"@type": "{{property.uri}}"
-												},
-												{
-													"@type": [{
-															"@if": "not isempty(property.curveIndependentVar)",
-															"@id": "{{property.curveIndependentVar}}"
-														},
-														{
-															"@if": "isempty(property.curveIndependentVar) and table.findall('headers/column')[0].text is not None",
-															"@id": "nanomine:{{camelcase(table.findall('headers/column')[0].text)}}",
-															"@type": "owl:Class",
-															"rdfs:subClassOf": {
-																"@id": "sio:Quantity"
+										"@id": "{{str(property.uri) + '_' + str(i)}}",
+										"@type": "{{property.uri}}",
+										"dc:description": [{
+											"@if": "table.find('../description') is not None",
+											"@value": "{{table.find('../description').text}}"
+										}],
+										"sio:hasAttribute": [{
+											"@for": "row in table.findall('rows/row')",
+											"@do": [{
+												"@if": "row.findall('column')[1].text is not None and row.findall('column')[0].text is not None",
+												"@id": "sample:{{slugify(id.text.replace(' ',''))}}_{{slugify(property.uri)}}_point_{{row.attrib['id']}}",
+
+												"sio:hasAttribute": [
+													{
+														"@type": [{
+																"@if": "not isempty(property.curveIndependentVar)",
+																"@id": "{{property.curveIndependentVar}}"
 															},
-															"rdfs:label": "{{table.findall('headers/column')[0].text}}"
+															{
+																"@if": "isempty(property.curveIndependentVar) and table.findall('headers/column')[0].text is not None",
+																"@id": "nanomine:{{camelcase(table.findall('headers/column')[0].text)}}",
+																"@type": "owl:Class",
+																"rdfs:subClassOf": {
+																	"@id": "sio:Quantity"
+																},
+																"rdfs:label": "{{table.findall('headers/column')[0].text}}"
+															}
+														],
+														"sio:hasValue": {
+															"@value": "{{row.findall('column')[0].text}}",
+															"@type": "xsd:double"
 														}
-													],
-													"sio:hasValue": {
-														"@value": "{{row.findall('column')[0].text}}",
-														"@type": "xsd:double"
-													}
-												},
-												{
-													"@type": [{
-															"@if": "not isempty(property.curveDependentVar)",
-															"@id": "{{property.curveDependentVar}}"
-														},
-														{
-															"@if": "isempty(property.curveDependentVar) and table.findall('headers/column')[1].text is not None",
-															"@id": "nanomine:{{camelcase(table.findall('headers/column')[1].text)}}",
-															"@type": "owl:Class",
-															"rdfs:subClassOf": {
-																"@id": "sio:Quantity"
+													},
+													{
+														"@type": [{
+																"@if": "not isempty(property.curveDependentVar)",
+																"@id": "{{property.curveDependentVar}}"
 															},
-															"rdfs:label": "{{table.findall('headers/column')[1].text}}"
+															{
+																"@if": "isempty(property.curveDependentVar) and table.findall('headers/column')[1].text is not None",
+																"@id": "nanomine:{{camelcase(table.findall('headers/column')[1].text)}}",
+																"@type": "owl:Class",
+																"rdfs:subClassOf": {
+																	"@id": "sio:Quantity"
+																},
+																"rdfs:label": "{{table.findall('headers/column')[1].text}}"
+															}
+														],
+														"sio:hasValue": {
+															"@value": "{{row.findall('column')[1].text}}",
+															"@type": "xsd:double"
 														}
-													],
-													"sio:hasValue": {
-														"@value": "{{row.findall('column')[1].text}}",
-														"@type": "xsd:double"
 													}
-												}
-											]
+												]
+											}]
 										}]
 									}
 								}
