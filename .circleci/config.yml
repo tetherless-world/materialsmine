@@ -11,7 +11,7 @@ jobs:
           command: chown -R whyis.whyis /apps/nanomine-graph
       - run:
           name: Install application
-          command: pip install -e .
+          command: pip3 install -e .
       - run:
           name: Run tests
-          command: cd /apps/whyis && python manage.py test
+          command: cd /apps/whyis && python3 manage.py test
