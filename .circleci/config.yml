@@ -14,4 +14,8 @@ jobs:
           command: pip3 install -e .
       - run:
           name: Run tests
-          command: cd /apps/whyis && python3 manage.py test
+          command: cd /apps/whyis && python3 manage.py test --ci
+      - store_artifacts:
+          path: test-results/py/htmlcov
+      - store_test_results:
+          path: test-results
