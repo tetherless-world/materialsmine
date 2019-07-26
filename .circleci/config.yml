@@ -1,26 +1,17 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/nanomine-graph
+    working_directory: /apps/nanomine-graph
     docker:
-      - image: ubuntu:xenial
+      - image: tetherlessworld/whyis:latest
     steps:
-      - run:
-          name: Install dependencies
-          command: apt-get update && apt-get install -y curl git lsb-release sudo
       - checkout
       - run:
-          name: Clone whyis
-          command: git clone https://github.com/tetherless-world/whyis.git ~/whyis-checkout
-      - run:
-          name: Install whyis
-          command: cd ~/whyis-checkout && WHYIS_BRANCH=master ./install.sh
-      - run:
-          name: Move application into place
-          command: mv ~/nanomine-graph /apps && chown -R whyis.whyis /apps/nanomine-graph
+          name: Set permissions
+          command: chown -R whyis.whyis /apps/nanomine-graph
       - run:
           name: Install application
           command: cd /apps/whyis && source venv/bin/activate && cd ../nanomine-graph && pip install -e .
       - run:
           name: Run tests
-          command: cd whyis && source venv/bin/activate && python manage.py test
+          command: cd /apps/whyis && source venv/bin/activate && python manage.py test
