@@ -1,8 +1,8 @@
 from . import ingest_tester
-from whyis.test.test_case import TestCase as WhyisTestCase
+from whyis.test.agent_unit_test_case import AgentUnitTestCase
 
 
-class IngestTestSetup(WhyisTestCase):
+class IngestTestSetup(AgentUnitTestCase):
     @classmethod
     def setUpClass(cls):
         print("Setting Up Class")
