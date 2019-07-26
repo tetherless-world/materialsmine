@@ -1,20 +1,24 @@
 version: 2
 jobs:
   build:
-    working_directory: /apps/nanomine-graph
+    # Don't set working_directory, we'll move everything into place afterwards
     docker:
       - image: circleci/python:3.7-stretch
     steps:
       - checkout
+          path: ~/nanomine-graph
       - run:
           name: Clone whyis
-          command: cd /apps && git clone https://github.com/tetherless-world/whyis.git whyis-checkout
+          command: git clone https://github.com/tetherless-world/whyis.git whyis-checkout
       - run:
           name: Install whyis
-          command: cd whyis-checkout && WHYIS_BRANCH=master ./install.sh
+          command: cd whyis-checkout && sudo WHYIS_BRANCH=master ./install.sh
+      - run:
+          name: Move application into place
+          command: sudo mv ~/nanomine-graph /apps && sudo chown -R whyis.whyis /apps/nanomine-graph
       - run:
           name: Install application
-          command: cd whyis && source venv/bin/activate && cd ../nanomine-graph && pip install -e .
+          command: cd /apps/whyis && source venv/bin/activate && cd ../nanomine-graph && pip install -e .
       - run:
           name: Run tests
           command: cd whyis && source venv/bin/activate && python manage.py test
