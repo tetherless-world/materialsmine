@@ -37,7 +37,7 @@ def main(argv):
         sys.stdout.write(uri + "...")
         tests_ran += 1
         test_text = str()
-        with open("/apps/nanomine-graph/tests/test_auto.py", "r") as f:
+        with open("/apps/nanomine-graph/tests/auto_tester.py", "r") as f:
             test_text = f.read()
         test_text = test_text.replace("<FILENAME HERE>", uri)
         with open("/apps/nanomine-graph/tests/test_auto_active.py", "w") as f:

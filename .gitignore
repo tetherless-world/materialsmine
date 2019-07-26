@@ -2,4 +2,9 @@
 *.DS_Store
 /data/*.setl.ttl
 .vscode
-tests/output.txt
+tests/outputs/*
+tests/output.txt*
+xml_files/*.xml
+output*
+tests/outputs/*
+*.egg-info
