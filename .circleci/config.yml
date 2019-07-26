@@ -14,7 +14,7 @@ jobs:
           command: pip3 install -e .
       - run:
           name: Start the whyis entrypoint and run tests
-          command: /docker-entrypoint.sh bash -c "ls -flh /data && cd /apps/whyis && python3 manage.py test --ci"
+          command: /docker-entrypoint.sh bash -c "ls -flh /data && cat /data/*.log && cd /apps/whyis && python3 manage.py test --ci"
       - store_artifacts:
           path: /apps/whyis/test-results/py/htmlcov
       - store_test_results:
