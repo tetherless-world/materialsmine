@@ -16,6 +16,6 @@ jobs:
           name: Start the whyis entrypoint and run tests
           command: /docker-entrypoint.sh bash -c "cd /apps/whyis && python3 manage.py test --ci"
       - store_artifacts:
-          path: test-results/py/htmlcov
+          path: /apps/whyis/test-results/py/htmlcov
       - store_test_results:
-          path: test-results
+          path: /apps/whyis/test-results
