@@ -14,10 +14,10 @@ jobs:
           command: git clone https://github.com/tetherless-world/whyis.git ~/whyis-checkout
       - run:
           name: Install whyis
-          command: cd ~/whyis-checkout && sudo WHYIS_BRANCH=master ./install.sh
+          command: cd ~/whyis-checkout && WHYIS_BRANCH=master ./install.sh
       - run:
           name: Move application into place
-          command: sudo mv ~/nanomine-graph /apps && sudo chown -R whyis.whyis /apps/nanomine-graph
+          command: mv ~/nanomine-graph /apps && chown -R whyis.whyis /apps/nanomine-graph
       - run:
           name: Install application
           command: cd /apps/whyis && source venv/bin/activate && cd ../nanomine-graph && pip install -e .
