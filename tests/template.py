@@ -1,5 +1,5 @@
 from . import ingest_tester
-from whyis_test_case import WhyisTestCase
+from whyis.test.test_case import TestCase as WhyisTestCase
 
 
 class IngestTestSetup(WhyisTestCase):

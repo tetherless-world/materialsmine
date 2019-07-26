@@ -1,4 +1,4 @@
-from testcase import WhyisTestCase
+from whyis.test.test_case import TestCase as WhyisTestCase
 
 from base64 import b64encode
 

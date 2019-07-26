@@ -1,4 +1,4 @@
-from testcase import WhyisTestCase
+from whyis.test.test_case import TestCase as WhyisTestCase
 
 import autonomic
 import rdflib
