@@ -13,8 +13,11 @@ jobs:
           name: Install application
           command: pip3 install -e .
       - run:
-          name: Start the whyis entrypoint (assumes cwd /apps/whyis) and run tests
-          command: cd /apps/whyis && /docker-entrypoint.sh bash -c "/apps/nanomine-graph/.circleci/test.sh"
+          name: Start the whyis entrypoint (assumes cwd /apps/whyis)
+          command: cd /apps/whyis && /docker-entrypoint.sh
+      - run:
+          name: Run tests
+          command: /apps/nanomine-graph/.circleci/test.sh
       - store_artifacts:
           path: /apps/whyis/test-results/py/htmlcov
       - store_test_results:
