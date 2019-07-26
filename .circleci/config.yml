@@ -1,21 +1,24 @@
 version: 2
 jobs:
   build:
-    working_directory: /apps
+    working_directory: /apps/nanomine-graph
     docker:
-      - image: circleci/python:3.7-stretch
+      - image: tetherlessworld/whyis:latest
     steps:
-      - checkout:
-          path: nanomine-graph
+      - checkout
       - run:
-          name: Clone whyis
-          command: git clone git@github.com:tetherless-world/whyis.git whyis-checkout
-      - run:
-          name: Install whyis
-          command: cd whyis-checkout && WHYIS_BRANCH=master ./install.sh
+          name: Set permissions
+          command: chown -R whyis.whyis /apps/nanomine-graph
       - run:
           name: Install application
-          command: cd whyis && source venv/bin/activate && cd ../nanomine-graph && pip install -e .
+          command: pip3 install -e .
+      - run:
+          name: Start the whyis entrypoint (assumes cwd /apps/whyis)
+          command: cd /apps/whyis && /docker-entrypoint.sh
       - run:
           name: Run tests
-          command: cd whyis && source venv/bin/activate && python manage.py test
+          command: /apps/nanomine-graph/.circleci/test.sh
+      - store_artifacts:
+          path: /apps/whyis/test-results/py/htmlcov
+      - store_test_results:
+          path: /apps/whyis/test-results

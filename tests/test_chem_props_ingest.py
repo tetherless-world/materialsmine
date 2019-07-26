@@ -1,9 +1,9 @@
-from whyis.test.test_case import TestCase as WhyisTestCase
+from whyis.test.agent_unit_test_case import AgentUnitTestCase
 
 import autonomic
 import rdflib
 
-class ChemPropsTest(WhyisTestCase):
+class ChemPropsTest(AgentUnitTestCase):
     def setUp(self):
         self.maxDiff = 10000
         self.login(*self.create_user("user@example.com", "password"))
