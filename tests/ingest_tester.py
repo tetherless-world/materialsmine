@@ -545,27 +545,30 @@ def test_tensile_loading_profile(runner, expected_strain=None, expected_stress=N
     print("Expected Stress  value Found") 
 
 # TODO Add autoparsing
+# TODO Verify node type, currently doesn't
 def test_flexural_loading_profile(runner, expected_strain=None, expected_stress=None):
     print("Testing Flexural Loading Profile")
     values = runner.app.db.query(
+        # ?common_node <http://semanticscience.org/resource/hasAttribute> ?type_node .
+        # ?type_node a <http://nanomine.org/ns/FlexuralLoadingProfile> .
     """
     SELECT ?strain ?stress
     WHERE {
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?type_node .
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?strain_node .
         ?common_node <http://semanticscience.org/resource/hasAttribute> ?stress_node .
+        ?common_node <http://semanticscience.org/resource/hasAttribute> ?strain_node .
 
-        ?type_node a <http://nanomine.org/ns/FlexuralLoadingProfile> .
 
-        ?strain_node a <http://nanomine.org/ns/Strain> .
-        ?strain_node <http://semanticscience.org/resource/hasValue> ?strain .
         
         ?stress_node a <http://nanomine.org/ns/Stress> .
         ?stress_node <http://semanticscience.org/resource/hasValue> ?stress .
 
+        ?strain_node a <http://nanomine.org/ns/Strain> .
+        ?strain_node <http://semanticscience.org/resource/hasValue> ?strain .
+
     }
     """
     )
+    print("Finished Query", flush=True)
     if expected_strain is None:
         raise NotImplementedError
     if expected_stress is None:
