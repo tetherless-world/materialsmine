@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/nanomine-graph
     docker:
-      - image: circleci/python:3.7-stretch
+      - image: ubuntu:xenial
     steps:
       - checkout
       - run:
