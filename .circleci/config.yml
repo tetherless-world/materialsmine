@@ -1,15 +1,14 @@
 version: 2
 jobs:
   build:
-    working_directory: /apps
+    working_directory: /apps/nanomine-graph
     docker:
       - image: circleci/python:3.7-stretch
     steps:
-      - checkout:
-          path: nanomine-graph
+      - checkout
       - run:
           name: Clone whyis
-          command: git clone git@github.com:tetherless-world/whyis.git whyis-checkout
+          command: cd /apps && git clone git@github.com:tetherless-world/whyis.git whyis-checkout
       - run:
           name: Install whyis
           command: cd whyis-checkout && WHYIS_BRANCH=master ./install.sh
