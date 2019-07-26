@@ -7,7 +7,7 @@ jobs:
     steps:
       - run:
           name: Install dependencies
-          command: apt-get update && apt-get install -y curl git sudo
+          command: apt-get update && apt-get install -y curl git lsb-release sudo
       - checkout
       - run:
           name: Clone whyis
