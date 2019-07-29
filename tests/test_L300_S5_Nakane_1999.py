@@ -62,5 +62,5 @@ class L300_S5_Nakane_1999(template.IngestTestSetup):
         stress = [rdflib.Literal(val) for val in stress]
         ingest_tester.test_tensile_loading_profile(self, strain, stress)
     
-    def test_triples(self):
-        ingest_tester.print_triples(self)
+    # def test_triples(self):
+    #     ingest_tester.print_triples(self)

@@ -519,16 +519,18 @@ def test_tensile_loading_profile(runner, expected_strain=None, expected_stress=N
     """
     SELECT ?strain ?stress
     WHERE {
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?type_node . 
-        ?type_node a <http://nanomine.org/ns/TensileLoadingProfile> .
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?strain_node .
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?stress_node .
+        ?profile a <http://nanomine.org/ns/TensileLoadingProfile> .
+        ?profile <http://semanticscience.org/resource/hasAttribute> ?point .
+
+        ?point <http://semanticscience.org/resource/hasAttribute> ?strain_node .
+        ?point <http://semanticscience.org/resource/hasAttribute> ?stress_node .
 
         ?strain_node a <http://nanomine.org/ns/Strain> .
         ?strain_node <http://semanticscience.org/resource/hasValue> ?strain .
-        
+
         ?stress_node a <http://nanomine.org/ns/Stress> .
         ?stress_node <http://semanticscience.org/resource/hasValue> ?stress .
+        
 
     }
     """
