@@ -32,6 +32,12 @@
     prov:used <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=798992913>;
   ].
 
+:processing_methods_table a csvw:Table, setl:Table;
+  prov:wasGeneratedBy [
+    a setl:Extract;
+    prov:used <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=798992913>;
+  ].
+
 :xml a setl:XML;
   prov:wasGeneratedBy [
      a setl:Extract;
@@ -53,7 +59,8 @@
     prov:used :xml;
     prov:qualifiedUsage [ a prov:Usage; prov:entity :property_classes_table; prov:hadRole [ dcterms:identifier "properties"]];
     prov:qualifiedUsage [ a prov:Usage; prov:entity :characterization_methods_table; prov:hadRole [ dcterms:identifier "methods"]];
-    setl:hasContext """{
+    prov:qualifiedUsage [ a prov:Usage; prov:entity :processing_methods_table; prov:hadRole [dcterms:identifier "processing"]];
+	setl:hasContext """{
   "owl" : "http://www.w3.org/2002/07/owl#",
   "sio" :     "http://semanticscience.org/resource/",
   "skos" :    "http://www.w3.org/2004/02/skos/core#",
@@ -89,7 +96,8 @@
 			"nanopub:hasAssertion": {
 				"@id": "entry:{{id.text.replace(' ','')}}_assertion",
 				"@type": "nanopub:Assertion",
-				"@graph": [{
+				"@graph": [
+					{
 						"@if": "row.findtext('Control_ID') is not None",
 						"@id": "sample:{{slugify(row.findtext('Control_ID').replace(' ',''))}}",
 						"sio:hasRole": {
@@ -694,6 +702,35 @@
 								}]
 							}
 						}]
+					},
+					{
+						"@id": "entry:{{id.text.replace(' ','')}}_material",
+						"prov:wasGeneratedBy": [
+							{									
+								"@for" : "p, process in processing.iterrows()",
+								"@do" : 
+								{
+									"@type" : "sio:Procedure",
+									"sio:hasInput":
+									{
+										"@id": "sio:ChemicalEntity"	,
+										"@type": [
+											{
+												"@if": "process.find('Additive') is not none",
+												"@type": "nanomine:Additive",
+												"@value": "{process.find('//Additive').text}"					
+											},
+											{
+												"@if": "process.find('Solvent') is not none",
+												"@type": "nanomine:Solvent",
+												"@value": "{process.find('//Solvent').text}"					
+											}
+										]
+									}
+								}
+							}
+						]	
+
 					},
 					{
 						"@for": "citation in row.findall('DATA_SOURCE/Citation')",
