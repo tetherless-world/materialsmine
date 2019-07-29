@@ -519,17 +519,6 @@
 											"@value": "{{table.find('../description').text}}"
 										}],
 										"sio:hasAttribute": [{
-											"@for": "header in table.findall('headers')",
-											"@do": [{
-												"@if": "row.findall('column')[1].text is not None and row.findall('column')[0].text is not None",
-												"@id": "sample:{{slugify(id.text.replace(' ',''))}}_{{slugify(property.uri)}}_point_{{row.attrib['id']}}",
-												"dc:description": [{
-													"@if": "header is not None",
-													"@value": "{{header.text}}"
-												}]
-											}]
-										}],
-										"sio:hasAttribute": [{
 											"@for": "row in table.findall('rows/row')",
 											"@do": [{
 												"@if": "row.findall('column')[1].text is not None and row.findall('column')[0].text is not None",
