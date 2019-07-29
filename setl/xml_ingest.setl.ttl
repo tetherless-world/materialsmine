@@ -512,7 +512,6 @@
 									"@if": "not isempty(property.xpath) and row.find('PROPERTIES')",
 									"@for": "i, table in enumerate(row.find('PROPERTIES').findall('.'+property.xpath+'//data'))",
 									"@do": {
-										"@if": "table.find('rows') is not None",
 										"@id": "{{str(property.uri) + '_' + str(i)}}",
 										"@type": "{{property.uri}}",
 										"dc:description": [{
@@ -520,7 +519,6 @@
 											"@value": "{{table.find('../description').text}}"
 										}],
 										"sio:hasAttribute": [{
-											"@if": "table.find('rows') is not None",
 											"@for": "header in table.findall('headers')",
 											"@do": [{
 												"@if": "row.findall('column')[1].text is not None and row.findall('column')[0].text is not None",
