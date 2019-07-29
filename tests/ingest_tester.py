@@ -551,21 +551,21 @@ def test_tensile_loading_profile(runner, expected_strain=None, expected_stress=N
 def test_flexural_loading_profile(runner, expected_strain=None, expected_stress=None):
     print("Testing Flexural Loading Profile")
     values = runner.app.db.query(
-        # ?common_node <http://semanticscience.org/resource/hasAttribute> ?type_node .
-        # ?type_node a <http://nanomine.org/ns/FlexuralLoadingProfile> .
     """
     SELECT ?strain ?stress
     WHERE {
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?stress_node .
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?strain_node .
+        ?profile a <http://nanomine.org/ns/FlexuralLoadingProfile> .
+        ?profile <http://semanticscience.org/resource/hasAttribute> ?point .
 
-
-        
-        ?stress_node a <http://nanomine.org/ns/Stress> .
-        ?stress_node <http://semanticscience.org/resource/hasValue> ?stress .
+        ?point <http://semanticscience.org/resource/hasAttribute> ?strain_node .
+        ?point <http://semanticscience.org/resource/hasAttribute> ?stress_node .
 
         ?strain_node a <http://nanomine.org/ns/Strain> .
         ?strain_node <http://semanticscience.org/resource/hasValue> ?strain .
+
+        ?stress_node a <http://nanomine.org/ns/Stress> .
+        ?stress_node <http://semanticscience.org/resource/hasValue> ?stress .
+        
 
     }
     """
@@ -576,13 +576,8 @@ def test_flexural_loading_profile(runner, expected_strain=None, expected_stress=
     if expected_stress is None:
         raise NotImplementedError
     
-    # strain = [value["strain"] for value in values]
-    # stress = [value["stress"] for value in values]
-    strain = list()
-    stress = list()
-    for v in values:
-        strain.append(v["strain"])
-        stress.append(v["stress"])
+    strain = [value["strain"] for value in values]
+    stress = [value["stress"] for value in values]
 
     runner.assertCountEqual(expected_strain, strain) 
     runner.assertCountEqual(expected_stress, stress) 
