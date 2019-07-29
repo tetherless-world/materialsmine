@@ -541,9 +541,51 @@ def test_tensile_loading_profile(runner, expected_strain=None, expected_stress=N
     
     strain = [value["strain"] for value in values]
     stress = [value["stress"] for value in values]
-    # runner.assertCountEqual(expected_strain, strain) 
+    runner.assertCountEqual(expected_strain, strain) 
     runner.assertCountEqual(expected_stress, stress) 
     print("Expected Stress  value Found") 
+
+# TODO Add autoparsing
+# TODO Verify node type, currently doesn't
+def test_flexural_loading_profile(runner, expected_strain=None, expected_stress=None):
+    print("Testing Flexural Loading Profile")
+    values = runner.app.db.query(
+        # ?common_node <http://semanticscience.org/resource/hasAttribute> ?type_node .
+        # ?type_node a <http://nanomine.org/ns/FlexuralLoadingProfile> .
+    """
+    SELECT ?strain ?stress
+    WHERE {
+        ?common_node <http://semanticscience.org/resource/hasAttribute> ?stress_node .
+        ?common_node <http://semanticscience.org/resource/hasAttribute> ?strain_node .
+
+
+        
+        ?stress_node a <http://nanomine.org/ns/Stress> .
+        ?stress_node <http://semanticscience.org/resource/hasValue> ?stress .
+
+        ?strain_node a <http://nanomine.org/ns/Strain> .
+        ?strain_node <http://semanticscience.org/resource/hasValue> ?strain .
+
+    }
+    """
+    )
+    print("Finished Query", flush=True)
+    if expected_strain is None:
+        raise NotImplementedError
+    if expected_stress is None:
+        raise NotImplementedError
+    
+    # strain = [value["strain"] for value in values]
+    # stress = [value["stress"] for value in values]
+    strain = list()
+    stress = list()
+    for v in values:
+        strain.append(v["strain"])
+        stress.append(v["stress"])
+
+    runner.assertCountEqual(expected_strain, strain) 
+    runner.assertCountEqual(expected_stress, stress) 
+    print("Expected Flexural Loading Profile Found") 
 
 
 # TODO Refactor to remove usage of specific bnodes

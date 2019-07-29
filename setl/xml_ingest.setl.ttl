@@ -524,12 +524,12 @@
 										"@do": [{
 											"@if": "row.findall('column')[1].text is not None and row.findall('column')[0].text is not None",
 											"@id": "sample:{{slugify(id.text.replace(' ',''))}}_{{slugify(property.uri)}}_{{row.attrib['id']}}",
+											"dc:Description": [{
+												"@if": "table.find('../description').text is not None",
+												"@value": "{{table.find('../description').text}}"
+											}],
 											"sio:hasAttribute": [{
-													"@type": "{{property.uri}}",
-													"sio:hasValue": {
-														"@value": "{{float(row.findall('column')[1].text)}}",
-														"@type": "xsd:double"
-													}
+													"@type": "{{property.uri}}"
 												},
 												{
 													"@type": [{
@@ -549,7 +549,11 @@
 													"sio:hasValue": {
 														"@value": "{{row.findall('column')[0].text}}",
 														"@type": "xsd:double"
-													}
+													},
+													"dc:Description": [{
+														"@if": "table.findall('headers/column')[0].text is not None",
+														"@value": "{{table.findall('headers/column')[0].text}}"
+													}]
 												},
 												{
 													"@type": [{
@@ -569,7 +573,11 @@
 													"sio:hasValue": {
 														"@value": "{{row.findall('column')[1].text}}",
 														"@type": "xsd:double"
-													}
+													},
+													"dc:Description": [{
+														"@if": "table.findall('headers/column')[1].text is not None",
+														"@value": "{{table.findall('headers/column')[1].text}}"
+													}]
 												}
 											]
 										}]
