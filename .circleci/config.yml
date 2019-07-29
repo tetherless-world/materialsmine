@@ -17,7 +17,7 @@ jobs:
           command: cd /apps/whyis && /docker-entrypoint.sh
       - run:
           name: Run tests
-          command: /apps/nanomine-graph/.circleci/test.sh
+          command: cd /apps/whyis && python3 manage.py test --ci
       - store_artifacts:
           path: /apps/whyis/test-results/py/htmlcov
       - store_test_results:
