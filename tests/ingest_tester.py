@@ -28,12 +28,17 @@ def setUp(runner, file_under_test):
     # Initialization
     runner.login(*runner.create_user("user@example.com", "password"))
 
-    r = requests.get('http://nanomine.org/nmr/xml/' + file_under_test + '.xml')
-    j = json.loads(r.text)
-    xml_str = j["data"][0]["xml_str"]
-    temp = tempfile.NamedTemporaryFile()
-    temp.write(xml_str.encode("utf-8"))
-    temp.seek(0)
+    try:
+        r = requests.get('http://nanomine.org/nmr/xml/' + file_under_test + '.xml', timeout=5)
+        r.raise_for_status()
+        j = json.loads(r.text)
+        xml_str = j["data"][0]["xml_str"]
+        temp = tempfile.NamedTemporaryFile()
+        temp.write(xml_str.encode("utf-8"))
+        temp.seek(0)
+    except Exception as e:
+        print(e)
+        runner.assertTrue(False, "Something went wrong with loading the XML file")
 
     files[file_under_test] = files["template"].format(temp.name)
     upload = files[file_under_test]
@@ -65,13 +70,19 @@ def setUp(runner, file_under_test):
 def autoparse(file_under_test):
     # Parses out information from the specified file for verification the the correct data
     # ends up in the graph
-    r = requests.get('http://nanomine.org/nmr/xml/' + file_under_test + '.xml')
-    j = json.loads(r.text)
-    xml_str = j["data"][0]["xml_str"]
-    temp = tempfile.NamedTemporaryFile()
-    temp.write(xml_str.encode('utf-8'))
-    temp.seek(0)
-    tree = ET.parse(temp)
+    tree = None
+    try:
+        r = requests.get('http://nanomine.org/nmr/xml/' + file_under_test + '.xml', timeout=5)
+        r.raise_for_status()
+        j = json.loads(r.text)
+        xml_str = j["data"][0]["xml_str"]
+        temp = tempfile.NamedTemporaryFile()
+        temp.write(xml_str.encode('utf-8'))
+        temp.seek(0)
+        tree = ET.parse(temp)
+    except Exception as e:
+        print(e)
+        print("Something went wrong with initializing autoparsing for", file_under_test)
     root = tree.getroot()
     expected_data = dict()
     # CommonFields Data
