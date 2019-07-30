@@ -9,6 +9,8 @@ import os
 
 import autonomic
 
+disabled = list()
+
 files = {
     "template": '''<{}> a <http://nanomine.org/ns/NanomineXMLFile>,
         <http://schema.org/DataDownload>,
@@ -18,6 +20,11 @@ files = {
 
 
 def setUp(runner, file_under_test):
+    # Skip setting up disabled tests
+    if os.getenv("CI") is not None:
+        if runner._testMethodName in disabled:
+            print("Skipping test", str(runner._testMethodName), "in CI since it is disabled")
+            return
     # Initialization
     runner.login(*runner.create_user("user@example.com", "password"))
 
@@ -307,6 +314,7 @@ def test_matrix_chemical_names(runner, expected_names=None):
 
 
 # TODO Reimplement
+disabled.append("test_matrix_trade_names")
 def test_matrix_trade_names(runner, expected_names=None):
     return
     # Check if the names of the chemicals are present
@@ -351,6 +359,7 @@ def test_filler_chemical_names(runner, expected_names=None):
 
 
 # TODO Reimplement
+disabled.append("test_filler_trade_names")
 def test_filler_trade_names(runner, expected_names=None):
     return
     # Check if the names of the chemicals are present
@@ -375,6 +384,7 @@ def test_filler_trade_names(runner, expected_names=None):
 
 
 # TODO Fix or remove
+disabled.append("test_temperatures")
 def test_temperatures(runner, expected_temperatures=None):
     return
     print("Checking if the expected temperatures are present")
@@ -387,6 +397,7 @@ def test_temperatures(runner, expected_temperatures=None):
 
 
 # TODO Reimplement
+disabled.append("test_abbreviations")
 def test_abbreviations(runner, expected_abbreviations=None):
     return
     print("Checking if the expected abbreviations are present")
@@ -406,6 +417,7 @@ def test_abbreviations(runner, expected_abbreviations=None):
     print("Expected Abbreviations Found")
 
 # TODO Reimplement
+disabled.append("test_manufacturers")
 def test_manufacturers(runner, expected_manufacturers=None):
     return
     print("Checking if the expected manufactures are present")
@@ -426,6 +438,7 @@ def test_manufacturers(runner, expected_manufacturers=None):
 
 
 # TODO Reimplement
+disabled.append("test_complete_material")
 def test_complete_material(runner, expected_materials=None):
     return
     materials = runner.app.db.query(
@@ -466,6 +479,7 @@ def test_complete_material(runner, expected_materials=None):
 
 
 # TODO Fix or remove
+disabled.append("construct_table")
 def construct_table(runner):
     raise NotImplementedError
     data = runner.app.db.query(
@@ -481,6 +495,7 @@ def construct_table(runner):
 
 
 # TODO Fix or remove
+disabled.append("test_dielectric_real_permittivity")
 def test_dielectric_real_permittivity(runner, expected_data=None):
     raise NotImplementedError
     print("Checking if the Dielectric Real Permittivity Table is as expected")
@@ -495,6 +510,7 @@ def test_dielectric_real_permittivity(runner, expected_data=None):
 
 
 # TODO Fix or remove
+disabled.append("test_filler_processing")
 def test_filler_processing(runner, expected_process=None):
     return
     print("Testing Filler Processing")
@@ -515,6 +531,7 @@ def test_filler_processing(runner, expected_process=None):
 
 
 # TODO Reimplement
+disabled.append("test_viscoelastic_measurement_mode")
 def test_viscoelastic_measurement_mode(runner, expected_mode=None):
     return
     print("Testing viscoelastic measurement mode")
@@ -560,6 +577,7 @@ def test_tensile_loading_profile(runner, expected_strain=None, expected_stress=N
 
 # TODO Refactor to remove usage of specific bnodes
 # TODO Reimplement 
+disabled.append("test_melt_viscosity")
 def test_melt_viscosity(runner, expected_value=None):
     return
     print("\n\nMelt Viscosity")
@@ -615,7 +633,7 @@ def test_specific_surface_area(runner, expected_area=None, expected_units=None):
     runner.assertCountEqual(expected_units, units)
 
 
-
+disabled.append("test_triples")
 def print_triples(runner):
     if os.getenv("CI") is None:
         print("Printing SPO Triples")
