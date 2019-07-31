@@ -13,6 +13,11 @@ jobs:
           name: Install application
           command: pip3 install -e .
       - run:
+          name: Install newer version of SETLr
+          command: |
+            pip uninstall --yes setlr
+            pip install -q git+https://github.com/tetherless-world/setlr.git#egg=setlr
+      - run:
           name: Start the whyis entrypoint (assumes cwd /apps/whyis)
           command: cd /apps/whyis && /docker-entrypoint.sh
       - run:
