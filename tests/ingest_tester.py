@@ -7,6 +7,9 @@ import rdflib
 import slugify
 import os
 
+from urllib3.util.retry import Retry
+from requests.adapters import HTTPAdapter
+
 import autonomic
 
 disabled = list()
@@ -29,9 +32,12 @@ def setUp(runner, file_under_test):
     runner.login(*runner.create_user("user@example.com", "password"))
 
     try:
-        r = requests.get('http://nanomine.org/nmr/xml/' + file_under_test + '.xml', timeout=5)
-        r.raise_for_status()
-        j = json.loads(r.text)
+        s = requests.Session()
+        retries = Retry(total=5, backoff_factor=0.1, status_forcelist=[500, 502, 503, 504], raise_on_redirect=True, raise_on_status=True)
+        s.mount("http://", HTTPAdapter(max_retries=retries))
+        response = s.get('http://nanomine.org/nmr/xml/' + file_under_test + '.xml', timeout=5)
+        runner.assertEqual(response.status_code, 200)
+        j = json.loads(response.text)
         xml_str = j["data"][0]["xml_str"]
         temp = tempfile.NamedTemporaryFile()
         temp.write(xml_str.encode("utf-8"))
@@ -72,9 +78,11 @@ def autoparse(file_under_test):
     # ends up in the graph
     tree = None
     try:
-        r = requests.get('http://nanomine.org/nmr/xml/' + file_under_test + '.xml', timeout=5)
-        r.raise_for_status()
-        j = json.loads(r.text)
+        s = requests.Session()
+        retries = Retry(total=5, backoff_factor=0.1, status_forcelist=[500, 502, 503, 504], raise_on_redirect=True, raise_on_status=True)
+        s.mount("http://", HTTPAdapter(max_retries=retries))
+        response = s.get('http://nanomine.org/nmr/xml/' + file_under_test + '.xml', timeout=5)
+        j = json.loads(response.text)
         xml_str = j["data"][0]["xml_str"]
         temp = tempfile.NamedTemporaryFile()
         temp.write(xml_str.encode('utf-8'))
