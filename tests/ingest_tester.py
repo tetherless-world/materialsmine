@@ -23,7 +23,7 @@ files = {
 
 
 def get_remote_xml(file_under_test):
-    # Given an nanomine file returns the xml string 
+    """ Given an nanomine file returns the xml string """
     s = requests.Session()
     retries = Retry(total=5, backoff_factor=0.1, status_forcelist=[500, 502, 503, 504], raise_on_redirect=True, raise_on_status=True)
     s.mount("http://", HTTPAdapter(max_retries=retries))
