@@ -33,6 +33,14 @@ def get_remote_xml(file_under_test):
     return xml_str
 
 
+def disable_test(func):
+    disabled.append(func.__name__)
+    print(func.__name__, "is disabled and will not run")
+    def disable(*args, **kwargs):
+        print(func.__name__, "has been disabled")
+    return disable
+
+
 def setUp(runner, file_under_test):
     # Skip setting up disabled tests
     if os.getenv("CI") is not None:
@@ -324,9 +332,8 @@ def test_matrix_chemical_names(runner, expected_names=None):
 
 
 # TODO Reimplement
-disabled.append("test_matrix_trade_names")
+@disable_test
 def test_matrix_trade_names(runner, expected_names=None):
-    return
     # Check if the names of the chemicals are present
     print("\n\nMatrix Trade Names")
     names = runner.app.db.query(
@@ -369,9 +376,8 @@ def test_filler_chemical_names(runner, expected_names=None):
 
 
 # TODO Reimplement
-disabled.append("test_filler_trade_names")
+@disable_test
 def test_filler_trade_names(runner, expected_names=None):
-    return
     # Check if the names of the chemicals are present
     print("\n\nFiller Trade Names")
     names = list(runner.app.db.query(
@@ -394,9 +400,8 @@ def test_filler_trade_names(runner, expected_names=None):
 
 
 # TODO Fix or remove
-disabled.append("test_temperatures")
+@disable_test
 def test_temperatures(runner, expected_temperatures=None):
-    return
     print("Checking if the expected temperatures are present")
     temperatures = list(runner.app.db.objects(
         None, rdflib.URIRef("http://purl.obolibrary.org/obo/PATO_0000146")))
@@ -407,9 +412,8 @@ def test_temperatures(runner, expected_temperatures=None):
 
 
 # TODO Reimplement
-disabled.append("test_abbreviations")
+@disable_test
 def test_abbreviations(runner, expected_abbreviations=None):
-    return
     print("Checking if the expected abbreviations are present")
     abbreviations = list(runner.app.db.query(
     """
@@ -426,10 +430,10 @@ def test_abbreviations(runner, expected_abbreviations=None):
     runner.assertCountEqual(expected_abbreviations, abbreviations)
     print("Expected Abbreviations Found")
 
+
 # TODO Reimplement
-disabled.append("test_manufacturers")
+@disable_test
 def test_manufacturers(runner, expected_manufacturers=None):
-    return
     print("Checking if the expected manufactures are present")
     manufacturers = list(runner.app.db.query(
         """
@@ -448,9 +452,8 @@ def test_manufacturers(runner, expected_manufacturers=None):
 
 
 # TODO Reimplement
-disabled.append("test_complete_material")
+@disable_test
 def test_complete_material(runner, expected_materials=None):
-    return
     materials = runner.app.db.query(
         """
     SELECT ?abbrev ?manufac ?name ?trade
@@ -490,6 +493,7 @@ def test_complete_material(runner, expected_materials=None):
 
 # TODO Fix or remove
 disabled.append("construct_table")
+@disable_test
 def construct_table(runner):
     raise NotImplementedError
     data = runner.app.db.query(
@@ -505,7 +509,7 @@ def construct_table(runner):
 
 
 # TODO Fix or remove
-disabled.append("test_dielectric_real_permittivity")
+@disable_test
 def test_dielectric_real_permittivity(runner, expected_data=None):
     raise NotImplementedError
     print("Checking if the Dielectric Real Permittivity Table is as expected")
@@ -520,9 +524,8 @@ def test_dielectric_real_permittivity(runner, expected_data=None):
 
 
 # TODO Fix or remove
-disabled.append("test_filler_processing")
+@disable_test
 def test_filler_processing(runner, expected_process=None):
-    return
     print("Testing Filler Processing")
     process = runner.app.db.query(
     """
@@ -541,9 +544,8 @@ def test_filler_processing(runner, expected_process=None):
 
 
 # TODO Reimplement
-disabled.append("test_viscoelastic_measurement_mode")
+@disable_test
 def test_viscoelastic_measurement_mode(runner, expected_mode=None):
-    return
     print("Testing viscoelastic measurement mode")
     mode = list(runner.app.db.objects(
         None, rdflib.URIRef("http://nanomine.org/ns/tensile")))
@@ -587,9 +589,8 @@ def test_tensile_loading_profile(runner, expected_strain=None, expected_stress=N
 
 # TODO Refactor to remove usage of specific bnodes
 # TODO Reimplement 
-disabled.append("test_melt_viscosity")
+@disable_test
 def test_melt_viscosity(runner, expected_value=None):
-    return
     print("\n\nMelt Viscosity")
     values = runner.app.db.query(
     """
@@ -643,7 +644,7 @@ def test_specific_surface_area(runner, expected_area=None, expected_units=None):
     runner.assertCountEqual(expected_units, units)
 
 
-disabled.append("test_triples")
+disabled.append("test_triples")     # Prevent triples from being printed in CI
 def print_triples(runner):
     if os.getenv("CI") is None:
         print("Printing SPO Triples")
