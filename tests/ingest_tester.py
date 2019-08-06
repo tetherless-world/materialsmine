@@ -25,9 +25,9 @@ files = {
 def get_remote_xml(file_under_test):
     """ Given an nanomine file returns the xml string """
     s = requests.Session()
-    retries = Retry(total=5, backoff_factor=0.1, status_forcelist=[500, 502, 503, 504], raise_on_redirect=True, raise_on_status=True)
+    retries = Retry(total=5, backoff_factor=1, status_forcelist=[500, 502, 503, 504], raise_on_redirect=True, raise_on_status=True)
     s.mount("http://", HTTPAdapter(max_retries=retries))
-    response = s.get('http://nanomine.org/nmr/xml/' + file_under_test + '.xml', timeout=5)
+    response = s.get('https://materialsmine.org/nmr/xml/' + file_under_test + '.xml', timeout=5)
     j = json.loads(response.text)
     xml_str = j["data"][0]["xml_str"]
     return xml_str
