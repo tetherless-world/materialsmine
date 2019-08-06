@@ -84,10 +84,12 @@ def query_table(runner, dependentVar, independentVar):
     query = """
         SELECT ?dependentVar ?independentVar
         WHERE {{
-            ?sample <http://semanticscience.org/resources/hasAttribute> ?dependentVar .
-            ?dependentVar a {} .
-            ?dependentVar <http://semanticscience.org/resources/inRelationTo> ?independentVar .
-            ?independentVar a {} .
+            ?sample <http://semanticscience.org/resource/hasAttribute> ?dependentVar_node .
+            ?dependentVar_node a {} .
+            ?dependentVar_node <http://semanticscience.org/resource/hasValue> ?dependentVar .
+            ?dependentVar_node <http://semanticscience.org/resource/inRelationTo> ?independentVarNode .
+            ?independentVarNode a {} .
+            ?independentVarNode <http://semanticscience.org/resource/hasValue> ?independentVar .
         }}
     """.format(dependentVar, independentVar)
     print(query)
