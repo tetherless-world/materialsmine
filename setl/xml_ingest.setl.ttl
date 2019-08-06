@@ -53,6 +53,14 @@
     owl:someValuesFrom <http://nanomine.org/ns/NanomineXMLFile>
   ].
 
+:get_uuid a owl:Class, prov:SoftwareAgent, setl:PythonScript;
+  rdfs:subClassOf prov:Activity;
+  prov:value '''
+def result():
+	from uuid import uuid4 
+	return uuid4().hex
+'''.
+
 :nanopubs a void:Dataset, dcat:Dataset;
   prov:wasGeneratedBy [a :NanomineXMLImport], [
     a setl:Transform, setl:JSLDT;
@@ -60,6 +68,7 @@
     prov:qualifiedUsage [ a prov:Usage; prov:entity :property_classes_table; prov:hadRole [ dcterms:identifier "properties"]];
     prov:qualifiedUsage [ a prov:Usage; prov:entity :characterization_methods_table; prov:hadRole [ dcterms:identifier "methods"]];
     prov:qualifiedUsage [ a prov:Usage; prov:entity :processing_methods_table; prov:hadRole [dcterms:identifier "processing"]];
+	prov:qualifiedUsage [ a prov:Usage; prov:entity :get_uuid; prov:hadRole [ dcterms:identifier "get_uuid"]];
 	setl:hasContext """{
   "owl" : "http://www.w3.org/2002/07/owl#",
   "sio" :     "http://semanticscience.org/resource/",
@@ -523,7 +532,7 @@
 										"@for": "row in table.findall('rows/row')",
 										"@do": [{
 											"@if": "row.findall('column')[1].text is not None and row.findall('column')[0].text is not None",
-											"@id": "sample:{{slugify(id.text.replace(' ',''))}}_{{slugify(property.uri)}}_{{row.attrib['id']}}",
+											"@id": "sample:{{slugify(id.text.replace(' ',''))}}_{{slugify(property.uri)}}_{{get_uuid()}}",
 											"@type": "{{property.uri}}",
 											"sio:Description": [{
 												"@if": "table.find('../description').text is not None",
