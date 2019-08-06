@@ -92,7 +92,7 @@ def query_table(runner, dependentVar, independentVar):
             ?independentVarNode <http://semanticscience.org/resource/hasValue> ?independentVar .
         }}
     """.format(dependentVar, independentVar)
-    print(query)
+    # print(query)
     values = runner.app.db.query(query)
     return values
 
@@ -572,7 +572,7 @@ def test_viscoelastic_measurement_mode(runner, expected_mode=None):
 # TODO Add autoparsing
 def test_tensile_loading_profile(runner, expected_strain=None, expected_stress=None):
     print("Stress value")
-    values = query_table(runner, "<http://nanomine.org/ns/Stress>", "<http://nanomie.org/Strain>")
+    values = query_table(runner, "<http://nanomine.org/ns/Stress>", "<http://nanomine.org/ns/Strain>")
 
     if expected_strain is None:
         raise NotImplementedError
