@@ -25,13 +25,28 @@ files = {
 def get_remote_xml(file_under_test):
     """ Given an nanomine file returns the xml string """
     s = requests.Session()
-    retries = Retry(total=5, backoff_factor=0.1, status_forcelist=[500, 502, 503, 504], raise_on_redirect=True, raise_on_status=True)
+    retries = Retry(total=5, backoff_factor=1, status_forcelist=[500, 502, 503, 504], raise_on_redirect=True, raise_on_status=True)
     s.mount("http://", HTTPAdapter(max_retries=retries))
-    response = s.get('http://nanomine.org/nmr/xml/' + file_under_test + '.xml', timeout=5)
+    response = s.get('https://materialsmine.org/nmr/xml/' + file_under_test + '.xml', timeout=5)
     j = json.loads(response.text)
     xml_str = j["data"][0]["xml_str"]
     return xml_str
 
+
+def get_local_xml(file_under_test):
+    """ Attempts to load a given file from the local /tests/xml/ folder """
+    file_under_test += ".xml"
+    test_folder_path = os.path.abspath(os.path.dirname(__file__))
+    file_path = os.path.join(test_folder_path, "xml", file_under_test)
+    with open(file_path) as f:
+        return f.read()   
+
+def get_xml(file_under_test):
+    try:
+        return get_local_xml(file_under_test)
+    except FileNotFoundError:
+        print("File not found locally, loading from server...")
+        return get_remote_xml(file_under_test)
 
 def disable_test(func):
     disabled.append(func.__name__)
@@ -51,7 +66,7 @@ def setUp(runner, file_under_test):
     runner.login(*runner.create_user("user@example.com", "password"))
 
     with tempfile.NamedTemporaryFile() as temp:
-        xml_str = get_remote_xml(file_under_test)
+        xml_str = get_xml(file_under_test)
         temp.write(xml_str.encode("utf-8"))
         temp.seek(0)
 
