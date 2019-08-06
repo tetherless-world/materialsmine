@@ -80,6 +80,19 @@ def setUp(runner, file_under_test):
             setlr_results = runner.run_agent(setlr, nanopublication=setlr_np)
 
 
+def query_table(runner, dependentVar, independentVar):
+    query = """
+        SELECT ?dependentVar ?independentVar
+        WHERE {{
+            ?sample <http://semanticscience.org/resources/hasAttribute> ?dependentVar .
+            ?dependentVar a {} .
+            ?dependentVar <http://semanticscience.org/resources/inRelationTo> ?independentVar .
+            ?independentVar a {} .
+        }}
+    """.format(dependentVar, independentVar)
+    print(query)
+    values = runner.app.db.query(query)
+    return values
 
 
 def autoparse(file_under_test):
@@ -557,31 +570,15 @@ def test_viscoelastic_measurement_mode(runner, expected_mode=None):
 # TODO Add autoparsing
 def test_tensile_loading_profile(runner, expected_strain=None, expected_stress=None):
     print("Stress value")
-    values = runner.app.db.query(
-    """
-    SELECT ?strain ?stress
-    WHERE {
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?type_node . 
-        ?type_node a <http://nanomine.org/ns/TensileLoadingProfile> .
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?strain_node .
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?stress_node .
+    values = query_table(runner, "<http://nanomine.org/ns/Stress>", "<http://nanomie.org/Strain>")
 
-        ?strain_node a <http://nanomine.org/ns/Strain> .
-        ?strain_node <http://semanticscience.org/resource/hasValue> ?strain .
-        
-        ?stress_node a <http://nanomine.org/ns/Stress> .
-        ?stress_node <http://semanticscience.org/resource/hasValue> ?stress .
-
-    }
-    """
-    )
     if expected_strain is None:
         raise NotImplementedError
     if expected_stress is None:
         raise NotImplementedError
     
-    strain = [value["strain"] for value in values]
-    stress = [value["stress"] for value in values]
+    stress = [value["dependentVar"] for value in values]
+    strain = [value["independentVar"] for value in values]
     runner.assertCountEqual(expected_strain, strain) 
     runner.assertCountEqual(expected_stress, stress) 
     print("Expected Stress  value Found") 
@@ -590,39 +587,15 @@ def test_tensile_loading_profile(runner, expected_strain=None, expected_stress=N
 # TODO Verify node type, currently doesn't
 def test_flexural_loading_profile(runner, expected_strain=None, expected_stress=None):
     print("Testing Flexural Loading Profile")
-    values = runner.app.db.query(
-        # ?common_node <http://semanticscience.org/resource/hasAttribute> ?type_node .
-        # ?type_node a <http://nanomine.org/ns/FlexuralLoadingProfile> .
-    """
-    SELECT ?strain ?stress
-    WHERE {
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?stress_node .
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?strain_node .
-
-
-        
-        ?stress_node a <http://nanomine.org/ns/Stress> .
-        ?stress_node <http://semanticscience.org/resource/hasValue> ?stress .
-
-        ?strain_node a <http://nanomine.org/ns/Strain> .
-        ?strain_node <http://semanticscience.org/resource/hasValue> ?strain .
-
-    }
-    """
-    )
+    values = query_table(runner, "<http://nanomine.org/ns/Stress>", "<http://nanomine.org/ns/Strain>")
     print("Finished Query", flush=True)
     if expected_strain is None:
         raise NotImplementedError
     if expected_stress is None:
         raise NotImplementedError
     
-    # strain = [value["strain"] for value in values]
-    # stress = [value["stress"] for value in values]
-    strain = list()
-    stress = list()
-    for v in values:
-        strain.append(v["strain"])
-        stress.append(v["stress"])
+    stress = [value["dependentVar"] for value in values]
+    strain = [value["independentVar"] for value in values]
 
     runner.assertCountEqual(expected_strain, strain) 
     runner.assertCountEqual(expected_stress, stress) 
