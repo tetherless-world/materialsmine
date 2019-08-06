@@ -38,10 +38,8 @@ def get_local_xml(file_under_test):
     file_under_test += ".xml"
     test_folder_path = os.path.abspath(os.path.dirname(__file__))
     file_path = os.path.join(test_folder_path, "xml", file_under_test)
-    xml_str = ""
     with open(file_path) as f:
-        xml_str = f.read()
-    return xml_str    
+        return f.read()   
 
 def get_xml(file_under_test):
     try:
