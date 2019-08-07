@@ -529,23 +529,6 @@ def test_complete_material(runner, expected_materials=None):
     runner.assertCountEqual(expected_materials, material_properties)
 
 
-# TODO Fix or remove
-disabled.append("construct_table")
-@disable_test
-def construct_table(runner):
-    raise NotImplementedError
-    data = runner.app.db.query(
-    """
-    SELECT ?p1 ?p2 WHERE {
-        ?property a {} .
-        ?property sio:hasAttribute ?p1_bnode
-        ?p1_bnode a {} .
-        ?p2_bnode a {} .
-    }
-    """
-    )
-
-
 def test_dielectric_real_permittivity(runner, expected_frequency, expected_real_permittivity, descriptions):
     print("Checking if the Dielectric Real Permittivity Table is as expected")
     values = query_table(runner, "<http://nanomine.org/ns/RealPartOfDielectricPermittivity>", "<http://nanomine.org/ns/FrequencyHz>", **descriptions)
