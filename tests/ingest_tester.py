@@ -80,18 +80,41 @@ def setUp(runner, file_under_test):
             setlr_results = runner.run_agent(setlr, nanopublication=setlr_np)
 
 
-def query_table(runner, dependentVar, independentVar):
+def query_table(runner, dependentVar, independentVar,
+                measurement_description=None, x_description=None, y_description=None):
+    
+    if measurement_description is not None:
+        measurement_description = "?sample <http://semanticscience.org/resource/description> {} .".format(measurement_description)
+    else:
+        measurement_description = ""
+
+    if x_description is not None:
+        x_description = "?independentVarNode <http://semanticscience.org/resource/description> {} .".format(x_description)
+    else:
+        x_description = ""
+
+    if y_description is not None:
+        y_description = "?dependentVarNode <http://semanticscience.org/resource/description> {} .".format(y_description)
+    else:
+        y_description = ""
+    
+
+
     query = """
         SELECT ?dependentVar ?independentVar
         WHERE {{
             ?sample <http://semanticscience.org/resource/hasAttribute> ?dependentVar_node .
+            
             ?dependentVar_node a {} .
             ?dependentVar_node <http://semanticscience.org/resource/hasValue> ?dependentVar .
             ?dependentVar_node <http://semanticscience.org/resource/inRelationTo> ?independentVarNode .
             ?independentVarNode a {} .
             ?independentVarNode <http://semanticscience.org/resource/hasValue> ?independentVar .
+            {}
+            {}
+            {}
         }}
-    """.format(dependentVar, independentVar)
+    """.format(dependentVar, independentVar, measurement_description, x_description, y_description)
     # print(query)
     values = runner.app.db.query(query)
     return values
