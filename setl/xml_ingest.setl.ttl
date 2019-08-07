@@ -14,6 +14,7 @@
 @prefix csvw:          <http://www.w3.org/ns/csvw#> .
 @prefix pv:            <http://purl.org/net/provenance/ns#>.
 @prefix sp:            <http://spinrdf.org/sp#>.
+@prefix dc:			   <http://purl.org/dc/elements/1.1/>.
 @prefix api_vocab: <http://purl.org/linked-data/api/vocab#>.
 
 @prefix :              <http://nanomine.org/setl/xml/> .
@@ -92,6 +93,7 @@ def result():
   "lang" :    "http://nanomine.org/language/",
   "void" :    "http://rdfs.org/ns/void#",
   "dcat" : "http://www.w3.org/ns/dcat#",
+  "dc" :	"http://purl.org/dc/elements/1.1/",
   "xsd" : "http://www.w3.org/2001/XMLSchema#"
 }""";
     prov:value """[{
@@ -534,7 +536,7 @@ def result():
 											"@if": "row.findall('column')[1].text is not None and row.findall('column')[0].text is not None",
 											"@id": "sample:{{slugify(id.text.replace(' ',''))}}_{{slugify(property.uri)}}_{{get_uuid()}}",
 											"@type": "{{property.uri}}",
-											"sio:Description": [{
+											"dc:Description": [{
 												"@if": "table.find('../description').text is not None",
 												"@value": "{{table.find('../description').text}}"
 											}],
@@ -558,7 +560,7 @@ def result():
 														"@value": "{{row.findall('column')[1].text}}",
 														"@type": "xsd:double"
 													},
-													"sio:Description": [{
+													"dc:Description": [{
 														"@if": "table.findall('headers/column')[1].text is not None",
 														"@value": "{{table.findall('headers/column')[1].text}}"
 													}],
