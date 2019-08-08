@@ -73,3 +73,65 @@ class IngestTestRunner(template.IngestTestSetup):
         descriptions["y_description"] = rdflib.Literal("Real Part of Dielectric Permittivity")
 
         ingest_tester.test_dielectric_real_permittivity(self, frequency, real_permittivity, descriptions)
+
+    def test_dielectric_loss_tangent(self):
+        return
+        frequency = [
+            0.002132876,
+            0.005323618,
+            0.013287653,
+            0.033643142,
+            0.08278107,
+            0.209594224,
+            0.523143327,
+            1.305756117,
+            3.25914324,
+            8.134761557,
+            20.30421516,
+            50.67894742,
+            126.4937202,
+            315.7259981,
+            788.0462816,
+            1966.949018,
+            4909.468555,
+            12430.33287,
+            30585.61668,
+            77440.03084,
+            190546.0718,
+            489390.0918,
+        ]
+
+        tan_delta = [
+            0.189265537,
+            0.152777778,
+            0.12405838,
+            0.093691149,
+            0.066148776,
+            0.045433145,
+            0.032015066,
+            0.02306968,
+            0.016949153,
+            0.013182674,
+            0.010122411,
+            0.007768362,
+            0.006355932,
+            0.005178908,
+            0.004237288,
+            0.003766478,
+            0.003295669,
+            0.003060264,
+            0.002589454,
+            0.002589454,
+            0.002354049,
+            0.002354049,
+        ]
+
+        frequency = [rdflib.Literal(f) for f in frequency]
+        tan_delta = [rdflib.Literal(t) for t in tan_delta]
+
+        descriptions = {}
+        descriptions["measurement_description"] = rdflib.Literal("Measured at 25 Celsius")
+        descriptions["x_description"] = rdflib.Literal("Frequency (Hz)")
+        descriptions["y_description"] = rdflib.Literal("tan delta")
+
+        ingest_tester.test_dielectric_loss_tangent(self, frequency, tan_delta, descriptions)
