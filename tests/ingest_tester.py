@@ -104,7 +104,6 @@ def query_table(runner, dependentVar, independentVar,
         SELECT ?dependentVar ?independentVar
         WHERE {{
             ?sample <http://semanticscience.org/resource/hasAttribute> ?dependentVarNode .
-            
             ?dependentVarNode a {} .
             ?dependentVarNode <http://semanticscience.org/resource/hasValue> ?dependentVar .
             ?dependentVarNode <http://semanticscience.org/resource/inRelationTo> ?independentVarNode .
@@ -538,6 +537,14 @@ def test_dielectric_real_permittivity(runner, expected_frequency, expected_real_
     runner.assertCountEqual(expected_real_permittivity, real_permittivity)
 
 
+def test_dielectric_loss_tangent(runner, expected_frequency, expected_tan_delta, descriptions):
+    print("Checking if Dielectric Loss Tangent Table is as expected")
+    values = query_table(runner, "<http://nanomine.org/ns/TanDelta>", "<http://nanomine.org/ns/FrequencyHz>", **descriptions)
+    frequency = [v["independentVar"] for v in values]
+    tan_delta = [v["dependentVar"] for v in values]
+    runner.assertCountEqual(expected_frequency, frequency)
+    runner.assertCountEqual(expected_tan_delta, tan_delta)
+
 # TODO Fix or remove
 @disable_test
 def test_filler_processing(runner, expected_process=None):
@@ -659,6 +666,18 @@ def test_specific_surface_area(runner, expected_area=None, expected_units=None):
         expected_units = runner.expected_data["specific_surface_area_units"]
     runner.assertCountEqual(expected_area, surface_area)
     runner.assertCountEqual(expected_units, units)
+
+
+def test_shear_loading_profile(runner, expected_aspect_ratio, expected_number, descriptions, types):
+    print("Testing shear loading profile")
+    values = query_table(runner, types["y_type"], types["x_type"], **descriptions)
+
+    number = [value["dependentVar"] for value in values]
+    aspect_ratio = [value["independentVar"] for value in values]
+
+    runner.assertCountEqual(expected_aspect_ratio, aspect_ratio)
+    runner.assertCountEqual(expected_number, number)
+
 
 
 disabled.append("test_triples")     # Prevent triples from being printed in CI
