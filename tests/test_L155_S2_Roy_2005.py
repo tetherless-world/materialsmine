@@ -135,3 +135,48 @@ class IngestTestRunner(template.IngestTestSetup):
         descriptions["y_description"] = rdflib.Literal("tan delta")
 
         ingest_tester.test_dielectric_loss_tangent(self, frequency, tan_delta, descriptions)
+
+    def test_weibull_plot(self):
+        breakdown_strength = [
+            134.3096058,
+            135.4974638,
+            136.6958274,
+            137.9047896,
+            145.3864394,
+            150.5983687,
+            168.8625957,
+            208.5987317,
+            271.6654549,
+            281.4043353,
+            460.765468,
+            554.3522963,
+            559.2550864,
+            940.2240538,
+        ]
+
+        failure_probability = [
+            12.5086297,
+            18.69779897,
+            24.93299398,
+            31.18775889,
+            37.44027712,
+            43.73113085,
+            49.92556641,
+            56.22166161,
+            62.45004225,
+            68.73755053,
+            74.97001936,
+            81.0239571,
+            87.5667591,
+            93.3498204,
+        ]
+
+        breakdown_strength = [rdflib.Literal(b) for b in breakdown_strength]
+        failure_probability = [rdflib.Literal(f) for f in failure_probability]
+
+        descriptions = {}
+        descriptions["measurement_description"] = rdflib.Literal("Measured at 25 Celsius")
+        descriptions["x_description"] = rdflib.Literal("Frequency (Hz)")
+        descriptions["y_description"] = rdflib.Literal("tan delta")
+
+        ingest_tester.test_weibull_plot(self, breakdown_strength, failure_probability, {})

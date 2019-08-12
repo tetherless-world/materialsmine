@@ -679,6 +679,17 @@ def test_shear_loading_profile(runner, expected_aspect_ratio, expected_number, d
     runner.assertCountEqual(expected_number, number)
 
 
+def test_weibull_plot(runner, expected_breakdown, expected_failure, descriptions):
+    print("Testing Weibull Plot")
+    values = query_table(runner, "<http://nanomine.org/ns/ProbabilityOfFailure>", "<http://nanomine.org/ns/BreakdownStrength>", **descriptions)
+
+    breakdown = [value["independentVar"] for value in values]
+    failure = [value["dependentVar"] for value in values]
+
+    runner.assertCountEqual(expected_breakdown, breakdown)
+    runner.assertCountEqual(expected_failure, failure)
+
+
 
 disabled.append("test_triples")     # Prevent triples from being printed in CI
 def print_triples(runner):
