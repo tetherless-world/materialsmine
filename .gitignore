@@ -2,6 +2,7 @@
 *.DS_Store
 /data/*.setl.ttl
 .vscode
+.idea/
 tests/outputs/*
 tests/output.txt*
 xml_files/*.xml
