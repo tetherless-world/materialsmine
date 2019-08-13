@@ -13,7 +13,7 @@ import rdflib
 from datetime import datetime
 
 # Set to be custom for your project
-envLodPrefix = os.environ('NM_GRAPH_LOD_PREFIX')
+envLodPrefix = os.environ['NM_GRAPH_LOD_PREFIX']
 if envLodPrefix != None and len(envLodPrefix) > 0:
     LOD_PREFIX = envLodPrefix
 else:
@@ -28,7 +28,7 @@ from nanomine.agent import *
 from authenticator import JWTAuthenticator
 
 authenticatorConfig = [] # set into config dict later
-autenticatorSecret = os.environ('NM_GRAPH_AUTH_SECRET')
+autenticatorSecret = os.environ['NM_GRAPH_AUTH_SECRET']
 if authenticatorSecret != None and len(authenticatorSecret) > 0:
   authenticatorConfig.append(JWTAuthenticator(key=authenticatorSecret))
 
