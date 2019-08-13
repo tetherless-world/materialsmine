@@ -95,6 +95,43 @@ def setUp(runner, file_under_test):
             setlr_results = runner.run_agent(setlr, nanopublication=setlr_np)
 
 
+def query_table(runner, dependentVar, independentVar,
+                measurement_description=None, x_description=None, y_description=None):
+    
+    if measurement_description is not None:
+        measurement_description = '?sample <http://purl.org/dc/elements/1.1/Description> "{}" .'.format(measurement_description)
+    else:
+        measurement_description = ""
+
+    if x_description is not None:
+        x_description = '?independentVarNode <http://purl.org/dc/elements/1.1/Description> "{}" .'.format(x_description)
+    else:
+        x_description = ""
+
+    if y_description is not None:
+        y_description = '?dependentVarNode <http://purl.org/dc/elements/1.1/Description> "{}" .'.format(y_description)
+    else:
+        y_description = ""
+    
+
+
+    query = """
+        SELECT ?dependentVar ?independentVar
+        WHERE {{
+            ?sample <http://semanticscience.org/resource/hasAttribute> ?dependentVarNode .
+            ?dependentVarNode a {} .
+            ?dependentVarNode <http://semanticscience.org/resource/hasValue> ?dependentVar .
+            ?dependentVarNode <http://semanticscience.org/resource/inRelationTo> ?independentVarNode .
+            ?independentVarNode a {} .
+            ?independentVarNode <http://semanticscience.org/resource/hasValue> ?independentVar .
+            {}
+            {}
+            {}
+        }}
+    """.format(dependentVar, independentVar, measurement_description, x_description, y_description)
+    # print(query)
+    values = runner.app.db.query(query)
+    return values
 
 
 def autoparse(file_under_test):
@@ -506,37 +543,22 @@ def test_complete_material(runner, expected_materials=None):
     runner.assertCountEqual(expected_materials, material_properties)
 
 
-# TODO Fix or remove
-disabled.append("construct_table")
-@disable_test
-def construct_table(runner):
-    raise NotImplementedError
-    data = runner.app.db.query(
-    """
-    SELECT ?p1 ?p2 WHERE {
-        ?property a {} .
-        ?property sio:hasAttribute ?p1_bnode
-        ?p1_bnode a {} .
-        ?p2_bnode a {} .
-    }
-    """
-    )
-
-
-# TODO Fix or remove
-@disable_test
-def test_dielectric_real_permittivity(runner, expected_data=None):
-    raise NotImplementedError
+def test_dielectric_real_permittivity(runner, expected_frequency, expected_real_permittivity, descriptions):
     print("Checking if the Dielectric Real Permittivity Table is as expected")
-    data = runner.app.db.query(
-    """
-    SELECT ?frequency ?lossTangent? WHERE {
-        ?bnode_freq a <http://nanomine.org/ns/FrequencyHZ> .
-        ?bnode_loss a <http://nanomine.org/ns/DielectricLossTangent> .
-    }
-    """
-    )
+    values = query_table(runner, "<http://nanomine.org/ns/RealPartOfDielectricPermittivity>", "<http://nanomine.org/ns/FrequencyHz>", **descriptions)
+    frequency = [v["independentVar"] for v in values]
+    real_permittivity = [v["dependentVar"] for v in values]
+    runner.assertCountEqual(expected_frequency, frequency)
+    runner.assertCountEqual(expected_real_permittivity, real_permittivity)
 
+
+def test_dielectric_loss_tangent(runner, expected_frequency, expected_tan_delta, descriptions):
+    print("Checking if Dielectric Loss Tangent Table is as expected")
+    values = query_table(runner, "<http://nanomine.org/ns/TanDelta>", "<http://nanomine.org/ns/FrequencyHz>", **descriptions)
+    frequency = [v["independentVar"] for v in values]
+    tan_delta = [v["dependentVar"] for v in values]
+    runner.assertCountEqual(expected_frequency, frequency)
+    runner.assertCountEqual(expected_tan_delta, tan_delta)
 
 # TODO Fix or remove
 @disable_test
@@ -572,31 +594,15 @@ def test_viscoelastic_measurement_mode(runner, expected_mode=None):
 # TODO Add autoparsing
 def test_tensile_loading_profile(runner, expected_strain=None, expected_stress=None):
     print("Stress value")
-    values = runner.app.db.query(
-    """
-    SELECT ?strain ?stress
-    WHERE {
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?type_node . 
-        ?type_node a <http://nanomine.org/ns/TensileLoadingProfile> .
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?strain_node .
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?stress_node .
+    values = query_table(runner, "<http://nanomine.org/ns/Stress>", "<http://nanomine.org/ns/Strain>")
 
-        ?strain_node a <http://nanomine.org/ns/Strain> .
-        ?strain_node <http://semanticscience.org/resource/hasValue> ?strain .
-        
-        ?stress_node a <http://nanomine.org/ns/Stress> .
-        ?stress_node <http://semanticscience.org/resource/hasValue> ?stress .
-
-    }
-    """
-    )
     if expected_strain is None:
         raise NotImplementedError
     if expected_stress is None:
         raise NotImplementedError
     
-    strain = [value["strain"] for value in values]
-    stress = [value["stress"] for value in values]
+    stress = [value["dependentVar"] for value in values]
+    strain = [value["independentVar"] for value in values]
     runner.assertCountEqual(expected_strain, strain) 
     runner.assertCountEqual(expected_stress, stress) 
     print("Expected Stress  value Found") 
@@ -605,39 +611,15 @@ def test_tensile_loading_profile(runner, expected_strain=None, expected_stress=N
 # TODO Verify node type, currently doesn't
 def test_flexural_loading_profile(runner, expected_strain=None, expected_stress=None):
     print("Testing Flexural Loading Profile")
-    values = runner.app.db.query(
-        # ?common_node <http://semanticscience.org/resource/hasAttribute> ?type_node .
-        # ?type_node a <http://nanomine.org/ns/FlexuralLoadingProfile> .
-    """
-    SELECT ?strain ?stress
-    WHERE {
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?stress_node .
-        ?common_node <http://semanticscience.org/resource/hasAttribute> ?strain_node .
-
-
-        
-        ?stress_node a <http://nanomine.org/ns/Stress> .
-        ?stress_node <http://semanticscience.org/resource/hasValue> ?stress .
-
-        ?strain_node a <http://nanomine.org/ns/Strain> .
-        ?strain_node <http://semanticscience.org/resource/hasValue> ?strain .
-
-    }
-    """
-    )
+    values = query_table(runner, "<http://nanomine.org/ns/Stress>", "<http://nanomine.org/ns/Strain>")
     print("Finished Query", flush=True)
     if expected_strain is None:
         raise NotImplementedError
     if expected_stress is None:
         raise NotImplementedError
     
-    # strain = [value["strain"] for value in values]
-    # stress = [value["stress"] for value in values]
-    strain = list()
-    stress = list()
-    for v in values:
-        strain.append(v["strain"])
-        stress.append(v["stress"])
+    stress = [value["dependentVar"] for value in values]
+    strain = [value["independentVar"] for value in values]
 
     runner.assertCountEqual(expected_strain, strain) 
     runner.assertCountEqual(expected_stress, stress) 
@@ -699,6 +681,29 @@ def test_specific_surface_area(runner, expected_area=None, expected_units=None):
         expected_units = runner.expected_data["specific_surface_area_units"]
     runner.assertCountEqual(expected_area, surface_area)
     runner.assertCountEqual(expected_units, units)
+
+
+def test_shear_loading_profile(runner, expected_aspect_ratio, expected_number, descriptions, types):
+    print("Testing shear loading profile")
+    values = query_table(runner, types["y_type"], types["x_type"], **descriptions)
+
+    number = [value["dependentVar"] for value in values]
+    aspect_ratio = [value["independentVar"] for value in values]
+
+    runner.assertCountEqual(expected_aspect_ratio, aspect_ratio)
+    runner.assertCountEqual(expected_number, number)
+
+
+def test_weibull_plot(runner, expected_breakdown, expected_failure, descriptions):
+    print("Testing Weibull Plot")
+    values = query_table(runner, "<http://nanomine.org/ns/ProbabilityOfFailure>", "<http://nanomine.org/ns/BreakdownStrength>", **descriptions)
+
+    breakdown = [value["independentVar"] for value in values]
+    failure = [value["dependentVar"] for value in values]
+
+    runner.assertCountEqual(expected_breakdown, breakdown)
+    runner.assertCountEqual(expected_failure, failure)
+
 
 
 disabled.append("test_triples")     # Prevent triples from being printed in CI
