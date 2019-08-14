@@ -13,11 +13,7 @@ import rdflib
 from datetime import datetime
 
 # Set to be custom for your project
-envLodPrefix = os.environ['NM_GRAPH_LOD_PREFIX']
-if envLodPrefix != None and len(envLodPrefix) > 0:
-    LOD_PREFIX = envLodPrefix
-else:
-    LOD_PREFIX = 'http://nanomine.org'
+LOD_PREFIX = os.environ.get('NM_GRAPH_LOD_PREFIX','http://nanomine.org')
 
 #os.getenv('lod_prefix') if os.getenv('lod_prefix') else 'http://hbgd.tw.rpi.edu'
 
@@ -27,10 +23,10 @@ from nanomine.agent import *
 
 from authenticator import JWTAuthenticator
 
-authenticatorConfig = [] # set into config dict later
-authenticatorSecret = os.environ['NM_GRAPH_AUTH_SECRET']
-if authenticatorSecret != None and len(authenticatorSecret) > 0:
-  authenticatorConfig.append(JWTAuthenticator(key=authenticatorSecret))
+authenticator_config = [] # set into config dict later
+authenticator_secret = os.environ['NM_GRAPH_AUTH_SECRET']
+if authenticator_secret:
+  authenticator_config.append(JWTAuthenticator(key=authenticator_secret))
 
 
 # base config class; extend it to your needs.
@@ -122,7 +118,7 @@ Config = dict(
     knowledge_queryEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
     knowledge_updateEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
 
-    authenticators = authenticatorConfig,
+    authenticators = authenticator_config,
     
     LOGIN_USER_TEMPLATE = "auth/login.html",
     CELERY_BROKER_URL = 'redis://localhost:6379/0',
