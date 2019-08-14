@@ -28,7 +28,7 @@ from nanomine.agent import *
 from authenticator import JWTAuthenticator
 
 authenticatorConfig = [] # set into config dict later
-autenticatorSecret = os.environ['NM_GRAPH_AUTH_SECRET']
+authenticatorSecret = os.environ['NM_GRAPH_AUTH_SECRET']
 if authenticatorSecret != None and len(authenticatorSecret) > 0:
   authenticatorConfig.append(JWTAuthenticator(key=authenticatorSecret))
 
