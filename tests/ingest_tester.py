@@ -95,6 +95,22 @@ def setUp(runner, file_under_test):
             setlr_results = runner.run_agent(setlr, nanopublication=setlr_np)
 
 
+def test_non_spherical_shape_width(runner, expected_width=None):
+    print("\n\nNon Spherical Shape Width value")
+    width_value = runner.app.db.query(
+        """
+    SELECT ?widthValue WHERE{
+        ?bnode <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Width> .
+        ?bnode <http://semanticscience.org/resource/hasUnit> <http://nanomine.org/ns/unit/nm> .
+        ?bnode <http://semanticscience.org/resource/hasValue> ?widthValue .
+
+    }
+        """
+    )
+    value = [value["widthValue"] for value in width_value]
+    runner.assertEqual(expected_width, value)
+    print("Expected Width value")
+
 def query_table(runner, dependentVar, independentVar,
                 measurement_description=None, x_description=None, y_description=None):
     
@@ -132,6 +148,8 @@ def query_table(runner, dependentVar, independentVar,
     # print(query)
     values = runner.app.db.query(query)
     return values
+
+    
 
 
 def autoparse(file_under_test):
@@ -259,6 +277,7 @@ def autoparse(file_under_test):
             data) for data in root.iter("Dielectric_Loss_Tangent")]
         expected_data["ElectricConductivity"] = [extract_table_data(
             data) for data in root.iter("ElectricConductivity")]
+      
 
         # Other Data
         expected_data["equipment"] = [elem.text.lower()
@@ -381,6 +400,7 @@ def test_matrix_chemical_names(runner, expected_names=None):
         expected_names = runner.expected_data["m_name"]
     runner.assertCountEqual(expected_names, names)
     print("Expected Matrix Chemical Names found")
+
 
 
 # TODO Reimplement
