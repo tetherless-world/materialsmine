@@ -108,7 +108,7 @@ def test_non_spherical_shape_width(runner, expected_width=None):
         """
     )
     value = [value["widthValue"] for value in width_value]
-    runner.assertEqual(expected_width, value)
+    runner.assertEqual(expected_width, value[0])
     print("Expected Width value")
 
 def query_table(runner, dependentVar, independentVar,
