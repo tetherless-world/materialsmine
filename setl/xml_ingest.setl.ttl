@@ -321,6 +321,10 @@ def result():
 													{
 														"@if": "shape.find('.//Width') is not None",
 														"@type": "sio:Width",
+														"dc:Description": [{
+															"@if": "shape.find('..//Width/description').text is not None",
+															"@value": "{{shape.find('..//Width/description').text}}"
+											            }],
 														"sio:hasValue": {
 															"@value": "{{shape.find('.//Width/value').text}}",
 															"@type": "xsd:double"
@@ -352,6 +356,10 @@ def result():
 													{
 														"@if": "shape.find('.//Length') is not None",
 														"@type": "sio:Length",
+														"dc:Description": [{
+															"@if": "shape.find('..//Length/description').text is not None",
+															"@value": "{{shape.find('..//Length/description').text}}"
+											            }],
 														"sio:hasValue": {
 															"@value": "{{shape.find('.//Length/value').text}}",
 															"@type": "xsd:double"
@@ -383,6 +391,10 @@ def result():
 													{
 														"@if": "shape.find('.//Depth') is not None",
 														"@type": "sio:Depth",
+														"dc:Description": [{
+															"@if": "shape.find('..//Depth/description').text is not None",
+															"@value": "{{shape.find('..//Depth/description').text}}"
+											            }],
 														"sio:hasValue": {
 															"@value": "{{shape.find('.//Depth/value').text}}",
 															"@type": "xsd:double"

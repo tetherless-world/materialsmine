@@ -95,21 +95,39 @@ def setUp(runner, file_under_test):
             setlr_results = runner.run_agent(setlr, nanopublication=setlr_np)
 
 
-def test_non_spherical_shape_width(runner, expected_width=None):
-    print("\n\nNon Spherical Shape Width value")
-    width_value = runner.app.db.query(
+def test_non_spherical_shape(runner, expected_widthDescription=None, expected_width=None, expected_lengthDescription=None, expected_length=None, expected_depthDescription=None, expected_depth=None):
+    print("\n\nNon Spherical Shape")
+    dimensions = runner.app.db.query(
         """
-    SELECT ?widthValue WHERE{
+    SELECT ?widthValue ?lengthValue ?depthValue ?lengthDesc ?widthDesc ?depthDesc WHERE{
         ?bnode <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Width> .
         ?bnode <http://semanticscience.org/resource/hasUnit> <http://nanomine.org/ns/unit/nm> .
         ?bnode <http://semanticscience.org/resource/hasValue> ?widthValue .
-
+        ?bnode <http://purl.org/dc/elements/1.1/Description> ?widthDesc .
+        ?bnode1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Length> .
+        ?bnode1 <http://semanticscience.org/resource/hasUnit> <http://nanomine.org/ns/unit/nm> .
+        ?bnode1 <http://semanticscience.org/resource/hasValue> ?lengthValue .
+        ?bnode1 <http://purl.org/dc/elements/1.1/Description> ?lengthDesc .
+        ?bnode2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://semanticscience.org/resource/Depth> .
+        ?bnode2 <http://semanticscience.org/resource/hasUnit> <http://nanomine.org/ns/unit/nm> .
+        ?bnode2 <http://semanticscience.org/resource/hasValue> ?depthValue .
+        ?bnode2 <http://purl.org/dc/elements/1.1/Description> ?depthDesc .
     }
         """
     )
-    value = [value["widthValue"] for value in width_value]
-    runner.assertEqual(expected_width, value[0])
-    print("Expected Width value")
+    width_value = [dim["widthValue"] for dim in dimensions]
+    runner.assertEqual(expected_width, width_value[0])
+    length_value = [dim["lengthValue"] for dim in dimensions]
+    runner.assertEqual(expected_length, length_value[0])
+    depth_value = [dim["depthValue"] for dim in dimensions]
+    runner.assertEqual(expected_depth, depth_value[0])
+    width_desc = [dim["widthDesc"] for dim in dimensions]
+    runner.assertEqual(expected_widthDescription, width_desc[0])
+    length_desc = [dim["lengthDesc"] for dim in dimensions]
+    runner.assertEqual(expected_lengthDescription, length_desc[0])
+    depth_desc = [dim["depthDesc"] for dim in dimensions]
+    runner.assertEqual(expected_depthDescription, depth_desc[0])
+    print("Expected Non Spherical Dimensions and descriptions found")
 
 def query_table(runner, dependentVar, independentVar,
                 measurement_description=None, x_description=None, y_description=None):
