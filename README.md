@@ -26,6 +26,7 @@ visualization for nanomine project
   cd /apps/whyis
   python manage.py load -i /apps/nanomine-graph/setl/ontology.setl.ttl -f turtle
   python manage.py load -i /apps/nanomine-graph/setl/xml_ingest.setl.ttl -f turtle
+  python manage.py load -i 'http://semanticscience.org/ontology/sio-subset-labels.owl' -f xml
   ```
 
 - Load any Nanomine XML files you may already have. There is a collection floating around among developers. For production, the curation service will post XML files to the Whyis instance when they're ready to be used.
