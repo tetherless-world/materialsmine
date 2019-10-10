@@ -4,7 +4,7 @@ visualization for nanomine project
 # Installation
 - install [whyis](http://tetherless-world.github.io/whyis/install) using this command
   ```
-  WHYIS_BRANCH=master bash < <(curl -skL https://raw.githubusercontent.com/tetherless-world/whyis/release/install.sh)
+  WHYIS_BRANCH=master bash < <(curl -skL https://raw.githubusercontent.com/tetherless-world/whyis/master/install.sh)
   ```
 - whyis will be installed in /apps/whyis
 - install nanomine-graph app following:
