@@ -43,7 +43,7 @@ Config = dict(
     app_path = '/apps/nanomine-graph',
 
     site_header_image = 'static/images/random_network.png',
-    
+
     # use TESTING mode?
     TESTING = False,
 
@@ -54,7 +54,7 @@ Config = dict(
     SECRET_KEY = "VOJ12a53NB9HOURFLNDOIWQZZ8YuFpMc",
 
     base_rate_probability = 0.8,
-    
+
     nanopub_archive = {
         'depot.storage_path' : "/data/nanopublications",
     },
@@ -110,15 +110,21 @@ Config = dict(
     db_defaultGraph = LOD_PREFIX + '/',
 
     DEFAULT_ANONYMOUS_READ = True,
-    
+
 
     admin_queryEndpoint = 'http://localhost:8080/blazegraph/namespace/admin/sparql',
     admin_updateEndpoint = 'http://localhost:8080/blazegraph/namespace/admin/sparql',
-    
+
     knowledge_queryEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
     knowledge_updateEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
 
     authenticators = authenticator_config,
+    
+    knowledge_useBlazeGraphBulkLoad = True,
+    knowledge_bulkLoadEndpoint = 'http://localhost:8080/blazegraph/dataloader',
+    knowledge_BlazeGraphProperties = '/apps/whyis/knowledge.properties',
+    load_dir = '/data/loaded',
+    knowledge_bulkLoadNamespace = 'knowledge',
     
     LOGIN_USER_TEMPLATE = "auth/login.html",
     CELERY_BROKER_URL = 'redis://localhost:6379/0',
@@ -191,4 +197,3 @@ Test.update(dict(
     TESTING = True,
     WTF_CSRF_ENABLED = False
 ))
-
