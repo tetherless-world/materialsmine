@@ -110,11 +110,11 @@ Config = dict(
 
     knowledge_queryEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
     knowledge_updateEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
-    knowledge_useBlazeGraphBulkLoad = True,
-    knowledge_bulkLoadEndpoint = 'http://localhost:8080/blazegraph/dataloader',
-    knowledge_BlazeGraphProperties = '/apps/whyis/knowledge.properties',
-    load_dir = '/data/loaded',
-    knowledge_bulkLoadNamespace = 'knowledge',
+    #knowledge_useBlazeGraphBulkLoad = True,
+    #knowledge_bulkLoadEndpoint = 'http://localhost:8080/blazegraph/dataloader',
+    #knowledge_BlazeGraphProperties = '/apps/whyis/knowledge.properties',
+    #load_dir = '/data/loaded',
+    #knowledge_bulkLoadNamespace = 'knowledge',
     
     authenticators = [
 #        JWTAuthenticator(key=os.environ['NM_AUTH_SECRET'])
