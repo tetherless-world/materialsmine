@@ -120,11 +120,11 @@ Config = dict(
 
     authenticators = authenticator_config,
     
-    knowledge_useBlazeGraphBulkLoad = True,
-    knowledge_bulkLoadEndpoint = 'http://localhost:8080/blazegraph/dataloader',
-    knowledge_BlazeGraphProperties = '/apps/whyis/knowledge.properties',
-    load_dir = '/data/loaded',
-    knowledge_bulkLoadNamespace = 'knowledge',
+    #knowledge_useBlazeGraphBulkLoad = True,
+    #knowledge_bulkLoadEndpoint = 'http://localhost:8080/blazegraph/dataloader',
+    #knowledge_BlazeGraphProperties = '/apps/whyis/knowledge.properties',
+    #load_dir = '/data/loaded',
+    #knowledge_bulkLoadNamespace = 'knowledge',
     
     LOGIN_USER_TEMPLATE = "auth/login.html",
     CELERY_BROKER_URL = 'redis://localhost:6379/0',
