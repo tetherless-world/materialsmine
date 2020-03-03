@@ -2,7 +2,7 @@
 
 pushd /apps/nanomine-graph
 
-#setlr setl/dev_nanomine_files.setl.ttl
+#setlr setl/dev_nanomine_files.setl.ttl sample
 #setlr setl/ontology.setl.ttl
 
 popd

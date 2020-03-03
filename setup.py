@@ -7,6 +7,6 @@ setup(name='Nanomine',
       description='Nanomine project configuration file',
       author='rui',
       packages=[
-          
+              'pymongo'
           ],
      )

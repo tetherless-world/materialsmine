@@ -49,10 +49,12 @@ Config = dict(
     base_rate_probability = 0.8,
 
     nanopub_archive = {
-        'depot.storage_path' : "/data/nanopublications",
+        #'depot.storage_path' : "/data/nanopublications",
     },
 
     file_archive = {
+        #'depot.backend': 'depot.io.gridfs.GridFSStorage',
+        #'depot.mongouri': 'mongodb://localhost/whyis_files',
         'depot.storage_path' : '/data/files',
         'cache_max_age' : 3600*24*7,
     },
@@ -110,12 +112,12 @@ Config = dict(
 
     knowledge_queryEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
     knowledge_updateEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
-    knowledge_useBlazeGraphBulkLoad = True,
-    knowledge_bulkLoadEndpoint = 'http://localhost:8080/blazegraph/dataloader',
-    knowledge_BlazeGraphProperties = '/apps/whyis/knowledge.properties',
-    load_dir = '/data/loaded',
-    knowledge_bulkLoadNamespace = 'knowledge',
-    
+    #knowledge_useBlazeGraphBulkLoad = True,
+    #knowledge_bulkLoadEndpoint = 'http://localhost:8080/blazegraph/dataloader',
+    #knowledge_BlazeGraphProperties = '/apps/whyis/knowledge.properties',
+    #load_dir = '/data/loaded',
+    #knowledge_bulkLoadNamespace = 'knowledge',
+
     authenticators = [
 #        JWTAuthenticator(key=os.environ['NM_AUTH_SECRET'])
     ],

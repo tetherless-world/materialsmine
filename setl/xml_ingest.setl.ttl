@@ -58,7 +58,7 @@
   rdfs:subClassOf prov:Activity;
   prov:value '''
 def result():
-	from uuid import uuid4 
+	from uuid import uuid4
 	return uuid4().hex
 '''.
 
@@ -86,6 +86,7 @@ def result():
   "foaf" : "http://xmlns.com/foaf/0.1/",
   "nanopub" :    "http://www.nanopub.org/nschema#",
   "entry" :    "http://nanomine.org/entry/",
+  "nanominenp" :    "http://nanomine.org/nanpub/",
   "sample" :    "http://nanomine.org/sample/",
   "article" :    "http://nanomine.org/article/",
   "compound" :    "http://nanomine.org/compound/",
@@ -100,12 +101,12 @@ def result():
 	"@for": "id in row.findall('ID')",
 	"@do": {
 		"@if": "id.text.replace(' ','') is not None",
-		"@id": "entry:{{id.text.replace(' ','')}}",
+		"@id": "nanominenp:{{id.text.replace(' ','')}}",
 		"@graph": [{
-			"@id": "entry:{{id.text.replace(' ','')}}",
+			"@id": "nanominenp:{{id.text.replace(' ','')}}",
 			"@type": "nanopub:Nanopublication",
 			"nanopub:hasAssertion": {
-				"@id": "entry:{{id.text.replace(' ','')}}_assertion",
+				"@id": "nanominenp:{{id.text.replace(' ','')}}_assertion",
 				"@type": "nanopub:Assertion",
 				"@graph": [
 					{
@@ -124,6 +125,38 @@ def result():
 						"@type": [
 							"nanomine:PolymerNanocomposite"
 						],
+                        "rdfs:label" : "{{row.find('MATERIALS/Filler/FillerComponent/ChemicalName').text}} in {{row.find('MATERIALS/Matrix/MatrixComponent/ChemicalName').text}}",
+                        "sio:isRepresentedBy" : [
+                          {
+                              "@for" : "image in row.findall('MICROSTRUCTURE/ImageFile')",
+                              "@do" : {
+                                  "@if" : "image.find('File') is not None",
+                                  "@id" : "{{image.find('File').text.strip()}}",
+                                  "@type" : [
+                                    "sio:Image",
+                                    {
+                                        "@if" : "image.find('Type') is not None" ,
+                                        "@id" : "nanomine:{{image.find('Type').text.title()}}Image",
+                                        "rdfs:label" : "{{image.find('Type').text.title()}} Image"
+                                    }
+                                  ],
+                                  "prov:wasGeneratedBy" : {
+                                      "@type" : [
+                                        "nanomine:Microscopy",
+                                        "prov:Activity",
+                                        {
+                                            "@if" : "image.find('MicroscopyType') is not None",
+                                            "@id" : "nanomine:{{image.find('MicroscopyType').text}}Microscopy",
+                                            "rdfs:label" : "{{image.find('MicroscopyType').text}} Microscopy"
+                                        }
+                                      ],
+                                      "prov:used" : {
+                                          "@id" : "sample:{{slugify(id.text.replace(' ',''))}}"
+                                      }
+                                  }
+                              }
+                          }
+                        ],
 						"sio:hasComponentPart": [{
 								"@for": "fc, particle in enumerate(row.findall('MATERIALS/Filler/FillerComponent'))",
 								"@do": {
@@ -176,9 +209,6 @@ def result():
 												"@type": "nanomine:{{fraction.tag.title()}}Fraction"
 											}
 										},
-
-
-
 										{
 											"@if": "particle.find('Density')",
 											"@for": "density in particle.findall('Density')",
@@ -518,7 +548,7 @@ def result():
 										}
 									},
 									{
-										"@if": "polymer.find('TradeName') is not None", 
+										"@if": "polymer.find('TradeName') is not None",
 										"@for": "tradename in polymer.findall('TradeName')",
 										"@do":{
 											"@type": "nanomine:TradeName",
@@ -536,83 +566,15 @@ def result():
 								}
 							}
 						],
-						"@reverse": {
-							"prov:specializationOf": [{
-								"@for": "i, property in properties.iterrows()",
-								"@do": {
-									"@if": "not isempty(property.xpath) and row.find('PROPERTIES')",
-									"@for": "table in row.find('PROPERTIES').findall('.'+property.xpath+'//data')",
-									"@do": {
-										"@for": "row in table.findall('rows/row')",
-										"@do": [{
-											"@if": "row.findall('column')[1].text is not None and row.findall('column')[0].text is not None",
-											"@id": "sample:{{slugify(id.text.replace(' ',''))}}_{{slugify(property.uri)}}_{{get_uuid()}}",
-											"@type": "{{property.uri}}",
-											"dc:Description": [{
-												"@if": "table.find('../description').text is not None",
-												"@value": "{{table.find('../description').text}}"
-											}],
-											"sio:hasAttribute": [
-												{
-													"@type": [{
-															"@if": "not isempty(property.curveDependentVar)",
-															"@id": "{{property.curveDependentVar}}"
-														},
-														{
-															"@if": "isempty(property.curveDependentVar) and table.findall('headers/column')[1].text is not None",
-															"@id": "nanomine:{{camelcase(table.findall('headers/column')[1].text)}}",
-															"@type": "owl:Class",
-															"rdfs:subClassOf": {
-																"@id": "sio:Quantity"
-															},
-															"rdfs:label": "{{table.findall('headers/column')[1].text}}"
-														}
-													],
-													"sio:hasValue": {
-														"@value": "{{row.findall('column')[1].text}}",
-														"@type": "xsd:double"
-													},
-													"dc:Description": [{
-														"@if": "table.findall('headers/column')[1].text is not None",
-														"@value": "{{table.findall('headers/column')[1].text}}"
-													}],
-													"sio:inRelationTo": [{
-														"@type": [{
-																"@if": "not isempty(property.curveIndependentVar)",
-																"@id": "{{property.curveIndependentVar}}"
-															},
-															{
-																"@if": "isempty(property.curveIndependentVar) and table.findall('headers/column')[0].text is not None",
-																"@id": "nanomine:{{camelcase(table.findall('headers/column')[0].text)}}",
-																"@type": "owl:Class",
-																"rdfs:subClassOf": {
-																	"@id": "sio:Quantity"
-																},
-																"rdfs:label": "{{table.findall('headers/column')[0].text}}"
-															}
-														],
-														"sio:hasValue": {
-															"@value": "{{row.findall('column')[0].text}}",
-															"@type": "xsd:double"
-														},
-														"dc:Description": [{
-															"@if": "table.findall('headers/column')[0].text is not None",
-															"@value": "{{table.findall('headers/column')[0].text}}"
-														}]
-													}]
-												}
-											]
-										}]
-									}
-								}
-							}]
-						},
-						"sio:hasAttribute": [{
+						"sio:hasAttribute": [
+                          {
 							"@for": "i, property in properties.iterrows()",
 							"@do": {
-								"@if": "not isempty(property.xpath) and row.find('PROPERTIES') and not row.find('PROPERTIES').findall('.'+property.xpath+'/data')",
+								"@if": "not isempty(property.xpath) and row.find('PROPERTIES')",
 								"@for": "value in row.find('PROPERTIES').findall('.'+property.xpath)",
-								"@do": [{
+								"@do": [
+                                  {
+                                    "@if" : "not row.find('PROPERTIES').findall('.'+property.xpath+'/data')",
 									"@type": "{{property.uri}}",
 									"dc:description": [{
 										"@if": "value.find('description') is not None",
@@ -648,22 +610,184 @@ def result():
 											}
 										}
 									}]
-								}]
-							}
+								  },
+                                  {
+                                      "@for": "table in value.findall('.//data')",
+                                      "@do": {
+                                          "@for": "row in table.findall('rows/row')",
+                                          "@do":
+                                                  {
+                                                      "@type": [{
+                                                              "@if": "not isempty(property.curveDependentVar)",
+                                                              "@id": "{{property.curveDependentVar}}"
+                                                          },
+                                                          {
+                                                              "@if": "isempty(property.curveDependentVar) and table.findall('headers/column')[1].text is not None",
+                                                              "@id": "nanomine:{{camelcase(table.findall('headers/column')[1].text)}}",
+                                                              "@type": "owl:Class",
+                                                              "rdfs:subClassOf": {
+                                                                  "@id": "sio:Quantity"
+                                                              },
+                                                              "rdfs:label": "{{table.findall('headers/column')[1].text}}"
+                                                          }
+                                                      ],
+                                                      "sio:hasValue": {
+                                                          "@value": "{{row.findall('column')[1].text}}",
+                                                          "@type": "xsd:double"
+                                                      },
+                                                      "dc:description": [{
+                                                          "@if": "table.findall('headers/column')[1].text is not None",
+                                                          "@value": "{{table.findall('headers/column')[1].text}}"
+                                                      }],
+                                                      "sio:inRelationTo": [{
+                                                          "@type": [{
+                                                                  "@if": "not isempty(property.curveIndependentVar)",
+                                                                  "@id": "{{property.curveIndependentVar}}"
+                                                              },
+                                                              {
+                                                                  "@if": "isempty(property.curveIndependentVar) and table.findall('headers/column')[0].text is not None",
+                                                                  "@id": "nanomine:{{camelcase(table.findall('headers/column')[0].text)}}",
+                                                                  "@type": "owl:Class",
+                                                                  "rdfs:subClassOf": {
+                                                                      "@id": "sio:Quantity"
+                                                                  },
+                                                                  "rdfs:label": "{{table.findall('headers/column')[0].text}}"
+                                                              }
+                                                          ],
+                                                          "sio:hasValue": {
+                                                              "@value": "{{row.findall('column')[0].text}}",
+                                                              "@type": "xsd:double"
+                                                          },
+                                                          "dc:description": [{
+                                                              "@if": "table.findall('headers/column')[0].text is not None",
+                                                              "@value": "{{table.findall('headers/column')[0].text}}"
+                                                          }]
+                                                      }]
+                                                  }
+
+                                      }
+                                  }
+                                ]
+							  }
 						}]
 					}
 				]
 			},
 			"nanopub:hasPublicationInfo": {
-				"@id": "entry:{{id.text.replace(' ','')}}_pubinfo",
+				"@id": "nanominenp:{{id.text.replace(' ','')}}_pubinfo",
 				"@type": "nanopub:PublicationInfo",
 				"@graph": []
 			},
 			"nanopub:hasProvenance": {
-				"@id": "entry:{{id.text.replace(' ','')}}_provenance",
+				"@id": "nanominenp:{{id.text.replace(' ','')}}_provenance",
 				"@type": "nanopub:Provenance",
-				"@graph": [{
-						"@id": "entry:{{id.text.replace(' ','')}}_assertion",
+				"@graph": [
+                    {
+                        "@for": "proc in row.findall('PROCESSING')",
+                        "@do": {
+                            "@id": "sample:{{slugify(id.text.replace(' ',''))}}",
+                            "prov:wasGeneratedBy": [{
+                                "@id": "entry:{{id.text.replace(' ','')}}_material_procedure",
+                                "@type" : "sio:Procedure",
+                                "dc:description": [{
+                                    "@if": "proc.find('ExperimentalProcedure').text is not None",
+                                    "@value": "{{proc.find('ExperimentalProcedure').text}}"
+                                }],
+                                "sio:hasPart" : [{
+                                    "@for": "pn, param in enumerate(proc.findall('.//ChooseParameter'))",
+                                    "@do": {
+                                        "@for": "i, process in processing.iterrows()",
+                                        "@do": {
+                                            "@if": "param.find(process.xpath[2:])",
+                                            "@type": "{{process.uri}}",
+                                            "@id" : "sample:{{id.text.replace(' ','')}}_step_{{pn}}",
+                                            "sio:hasOutput" : [{
+                                                "@id": "sample:{{id.text.replace(' ','')}}_step_{{pn}}_output"
+                                            }],
+                                            "sio:hasInput": [{
+                                                "@if" : "pn > 0",
+                                                "@id": "sample:{{id.text.replace(' ','')}}_step_{{pn-1}}_output"
+                                            }],
+                                            "sio:hasParameter": [
+                                                {
+                                                    "@for": "i, parameter in processing.iterrows()",
+                                                    "@do": {
+                                                        "@if": "not isempty(parameter.xpath) and row.findall('.'+parameter.xpath) and param.find(parameter.xpath[2:]) is not None",
+                                                        "@for": "value in param.findall('.'+parameter.xpath)",
+                                                        "@do": [{
+                                                            "@id": "sample:{{id.text.replace(' ','')}}_{{process.label.lower().replace(' ','_')}}_step_{{pn}}_{{slugify(value.tag)}}",
+                                                            "@type": [
+                                                                "sio:Parameter",
+                                                                "{{parameter.uri}}"
+                                                            ],
+                                                            "dc:description": [{
+                                                                "@if": "value.find('Description')",
+                                                                "@value": "{{value.find('Description').text}}"
+                                                            }],
+                                                            "sio:hasAttribute" : [{
+                                                                "@for": "i, parameter_attr in processing.iterrows()",
+                                                                "@do": {
+                                                                    "@if": "not isempty(parameter_attr.xpath) and row.findall('.'+parameter_attr.xpath)",
+                                                                    "@for": "val in value.findall('.'+parameter_attr.xpath)",
+                                                                    "@do": [{
+                                                                        "@id": "sample:{{id.text.replace(' ','')}}_{{process.label.lower().replace(' ','_')}}_step_{{pn}}_{{slugify(value.tag)}}_{{slugify(val.tag)}}",
+                                                                        "@type": [
+                                                                            "{{parameter_attr.uri}}"
+                                                                        ],
+                                                                        "dc:description": [{
+                                                                            "@if": "val.find('Description')",
+                                                                            "@value": "{{val.find('Description').text}}"
+                                                                        },
+                                                                        {
+                                                                            "@if": "val.find('description')",
+                                                                            "@value": "{{val.find('description').text}}"
+                                                                        }],
+                                                                        "sio:hasValue": [{
+                                                                            "@if": "val.find('value').text is not None",
+                                                                            "@value": "{{val.find('value').text}}"
+                                                                        },
+                                                                        {
+                                                                            "@if": "val.text is not None",
+                                                                            "@value": "{{val.text}}"
+                                                                        }],
+                                                                        "sio:hasUnit": [{
+                                                                            "@if": "val.find('unit') is not None",
+                                                                            "@id": "unit:{{slugify(val.find('unit').text)}}",
+                                                                            "rdfs:label": "{{val.find('unit').text}}"
+                                                                        }],
+                                                                        "sio:hasAttribute": [{
+                                                                            "@if": "val.find('.//uncertainty') is not None",
+                                                                            "@type": [
+                                                                                "sio:UncertaintyValue",
+                                                                                {
+                                                                                    "@if": "val.find('.//uncertainty/type').text == 'relative'",
+                                                                                    "@id": "sio:Ratio"
+                                                                                },
+                                                                                {
+                                                                                    "@if": "val.find('.//uncertainty/type').text == 'absolute'",
+                                                                                    "@id": "sio:StandardDeviation"
+                                                                                }
+                                                                            ],
+                                                                            "sio:hasValue": [{
+                                                                                "@if": "val.find('.//uncertainty/value').text is not None",
+                                                                                "@value": "{{val.find('.//uncertainty/value').text}}"
+                                                                            }]
+                                                                        }]
+                                                                    }]
+                                                                }
+                                                            }]
+                                                        }]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }]
+                            }]
+                        }
+                    },
+                    {
+						"@id": "nanominenp:{{id.text.replace(' ','')}}_assertion",
 						"prov:wasGeneratedBy": [{
 							"@for": "i, method in methods.iterrows()",
 							"@do": {
@@ -734,45 +858,16 @@ def result():
 						}]
 					},
 					{
-						"@id": "entry:{{id.text.replace(' ','')}}_material",
-						"prov:wasGeneratedBy": [
-							{									
-								"@for" : "p, process in processing.iterrows()",
-								"@do" : 
-								{
-									"@type" : "sio:Procedure",
-									"sio:hasInput":
-									{
-										"@id": "sio:ChemicalEntity"	,
-										"@type": [
-											{
-												"@if": "process.find('Additive') is not none",
-												"@type": "nanomine:Additive",
-												"@value": "{process.find('//Additive').text}"					
-											},
-											{
-												"@if": "process.find('Solvent') is not none",
-												"@type": "nanomine:Solvent",
-												"@value": "{process.find('//Solvent').text}"					
-											}
-										]
-									}
-								}
-							}
-						]	
-
-					},
-					{
 						"@for": "citation in row.findall('DATA_SOURCE/Citation')",
 						"@do": {
-							"@id": "entry:{{id.text.replace(' ','')}}_assertion",
+							"@id": "nanominenp:{{id.text.replace(' ','')}}_assertion",
 							"prov:generatedAtTime": [{
 								"@if": "citation.find('CommonFields/DateOfCitation')",
 								"@type": "xsd:date",
 								"@value": "{{citation.find('CommonFields/DateOfCitation').text"
 							}],
 							"prov:wasQuotedFrom": [{
-								"@id": "{%if citation.find('CommonFields/DOI') != None %}doi:{{citation.find('CommonFields/DOI').text.replace('<','%3C').replace('>','%3E')}}{%else%}entry:{{id.text.replace(' ','-')}}{%endif%}",
+								"@id": "{%if citation.find('CommonFields/DOI') != None %}doi:{{citation.find('CommonFields/DOI').text.replace('<','%3C').replace('>','%3E')}}{%else%}nanominenp:{{id.text.replace(' ','-')}}{%endif%}",
 								"@type": [
 									"dcterms:BibliographicResource",
 									{
@@ -862,5 +957,3 @@ def result():
 #      a setl:Load;
 #      prov:used :nanopubs ;
 #    ].
-
-
