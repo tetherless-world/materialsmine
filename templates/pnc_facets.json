@@ -34,20 +34,20 @@
     },
     {
         "class": "http://nanomine.org/ns/PolymerNanocomposite",
-        "label": "Property",
-        "facetId" : "Property",
-        "predicate": "<http://semanticscience.org/resource/hasAttribute>",
+        "label": "Processing Method",
+        "facetId" : "ProcessingMethod",
+        "multiType": "union",
+        "predicate": "<http://www.w3.org/ns/prov#wasGeneratedBy>/<http://semanticscience.org/resource/hasPart>",
         "typeProperty" : "rdf:type",
-        "valuePredicate" : "<http://semanticscience.org/resource/hasValue>",
-        "unitPredicate" : "<http://semanticscience.org/resource/hasUnit>",
         "propertyType": "http://www.w3.org/2002/07/owl#ObjectProperty"
     },
     {
         "class": "http://nanomine.org/ns/PolymerNanocomposite",
-        "label": "Property Curve",
-        "facetId" : "PropertyCurve",
-        "predicate": "^<http://www.w3.org/ns/prov#specializationOf> ?pnc_specialization. ?pnc_specialization <http://semanticscience.org/resource/hasAttribute>",
+        "label": "Property",
+        "facetId" : "Property",
+        "predicate": "<http://semanticscience.org/resource/hasAttribute>",
         "typeProperty" : "rdf:type",
+        "independentVariables" : "<http://semanticscience.org/resource/inRelationTo>",
         "valuePredicate" : "<http://semanticscience.org/resource/hasValue>",
         "unitPredicate" : "<http://semanticscience.org/resource/hasUnit>",
         "propertyType": "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -111,5 +111,5 @@
         "facetId" : "Keyword",
         "predicate": "^<http://semanticscience.org/resource/hasPart>/<http://www.w3.org/ns/dcat#keyword>",
         "propertyType": "http://www.w3.org/2002/07/owl#DataProperty"
-    }    
+    }
 ]
