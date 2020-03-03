@@ -117,7 +117,7 @@ Config = dict(
     #knowledge_BlazeGraphProperties = '/apps/whyis/knowledge.properties',
     #load_dir = '/data/loaded',
     #knowledge_bulkLoadNamespace = 'knowledge',
-
+    
     authenticators = [
 #        JWTAuthenticator(key=os.environ['NM_AUTH_SECRET'])
     ],
