@@ -10,6 +10,5 @@ class IngestTestRunner(template.IngestTestSetup):
         cls.file_under_test = file_under_test
         super().setUpClass()
 
-    def test_triples(self):
+    def no_test_triples(self):
          ingest_tester.print_triples(self)
-

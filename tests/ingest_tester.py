@@ -10,15 +10,17 @@ import os
 from urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
 
+from base64 import b64encode
+
 import autonomic
 
 disabled = []
 
 files = {
-    "template": '''<{}> a <http://nanomine.org/ns/NanomineXMLFile>,
+    "template": '''<https://materialsmine.org/nmr/xml/%s> a <http://nanomine.org/ns/NanomineXMLFile>,
         <http://schema.org/DataDownload>,
         <https://www.iana.org/assignments/media-types/text/xml> ;
-    <http://vocab.rpi.edu/whyis/hasContent> "data:text/xml;charset=UTF-8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPFBvbHltZXJOYW5vY29tcG9zaXRlPjxJRD5MMTAyX1MzX0h1XzIwMDc8L0lEPjxDb250cm9sX0lEPkwxMDJfUzFfSHVfMjAwNzwvQ29udHJvbF9JRD48REFUQV9TT1VSQ0U+PENpdGF0aW9uPjxDb21tb25GaWVsZHM+PENpdGF0aW9uVHlwZT5yZXNlYXJjaCBhcnRpY2xlPC9DaXRhdGlvblR5cGU+PFB1YmxpY2F0aW9uPkpvdXJuYWwgb2YgdGhlIEV1cm9wZWFuIENlcmFtaWMgU29jaWV0eTwvUHVibGljYXRpb24+PFRpdGxlPkRpZWxlY3RyaWMgcHJvcGVydGllcyBvZiBCU1QvcG9seW1lciBjb21wb3NpdGU8L1RpdGxlPjxBdXRob3I+SHUsIFRhbzwvQXV0aG9yPjxBdXRob3I+SnV1dGksIEphcmk8L0F1dGhvcj48QXV0aG9yPkphbnR1bmVuLCBIZWxpPC9BdXRob3I+PEF1dGhvcj5WaWxrbWFuLCBUYWlzdG88L0F1dGhvcj48S2V5d29yZD5Db21wb3NpdGVzPC9LZXl3b3JkPjxLZXl3b3JkPkRpZWxlY3RyaWMgcHJvcGVydGllczwvS2V5d29yZD48S2V5d29yZD5NaWNyb3N0cnVjdHVyZS1maW5hbDwvS2V5d29yZD48S2V5d29yZD5CU1QtQ09DPC9LZXl3b3JkPjxQdWJsaXNoZXI+RWxzZXZpZXI8L1B1Ymxpc2hlcj48UHVibGljYXRpb25ZZWFyPjIwMDc8L1B1YmxpY2F0aW9uWWVhcj48RE9JPjEwLjEwMTYvai5qZXVyY2VyYW1zb2MuMjAwNy4wMi4wODI8L0RPST48Vm9sdW1lPjI3PC9Wb2x1bWU+PFVSTD5odHRwczovL3d3dy5zY2llbmNlZGlyZWN0LmNvbS9zY2llbmNlL2FydGljbGUvcGlpL1MwOTU1MjIxOTA3MDAxMjUyP3ZpYSUzRGlodWI8L1VSTD48TGFuZ3VhZ2U+RW5nbGlzaDwvTGFuZ3VhZ2U+PExvY2F0aW9uPk1pY3JvZWxlY3Ryb25pY3MgYW5kIE1hdGVyaWFscyBQaHlzaWNzIExhYm9yYXRvcmllcywgRU1QQVJUIFJlc2VhcmNoIEdyb3VwIG9mIEluZm90ZWNoIE91bHUsIFAuTy4gQm94IDQ1MDAsIEZJTi05MDAxNCBVbml2ZXJzaXR5IG9mIE91bHUsIEZpbmxhbmQ8L0xvY2F0aW9uPjxEYXRlT2ZDaXRhdGlvbj4yMDE1LTA3LTI0PC9EYXRlT2ZDaXRhdGlvbj48L0NvbW1vbkZpZWxkcz48Q2l0YXRpb25UeXBlPjxKb3VybmFsPjxJU1NOPjA5NTUtMjIxOTwvSVNTTj48SXNzdWU+MTMtMTU8L0lzc3VlPjwvSm91cm5hbD48L0NpdGF0aW9uVHlwZT48L0NpdGF0aW9uPjwvREFUQV9TT1VSQ0U+PE1BVEVSSUFMUz48TWF0cml4PjxNYXRyaXhDb21wb25lbnQ+PENoZW1pY2FsTmFtZT5jeWNsbyBvbGVmaW4gY29wb2x5bWVyPC9DaGVtaWNhbE5hbWU+PEFiYnJldmlhdGlvbj5DT0M8L0FiYnJldmlhdGlvbj48UG9seW1lclR5cGU+Y29wb2x5bWVyPC9Qb2x5bWVyVHlwZT48TWFudWZhY3R1cmVyT3JTb3VyY2VOYW1lPlRpY29uYSBHbWJILCBHZXJtYW55PC9NYW51ZmFjdHVyZXJPclNvdXJjZU5hbWU+PFRyYWRlTmFtZT5Ub3BhcyA4MDA3Uy0wNDwvVHJhZGVOYW1lPjxEZW5zaXR5Pjx2YWx1ZT4xLjAyPC92YWx1ZT48dW5pdD5nL2NtXjM8L3VuaXQ+PC9EZW5zaXR5PjwvTWF0cml4Q29tcG9uZW50PjwvTWF0cml4PjxGaWxsZXI+PEZpbGxlckNvbXBvbmVudD48Q2hlbWljYWxOYW1lPmJhcml1bSBzdHJvbnRpdW0gdGl0YW5hdGU8L0NoZW1pY2FsTmFtZT48QWJicmV2aWF0aW9uPkJTVDwvQWJicmV2aWF0aW9uPjxNYW51ZmFjdHVyZXJPclNvdXJjZU5hbWU+U2lnbWHigJNBbGRyaWNoIENoZW1pZSBHbWJILCBHZXJtYW55PC9NYW51ZmFjdHVyZXJPclNvdXJjZU5hbWU+PERlbnNpdHk+PHZhbHVlPjQuOTwvdmFsdWU+PHVuaXQ+Zy9jbV4zPC91bml0PjwvRGVuc2l0eT48U3BoZXJpY2FsUGFydGljbGVEaWFtZXRlcj48ZGVzY3JpcHRpb24+bGVzcyB0aGFuIDIwMCBubTwvZGVzY3JpcHRpb24+PHZhbHVlPjIwMDwvdmFsdWU+PHVuaXQ+bm08L3VuaXQ+PC9TcGhlcmljYWxQYXJ0aWNsZURpYW1ldGVyPjwvRmlsbGVyQ29tcG9uZW50PjxGaWxsZXJDb21wb3NpdGlvbj48RnJhY3Rpb24+PHZvbHVtZT4wLjA1PC92b2x1bWU+PC9GcmFjdGlvbj48L0ZpbGxlckNvbXBvc2l0aW9uPjxEZXNjcmlwdGlvbj5CYTAuNVNyMC41VGlPMzwvRGVzY3JpcHRpb24+PC9GaWxsZXI+PC9NQVRFUklBTFM+PFBST0NFU1NJTkc+PE1lbHRNaXhpbmc+PENob29zZVBhcmFtZXRlcj48TWl4aW5nPjxNaXhlcj5Ub3JxdWUgUmhlb21ldGVyPC9NaXhlcj48UlBNPjxkZXNjcmlwdGlvbj4zMi02NCBycG08L2Rlc2NyaXB0aW9uPjx2YWx1ZT40ODwvdmFsdWU+PHVuaXQ+cnBtPC91bml0PjwvUlBNPjxUaW1lPjx2YWx1ZT4xNTwvdmFsdWU+PHVuaXQ+bWludXRlczwvdW5pdD48dW5jZXJ0YWludHk+PHR5cGU+YWJzb2x1dGU8L3R5cGU+PHZhbHVlPjU8L3ZhbHVlPjwvdW5jZXJ0YWludHk+PC9UaW1lPjxUZW1wZXJhdHVyZT48dmFsdWU+MjMwPC92YWx1ZT48dW5pdD5DZWxzaXVzPC91bml0PjwvVGVtcGVyYXR1cmU+PC9NaXhpbmc+PC9DaG9vc2VQYXJhbWV0ZXI+PENob29zZVBhcmFtZXRlcj48TW9sZGluZz48TW9sZGluZ01vZGU+aG90LXByZXNzaW5nPC9Nb2xkaW5nTW9kZT48TW9sZGluZ0luZm8+PFRlbXBlcmF0dXJlPjx2YWx1ZT4yMDA8L3ZhbHVlPjx1bml0PkNlbHNpdXM8L3VuaXQ+PC9UZW1wZXJhdHVyZT48L01vbGRpbmdJbmZvPjwvTW9sZGluZz48L0Nob29zZVBhcmFtZXRlcj48L01lbHRNaXhpbmc+PC9QUk9DRVNTSU5HPjxDSEFSQUNURVJJWkFUSU9OPjxTY2FubmluZ19FbGVjdHJvbl9NaWNyb3Njb3B5PjxFcXVpcG1lbnRVc2VkPkpFT0wgSlNNLTY0MDA8L0VxdWlwbWVudFVzZWQ+PC9TY2FubmluZ19FbGVjdHJvbl9NaWNyb3Njb3B5PjxEaWVsZWN0cmljX2FuZF9JbXBlZGFuY2VfU3BlY3Ryb3Njb3B5X0FuYWx5c2lzPjxFcXVpcG1lbnQ+QWdpbGVudCBFNDk5MUE8L0VxdWlwbWVudD48L0RpZWxlY3RyaWNfYW5kX0ltcGVkYW5jZV9TcGVjdHJvc2NvcHlfQW5hbHlzaXM+PFhSYXlfRGlmZnJhY3Rpb25fYW5kX1NjYXR0ZXJpbmc+PEVxdWlwbWVudD5TaWVtZW5zIEQ1MDAwPC9FcXVpcG1lbnQ+PC9YUmF5X0RpZmZyYWN0aW9uX2FuZF9TY2F0dGVyaW5nPjwvQ0hBUkFDVEVSSVpBVElPTj48UFJPUEVSVElFUz48RWxlY3RyaWNhbD48QUNfRGllbGVjdHJpY0Rpc3BlcnNpb24+PERpZWxlY3RyaWNfUmVhbF9QZXJtaXR0aXZpdHk+PGRlc2NyaXB0aW9uPlJlbGF0aXZlIHBlcm1pdHRpdml0eSBhdCAxR0h6PC9kZXNjcmlwdGlvbj48dmFsdWU+Mi45PC92YWx1ZT48L0RpZWxlY3RyaWNfUmVhbF9QZXJtaXR0aXZpdHk+PERpZWxlY3RyaWNfTG9zc19UYW5nZW50PjxkZXNjcmlwdGlvbj5Mb3NzIFRhbmdlbnQgYXQgMSBHSHo8L2Rlc2NyaXB0aW9uPjx2YWx1ZT41ZS0wNTwvdmFsdWU+PC9EaWVsZWN0cmljX0xvc3NfVGFuZ2VudD48L0FDX0RpZWxlY3RyaWNEaXNwZXJzaW9uPjwvRWxlY3RyaWNhbD48L1BST1BFUlRJRVM+PC9Qb2x5bWVyTmFub2NvbXBvc2l0ZT4=" .'''
+    <http://vocab.rpi.edu/whyis/hasContent> "data:text/xml;charset=UTF-8;base64,%s" .'''
 }
 
 
@@ -38,15 +40,16 @@ def get_local_xml(file_under_test):
     file_under_test += ".xml"
     test_folder_path = os.path.abspath(os.path.dirname(__file__))
     file_path = os.path.join(test_folder_path, "xml", file_under_test)
+    print (file_path)
     with open(file_path) as f:
-        return f.read()   
+        return f.read()
 
 def get_xml(file_under_test):
-    try:
-        return get_local_xml(file_under_test)
-    except FileNotFoundError:
-        print("File not found locally, loading from server...")
-        return get_remote_xml(file_under_test)
+    #try:
+    return get_local_xml(file_under_test)
+    #except FileNotFoundError:
+    #    print("File not found locally, loading from server...")
+    #    return get_remote_xml(file_under_test)
 
 def disable_test(func):
     disabled.append(func.__name__)
@@ -65,34 +68,35 @@ def setUp(runner, file_under_test):
     # Initialization
     runner.login(*runner.create_user("user@example.com", "password"))
 
-    with tempfile.NamedTemporaryFile() as temp:
-        xml_str = get_xml(file_under_test)
-        temp.write(xml_str.encode("utf-8"))
-        temp.seek(0)
+    xml_str = get_xml(file_under_test)
+    encoded_file = b64encode(xml_str.encode('utf8'))
 
+    print ("XML length:", len(encoded_file))
+    files[file_under_test] = files["template"] % (file_under_test, encoded_file)
+    upload = files[file_under_test]
 
-        files[file_under_test] = files["template"].format(temp.name)
-        upload = files[file_under_test]
+    response = runner.client.post("/pub", data=upload, content_type="text/turtle", follow_redirects=True)
+    runner.assertEquals(response.status, '201 CREATED')
 
-        response = runner.client.post(
-            "/pub", data=upload, content_type="text/turtle", follow_redirects=True)
-        runner.assertEquals(response.status, '201 CREATED')
+    response = runner.client.post("/pub", data=open('/apps/nanomine-graph/setl/xml_ingest.setl.ttl', 'rb').read(),
+                                  content_type="text/turtle", follow_redirects=True)
+    runner.assertEquals(response.status, '201 CREATED')
 
-        response = runner.client.post("/pub", data=open('/apps/nanomine-graph/setl/xml_ingest.setl.ttl', 'rb').read(),
-                                    content_type="text/turtle", follow_redirects=True)
-        runner.assertEquals(response.status, '201 CREATED')
+    fileid = runner.app.db.value(rdflib.URIRef('https://materialsmine.org/nmr/xml/'+file_under_test),
+                               rdflib.URIRef('http://vocab.rpi.edu/whyis/hasFileID'))
+    runner.assertNotEquals(fileid,None)
+    setlmaker = autonomic.SETLMaker()
+    results = runner.run_agent(setlmaker)
 
-        setlmaker = autonomic.SETLMaker()
-        results = runner.run_agent(setlmaker)
+    # confirm this is creating a SETL script for the XML file.
+    runner.assertTrue(len(results) > 0)
 
-        # confirm this is creating a SETL script for the XML file.
-        runner.assertTrue(len(results) > 0)
+    setlr = autonomic.SETLr()
 
-        setlr = autonomic.SETLr()
-
-        print(len(runner.app.db))
-        for setlr_np in results:
-            setlr_results = runner.run_agent(setlr, nanopublication=setlr_np)
+    print(len(runner.app.db))
+    for setlr_np in results:
+        print (setlr_np.serialize(format="trig").decode('utf8'))
+        setlr_results = runner.run_agent(setlr, nanopublication=setlr_np)
 
 
 def test_non_spherical_shape(runner, expected_widthDescription=None, expected_width=None, expected_lengthDescription=None, expected_length=None, expected_depthDescription=None, expected_depth=None):
@@ -131,7 +135,7 @@ def test_non_spherical_shape(runner, expected_widthDescription=None, expected_wi
 
 def query_table(runner, dependentVar, independentVar,
                 measurement_description=None, x_description=None, y_description=None):
-    
+
     if measurement_description is not None:
         measurement_description = '?sample <http://purl.org/dc/elements/1.1/Description> "{}" .'.format(measurement_description)
     else:
@@ -146,7 +150,7 @@ def query_table(runner, dependentVar, independentVar,
         y_description = '?dependentVarNode <http://purl.org/dc/elements/1.1/Description> "{}" .'.format(y_description)
     else:
         y_description = ""
-    
+
 
 
     query = """
@@ -167,7 +171,7 @@ def query_table(runner, dependentVar, independentVar,
     values = runner.app.db.query(query)
     return values
 
-    
+
 
 
 def autoparse(file_under_test):
@@ -178,7 +182,7 @@ def autoparse(file_under_test):
         temp.write(xml_str.encode('utf-8'))
         temp.seek(0)
         tree = ET.parse(temp)
-    
+
         root = tree.getroot()
         expected_data = dict()
         # CommonFields Data
@@ -226,11 +230,11 @@ def autoparse(file_under_test):
 
         #Viscoleastic Properties,hardness, hardnessteststandard - Neha
         expected_data["viscoelastic_measurement_mode"] = [rdflib.Literal(elem.text)
-                                        for elem in root.iter(".//Viscoelastic//MeasurementMode")]   
-        
+                                        for elem in root.iter(".//Viscoelastic//MeasurementMode")]
+
         expected_data["hardness"] = [rdflib.Literal(elem.text)
                                     for elem in root.iter("Hardness")]
-        
+
         expected_data["hardnessteststandard"] = [rdflib.Literal(elem.text)
                                                 for elem in root.iter(".//HardnessTestStandard")]
 
@@ -295,7 +299,7 @@ def autoparse(file_under_test):
             data) for data in root.iter("Dielectric_Loss_Tangent")]
         expected_data["ElectricConductivity"] = [extract_table_data(
             data) for data in root.iter("ElectricConductivity")]
-      
+
 
         # Other Data
         expected_data["equipment"] = [elem.text.lower()
@@ -327,7 +331,7 @@ def test_authors(runner, expected_authors=None):
     # Ensure that the proper number of authors are in the graph
     print("\n\nauthors")
     authors = runner.app.db.query(
-        """SELECT ?name 
+        """SELECT ?name
     WHERE {
         ?paper <http://purl.org/dc/terms/creator> ?author .
         ?author <http://xmlns.com/foaf/0.1/name> ?name .
@@ -638,12 +642,12 @@ def test_tensile_loading_profile(runner, expected_strain=None, expected_stress=N
         raise NotImplementedError
     if expected_stress is None:
         raise NotImplementedError
-    
+
     stress = [value["dependentVar"] for value in values]
     strain = [value["independentVar"] for value in values]
-    runner.assertCountEqual(expected_strain, strain) 
-    runner.assertCountEqual(expected_stress, stress) 
-    print("Expected Stress  value Found") 
+    runner.assertCountEqual(expected_strain, strain)
+    runner.assertCountEqual(expected_stress, stress)
+    print("Expected Stress  value Found")
 
 # TODO Add autoparsing
 # TODO Verify node type, currently doesn't
@@ -655,17 +659,17 @@ def test_flexural_loading_profile(runner, expected_strain=None, expected_stress=
         raise NotImplementedError
     if expected_stress is None:
         raise NotImplementedError
-    
+
     stress = [value["dependentVar"] for value in values]
     strain = [value["independentVar"] for value in values]
 
-    runner.assertCountEqual(expected_strain, strain) 
-    runner.assertCountEqual(expected_stress, stress) 
-    print("Expected Flexural Loading Profile Found") 
+    runner.assertCountEqual(expected_strain, strain)
+    runner.assertCountEqual(expected_stress, stress)
+    print("Expected Flexural Loading Profile Found")
 
 
 # TODO Refactor to remove usage of specific bnodes
-# TODO Reimplement 
+# TODO Reimplement
 @disable_test
 def test_melt_viscosity(runner, expected_value=None):
     print("\n\nMelt Viscosity")

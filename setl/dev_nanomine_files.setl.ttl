@@ -67,7 +67,7 @@
       "http://purl.org/net/provenance/ns#File"
     ],
     "http://open.vocab.org/terms/hasContentType": "text/xml",
-    "whyis:hasContent" : {"@id" : "data:text/xml;charset=UTF-8;base64,{{b64encode(get(row['file']['value']+'?format=xml').text.encode('utf8')).decode('ascii')}}"},
+    "whyis:hasContent" : {"@id" : "data:text/xml;charset=UTF-8;base64,{{b64encode(get(row['file']['value'].replace('nanomine.org','qa.materialsmine.org')+'?format=xml').text.encode('utf8')).decode('ascii')}}"},
     "dc:conformsTo" : {"@id" : "{{row['schema']['value']}}"}
   },
   {

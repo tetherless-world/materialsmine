@@ -11,10 +11,10 @@ class IngestTestRunner(template.IngestTestSetup):
         cls.file_under_test = file_under_test
         super().setUpClass()
 
-    def test_triples(self):
+    def no_test_triples(self):
         ingest_tester.print_triples(self)
-    
-    def test_non_spherical_shape(self):
+
+    def no_test_non_spherical_shape(self):
         width_description = rdflib.Literal("50th percentile value measured by TEM, diameter")
         length_description = rdflib.Literal("50th percentile value measured by TEM")
         depth_description = rdflib.Literal("50th percentile value measured by TEM, diameter")

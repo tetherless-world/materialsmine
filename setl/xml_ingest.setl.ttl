@@ -94,7 +94,8 @@ def result():
   "lang" :    "http://nanomine.org/language/",
   "void" :    "http://rdfs.org/ns/void#",
   "dcat" : "http://www.w3.org/ns/dcat#",
-  "dc" :	"http://purl.org/dc/elements/1.1/",
+  "pubchem" : "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID",
+  "dc" :	"http://purl.org/dc/terms/",
   "xsd" : "http://www.w3.org/2001/XMLSchema#"
 }""";
     prov:value """[{
@@ -158,34 +159,44 @@ def result():
                           }
                         ],
 						"sio:hasComponentPart": [{
-								"@for": "fc, particle in enumerate(row.findall('MATERIALS/Filler/FillerComponent'))",
+								"@for": "pi, part in enumerate(row.findall('MATERIALS/Filler/FillerComponent'))",
 								"@do": {
-									"@id": "sample:{{slugify(id.text.replace(' ',''))}}_filler_{{fc}}",
+									"@id": "sample:{{slugify(id.text.replace(' ',''))}}_filler_{{pi}}",
 									"@type": [{
-											"@if": "particle.find('PubChemRef') is not None and particle.find('PubChemRef').text is not None",
-											"@id": "pubchem:{{particle.find('PubChemRef').text.replace(' ','')}}",
+											"@id": "{% if part.find('StdChemicalName') is not none %}compound:{{camelcase(part.find('StdChemicalName').text)}}{% elif part.find('PubChemRef') is not none %}pubchem:{{part.find('PubChemRef').text.replace(' ','')}}{% elif part.find('ChemicalName') is not none %}compound:{{camelcase(part.find('ChemicalName').text)}}{% elif part.find('Abbreviation') is not none %}compound:{{camelcase(part.find('Abbreviation').text)}}{% endif %}",
 											"@type": "owl:Class",
-											"rdfs:label": [{
-													"@value": "{{particle.find('ChemicalName').text}}",
-													"@if": "particle.find('ChemicalName').text is not None"
-												},
-												{
-													"@value": "{{particle.find('Abbreviation').text}}",
-													"@if": "particle.find('ChemicalName').text is None and particle.find('Abbreviation').text is not None"
-												}
-											]
-										},
-										{
-											"@if": "(particle.find('PubChemRef') is None or particle.find('PubChemRef').text is None) and particle.find('ChemicalName').text is not None",
-											"@id": "compound:{{camelcase(particle.find('ChemicalName').text)}}",
-											"@type": "owl:Class",
-											"rdfs:label": "{{particle.find('ChemicalName').text}}"
-										},
-										{
-											"@if": "(particle.find('PubChemRef') is None or particle.find('PubChemRef').text is None) and particle.find('ChemicalName').text is None and particle.find('Abbreviation').text is not None",
-											"@id": "compound:{{camelcase(particle.find('Abbreviation').text)}}",
-											"@type": "owl:Class",
-											"rdfs:label": "{{particle.find('Abbreviation').text}}"
+											"rdfs:label": [
+                                                {
+                                                    "@if" : "part.find('StdChemicalName')",
+                                                    "@value" : "{{part.find('StdChemicalName').text}}"
+                                                },
+                                                {
+                                                    "@if" : "not part.find('StdChemicalName') and part.find('ChemicalName')",
+                                                    "@value" : "{{part.find('ChemicalName').text}}"
+                                                }
+                                            ],
+                                            "skos:altLabel" : [
+                                                {
+                                                    "@if" : "part.find('StdChemicalName') and part.find('ChemicalName')",
+                                                    "@value" : "{{part.find('ChemicalName').text}}"
+                                                },
+                                                {
+                                                    "@if" : "part.find('TradeName') is not None",
+                                                    "@value" : "{{part.find('TradeName').text}}"
+                                                }
+                                            ],
+                                            "skos:notation" : [
+                                                {
+                                                    "@if" : "part.find('Abbreviation') is not None",
+                                                    "@value" : "{{part.find('Abbreviation').text}}"
+                                                }
+                                            ],
+                                            "rdfs:subClassOf" : [
+                                                {
+                                                    "@if" : "part.find('PubChemRef') is not None",
+                                                    "@id" : "pubchem:{{part.find('PubChemRef').text.replace(' ','')}}"
+                                                }
+                                            ]
 										}
 									],
 									"sio:hasRole": {
@@ -195,29 +206,33 @@ def result():
 										}
 									},
 									"sio:hasAttribute": [{
-											"@for": ["fraction in [ x for x in [",
-												"particle.find('FillerComponentComposition/*'),",
-												"row.find('MATERIALS/Filler/FillerComposition/Fraction/*'),",
-												"] if x is not None][:1]"
-											],
+											"@for": "fraction in part.findall('../FillerComposition/Fraction/*')",
 											"@do": {
-												"@id": "sample:{{slugify(id.text.replace(' ',''))}}_filler_{{fc}}_{{fraction.tag}}_fraction",
+												"@id": "sample:{{slugify(id.text.replace(' ',''))}}_filler_{{pi}}_{{fraction.tag}}_fraction",
 												"sio:hasValue": {
 													"@value": "{{fraction.text}}",
 													"@type": "xsd:double"
 												},
+                                                "dc:description" : [ {
+                                                    "@if" : "fraction.find('source')",
+                                                    "@value" : "{{fraction.find('source').text}}"
+                                                }],
 												"@type": "nanomine:{{fraction.tag.title()}}Fraction"
 											}
 										},
 										{
-											"@if": "particle.find('Density')",
-											"@for": "density in particle.findall('Density')",
+											"@if": "part.find('Density')",
+											"@for": "density in part.findall('Density')",
 											"@do": {
 												"@type": "sio:Density",
 												"sio:hasValue": {
 													"@value": "{{density.find('value').text}}",
 													"@type": "xsd:double"
 												},
+                                                "dc:description" : [ {
+                                                    "@if" : "density.find('source')",
+                                                    "@value" : "{{density.find('source').text}}"
+                                                }],
 												"sio:hasUnit": [{
 													"@if": "density.find('unit')",
 													"@id": "unit:{{slugify(density.find('unit').text)}}",
@@ -226,8 +241,8 @@ def result():
 											}
 										},
 										{
-											"@if": "particle.find('SurfaceArea').find('specific') is not None",
-											"@for": "area in particle.findall('SurfaceArea')",
+											"@if": "part.find('SurfaceArea').find('specific') is not None",
+											"@for": "area in part.findall('SurfaceArea')",
 											"@do": {
 												"@type": "nanomine:SpecificSurfaceArea",
 												"sio:hasValue": {
@@ -260,7 +275,7 @@ def result():
 											}
 										},
 										{
-											"@for": "ratio in particle.findall('ParticleAspectRatio')",
+											"@for": "ratio in part.findall('ParticleAspectRatio')",
 											"@do": {
 												"@type": "sio:AspectRatio",
 												"sio:hasValue": {
@@ -293,7 +308,7 @@ def result():
 											}
 										},
 										{
-											"@for": "size in particle.findall('SphericalParticleDiameter')",
+											"@for": "size in part.findall('SphericalParticleDiameter')",
 											"@do": {
 												"@type": "sio:Width",
 												"sio:hasValue": {
@@ -326,7 +341,7 @@ def result():
 											}
 										},
 										{
-											"@for": "phase in particle.findall('CrystalPhase')",
+											"@for": "phase in part.findall('CrystalPhase')",
 											"@do": {
 												"@type": [
 													"nanomine:CrystalPhase",
@@ -342,7 +357,7 @@ def result():
 											}
 										},
 										{
-											"@for": "shape in particle.findall('NonSphericalShape')",
+											"@for": "shape in part.findall('NonSphericalShape')",
 											"@do": {
 												"sio:hasAttribute": [{
 														"@type": "nanomine:NonSpherical",
@@ -461,36 +476,46 @@ def result():
 
 									],
 									"sio:isSurroundedBy": [{
-										"@for": "surface in particle.findall('ParticleSurfaceTreatment') if len(particle.findall('ParticleSurfaceTreatment')) > 0 else particle.findall('ParticleSurfaceTreatment')",
+										"@for": "s, surface in enumerate(part.findall('ParticleSurfaceTreatment'))",
 										"@do": {
-											"@id": "sample:{{slugify(id.text.replace(' ',''))}}_filler_{{fc}}_surfacetreatment",
-											"@type": [{
-													"@if": "surface.find('PubChemRef') is not None and surface.find('PubChemRef').text is not None",
-													"@id": "pubchem:{{surface.find('PubChemRef').text.replace(' ','')}}",
-													"@type": "owl:Class",
-													"rdfs:label": [{
-															"@value": "{{surface.find('ChemicalName').text}}",
-															"@if": "surface.find('ChemicalName').text is not None"
-														},
-														{
-															"@value": "{{surface.find('Abbreviation').text}}",
-															"@if": "surface.find('ChemicalName').text is None and surface.find('Abbreviation').text is not None"
-														}
-													]
-												},
-												{
-													"@if": "(surface.find('PubChemRef') is None or surface.find('PubChemRef').text is  None) and surface.find('ChemicalName').text is not None",
-													"@id": "compound:{{camelcase(surface.find('ChemicalName').text)}}",
-													"@type": "owl:Class",
-													"rdfs:label": "{{surface.find('ChemicalName').text}}"
-												},
-												{
-													"@if": "(surface.find('PubChemRef') is None or surface.find('PubChemRef').text is None) and surface.find('ChemicalName').text is None and surface.find('Abbreviation').text is not None",
-													"@id": "compound:{{camelcase(surface.find('Abbreviation').text)}}",
-													"@type": "owl:Class",
-													"rdfs:label": "{{surface.find('Abbreviation').text}}"
-												}
-											],
+                                            "@id": "{% if surface.find('StdChemicalName') is not none %}compound:{{ camelcase(surface.find('StdChemicalName').text)}}{% elif surface.find('PubChemRef') is not none %}pubchem:{{surface.find('PubChemRef').text.replace(' ','')}}{% elif surface.find('ChemicalName') is not none %}compound:{{camelcase(surface.find('ChemicalName').text)}}{% elif surface.find('Abbreviation') is not none %}compound:{{camelcase(surface.find('Abbreviation').text)}}{% endif %}",
+                                            "@type": [{
+        											"@id": "{% if surface.find('StdChemicalName') %}compound:{{camelcase(surface.find('StdChemicalName').text)}}{% elif surface.find('PubChemRef') %}pubchem:{{surface.find('PubChemRef').text.replace(' ','')}}{% elif surface.find('ChemicalName') %}compound:{{camelcase(surface.find('ChemicalName').text)}}{% elif surface.find('Abbreviation') %}compound:{{camelcase(surface.find('Abbreviation').text)}}{% endif %}",
+        											"@type": "owl:Class",
+        											"rdfs:label": [
+                                                        {
+                                                            "@if" : "surface.find('StdChemicalName')",
+                                                            "@value" : "{{surface.find('StdChemicalName').text}}"
+                                                        },
+                                                        {
+                                                            "@if" : "not surface.find('StdChemicalName') and surface.find('ChemicalName')",
+                                                            "@value" : "{{surface.find('ChemicalName').text}}"
+                                                        }
+                                                    ],
+                                                    "skos:altLabel" : [
+                                                        {
+                                                            "@if" : "surface.find('StdChemicalName') and surface.find('ChemicalName')",
+                                                            "@value" : "{{surface.find('ChemicalName').text}}"
+                                                        },
+                                                        {
+                                                            "@if" : "surface.find('TradeName') is not None",
+                                                            "@value" : "{{surface.find('TradeName').text}}"
+                                                        }
+                                                    ],
+                                                    "skos:notation" : [
+                                                        {
+                                                            "@if" : "surface.find('Abbreviation') is not None",
+                                                            "@value" : "{{surface.find('Abbreviation').text}}"
+                                                        }
+                                                    ],
+                                                    "rdfs:subClassOf" : [
+                                                        {
+                                                            "@if" : "surface.find('PubChemRef') is not None",
+                                                            "@id" : "pubchem:{{surface.find('PubChemRef').text.replace(' ','')}}"
+                                                        }
+                                                    ]
+        										}
+        									],
 											"sio:hasRole": {
 												"@type": "nanomine:SurfaceTreatment",
 												"sio:inRelationTo": {
@@ -502,36 +527,45 @@ def result():
 								}
 							},
 							{
-								"@for": "polymer in row.findall('MATERIALS/Matrix/MatrixComponent')",
+								"@for": "pi, part in enumerate(row.findall('MATERIALS/Matrix/MatrixComponent'))",
 								"@do": {
-									"@id": "sample:{{slugify(id.text.replace(' ',''))}}_matrix",
-									"@type": [{
-											"@if": "polymer.find('PubChemRef') is not None and polymer.find('PubChemRef').text is not None",
-											"@id": "pubchem:{{polymer.find('PubChemRef').text.replace(' ','')}}",
+									"@id": "sample:{{slugify(id.text.replace(' ',''))}}_matrix_{{pi}}",
+                                    "@type": [{
+                                            "@id": "{% if part.find('StdChemicalName') is not none %}compound:{{camelcase(part.find('StdChemicalName').text)}}{% elif part.find('PubChemRef') is not none %}pubchem:{{part.find('PubChemRef').text.replace(' ','')}}{% elif part.find('ChemicalName') is not none %}compound:{{camelcase(part.find('ChemicalName').text)}}{% elif part.find('Abbreviation') is not none %}compound:{{camelcase(part.find('Abbreviation').text)}}{% endif %}",
 											"@type": "owl:Class",
-											"rdfs:label": [{
-													"@value": "{{polymer.find('ChemicalName').text}}",
-													"@if": "polymer.find('ChemicalName').text is not None"
-												},
-												{
-													"@value": "{{polymer.find('Abbreviation').text}}",
-													"@if": "polymer.find('ChemicalName').text is None and polymer.find('Abbreviation').text is not None"
-												}
-											]
-										},
-										{
-											"@if": "(polymer.find('PubChemRef') is None or polymer.find('PubChemRef').text is None) and polymer.find('ChemicalName').text is not None",
-											"@id": "compound:{{camelcase(polymer.find('ChemicalName').text)}}",
-											"@type": "owl:Class",
-											"rdfs:label": "{{polymer.find('ChemicalName').text}}"
-										},
-										{
-											"@if": "(polymer.find('PubChemRef') is None or polymer.find('PubChemRef').text is None) and polymer.find('ChemicalName').text is None and polymer.find('Abbreviation').text is not None",
-											"@id": "compound:{{camelcase(polymer.find('Abbreviation').text)}}",
-											"@type": "owl:Class",
-											"rdfs:label": "{{polymer.find('Abbreviation').text}}"
+											"rdfs:label": [
+                                                {
+                                                    "@if" : "part.find('StdChemicalName')",
+                                                    "@value" : "{{part.find('StdChemicalName').text}}"
+                                                },
+                                                {
+                                                    "@if" : "not part.find('StdChemicalName') and part.find('ChemicalName')",
+                                                    "@value" : "{{part.find('ChemicalName').text}}"
+                                                }
+                                            ],
+                                            "skos:altLabel" : [
+                                                {
+                                                    "@if" : "part.find('StdChemicalName') and part.find('ChemicalName')",
+                                                    "@value" : "{{part.find('ChemicalName').text}}"
+                                                },
+                                                {
+                                                    "@if" : "part.find('TradeName') is not None",
+                                                    "@value" : "{{part.find('TradeName').text}}"
+                                                }
+                                            ],
+                                            "skos:notation" : [
+                                                {
+                                                    "@if" : "part.find('Abbreviation') is not None",
+                                                    "@value" : "{{part.find('Abbreviation').text}}"
+                                                }
+                                            ],
+                                            "rdfs:subClassOf" : [
+                                                {
+                                                    "@if" : "part.find('PubChemRef') is not None",
+                                                    "@id" : "pubchem:{{part.find('PubChemRef').text.replace(' ','')}}"
+                                                }
+                                            ]
 										}
-
 									],
 									"sio:hasRole": {
 										"@type": "nanomine:Matrix",
@@ -540,24 +574,24 @@ def result():
 										}
 									},
 									"sio:hasAttribute": [{
-										"@if": "polymer.find('ManufacturerOrSourceName') is not None",
-										"@for": "manufacturer in polymer.findall('ManufacturerOrSourceName')",
+										"@if": "part.find('ManufacturerOrSourceName') is not None",
+										"@for": "manufacturer in part.findall('ManufacturerOrSourceName')",
 										"@do": {
 											"@type": "nanomine:Manufacturer",
 											"sio:hasValue": "{{manufacturer.text}}"
 										}
 									},
 									{
-										"@if": "polymer.find('TradeName') is not None",
-										"@for": "tradename in polymer.findall('TradeName')",
+										"@if": "part.find('TradeName') is not None",
+										"@for": "tradename in part.findall('TradeName')",
 										"@do":{
 											"@type": "nanomine:TradeName",
 											"sio:hasValue": "{{tradename.text}}"
 										}
 									},
 									{
-										"@if": "polymer.find('Abbreviation') is not None",
-										"@for": "abbrev in polymer.findall('Abbreviation')",
+										"@if": "part.find('Abbreviation') is not None",
+										"@for": "abbrev in part.findall('Abbreviation')",
 										"@do":{
 											"@type": "nanomine:Abbreviation",
 											"sio:hasValue": "{{abbrev.text}}"

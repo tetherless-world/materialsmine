@@ -35,7 +35,10 @@ class IngestTestSetup(AgentUnitTestCase):
                     results.extend(agent.process_graph(np))
         return results
 
-class IngestTestTests(IngestTestSetup):  
+class IngestTestTests(IngestTestSetup):
+    pass
+
+class OldIngestTestTests(IngestTestSetup):
     def test_nanocomposites(self):
         ingest_tester.test_nanocomposites(self)
 

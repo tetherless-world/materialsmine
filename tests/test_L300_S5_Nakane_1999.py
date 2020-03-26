@@ -13,7 +13,7 @@ class L300_S5_Nakane_1999(template.IngestTestSetup):
     #     ingest_tester.test_viscoelastic_measurement_mode(self, expected_properties)
     #     ingest_tester.test_viscoelastic_measurement_mode(self)
 
-    def test_tensile_loading_profile(self):
+    def no_test_tensile_loading_profile(self):
         strain = [
             0.488947522403,
             0.206702455438,
@@ -61,6 +61,6 @@ class L300_S5_Nakane_1999(template.IngestTestSetup):
         strain = [rdflib.Literal(val) for val in strain]
         stress = [rdflib.Literal(val) for val in stress]
         ingest_tester.test_tensile_loading_profile(self, strain, stress)
-    
-    def test_triples(self):
+
+    def no_test_triples(self):
         ingest_tester.print_triples(self)

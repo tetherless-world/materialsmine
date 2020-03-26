@@ -11,10 +11,10 @@ class IngestTestRunner(template.IngestTestSetup):
         cls.file_under_test = file_under_test
         super().setUpClass()
 
-    def test_triples(self):
+    def no_test_triples(self):
          ingest_tester.print_triples(self)
 
-    def test_flexural_loading_profile(self):
+    def no_test_flexural_loading_profile(self):
         strain = [
             0.0455199451544,
             0.0984788280365,
