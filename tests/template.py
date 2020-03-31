@@ -1,6 +1,43 @@
 from . import ingest_tester
 from whyis.test.agent_unit_test_case import AgentUnitTestCase
+from base64 import b64encode
+import autonomic
 
+class IngestTest(AgentUnitTestCase):
+
+    upload_template = '''<https://materialsmine.org/nmr/xml/example> a <http://nanomine.org/ns/NanomineXMLFile>,
+        <http://schema.org/DataDownload>,
+        <https://www.iana.org/assignments/media-types/text/xml> ;
+    <http://vocab.rpi.edu/whyis/hasContent> "data:text/xml;charset=UTF-8;base64,%s" .'''
+
+    def setUp(self):
+        # Initialization
+        self.login(*self.create_user("user@example.com", "password"))
+
+        encoded_file = b64encode(self.data.encode('utf8')).decode('ascii')
+
+        print ("XML length:", len(encoded_file))
+        upload = self.upload_template % (encoded_file)
+        response = self.client.post("/pub", data=upload, content_type="text/turtle", follow_redirects=True)
+        self.assertEquals(response.status, '201 CREATED')
+
+        response = self.client.post("/pub", data=open('/apps/nanomine-graph/setl/xml_ingest.setl.ttl', 'rb').read(),
+                                      content_type="text/turtle", follow_redirects=True)
+        self.assertEquals(response.status, '201 CREATED')
+
+        setlmaker = autonomic.SETLMaker()
+        setlmaker.dry_run = False
+        results = self.run_agent(setlmaker)
+
+        # confirm this is creating a SETL script for the XML file.
+        self.assertTrue(len(results) > 0)
+
+        setlr = autonomic.SETLr()
+        setlr.dry_run = False
+
+        print(len(self.app.db))
+        for setlr_np in results:
+            setlr_results = self.run_agent(setlr, nanopublication=setlr_np)
 
 class IngestTestSetup(AgentUnitTestCase):
     @classmethod
