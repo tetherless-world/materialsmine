@@ -24,7 +24,7 @@ from nanomine.agent import *
 from authenticator import JWTAuthenticator
 
 authenticator_config = [] # set into config dict later
-authenticator_secret = os.environ['NM_GRAPH_AUTH_SECRET']
+authenticator_secret = os.environ.get('NM_GRAPH_AUTH_SECRET', None)
 if authenticator_secret:
   authenticator_config.append(JWTAuthenticator(key=authenticator_secret))
 
@@ -127,7 +127,7 @@ Config = dict(
     #knowledge_BlazeGraphProperties = '/apps/whyis/knowledge.properties',
     #load_dir = '/data/loaded',
     #knowledge_bulkLoadNamespace = 'knowledge',
-    
+
     LOGIN_USER_TEMPLATE = "auth/login.html",
     CELERY_BROKER_URL = 'redis://localhost:6379/0',
     CELERY_RESULT_BACKEND = 'redis://localhost:6379/0',

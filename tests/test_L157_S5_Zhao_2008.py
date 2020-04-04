@@ -10,11 +10,11 @@ class L157_S5_Zhao_2008(template.IngestTestSetup):
     # def test_triples(self):
     #     ingest_tester.print_triples(self)
 
-    def test_filler_trade_names(self):
+    def no_test_filler_trade_names(self):
         ingest_tester.test_filler_trade_names(self)
 
-    def test_matrix_trade_names(self):
+    def no_test_matrix_trade_names(self):
         ingest_tester.test_matrix_trade_names(self)
 
-    def test_complete_material(self):
+    def no_test_complete_material(self):
         ingest_tester.test_complete_material(self)

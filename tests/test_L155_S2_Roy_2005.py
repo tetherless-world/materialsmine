@@ -11,10 +11,10 @@ class IngestTestRunner(template.IngestTestSetup):
         cls.file_under_test = file_under_test
         super().setUpClass()
 
-    def test_triples(self):
+    def no_test_triples(self):
          ingest_tester.print_triples(self)
 
-    def test_dielectric_real_permittivity(self):
+    def no_test_dielectric_real_permittivity(self):
         frequency = [
             0.002078949,
             0.005239995,
@@ -74,7 +74,7 @@ class IngestTestRunner(template.IngestTestSetup):
 
         ingest_tester.test_dielectric_real_permittivity(self, frequency, real_permittivity, descriptions)
 
-    def test_dielectric_loss_tangent(self):
+    def no_test_dielectric_loss_tangent(self):
         return
         frequency = [
             0.002132876,
@@ -136,7 +136,7 @@ class IngestTestRunner(template.IngestTestSetup):
 
         ingest_tester.test_dielectric_loss_tangent(self, frequency, tan_delta, descriptions)
 
-    def test_weibull_plot(self):
+    def no_test_weibull_plot(self):
         breakdown_strength = [
             134.3096058,
             135.4974638,

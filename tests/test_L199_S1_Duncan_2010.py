@@ -11,10 +11,10 @@ class Test_L199_S1_Duncan_2010(template.IngestTestSetup):
         cls.file_under_test = file_under_test
         super().setUpClass()
 
-    def test_triples(self):
+    def no_test_triples(self):
         ingest_tester.print_triples(self)
 
-    def test_shear_loading_profile_1(self):
+    def no_test_shear_loading_profile_1(self):
         descriptions = {}
         descriptions["measurement_description"] = rdflib.Literal("Number of MWNT within grip region dissolved in THF")
         descriptions["x_description"] = rdflib.Literal("Aspect ratio (L/d)")
@@ -56,7 +56,7 @@ class Test_L199_S1_Duncan_2010(template.IngestTestSetup):
         number = [rdflib.Literal(n) for n in number]
         ingest_tester.test_shear_loading_profile(self, aspect_ratio, number, descriptions, types)
 
-    def test_shear_loading_profile_2(self):
+    def no_test_shear_loading_profile_2(self):
         descriptions = {}
         descriptions["measurement_description"] = rdflib.Literal("Number of MWNT along the fracture edge dissolved in THF")
         descriptions["x_description"] = rdflib.Literal("Aspect ratio (L/d)")
@@ -93,8 +93,8 @@ class Test_L199_S1_Duncan_2010(template.IngestTestSetup):
         aspect_ratio = [rdflib.Literal(a, datatype=rdflib.XSD.double) for a in aspect_ratio]
         number = [rdflib.Literal(n) for n in number]
         ingest_tester.test_shear_loading_profile(self, aspect_ratio, number, descriptions, types)
-    
-    def test_shear_loading_profile_3(self):
+
+    def no_test_shear_loading_profile_3(self):
         descriptions = {}
         descriptions["measurement_description"] = rdflib.Literal("Number of MWNT along the fracture for ARNT/PC")
         descriptions["x_description"] = rdflib.Literal("Aspect ratio (L/d)")
@@ -127,4 +127,3 @@ class Test_L199_S1_Duncan_2010(template.IngestTestSetup):
         aspect_ratio = [rdflib.Literal(a, datatype=rdflib.XSD.double) for a in aspect_ratio]
         number = [rdflib.Literal(n) for n in number]
         ingest_tester.test_shear_loading_profile(self, aspect_ratio, number, descriptions, types)
-    
