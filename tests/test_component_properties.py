@@ -4,7 +4,7 @@ from . import template
 
 SKOS = rdflib.Namespace("http://www.w3.org/2004/02/skos/core#")
 
-class TestFractions(template.IngestTest):
+class TestComponentProperties(template.IngestTest):
 
     data = '''<?xml version="1.0" encoding="UTF-8"?>
     <PolymerNanocomposite>
