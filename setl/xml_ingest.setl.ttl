@@ -225,7 +225,7 @@ def result():
                                         {
                                             "@for": "density in part.findall('Density')",
                                             "@do": {
-                                                "@type": "sio:Density",
+                                                "@type": "nanomine:Density",
                                                 "sio:hasValue": {
                                                     "@value": "{{density.find('value').text}}",
                                                     "@type": "xsd:double"
@@ -578,7 +578,7 @@ def result():
                                     {
                                         "@for": "density in part.findall('Density')",
                                         "@do": {
-                                            "@type": "sio:Density",
+                                            "@type": "nanomine:Density",
                                             "sio:hasValue": {
                                                 "@value": "{{density.find('value').text}}",
                                                 "@type": "xsd:double"

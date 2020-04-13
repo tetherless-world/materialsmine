@@ -24,7 +24,7 @@
   api_vocab:selector "results.bindings.item";
   prov:wasGeneratedBy [
      a setl:Extract;
-     prov:used <https://materialsmine.org/wi/sparql?format=json&query=SELECT+distinct+%3Fdataset+%3Ffile+%3Fschema+WHERE+%7B%0A++%3Ffile+a+%3Chttp%3A%2F%2Fnanomine.org%2Fns%2FNanomineXMLFile%3E.%0A++%3Ffile+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2FconformsTo%3E+%3Fschema.%0A++%3Fdataset+%3Chttp%3A%2F%2Fschema.org%2Fdistribution%3E+%3Ffile.%0A%7D+%0A>
+     prov:used <https://qa.materialsmine.org/wi/sparql?format=json&query=SELECT+distinct+%3Fdataset+%3Ffile+%3Fschema+WHERE+%7B%0A++%3Ffile+a+%3Chttp%3A%2F%2Fnanomine.org%2Fns%2FNanomineXMLFile%3E.%0A++%3Ffile+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2FconformsTo%3E+%3Fschema.%0A++%3Fdataset+%3Chttp%3A%2F%2Fschema.org%2Fdistribution%3E+%3Ffile.%0A%7D+%0A>
   ].
 
 :get a owl:Class, prov:SoftwareAgent, setl:PythonScript;
@@ -67,7 +67,7 @@
       "http://purl.org/net/provenance/ns#File"
     ],
     "http://open.vocab.org/terms/hasContentType": "text/xml",
-    "whyis:hasContent" : {"@id" : "data:text/xml;charset=UTF-8;base64,{{b64encode(get(row['file']['value'].replace('nanomine.org','qa.materialsmine.org')+'?format=xml').text.encode('utf8')).decode('ascii')}}"},
+    "whyis:hasContent" : {"@id" : "data:text/xml;charset=UTF-8;base64,{{b64encode(get(row['file']['value']+'?format=xml').text.encode('utf8')).decode('ascii')}}"},
     "dc:conformsTo" : {"@id" : "{{row['schema']['value']}}"}
   },
   {
