@@ -12,6 +12,7 @@ import agents.nlp as nlp
 import rdflib
 from datetime import datetime
 
+
 # Set to be custom for your project
 LOD_PREFIX = 'http://nanomine.org'
 #os.getenv('lod_prefix') if os.getenv('lod_prefix') else 'http://hbgd.tw.rpi.edu'
@@ -125,6 +126,11 @@ Config = dict(
     LOGIN_USER_TEMPLATE = "auth/login.html",
     CELERY_BROKER_URL = 'redis://localhost:6379/0',
     CELERY_RESULT_BACKEND = 'redis://localhost:6379/0',
+    CACHE_TYPE = "redis", # Flask-Caching related configs
+    CACHE_KEY_PREFIX = 'whyis_cache_',
+    CACHE_REDIS_URL = 'redis://localhost:6379/0',
+    CACHE_DEFAULT_TIMEOUT = 0,
+
     default_language = 'en',
     namespaces = [
         importer.LinkedData(
@@ -163,6 +169,7 @@ Config = dict(
     inferencers = {
         "SETLr": autonomic.SETLr(),
         "SETLMaker": autonomic.SETLMaker(),
+        "CacheUpdater" : autonomic.CacheUpdater(),
 #        "HTML2Text" : nlp.HTML2Text(),
 #        "EntityExtractor" : nlp.EntityExtractor(),
 #        "EntityResolver" : nlp.EntityResolver(),
