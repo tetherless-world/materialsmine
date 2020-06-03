@@ -61,6 +61,12 @@
   ].
 
 
+:units_table a csvw:Table, setl:Table;
+    prov:wasGeneratedBy [
+      a setl:Extract;
+      prov:used <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=1871720821>;
+    ].
+
 :ontology a setl:SemanticETLScript;
   rdfs:label "Nanomine Ontology SETL Script".
 
@@ -283,6 +289,36 @@
                     }
                 ]
 	}]
+}]'''], [
+    a setl:Transform, setl:JSLDT;
+    prov:used :units_table;
+    setl:hasContext '''{
+        "@vocab" :  "http://nanomine.org/",
+        "sio" :     "http://semanticscience.org/resource/",
+        "chear" :   "http://hadatac.org/ont/chear#",
+        "skos" :    "http://www.w3.org/2004/02/skos/core#",
+        "prov" :    "http://www.w3.org/ns/prov#",
+        "dc"   :    "http://purl.org/dc/terms/",
+        "cmo"  :    "http://purl.org/twc/ontologies/cmo.owl#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "rdfs" :    "http://www.w3.org/2000/01/rdf-schema#",
+        "bibo" :    "http://purl.org/ontology/bibo/",
+        "nanomine" :    "http://nanomine.org/ns/"
+    }''';
+    prov:value '''[{
+        "@id": "http://nanomine.org/ns",
+        "@graph": [{
+            "@id": "{{row.uri}}",
+            "@type" : [
+                "sio:UnitOfMeasurement",
+                {"@if" : "row.absolute == 'y'", "@id" : "nanomine:AbsoluteUnitOfMeasurement"}
+            ],
+            "rdfs:label" : "{{row.label}}",
+            "skos:notation" : [ { "@if" : "not isempty(row.notation)", "@value": "{{row.notation}}" }],
+            "skos:altLabel" : [ { "@if" : "not isempty(row.altLabel)", "@value": "{{row.altLabel}}" }],
+            "skos:definition" : [ { "@if" : "not isempty(row.definition)", "@value": "{{row.definition}}" }]
+        }]
 }]'''], [
     a setl:Transform, setl:JSLDT;
     prov:used :characterization_classes_table;

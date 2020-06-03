@@ -76,7 +76,7 @@ class TestStaticProperties(template.IngestTest):
         print ('\n'.join(['\t'.join([(val if val is not None else '-') for val in x]) for x in properties]))
         self.assertIn((rdflib.URIRef('http://nanomine.org/sample/l141-s19-gao-2013'),
                        rdflib.URIRef('http://nanomine.org/ns/TensileModulus'),
-                       rdflib.URIRef('http://nanomine.org/ns/unit/gpa'),
+                       rdflib.URIRef('http://www.ontology-of-units-of-measure.org/resource/om-2/gigapascal'),
                        rdflib.Literal(3.2),
                        rdflib.Literal(0.1)), properties)
         self.assertIn((rdflib.URIRef('http://nanomine.org/sample/l141-s19-gao-2013'),
@@ -178,11 +178,11 @@ class TestDynamicProperties(template.IngestTest):
                        rdflib.Literal(33.8412508779),
                        rdflib.URIRef('http://nanomine.org/ns/Frequency'),
                        rdflib.Literal(53.0),
-                       rdflib.URIRef('http://nanomine.org/ns/unit/hz')), properties)
+                       rdflib.URIRef('http://www.ontology-of-units-of-measure.org/resource/om-2/hertz')), properties)
         self.assertIn((rdflib.URIRef('http://nanomine.org/sample/l104-s4-he-2009'),
                        rdflib.URIRef('http://nanomine.org/ns/DielectricPermittivity'),
                        None,
                        rdflib.Literal(24.9339073612),
                        rdflib.URIRef('http://nanomine.org/ns/Frequency'),
                        rdflib.Literal(54.0),
-                       rdflib.URIRef('http://nanomine.org/ns/unit/hz')), properties)
+                       rdflib.URIRef('http://www.ontology-of-units-of-measure.org/resource/om-2/hertz')), properties)
