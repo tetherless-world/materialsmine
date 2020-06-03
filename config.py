@@ -169,7 +169,7 @@ Config = dict(
     inferencers = {
         "SETLr": autonomic.SETLr(),
         "SETLMaker": autonomic.SETLMaker(),
-#        "CacheUpdater" : autonomic.CacheUpdater(),
+        "CacheUpdater" : autonomic.CacheUpdater(),
 #        "HTML2Text" : nlp.HTML2Text(),
 #        "EntityExtractor" : nlp.EntityExtractor(),
 #        "EntityResolver" : nlp.EntityResolver(),
