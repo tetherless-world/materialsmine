@@ -103,10 +103,10 @@ class TestComponentProperties(template.IngestTest):
             }'''))
         print ('\n'.join(['\t'.join(x) for x in component_types]))
         self.assertIn((rdflib.URIRef('http://nanomine.org/ns/Filler'),
-                       rdflib.URIRef('http://semanticscience.org/resource/Density'),
+                       rdflib.URIRef('http://nanomine.org/ns/Density'),
                        rdflib.Literal(6.02),
-                       rdflib.URIRef('http://nanomine.org/ns/unit/g-cm3')), component_types)
+                       rdflib.URIRef('http://www.ontology-of-units-of-measure.org/resource/om-2/gramPerCubicCentimetre')), component_types)
         self.assertIn((rdflib.URIRef('http://nanomine.org/ns/Matrix'),
-                       rdflib.URIRef('http://semanticscience.org/resource/Density'),
+                       rdflib.URIRef('http://nanomine.org/ns/Density'),
                        rdflib.Literal(1.13),
-                       rdflib.URIRef('http://nanomine.org/ns/unit/g-cm3')), component_types)
+                       rdflib.URIRef('http://www.ontology-of-units-of-measure.org/resource/om-2/gramPerCubicCentimetre')), component_types)

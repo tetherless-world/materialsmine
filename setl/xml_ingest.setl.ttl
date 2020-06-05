@@ -39,6 +39,19 @@
     prov:used <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=1751784944>;
   ].
 
+:units_table a csvw:Table, setl:Table;
+    prov:wasGeneratedBy [
+      a setl:Extract;
+      prov:used <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=1871720821>;
+    ].
+
+:units a owl:Class, prov:SoftwareAgent, setl:PythonScript;
+      rdfs:subClassOf prov:Activity;
+      prov:qualifiedDerivation [ a prov:Usage; prov:entity :units_table; prov:hadRole [ dcterms:identifier "units"]];
+      prov:value '''
+result = units.set_index(units.code)
+'''.
+
 :xml a setl:XML;
   prov:wasGeneratedBy [
      a setl:Extract;
@@ -70,6 +83,7 @@ def result():
     prov:qualifiedUsage [ a prov:Usage; prov:entity :characterization_methods_table; prov:hadRole [ dcterms:identifier "methods"]];
     prov:qualifiedUsage [ a prov:Usage; prov:entity :processing_methods_table; prov:hadRole [dcterms:identifier "processing"]];
     prov:qualifiedUsage [ a prov:Usage; prov:entity :get_uuid; prov:hadRole [ dcterms:identifier "get_uuid"]];
+    prov:qualifiedUsage [ a prov:Usage; prov:entity :units; prov:hadRole [ dcterms:identifier "units"]];
     setl:hasContext """{
   "owl" : "http://www.w3.org/2002/07/owl#",
   "sio" :     "http://semanticscience.org/resource/",
@@ -234,11 +248,12 @@ def result():
                                                     "@if" : "density.find('source') is not None",
                                                     "@value" : "{{density.find('source').text}}"
                                                 }],
-                                                "sio:hasUnit": [{
-                                                    "@if": "density.find('unit') is not None",
-                                                    "@id": "unit:{{slugify(density.find('unit').text)}}",
-                                                    "rdfs:label": "{{density.find('unit').text}}"
-                                                }]
+                                                "sio:hasUnit": [
+                                                  {
+                                                    "@if": "density.find('unit') is not None and density.find('unit').text in units.index",
+                                                    "@id": "{{units.loc[density.find('unit').text].uri}}"
+                                                  }
+                                                ]
                                             }
                                         },
                                         {
@@ -250,11 +265,12 @@ def result():
                                                     "@value": "{{area.find('.//value').text}}",
                                                     "@type": "xsd:double"
                                                 },
-                                                "sio:hasUnit": [{
-                                                    "@if": "area.find('.//unit') is not None",
-                                                    "@id": "unit:{{slugify(area.find('.//unit').text)}}",
-                                                    "rdfs:label": "{{area.find('.//unit').text}}"
-                                                }],
+                                                "sio:hasUnit": [
+                                                    {
+                                                      "@if": "area.find('.//unit') is not None and area.find('.//unit').text in units.index",
+                                                      "@id": "{{units.loc[area.find('.//unit').text].uri}}"
+                                                    }
+                                                ],
                                                 "sio:hasAttribute": [{
                                                     "@if": "area.find('.//uncertainty')",
                                                     "@type": [
@@ -283,11 +299,12 @@ def result():
                                                     "@value": "{{ratio.find('value').text}}",
                                                     "@type": "xsd:double"
                                                 },
-                                                "sio:hasUnit": [{
-                                                    "@if": "ratio.find('unit') is not None",
-                                                    "@id": "unit:{{slugify(ratio.find('unit').text)}}",
-                                                    "rdfs:label": "{{ratio.find('unit').text}}"
-                                                }],
+                                                "sio:hasUnit": [
+                                                    {
+                                                      "@if": "ratio.find('.//unit') is not None and ratio.find('.//unit').text in units.index",
+                                                      "@id": "{{units.loc[ratio.find('.//unit').text].uri}}"
+                                                    }
+                                                ],
                                                 "sio:hasAttribute": [{
                                                     "@if": "ratio.find('.//uncertainty')",
                                                     "@type": [
@@ -316,11 +333,12 @@ def result():
                                                     "@value": "{{size.find('value').text}}",
                                                     "@type": "xsd:double"
                                                 },
-                                                "sio:hasUnit": [{
-                                                    "@if": "size.find('unit') is not None",
-                                                    "@id": "unit:{{slugify(size.find('unit').text)}}",
-                                                    "rdfs:label": "{{size.find('unit').text}}"
-                                                }],
+                                                "sio:hasUnit": [
+                                                    {
+                                                      "@if": "size.find('.//unit') is not None and size.find('.//unit').text in units.index",
+                                                      "@id": "{{units.loc[size.find('.//unit').text].uri}}"
+                                                    }
+                                                ],
                                                 "sio:hasAttribute": [{
                                                     "@if": "size.find('.//uncertainty') is not None",
                                                     "@type": [
@@ -375,11 +393,12 @@ def result():
                                                             "@value": "{{shape.find('.//Width/value').text}}",
                                                             "@type": "xsd:double"
                                                         },
-                                                        "sio:hasUnit": [{
-                                                            "@if": "shape.find('.//Width/unit') is not None",
-                                                            "@id": "unit:{{slugify(shape.find('.//Width/unit').text)}}",
-                                                            "rdfs:label": "{{shape.find('.//Width/unit').text}}"
-                                                        }],
+                                                        "sio:hasUnit": [
+                                                            {
+                                                              "@if": "shape.find('.//Width/unit') is not None and shape.find('.//Width/unit').text in units.index",
+                                                              "@id": "{{units.loc[shape.find('.//Width/unit').text].uri}}"
+                                                            }
+                                                        ],
                                                         "sio:hasAttribute": [{
                                                             "@if": "shape.find('.//Width/uncertainty') is not None",
                                                             "@type": [
@@ -410,11 +429,12 @@ def result():
                                                             "@value": "{{shape.find('.//Length/value').text}}",
                                                             "@type": "xsd:double"
                                                         },
-                                                        "sio:hasUnit": [{
-                                                            "@if": "shape.find('.//Length/unit') is not None",
-                                                            "@id": "unit:{{slugify(shape.find('.//Length/unit').text)}}",
-                                                            "rdfs:label": "{{shape.find('.//Length/unit').text}}"
-                                                        }],
+                                                        "sio:hasUnit": [
+                                                            {
+                                                              "@if": "shape.find('.//Length/unit') is not None and shape.find('.//Length/unit').text in units.index",
+                                                              "@id": "{{units.loc[shape.find('.//Length/unit').text].uri}}"
+                                                            }
+                                                        ],
                                                         "sio:hasAttribute": [{
                                                             "@if": "shape.find('.//Length/uncertainty') is not None",
                                                             "@type": [
@@ -445,11 +465,12 @@ def result():
                                                             "@value": "{{shape.find('.//Depth/value').text}}",
                                                             "@type": "xsd:double"
                                                         },
-                                                        "sio:hasUnit": [{
-                                                            "@if": "shape.find('.//Depth/unit') is not None",
-                                                            "@id": "unit:{{slugify(shape.find('.//Depth/unit').text)}}",
-                                                            "rdfs:label": "{{shape.find('.//Depth/unit').text}}"
-                                                        }],
+                                                        "sio:hasUnit": [
+                                                            {
+                                                              "@if": "shape.find('.//Depth/unit') is not None and shape.find('.//Depth/unit').text in units.index",
+                                                              "@id": "{{units.loc[shape.find('.//Depth/unit').text].uri}}"
+                                                            }
+                                                        ],
                                                         "sio:hasAttribute": [{
                                                             "@if": "shape.find('.//Depth/uncertainty') is not None",
                                                             "@type": [
@@ -587,11 +608,12 @@ def result():
                                                 "@if" : "density.find('source') is not None",
                                                 "@value" : "{{density.find('source').text}}"
                                             }],
-                                            "sio:hasUnit": [{
-                                                "@if": "density.find('unit') is not None",
-                                                "@id": "unit:{{slugify(density.find('unit').text)}}",
-                                                "rdfs:label": "{{density.find('unit').text}}"
-                                            }]
+                                            "sio:hasUnit": [
+                                                {
+                                                  "@if": "density.find('unit') is not None and density.find('unit').text in units.index",
+                                                  "@id": "{{units.loc[density.find('unit').text].uri}}"
+                                                }
+                                            ]
                                         }
                                     },
                                     {
@@ -640,12 +662,12 @@ def result():
                                         "@value": "{{value.find('value').text}}",
                                         "@type": "xsd:double"
                                     }],
-                                    "sio:hasUnit": [{
-                                        "@if": "value.find('unit') is not None",
-                                        "@id": "unit:{{slugify(value.find('unit').text)}}",
-                                        "rdfs:label": "{{value.find('unit').text}}",
-                                        "@type" : "sio:UnitOfMeasure"
-                                    }],
+                                    "sio:hasUnit": [
+                                        {
+                                          "@if": "value.find('unit') is not None and value.find('unit').text in units.index",
+                                          "@id": "{{units.loc[value.find('unit').text].uri}}"
+                                        }
+                                    ],
                                     "sio:hasAttribute": [{
                                         "@for": "uncertainty in value.findall('uncertainty')",
                                         "@do": {
@@ -689,10 +711,8 @@ def result():
                                                       ],
                                                       "sio:hasUnit" : [
                                                           {
-                                                              "@if": "row.find('../../../AxisLabel/yUnit') is not None and row.find('../../AxisLabel/yUnit').text not in {None,'dimensionless'}",
-                                                              "@id": "unit:{{slugify(row.find('../../../AxisLabel/yUnit').text)}}",
-                                                              "rdfs:label": "{{row.find('../../../AxisLabel/yUnit').text}}",
-                                                              "@type" : "sio:UnitOfMeasure"
+                                                            "@if": "row.find('../../../AxisLabel/yUnit') is not None and row.find('../../../AxisLabel/yUnit').text in units.index",
+                                                            "@id": "{{units.loc[row.find('../../../AxisLabel/yUnit').text].uri}}"
                                                           }
                                                       ],
                                                       "sio:hasValue": {
@@ -716,10 +736,8 @@ def result():
                                                           ],
                                                           "sio:hasUnit" : [
                                                               {
-                                                                  "@if": "row.find('../../../AxisLabel/xUnit') is not None and row.find('../../../AxisLabel/xUnit').text not in {None,'dimensionless'}",
-                                                                  "@id": "unit:{{slugify(row.find('../../../AxisLabel/xUnit').text)}}",
-                                                                  "rdfs:label": "{{row.find('../../../AxisLabel/xUnit').text}}",
-                                                                  "@type" : "sio:UnitOfMeasure"
+                                                                "@if": "row.find('../../../AxisLabel/xUnit') is not None and row.find('../../../AxisLabel/xUnit').text in units.index",
+                                                                "@id": "{{units.loc[row.find('../../../AxisLabel/xUnit').text].uri}}"
                                                               }
                                                           ],
                                                           "sio:hasValue": {
@@ -814,11 +832,12 @@ def result():
                                                                             "@if": "val.text is not None",
                                                                             "@value": "{{val.text}}"
                                                                         }],
-                                                                        "sio:hasUnit": [{
-                                                                            "@if": "val.find('unit') is not None",
-                                                                            "@id": "unit:{{slugify(val.find('unit').text)}}",
-                                                                            "rdfs:label": "{{val.find('unit').text}}"
-                                                                        }],
+                                                                        "sio:hasUnit": [
+                                                                            {
+                                                                              "@if": "val.find('unit') is not None and val.find('unit').text in units.index",
+                                                                              "@id": "{{units.loc[val.find('unit').text].uri}}"
+                                                                            }
+                                                                        ],
                                                                         "sio:hasAttribute": [{
                                                                             "@if": "val.find('.//uncertainty') is not None",
                                                                             "@type": [
@@ -890,11 +909,12 @@ def result():
                                                         "@value": "{{value.findall('.'+method_attr.xpath)[0].find('value').text}}",
                                                         "@type": "xsd:double"
                                                     },
-                                                    "sio:hasUnit": [{
-                                                        "@if": "value.findall('.'+method_attr.xpath)[0].find('unit') is not None",
-                                                        "@id": "unit:{{slugify(value.findall('.'+method_attr.xpath)[0].find('unit').text)}}",
-                                                        "rdfs:label": "{{value.findall('.'+method_attr.xpath)[0].find('unit').text}}"
-                                                    }],
+                                                    "sio:hasUnit": [
+                                                        {
+                                                          "@if": "value.findall('.'+method_attr.xpath)[0].find('unit') is not None and value.findall('.'+method_attr.xpath)[0].find('unit').text in units.index",
+                                                          "@id": "{{units.loc[value.findall('.'+method_attr.xpath)[0].find('unit').text].uri}}"
+                                                        }
+                                                    ],
                                                     "sio:hasAttribute": [{
                                                         "@if": "value.findall('.'+method_attr.xpath)[0].find('.//uncertainty') is not None",
                                                         "@type": [
