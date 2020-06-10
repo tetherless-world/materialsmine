@@ -488,3 +488,7 @@ whyis:hasView "visualization.html".
   whyis:newInstanceView "new_instance_view.html";
   whyis:hasView "class_view.html";
   whyis:hasFacets "pnc_facets.json".
+
+<http://nanomine.org/gallery> a whyis:ChartVizGallery.
+
+whyis:ChartVizGallery whyis:hasView "chart_gallery.html".
