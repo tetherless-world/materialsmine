@@ -50,3 +50,4 @@ Hopefully this should outline the basics of expanding the unit tests for the xml
     * Tests which we want to be ran automatically should be placed in the `IngestTestTests` class in `template.py`
 * These tests can be then executed automatically with the `auto_tester.py` script, which can be supplied with a number of files to test and a `--scramble` parameter to randomize which files are tested.
 * I believe this functionally works, though I admit it's been a while since I've worked on it.
+* The tests can also be run through whyis using `python manage.py test --apponly`

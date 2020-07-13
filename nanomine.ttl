@@ -8,12 +8,32 @@
 @prefix sio: <http://semanticscience.org/resource/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-<file:///apps/nanomine-graph/nan> a owl:Class ;
-    rdfs:label "nan" ;
+<file:///apps/nanomine-graph/setl/nan> a owl:Class ;
+    rdfs:label "Author",
+        "DOI",
+        "Date of Citation",
+        "Date of Measurement",
+        "Date of Sample Made",
+        "Edition",
+        "Editor",
+        "ISBN",
+        "ISSN",
+        "Institution or Lab",
+        "Issue",
+        "Keyword",
+        "Language",
+        "Publication Year",
+        "Publisher",
+        "Title",
+        "URL",
+        "Volume",
+        "nan",
+        "related DOI" ;
     nanomine:hasSelector "//DegreeOfCrystallization",
         "//Rheological",
         "//Volumetric",
-        "//WeibullParameter" .
+        "//WeibullParameter" ;
+    rdfs:subClassOf prov:Agent .
 
 :ns a owl:Ontology ;
     rdfs:label "Nanomaterials Ontology" ;
@@ -91,6 +111,9 @@ nanomine:BarrelTemperature a owl:Class ;
     rdfs:label "Barrel Temperature" ;
     rdfs:subClassOf <obo:PATO_0000146> .
 
+nanomine:Book a owl:Class ;
+    rdfs:label "Book" .
+
 nanomine:BreakdownStrength a owl:Class ;
     rdfs:label "Breakdown Strength" ;
     rdfs:subClassOf nanomine:ElectricalProperty .
@@ -130,7 +153,8 @@ nanomine:CharpyImpactEnergy a owl:Class ;
     skos:definition "Energy absorbed by the sample during Charpy impact testing" .
 
 nanomine:ChemicalUsed a owl:Class ;
-    rdfs:label "Chemical Used" .
+    rdfs:label "Chemical Used" ;
+    rdfs:subClassOf sio:ChemicalEntity .
 
 nanomine:CoRotation a owl:Class ;
     rdfs:label "Co-Rotation" ;
@@ -228,13 +252,13 @@ nanomine:Cooling a owl:Class ;
     rdfs:label "Cooling" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom sio:TimeInterval ],
+            owl:someValuesFrom <obo:PATO_0001025> ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom <obo:PATO_0000146> ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom <obo:PATO_0001025> ],
+            owl:someValuesFrom sio:TimeInterval ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:AmbientCondition ],
@@ -278,7 +302,8 @@ nanomine:CurrentDensity a owl:Class ;
 
 nanomine:CycleInformation a owl:Class ;
     rdfs:label "Cycle Information" ;
-    nanomine:hasSelector "//CycleInformation" .
+    nanomine:hasSelector "//CycleInformation" ;
+    rdfs:subClassOf sio:InformationContentEntity .
 
 nanomine:DC_DielectricConstant a owl:Class ;
     rdfs:label "DC Dielectric Constant" ;
@@ -304,7 +329,7 @@ nanomine:Density a owl:Class ;
             owl:hasValue <http://nanomine.org/ns/unit/kg-m-3> ;
             owl:onProperty sio:hasUnit ],
         nanomine:VolumetricProperty,
-        sio:3DExtentQuantity ;
+        <http://semanticscience.org/resource/3DExtentQuantity> ;
     skos:definition "The density, or more precisely, the volumetric mass density, of a substance is its mass per unit volume.",
         "degree of consistency measured by the quantity of mass per unit volume" ;
     prov:wasQuotedFrom "https://en.wikipedia.org/wiki/Density" .
@@ -341,11 +366,11 @@ nanomine:DifferentialScanningCalorimetry a owl:Class ;
     rdfs:label "Differential Scanning Calorimetry" ;
     nanomine:hasSelector "//Differential_Scanning_Calorimetry" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty prov:used ;
-            owl:someValuesFrom nanomine:HeatingRate ],
-        [ a owl:Restriction ;
             owl:onProperty prov:generated ;
             owl:someValuesFrom nanomine:ThermalProperty ],
+        [ a owl:Restriction ;
+            owl:onProperty prov:used ;
+            owl:someValuesFrom nanomine:HeatingRate ],
         [ a owl:Restriction ;
             owl:onProperty prov:used ;
             owl:someValuesFrom nanomine:CoolingRate ],
@@ -367,13 +392,13 @@ nanomine:Drying-Evaporation a owl:Class ;
             owl:someValuesFrom nanomine:AmbientCondition ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom <obo:PATO_0000146> ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom <obo:PATO_0001025> ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom sio:TimeInterval ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom <obo:PATO_0000146> ],
         sio:Procedure ;
     skos:definition "Process for drying and evaporation of liquid solutions" .
 
@@ -462,7 +487,8 @@ nanomine:Equipment a owl:Class ;
     rdfs:label "Equipment",
         "Equipment Used" ;
     nanomine:hasSelector "//Equipment",
-        "//EquipmentUsed" .
+        "//EquipmentUsed" ;
+    rdfs:subClassOf sio:Device .
 
 nanomine:EssentialWorkOfFracture a owl:Class ;
     rdfs:label "Essential Work Of Fracture" ;
@@ -480,7 +506,12 @@ nanomine:Eutactic a owl:Class ;
     prov:wasQuotedFrom "https://en.wikipedia.org/wiki/Tacticity#Eutactic_polymers" .
 
 nanomine:ExperimentalProcedure a owl:Class ;
-    rdfs:label "Experimental Procedure" .
+    rdfs:label "Experimental Procedure" ;
+    rdfs:subClassOf sio:Procedure .
+
+nanomine:Experimenter a owl:Class ;
+    rdfs:label "Experimenter" ;
+    rdfs:subClassOf prov:Agent .
 
 nanomine:Extrusion a owl:Class ;
     rdfs:label "Extrusion" ;
@@ -613,10 +644,6 @@ nanomine:FractureEnergy a owl:Class ;
     rdfs:label "nan" ;
     nanomine:hasSelector "//FractureEnergy" .
 
-nanomine:Frequency a owl:Class ;
-    rdfs:label "nan" ;
-    nanomine:hasSelector "//frequency" .
-
 nanomine:FrequencySweep a owl:Class ;
     rdfs:label "nan" ;
     nanomine:hasSelector "//FrequencySweep" .
@@ -633,6 +660,7 @@ nanomine:GlassTransitionTemperature a owl:Class ;
 
 nanomine:GraftDensity a owl:Class ;
     rdfs:label "Graft Density" ;
+    rdfs:subClassOf sio:Density ;
     skos:definition "A result of surface treatment process, the graft density quantifies the area density of surface-treatment molecules on the surface of the filler, typically in units of chains/nm^2." .
 
 nanomine:GrowthRateOfCrystal a owl:Class ;
@@ -698,13 +726,13 @@ nanomine:Heating a owl:Class ;
     rdfs:label "Heating" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom sio:TimeInterval ],
+            owl:someValuesFrom <obo:PATO_0001025> ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom <obo:PATO_0000146> ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom <obo:PATO_0001025> ],
+            owl:someValuesFrom sio:TimeInterval ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:AmbientCondition ],
@@ -818,6 +846,9 @@ nanomine:JIntegral a owl:Class ;
     rdfs:label "nan" ;
     nanomine:hasSelector "//J-integral" .
 
+nanomine:Journal a owl:Class ;
+    rdfs:label "Journal" .
+
 nanomine:KFactor a owl:Class ;
     rdfs:label "nan" ;
     nanomine:hasSelector "//K-factor" .
@@ -874,7 +905,8 @@ nanomine:MatrixComponent a owl:Class ;
     rdfs:subClassOf nanomine:Component .
 
 nanomine:MatrixComponentComposition a owl:Class ;
-    rdfs:label "Matrix Component Composition" .
+    rdfs:label "Matrix Component Composition" ;
+    rdfs:subClassOf nanomine:Composition .
 
 nanomine:MatrixProcessing a owl:Class ;
     rdfs:label "Matrix Processing" ;
@@ -882,7 +914,8 @@ nanomine:MatrixProcessing a owl:Class ;
 
 nanomine:MeasurementMethod a owl:Class ;
     rdfs:label "nan" ;
-    nanomine:hasSelector "//MeasurementMethod" .
+    nanomine:hasSelector "//MeasurementMethod" ;
+    rdfs:subClassOf sio:Measuring .
 
 nanomine:MechanicalMixing a owl:Class ;
     rdfs:label "Mechanical Mixing" ;
@@ -921,10 +954,12 @@ nanomine:MeltingTemperature a owl:Class ;
     skos:definition "the temperature at which a solid turns into a liquid" .
 
 nanomine:Mixer a owl:Class ;
-    rdfs:label "Mixer" .
+    rdfs:label "Mixer" ;
+    rdfs:subClassOf sio:Device .
 
 nanomine:MixingMethod a owl:Class ;
-    rdfs:label "Mixing Method" .
+    rdfs:label "Mixing Method" ;
+    rdfs:subClassOf sio:Procedure .
 
 nanomine:MolecularWeight_Mn a owl:Class ;
     rdfs:label "Molecular Weight" ;
@@ -939,7 +974,8 @@ nanomine:MolecularWeight_Mw a owl:Class ;
     skos:definition "Mw, the weight averaged molecular weight, typically in units g/mol, kg/mol, or kDa, describes the average size of the matrix polymer chains." .
 
 nanomine:NonSpherical a owl:Class ;
-    rdfs:label "Non-spherical Shape" .
+    rdfs:label "Non-spherical Shape" ;
+    rdfs:subClassOf sio:Shape .
 
 nanomine:Notched a owl:Class ;
     rdfs:label "Notched" ;
@@ -998,6 +1034,7 @@ nanomine:Particle a owl:Class ;
 
 nanomine:ParticleDiameter a owl:Class ;
     rdfs:label "Particle Diameter" ;
+    rdfs:subClassOf sio:MeasurementValue ;
     skos:definition "Assuming sphere-like particles comprising the filler, the particle diameter is the \"average\" diameter of those particles." .
 
 nanomine:ParticleSurfaceTreatmentComposition a owl:Class ;
@@ -1049,7 +1086,8 @@ nanomine:Power a owl:Class ;
 
 nanomine:PreCrackingProcess a owl:Class ;
     rdfs:label "nan" ;
-    nanomine:hasSelector "//preCrackingProcess" .
+    nanomine:hasSelector "//preCrackingProcess" ;
+    rdfs:subClassOf sio:Procedure .
 
 nanomine:PreLoad a owl:Class ;
     rdfs:label "Pre-Load" ;
@@ -1074,7 +1112,8 @@ nanomine:Profile a owl:Class ;
     nanomine:hasSelector "//profile" .
 
 nanomine:PubChemReference a owl:Class ;
-    rdfs:label "PubChem Reference" .
+    rdfs:label "PubChem Reference" ;
+    rdfs:subClassOf sio:Reference .
 
 nanomine:PulsedElectroAcoustic a owl:Class ;
     rdfs:label "Pulsed Electro Acoustic" ;
@@ -1150,7 +1189,8 @@ nanomine:RotationalMolding a owl:Class ;
     rdfs:subClassOf nanomine:Molding .
 
 nanomine:SMILES a owl:Class ;
-    rdfs:label "SMILES" .
+    rdfs:label "SMILES" ;
+    rdfs:subClassOf sio:Representation .
 
 nanomine:ScanningElectronMicroscopy a owl:Class ;
     rdfs:label "Scanning Electron Microscopy" ;
@@ -1163,16 +1203,16 @@ nanomine:ScanningElectronMicroscopy a owl:Class ;
             owl:someValuesFrom nanomine:WorkingDistance ],
         [ a owl:Restriction ;
             owl:onProperty prov:used ;
-            owl:someValuesFrom nanomine:AcceleratingVoltage ],
-        [ a owl:Restriction ;
-            owl:onProperty prov:generated ;
-            owl:someValuesFrom nanomine:ElectricalProperty ],
-        [ a owl:Restriction ;
-            owl:onProperty prov:used ;
             owl:someValuesFrom nanomine:ExposureTime ],
         [ a owl:Restriction ;
             owl:onProperty prov:used ;
+            owl:someValuesFrom nanomine:AcceleratingVoltage ],
+        [ a owl:Restriction ;
+            owl:onProperty prov:used ;
             owl:someValuesFrom nanomine:Magnification ],
+        [ a owl:Restriction ;
+            owl:onProperty prov:generated ;
+            owl:someValuesFrom nanomine:ElectricalProperty ],
         sio:Measuring ;
     skos:definition "Scanning electron microscopy for obtaining microstructure at microscale" .
 
@@ -1269,21 +1309,18 @@ nanomine:Stirring a owl:Class ;
         nanomine:Mixing ;
     skos:definition "Manual stirring of liquid solutions" .
 
-nanomine:Strain a owl:Class ;
-    rdfs:label "Strain" ;
-    rdfs:subClassOf nanomine:MechanicalProperty ;
-    skos:definition "Engineering strain is defined as the amount of deformation in the direction of the applied force divided by the initial length of the material." .
-
 nanomine:StrainAmplitude a owl:Class ;
     rdfs:label "Strain Amplitude",
         "nan" ;
     nanomine:hasSelector "//StrainAmplitude",
         "//strainAmplitude" ;
+    rdfs:subClassOf nanomine:Condition ;
     skos:definition "The magnitude of forced displacement of a material sample." .
 
 nanomine:StrainAtBreak a owl:Class ;
     rdfs:label "nan" ;
-    nanomine:hasSelector "//StrainAtBreak" .
+    nanomine:hasSelector "//StrainAtBreak" ;
+    rdfs:subClassOf nanomine:Strain .
 
 nanomine:StrainRate a owl:Class ;
     rdfs:label "Strain Rate",
@@ -1307,7 +1344,8 @@ nanomine:Stress a owl:Class ;
 
 nanomine:StressRelaxation a owl:Class ;
     rdfs:label "nan" ;
-    nanomine:hasSelector "//StressRelaxation" .
+    nanomine:hasSelector "//StressRelaxation" ;
+    rdfs:subClassOf sio:RateOfChange .
 
 nanomine:SurfaceChemistryProcessing a owl:Class ;
     rdfs:label "Surface Chemistry Processing" ;
@@ -1418,7 +1456,8 @@ nanomine:TensileModulus a owl:Class ;
 
 nanomine:TensileStrength a owl:Class ;
     rdfs:label "nan" ;
-    nanomine:hasSelector "//TensileStrength" .
+    nanomine:hasSelector "//TensileStrength" ;
+    rdfs:subClassOf nanomine:TensileProperty .
 
 nanomine:TensileStressAtBreak a owl:Class ;
     rdfs:label "Tensile Stress At Break" ;
@@ -1511,14 +1550,14 @@ nanomine:TransmissionElectronMicroscopy a owl:Class ;
     rdfs:label "Transmission Electron Microscopy" ;
     nanomine:hasSelector "//Transmission_Electron_Microscopy" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty prov:generated ;
-            owl:someValuesFrom nanomine:ElectricalProperty ],
-        [ a owl:Restriction ;
             owl:onProperty prov:used ;
-            owl:someValuesFrom nanomine:Magnification ],
+            owl:someValuesFrom nanomine:AcceleratingVoltage ],
         [ a owl:Restriction ;
             owl:onProperty prov:used ;
             owl:someValuesFrom nanomine:WorkingDistance ],
+        [ a owl:Restriction ;
+            owl:onProperty prov:generated ;
+            owl:someValuesFrom nanomine:ElectricalProperty ],
         [ a owl:Restriction ;
             owl:onProperty prov:used ;
             owl:someValuesFrom nanomine:ExposureTime ],
@@ -1527,7 +1566,7 @@ nanomine:TransmissionElectronMicroscopy a owl:Class ;
             owl:someValuesFrom nanomine:EmissionCurrent ],
         [ a owl:Restriction ;
             owl:onProperty prov:used ;
-            owl:someValuesFrom nanomine:AcceleratingVoltage ],
+            owl:someValuesFrom nanomine:Magnification ],
         sio:Measuring ;
     skos:definition "Transmission electron microscopy for obtaining microstructure at nanoscale" .
 
@@ -1553,7 +1592,7 @@ nanomine:VacuumMolding a owl:Class ;
 
 nanomine:Viscosity a owl:Class ;
     rdfs:label "Viscosity" ;
-    rdfs:subClassOf sio:3DExtentQuantity ;
+    rdfs:subClassOf <http://semanticscience.org/resource/3DExtentQuantity> ;
     skos:definition "a measure of its resistance to gradual deformation by shear stress or tensile stress." ;
     prov:wasQuotedFrom "https://en.wikipedia.org/wiki/Viscosity" .
 
@@ -1624,7 +1663,8 @@ nanomine:sampleShape a owl:Class ;
     nanomine:hasSelector "//sampleShape" .
 
 nanomine:uSMILES a owl:Class ;
-    rdfs:label "uSMILES" .
+    rdfs:label "uSMILES" ;
+    rdfs:subClassOf sio:Representation .
 
 <http://nanomine.org/ns/unit/j-cm> a sio:UnitOfMeasurement ;
     rdfs:label "Joule per Centimeter" ;
@@ -1707,17 +1747,27 @@ sio:AspectRatio a owl:Class ;
     rdfs:subClassOf sio:Ratio ;
     skos:definition "The aspect ratio of a geometric shape is the ratio of its sizes in different dimensions." .
 
+sio:Chapter a owl:Class ;
+    rdfs:label "Chapter" .
+
+sio:Citation a owl:Class ;
+    rdfs:label "Citation Type" .
+
 sio:Day a sio:UnitOfMeasurement ;
     rdfs:label "Day" ;
     skos:notation "dy" .
 
 sio:Description a owl:Class ;
     rdfs:label "Description" ;
-    nanomine:hasSelector "//Description" .
+    nanomine:hasSelector "//Description" ;
+    rdfs:subClassOf sio:LanguageEntity .
 
 sio:Hour a sio:UnitOfMeasurement ;
     rdfs:label "Hour" ;
     skos:notation "Hr" .
+
+sio:Publication a owl:Class ;
+    rdfs:label "Publication" .
 
 sio:Rotation a owl:Class ;
     rdfs:label "Rotation" ;
@@ -1960,13 +2010,18 @@ nanomine:ScrewLength a owl:Class ;
     rdfs:label "Screw Length" ;
     rdfs:subClassOf sio:Length .
 
+nanomine:Strain a owl:Class ;
+    rdfs:label "Strain" ;
+    rdfs:subClassOf nanomine:MechanicalProperty ;
+    skos:definition "Engineering strain is defined as the amount of deformation in the direction of the applied force divided by the initial length of the material." .
+
 nanomine:Throughput a owl:Class ;
     rdfs:label "Throughput" ;
     rdfs:subClassOf sio:Quantity .
 
 nanomine:Torque a owl:Class ;
     rdfs:label "Torque" ;
-    rdfs:subClassOf sio:1DExtentQuantity .
+    rdfs:subClassOf <http://semanticscience.org/resource/1DExtentQuantity> .
 
 nanomine:Voltage a owl:Class ;
     rdfs:label "Voltage" ;
@@ -1976,7 +2031,9 @@ nanomine:Voltage a owl:Class ;
     rdfs:label "1/Pa" .
 
 <http://nanomine.org/ns/unit/1-s> a sio:UnitOfMeasurement ;
-    rdfs:label "1/s" .
+    rdfs:label "1/s",
+        "Per Second" ;
+    skos:notation "1/s" .
 
 <http://nanomine.org/ns/unit/c-m-2> a sio:UnitOfMeasurement ;
     rdfs:label "C/m^2" .
@@ -2021,10 +2078,16 @@ bibo: rdfs:label "BIBO" .
 sio:Depth a owl:Class ;
     rdfs:label "Depth" ;
     rdfs:subClassOf nanomine:Dimension,
-        sio:1DExtentQuantity .
+        <http://semanticscience.org/resource/1DExtentQuantity> .
+
+sio:Frequency a owl:Class ;
+    rdfs:label "nan" ;
+    nanomine:hasSelector "//frequency" ;
+    rdfs:subClassOf sio:RateOfChange .
 
 sio:SurfaceArea a owl:Class ;
-    rdfs:label "Surface Area" .
+    rdfs:label "Surface Area" ;
+    rdfs:subClassOf sio:Area .
 
 <http://www.nanopub.org/nschema#> rdfs:label "Nanopub" .
 
@@ -2032,13 +2095,6 @@ nanomine:AcceleratingVoltage a owl:Class ;
     rdfs:label "Accelerating Voltage" ;
     nanomine:hasSelector "//AcceleratingVoltage" ;
     rdfs:subClassOf sio:Parameter .
-
-nanomine:Condition a owl:Class ;
-    rdfs:label "Condition",
-        "nan" ;
-    nanomine:hasSelector "//Condition",
-        "//condition" ;
-    rdfs:subClassOf nanomine:CompressionProperty .
 
 nanomine:EmissionCurrent a owl:Class ;
     rdfs:label "Emission Current" ;
@@ -2090,6 +2146,13 @@ nanomine:CompressiveCreep a owl:Class ;
     rdfs:subClassOf nanomine:Creep ;
     skos:definition "creep during compressive test" .
 
+nanomine:Condition a owl:Class ;
+    rdfs:label "Condition",
+        "nan" ;
+    nanomine:hasSelector "//Condition",
+        "//condition" ;
+    rdfs:subClassOf nanomine:CompressionProperty .
+
 nanomine:Creep a owl:Class ;
     rdfs:label "Creep" ;
     nanomine:hasSelector "//Creep" ;
@@ -2100,49 +2163,43 @@ nanomine:Extruder a owl:Class ;
     rdfs:label "Extruder" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:ResidenceTime ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:InnerBarrelDiameter ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:DLRatio ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:Voltage ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:Throughput ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:ChannelDepth ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:ExtrusionTemperature ],
+            owl:someValuesFrom nanomine:FlightWidth ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:ScrewLength ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:Torque ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:ScrewDiameter ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:Amperage ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:Dimension ],
+            owl:someValuesFrom nanomine:ScrewChannelWidth ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:ChannelsPerScrew ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:FlightWidth ],
+            owl:someValuesFrom nanomine:ResidenceTime ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:Voltage ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:Torque ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:Throughput ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:InnerBarrelDiameter ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:Dimension ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:ScrewLead ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:Amperage ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:ExtrusionTemperature ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:MeltTemperature ],
@@ -2151,10 +2208,16 @@ nanomine:Extruder a owl:Class ;
             owl:someValuesFrom nanomine:FlightClearance ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:ScrewChannelWidth ],
+            owl:someValuesFrom nanomine:ChannelDepth ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:DLRatio ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:PressureAtDie ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:ScrewDiameter ],
         sio:Device .
 
 nanomine:FlexuralCreep a owl:Class ;
@@ -2208,7 +2271,7 @@ nanomine:Solvent a owl:Class ;
 sio:Length a owl:Class ;
     rdfs:label "Length" ;
     rdfs:subClassOf nanomine:Dimension,
-        sio:1DExtentQuantity .
+        <http://semanticscience.org/resource/1DExtentQuantity> .
 
 sio:Ratio a owl:Class ;
     rdfs:label "Fraction" ;
@@ -2242,7 +2305,7 @@ sio:Polymer a owl:Class ;
 <obo:PATO_0001334> a owl:Class ;
     rdfs:label "Diameter" ;
     rdfs:subClassOf nanomine:Dimension,
-        sio:1DExtentQuantity .
+        <http://semanticscience.org/resource/1DExtentQuantity> .
 
 nanomine:Crystallinity a owl:Class ;
     rdfs:label "Crystallinity" ;
@@ -2260,16 +2323,16 @@ nanomine:Molding a owl:Class ;
     rdfs:label "Molding" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:AmbientCondition ],
+            owl:someValuesFrom <obo:PATO_0001025> ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom sio:TimeInterval ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom <obo:PATO_0000146> ],
+            owl:someValuesFrom nanomine:AmbientCondition ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom <obo:PATO_0001025> ],
+            owl:someValuesFrom <obo:PATO_0000146> ],
         sio:Procedure ;
     skos:definition "Methods to shape final composite" .
 
@@ -2307,7 +2370,7 @@ nanomine:TensileCreep a owl:Class ;
 
 <obo:PATO_0001025> a owl:Class ;
     rdfs:label "Pressure" ;
-    rdfs:subClassOf sio:2DExtentQuantity .
+    rdfs:subClassOf <http://semanticscience.org/resource/2DExtentQuantity> .
 
 nanomine:AmbientCondition a owl:Class ;
     rdfs:label "Ambient Condition" ;
@@ -2318,10 +2381,10 @@ nanomine:Mixing a owl:Class ;
     rdfs:label "Mixing" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:RotationalFrequency ],
+            owl:someValuesFrom <obo:PATO_0000146> ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom <obo:PATO_0000146> ],
+            owl:someValuesFrom nanomine:RotationalFrequency ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom sio:TimeInterval ],
@@ -2344,7 +2407,7 @@ nanomine:Additive a owl:Class ;
 
 nanomine:VolumetricProperty a owl:Class ;
     rdfs:label "Volumetric Property" ;
-    rdfs:subClassOf sio:3DExtentQuantity .
+    rdfs:subClassOf <http://semanticscience.org/resource/3DExtentQuantity> .
 
 nanomine:TensileProperty a owl:Class ;
     rdfs:label "Tensile Property" ;
@@ -2364,24 +2427,6 @@ nanomine:ViscoelasticProperty a owl:Class ;
     rdfs:subClassOf sio:Quantity ;
     skos:definition "Properties of materials that exhibit both viscous and elastic behaviors" .
 
-sio:Procedure a owl:Class ;
-    rdfs:label "nan" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom <obo:PATO_0000146> ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasInput ;
-            owl:someValuesFrom nanomine:Additive ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom <obo:PATO_0001025> ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom sio:TimeInterval ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasInput ;
-            owl:someValuesFrom nanomine:Solvent ] .
-
 <obo:PATO_0000146> a owl:Class ;
     rdfs:label "Temperature" ;
     nanomine:hasSelector "//temperature" ;
@@ -2396,6 +2441,25 @@ nanomine:ThermalProperty a owl:Class ;
 
 <http://nanomine.org/ns/unit/pa> a sio:UnitOfMeasurement ;
     rdfs:label "Pa" .
+
+sio:Procedure a owl:Class ;
+    rdfs:label "nan" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty sio:hasInput ;
+            owl:someValuesFrom nanomine:Solvent ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom <obo:PATO_0001025> ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasInput ;
+            owl:someValuesFrom nanomine:Additive ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom sio:TimeInterval ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom <obo:PATO_0000146> ],
+        sio:Process .
 
 sio:Quantity a owl:Class ;
     rdfs:label "Amount" ;
