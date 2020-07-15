@@ -1,0 +1,11 @@
+*.pyc
+*.DS_Store
+/data/*.setl.ttl
+.vscode
+tests/outputs/*
+tests/output.txt*
+xml_files/*.xml
+output*
+tests/outputs/*
+*.egg-info
+.mypy_cache/
