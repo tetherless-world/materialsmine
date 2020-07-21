@@ -33,6 +33,12 @@
     prov:used <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=798992913>;
   ].
 
+:materials_table a csvw:Table, setl:Table;
+  prov:wasGeneratedBy [
+    a setl:Extract;
+    prov:used <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=1042381215>;
+  ].
+
 :processing_methods_table a csvw:Table, setl:Table;
   prov:wasGeneratedBy [
     a setl:Extract;
@@ -88,6 +94,7 @@ def result():
     prov:qualifiedUsage [ a prov:Usage; prov:entity :property_classes_table; prov:hadRole [ dcterms:identifier "properties"]];
     prov:qualifiedUsage [ a prov:Usage; prov:entity :characterization_methods_table; prov:hadRole [ dcterms:identifier "methods"]];
     prov:qualifiedUsage [ a prov:Usage; prov:entity :processing_methods_table; prov:hadRole [dcterms:identifier "processing"]];
+    prov:qualifiedUsage [ a prov:Usage; prov:entity :materials_table; prov:hadRole [dcterms:identifier "materials"]];
     prov:qualifiedUsage [ a prov:Usage; prov:entity :units; prov:hadRole [ dcterms:identifier "units"]];
     prov:qualifiedUsage [ a prov:Usage; prov:entity :microstructure_descriptors_table; prov:hadRole [ dcterms:identifier "microstructures"]];
     prov:qualifiedUsage [ a prov:Usage; prov:entity :get_uuid; prov:hadRole [ dcterms:identifier "get_uuid"]];
@@ -154,7 +161,8 @@ def result():
                         "@for": "material in row.findall('MATERIALS')",
                         "@do": {
                             "@id": "sample:{{slugify(id.text.replace(' ',''))}}",
-                            "sio:hasComponentPart" : [{
+                            "sio:hasComponentPart" : [
+                            {
                                 "@for": "pi, part in enumerate(material.findall('Filler/FillerComponent'))",
                                 "@do": {
                                     "@id": "sample:{{slugify(id.text.replace(' ',''))}}_filler_{{pi}}",
@@ -503,6 +511,16 @@ def result():
                                                             "@value" : "{{surface.find('TradeName').text}}"
                                                         }
                                                     ],
+                                                    "sio:hasAttribute": [
+                                                        {
+                                                            "@if": "surface.find('ManufacturerOrSourceName') is not None",
+                                                            "@for": "manufacturer in surface.findall('ManufacturerOrSourceName')",
+                                                            "@do": {
+                                                                "@type": "nanomine:ManufacturerOrSourceName",
+                                                                "sio:hasValue": "{{manufacturer.text}}"
+                                                            }
+                                                        }
+                                                    ],
                                                     "skos:notation" : [
                                                         {
                                                             "@if" : "surface.find('Abbreviation') is not None",
@@ -599,7 +617,7 @@ def result():
                                         "@if": "part.find('ManufacturerOrSourceName') is not None",
                                         "@for": "manufacturer in part.findall('ManufacturerOrSourceName')",
                                         "@do": {
-                                            "@type": "nanomine:Manufacturer",
+                                            "@type": "nanomine:ManufacturerOrSourceName",
                                             "sio:hasValue": "{{manufacturer.text}}"
                                         }
                                     },
