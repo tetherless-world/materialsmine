@@ -638,7 +638,116 @@ def result():
                                         }
                                     }]
                                 }
-                            }]
+                            }],
+"sio:hasAttribute": [
+                          {
+                            "@for": "i, property in properties.iterrows()",
+                            "@do": {
+                                "@if": "not isempty(property.xpath) and row.find('PROPERTIES')",
+                                "@for": "value in row.find('PROPERTIES').findall('.'+property.xpath)",
+                                "@do": [
+                                  {
+                                    "@if" : "not row.find('PROPERTIES').findall('.'+property.xpath+'/data')",
+                                    "@type": "{{property.uri}}",
+                                    "dc:description": [{
+                                        "@if": "value.find('description') is not None",
+                                        "@value": "{{value.find('description').text}}"
+                                    }],
+                                    "sio:hasValue": [{
+                                        "@if": "value.find('value') is not None",
+                                        "@value": "{{value.find('value').text}}",
+                                        "@type": "xsd:double"
+                                    }],
+                                    "sio:hasUnit": [
+                                        {
+                                          "@if": "value.find('unit') is not None and value.find('unit').text in units.index",
+                                          "@id": "{{units.loc[value.find('unit').text].uri}}"
+                                        }
+                                    ],
+                                    "sio:hasAttribute": [{
+                                        "@for": "uncertainty in value.findall('uncertainty')",
+                                        "@do": {
+                                            "@type": [
+                                                "sio:UncertaintyValue",
+                                                {
+                                                    "@if": "uncertainty.find('type').text == 'relative'",
+                                                    "@id": "sio:Ratio"
+                                                },
+                                                {
+                                                    "@if": "uncertainty.find('type').text == 'absolute'",
+                                                    "@id": "sio:StandardDeviation"
+                                                }
+                                            ],
+                                            "sio:hasValue": {
+                                                "@value": "{{uncertainty.find('value').text}}",
+                                                "@type": "xsd:double"
+                                            }
+                                        }
+                                    }]
+                                  },
+                                  {
+                                      "@for": "table in value.findall('.//data')",
+                                      "@do": {
+                                          "@for": "row in table.findall('rows/row')",
+                                          "@do":
+                                                  {
+                                                      "@type": [{
+                                                              "@if": "not isempty(property.curveDependentVar)",
+                                                              "@id": "{{property.curveDependentVar}}"
+                                                          },
+                                                          {
+                                                              "@if": "isempty(property.curveDependentVar) and row.find('../../../AxisLabel/yName') is not None",
+                                                              "@id": "nanomine:{{camelcase(row.find('../../../AxisLabel/yName').text)}}",
+                                                              "@type": "owl:Class",
+                                                              "rdfs:subClassOf": {
+                                                                  "@id": "sio:Quantity"
+                                                              },
+                                                              "rdfs:label": "{{row.find('../../../AxisLabel/yName').text}}"
+                                                          }
+                                                      ],
+                                                      "sio:hasUnit" : [
+                                                          {
+                                                            "@if": "row.find('../../../AxisLabel/yUnit') is not None and row.find('../../../AxisLabel/yUnit').text in units.index",
+                                                            "@id": "{{units.loc[row.find('../../../AxisLabel/yUnit').text].uri}}"
+                                                          }
+                                                      ],
+                                                      "sio:hasValue": {
+                                                          "@value": "{{row.findall('column')[1].text}}",
+                                                          "@type": "xsd:double"
+                                                      },
+                                                      "sio:inRelationTo": [{
+                                                          "@type": [{
+                                                                  "@if": "not isempty(property.curveIndependentVar)",
+                                                                  "@id": "{{property.curveIndependentVar}}"
+                                                              },
+                                                              {
+                                                                  "@if": "isempty(property.curveIndependentVar) and row.find('../../../AxisLabel/xName') is not None",
+                                                                  "@id": "nanomine:{{camelcase(row.find('../../../AxisLabel/xName').text)}}",
+                                                                  "@type": "owl:Class",
+                                                                  "rdfs:subClassOf": {
+                                                                      "@id": "sio:Quantity"
+                                                                  },
+                                                                  "rdfs:label": "{{row.find('../../../AxisLabel/xName').text}}"
+                                                              }
+                                                          ],
+                                                          "sio:hasUnit" : [
+                                                              {
+                                                                "@if": "row.find('../../../AxisLabel/xUnit') is not None and row.find('../../../AxisLabel/xUnit').text in units.index",
+                                                                "@id": "{{units.loc[row.find('../../../AxisLabel/xUnit').text].uri}}"
+                                                              }
+                                                          ],
+                                                          "sio:hasValue": {
+                                                              "@value": "{{row.findall('column')[0].text}}",
+                                                              "@type": "xsd:double"
+                                                          }
+                                                      }]
+                                                  }
+
+                                      }
+                                  }
+                                ]
+                              }
+                        }]
                         }
                     },
                     {
@@ -971,124 +1080,6 @@ def result():
                                     }]
                                 }
                             }]
-                        }
-                    },
-                    {
-                        "@for": "prop in row.findall('PROPERTIES')",
-                        "@do": {
-                            "@id": "sample:{{slugify(id.text.replace(' ',''))}}",
-                            "sio:hasAttribute" : [
-                                {
-                                    "@for": "i, property in properties.iterrows()",
-                                    "@do": {
-                                        "@if": "not isempty(property.xpath) and prop.find('.'+property.xpath)",
-                                        "@id": "entry:{{id.text.replace(' ','')}}_{{property.label.lower().replace(' ','_')}}_property__{{i}}",
-                                        "@type": ["sio:MeasurementValue","{{property.uri}}"],
-                                        "@for": "value in prop.findall('.'+property.xpath)",
-                                        "@do": [
-                                        {
-                                            "@if" : "not prop.findall('.'+property.xpath+'/data')",
-                                            "dc:description": [{
-                                                "@if": "value.find('description') is not None",
-                                                "@value": "{{value.find('description').text}}"
-                                            }],
-                                            "sio:hasValue": [{
-                                                "@if": "value.find('value') is not None",
-                                                "@value": "{{value.find('value').text}}",
-                                                "@type": "xsd:double"
-                                            }],
-                                            "sio:hasUnit": [
-                                                {
-                                                  "@if": "value.find('unit') is not None and value.find('unit').text in units.index",
-                                                  "@id": "{{units.loc[value.find('unit').text].uri}}",
-                                                  "rdfs:label": "{{value.find('unit').text}}"
-                                                }
-                                            ],
-                                            "sio:hasAttribute": [{
-                                                "@for": "uncertainty in value.findall('uncertainty')",
-                                                "@id": "sample:{{slugify(id.text.replace(' ',''))}}_property_uncertainty_{{i}}",
-                                                "@do": {
-                                                    "@type": [
-                                                        "sio:UncertaintyValue",
-                                                        {
-                                                            "@if": "uncertainty.find('type').text == 'relative'",
-                                                            "@id": "sio:Ratio"
-                                                        },
-                                                        {
-                                                            "@if": "uncertainty.find('type').text == 'absolute'",
-                                                            "@id": "sio:StandardDeviation"
-                                                        }
-                                                    ],
-                                                    "sio:hasValue": {
-                                                        "@value": "{{uncertainty.find('value').text}}",
-                                                        "@type": "xsd:double"
-                                                    }
-                                                }
-                                            }]
-                                        },
-                                        {
-                                            "@for": "table in value.findall('.//data')",
-                                            "@do": {
-                                                "@for": "row in table.findall('rows/row')",
-                                                "@do":
-                                                  {
-                                                      "@type": [{
-                                                              "@if": "not isempty(property.curveDependentVar)",
-                                                              "@id": "{{property.curveDependentVar}}"
-                                                          },
-                                                          {
-                                                              "@if": "isempty(property.curveDependentVar) and row.find('../../../AxisLabel/yName') is not None",
-                                                              "@id": "nanomine:{{camelcase(row.find('../../../AxisLabel/yName').text)}}",
-                                                              "@type": "owl:Class",
-                                                              "rdfs:subClassOf": {
-                                                                  "@id": "sio:Quantity"
-                                                              },
-                                                              "rdfs:label": "{{row.find('../../../AxisLabel/yName').text}}"
-                                                          }
-                                                      ],
-                                                      "sio:hasUnit" : [
-                                                          {
-                                                            "@if": "row.find('../../../AxisLabel/yUnit') is not None and row.find('../../../AxisLabel/yUnit').text in units.index",
-                                                            "@id": "{{units.loc[row.find('../../../AxisLabel/yUnit').text].uri}}"
-                                                          }
-                                                      ],
-                                                      "sio:hasValue": {
-                                                          "@value": "{{row.findall('column')[1].text}}",
-                                                          "@type": "xsd:double"
-                                                      },
-                                                      "sio:inRelationTo": [{
-                                                          "@type": [{
-                                                                  "@if": "not isempty(property.curveIndependentVar)",
-                                                                  "@id": "{{property.curveIndependentVar}}"
-                                                              },
-                                                              {
-                                                                  "@if": "isempty(property.curveIndependentVar) and row.find('../../../AxisLabel/xName') is not None",
-                                                                  "@id": "nanomine:{{camelcase(row.find('../../../AxisLabel/xName').text)}}",
-                                                                  "@type": "owl:Class",
-                                                                  "rdfs:subClassOf": {
-                                                                      "@id": "sio:Quantity"
-                                                                  },
-                                                                  "rdfs:label": "{{row.find('../../../AxisLabel/xName').text}}"
-                                                              }
-                                                          ],
-                                                          "sio:hasUnit" : [
-                                                              {
-                                                                "@if": "row.find('../../../AxisLabel/xUnit') is not None and row.find('../../../AxisLabel/xUnit').text in units.index",
-                                                                "@id": "{{units.loc[row.find('../../../AxisLabel/xUnit').text].uri}}"
-                                                              }
-                                                          ],
-                                                          "sio:hasValue": {
-                                                              "@value": "{{row.findall('column')[0].text}}",
-                                                              "@type": "xsd:double"
-                                                          }
-                                                      }]
-                                                  }
-                                              }
-                                          }
-                                        ]
-                                    }
-                                }
-                            ]
                         }
                     }
                 ]
