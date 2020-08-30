@@ -490,40 +490,40 @@ def result():
                                             "@id": "sample:{{slugify(id.text.replace(' ',''))}}_filler_{{pi}}_surface_{{s}}",
                                             "@type": [{
                                                     "@id": "{% if surface.find('StdChemicalName') is not none %}compound:{{ camelcase(surface.find('StdChemicalName').text)}}{% elif surface.find('PubChemRef') is not none %}pubchem:{{surface.find('PubChemRef').text.replace(' ','')}}{% elif surface.find('ChemicalName') is not none %}compound:{{camelcase(surface.find('ChemicalName').text)}}{% elif surface.find('Abbreviation') is not none %}compound:{{camelcase(surface.find('Abbreviation').text)}}{% endif %}",
-                                                    "@type": "owl:Class",
-                                                    "rdfs:label": [
-                                                        {
-                                                            "@if" : "surface.find('StdChemicalName') is not None",
-                                                            "@value" : "{{surface.find('StdChemicalName').text}}"
-                                                        },
-                                                        {
-                                                            "@if" : "surface.find('StdChemicalName') is None and surface.find('ChemicalName') is not None",
-                                                            "@value" : "{{surface.find('ChemicalName').text}}"
-                                                        }
-                                                    ],
-                                                    "skos:altLabel" : [
-                                                        {
-                                                            "@if" : "surface.find('StdChemicalName') is not None and surface.find('ChemicalName') is not None",
-                                                            "@value" : "{{surface.find('ChemicalName').text}}"
-                                                        },
-                                                        {
-                                                            "@if" : "surface.find('TradeName') is not None",
-                                                            "@value" : "{{surface.find('TradeName').text}}"
-                                                        }
-                                                    ],
-                                                    "skos:notation" : [
-                                                        {
-                                                            "@if" : "surface.find('Abbreviation') is not None",
-                                                            "@value" : "{{surface.find('Abbreviation').text}}"
-                                                        }
-                                                    ],
-                                                    "rdfs:subClassOf" : [
-                                                        {
-                                                            "@if" : "surface.find('PubChemRef') is not None",
-                                                            "@id" : "pubchem:{{surface.find('PubChemRef').text.replace(' ','')}}"
-                                                        }
-                                                    ]
+                                                    "@type": "owl:Class"
                                                 }
+                                            ],
+                                            "rdfs:label": [
+                                                {
+                                                    "@if" : "surface.find('StdChemicalName') is not None",
+                                                    "@value" : "{{surface.find('StdChemicalName').text}}"
+                                                },
+                                                {
+                                                    "@if" : "surface.find('StdChemicalName') is None and surface.find('ChemicalName') is not None",
+                                                    "@value" : "{{surface.find('ChemicalName').text}}"
+                                                }
+                                            ],
+                                            "skos:altLabel" : [
+                                                {
+                                                    "@if" : "surface.find('StdChemicalName') is not None and surface.find('ChemicalName') is not None",
+                                                    "@value" : "{{surface.find('ChemicalName').text}}"
+                                                },
+                                                {
+                                                    "@if" : "surface.find('TradeName') is not None",
+                                                    "@value" : "{{surface.find('TradeName').text}}"
+                                                }
+                                           ],
+                                           "skos:notation" : [
+                                                {
+                                                   "@if" : "surface.find('Abbreviation') is not None",
+                                                   "@value" : "{{surface.find('Abbreviation').text}}"
+                                                 }
+                                            ],
+                                            "rdfs:subClassOf" : [
+                                                {
+                                                    "@if" : "surface.find('PubChemRef') is not None",
+                                                    "@id" : "pubchem:{{surface.find('PubChemRef').text.replace(' ','')}}"
+                                                 }
                                             ],
                                             "sio:hasAttribute": [
                                                 {
