@@ -511,16 +511,6 @@ def result():
                                                             "@value" : "{{surface.find('TradeName').text}}"
                                                         }
                                                     ],
-                                                    "sio:hasAttribute": [
-                                                        {
-                                                            "@if": "surface.find('ManufacturerOrSourceName') is not None",
-                                                            "@for": "manufacturer in surface.findall('ManufacturerOrSourceName')",
-                                                            "@do": {
-                                                                "@type": "nanomine:ManufacturerOrSourceName",
-                                                                "sio:hasValue": "{{manufacturer.text}}"
-                                                            }
-                                                        }
-                                                    ],
                                                     "skos:notation" : [
                                                         {
                                                             "@if" : "surface.find('Abbreviation') is not None",
@@ -533,6 +523,16 @@ def result():
                                                             "@id" : "pubchem:{{surface.find('PubChemRef').text.replace(' ','')}}"
                                                         }
                                                     ]
+                                                }
+                                            ],
+                                            "sio:hasAttribute": [
+                                                {
+                                                    "@if": "surface.find('ManufacturerOrSourceName') is not None",
+                                                    "@for": "manufacturer in surface.findall('ManufacturerOrSourceName')",
+                                                    "@do": {
+                                                        "@type": "nanomine:ManufacturerOrSourceName",
+                                                        "sio:hasValue": "{{manufacturer.text}}"
+                                                    }
                                                 }
                                             ],
                                             "sio:hasRole": {
