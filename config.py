@@ -23,6 +23,8 @@ from nanomine.agent import *
 
 from authenticator import JWTAuthenticator
 
+import whyis_unit_converter.unit_converter_agent as converter
+
 # base config class; extend it to your needs.
 Config = dict(
     # use DEBUG mode?
@@ -170,6 +172,7 @@ Config = dict(
         "SETLr": autonomic.SETLr(),
         "SETLMaker": autonomic.SETLMaker(),
         "CacheUpdater" : autonomic.CacheUpdater(),
+        "UnitConverter": converter.UnitConverter(),
 #        "HTML2Text" : nlp.HTML2Text(),
 #        "EntityExtractor" : nlp.EntityExtractor(),
 #        "EntityResolver" : nlp.EntityResolver(),
