@@ -895,10 +895,10 @@ def result():
                     {
                         "@for": "proc in row.findall('PROCESSING')",
                         "@do": {
-                            "@id": "sample:{{slugify(id.text.replace(' ',''))}}",
                             "@for": "i, procedure in processing.iterrows()",
                             "@do": {
                                 "@if": "proc.find(procedure.xpath[2:])",
+                                "@id": "sample:{{slugify(id.text.replace(' ',''))}}",
                                 "prov:wasGeneratedBy": [{
                                     "@id": "entry:{{id.text.replace(' ','')}}_material_{{procedure.label.lower().replace(' ','_')}}_procedure",
                                     "@type" : ["sio:Procedure","{{procedure.uri}}"],
