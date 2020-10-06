@@ -46,6 +46,11 @@ Config = dict(
 
     site_header_image = 'static/images/random_network.png',
 
+    #JS CONFIG - VUE JS
+    ##USE CUSTOM REST BACKUP & RESTORE
+    THIRD_PARTY_REST_BACKUP = True,
+    DISABLE_VUE_SPEED_DIAL = True,
+
     # use TESTING mode?
     TESTING = False,
 
