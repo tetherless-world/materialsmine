@@ -178,7 +178,7 @@
                 "@type" : "owl:Class",
                 "rdfs:label" : "{{row.label}}",
                 "skos:definition" : [ { "@if" : "not isempty(row.definition)", "@value": "{{row.definition}}" }],
-                "nanomine:hasSelector" : [ { "@if" : "not isempty(row.xpath)", "@value": "{{row.xpath}}" }],
+                "nanomine:hasPreferredUnit" : [ { "@if" : "not isempty(row.preferredUnit)", "@id" : "{{row.preferredUnit}}"} ],
                 "rdfs:subClassOf" : [
                     { "@if" : "not isempty(row.subClassOf)",
                       "@for" : "superClass in row.subClassOf.split(', ')",
