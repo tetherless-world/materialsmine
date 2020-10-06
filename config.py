@@ -14,16 +14,22 @@ from datetime import datetime
 
 
 # Set to be custom for your project
-LOD_PREFIX = 'http://nanomine.org'
+LOD_PREFIX = os.environ.get('NM_GRAPH_LOD_PREFIX','http://nanomine.org')
+
 #os.getenv('lod_prefix') if os.getenv('lod_prefix') else 'http://hbgd.tw.rpi.edu'
 
 skos = rdflib.Namespace("http://www.w3.org/2004/02/skos/core#")
 
 from nanomine.agent import *
 
+import whyis_unit_converter.unit_converter_agent as converter
+
 from authenticator import JWTAuthenticator
 
-import whyis_unit_converter.unit_converter_agent as converter
+authenticator_config = [] # set into config dict later
+authenticator_secret = os.environ.get('NM_GRAPH_AUTH_SECRET', None)
+if authenticator_secret:
+authenticator_config.append(JWTAuthenticator(key=authenticator_secret))
 
 # base config class; extend it to your needs.
 Config = dict(
@@ -115,15 +121,14 @@ Config = dict(
 
     knowledge_queryEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
     knowledge_updateEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
+
+    authenticators = authenticator_config,
+    
     #knowledge_useBlazeGraphBulkLoad = True,
     #knowledge_bulkLoadEndpoint = 'http://localhost:8080/blazegraph/dataloader',
     #knowledge_BlazeGraphProperties = '/apps/whyis/knowledge.properties',
     #load_dir = '/data/loaded',
     #knowledge_bulkLoadNamespace = 'knowledge',
-
-    authenticators = [
-#        JWTAuthenticator(key=os.environ['NM_AUTH_SECRET'])
-    ],
 
     LOGIN_USER_TEMPLATE = "auth/login.html",
     CELERY_BROKER_URL = 'redis://localhost:6379/0',
