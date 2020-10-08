@@ -487,7 +487,8 @@ whyis:hasView "visualization.html".
   whyis:hasIncoming "incoming_class.json";
   whyis:newInstanceView "new_instance_view.html";
   whyis:hasView "class_view.html";
-  whyis:hasFacets "pnc_facets.json".
+  whyis:hasFacets "pnc_facets.json";
+  whyis:hasFacetValues "facet_values_20201008_HARDCODED.json".
 
 <http://nanomine.org/gallery> a whyis:ChartVizGallery.
 
