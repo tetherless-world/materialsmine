@@ -22,14 +22,14 @@ skos = rdflib.Namespace("http://www.w3.org/2004/02/skos/core#")
 
 from nanomine.agent import *
 
-import whyis_unit_converter.unit_converter_agent as converter
 
 from authenticator import JWTAuthenticator
+import whyis_unit_converter.unit_converter_agent as converter
 
 authenticator_config = [] # set into config dict later
 authenticator_secret = os.environ.get('NM_GRAPH_AUTH_SECRET', None)
 if authenticator_secret:
-authenticator_config.append(JWTAuthenticator(key=authenticator_secret))
+    authenticator_config.append(JWTAuthenticator(key=authenticator_secret))
 
 # base config class; extend it to your needs.
 Config = dict(
@@ -45,6 +45,11 @@ Config = dict(
     app_path = '/apps/nanomine-graph',
 
     site_header_image = 'static/images/random_network.png',
+
+    #JS CONFIG - VUE JS
+    ##USE CUSTOM REST BACKUP & RESTORE
+    THIRD_PARTY_REST_BACKUP = True,
+    DISABLE_VUE_SPEED_DIAL = True,
 
     # use TESTING mode?
     TESTING = False,
