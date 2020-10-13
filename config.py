@@ -29,7 +29,7 @@ from authenticator import JWTAuthenticator
 authenticator_config = [] # set into config dict later
 authenticator_secret = os.environ.get('NM_GRAPH_AUTH_SECRET', None)
 if authenticator_secret:
-authenticator_config.append(JWTAuthenticator(key=authenticator_secret))
+    authenticator_config.append(JWTAuthenticator(key=authenticator_secret))
 
 # base config class; extend it to your needs.
 Config = dict(
@@ -123,7 +123,7 @@ Config = dict(
     knowledge_updateEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
 
     authenticators = authenticator_config,
-    
+
     #knowledge_useBlazeGraphBulkLoad = True,
     #knowledge_bulkLoadEndpoint = 'http://localhost:8080/blazegraph/dataloader',
     #knowledge_BlazeGraphProperties = '/apps/whyis/knowledge.properties',
