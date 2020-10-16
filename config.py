@@ -22,9 +22,9 @@ skos = rdflib.Namespace("http://www.w3.org/2004/02/skos/core#")
 
 from nanomine.agent import *
 
+import whyis_unit_converter.unit_converter_agent as converter
 
 from authenticator import JWTAuthenticator
-import whyis_unit_converter.unit_converter_agent as converter
 
 authenticator_config = [] # set into config dict later
 authenticator_secret = os.environ.get('NM_GRAPH_AUTH_SECRET', None)
@@ -46,11 +46,6 @@ Config = dict(
 
     site_header_image = 'static/images/random_network.png',
 
-    #JS CONFIG - VUE JS
-    ##USE CUSTOM REST BACKUP & RESTORE
-    THIRD_PARTY_REST_BACKUP = True,
-    DISABLE_VUE_SPEED_DIAL = True,
-
     # use TESTING mode?
     TESTING = False,
 
@@ -61,10 +56,6 @@ Config = dict(
     SECRET_KEY = "VOJ12a53NB9HOURFLNDOIWQZZ8YuFpMc",
 
     base_rate_probability = 0.8,
-
-    nanopub_archive = {
-        #'depot.storage_path' : "/data/nanopublications",
-    },
 
     file_archive = {
         #'depot.backend': 'depot.io.gridfs.GridFSStorage',
@@ -145,6 +136,18 @@ Config = dict(
 
     default_language = 'en',
     namespaces = [
+        importer.LinkedData(
+            prefix = LOD_PREFIX+'/sio/',
+            url = 'http://semanticscience.org/resource/%s',
+            headers={'Accept':'text/turtle'},
+            format='turtle'
+        ),
+        importer.LinkedData(
+            prefix = LOD_PREFIX+'/dcat/',
+            url = 'http://www.w3.org/ns/dcat#%s',
+            headers={'Accept':'text/turtle'},
+            format='turtle'
+        ),
         importer.LinkedData(
             prefix = LOD_PREFIX+'/doi/',
             url = 'http://dx.doi.org/%s',
