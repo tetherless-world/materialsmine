@@ -1,6 +1,7 @@
-@prefix : <http://nanomine.org/> .
+@prefix : <http://materialsmine.org/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix materialsmine: <http://materialsmine.org/ns/> .
 @prefix nanomine: <http://nanomine.org/ns/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -32,8 +33,8 @@
     rdfs:subClassOf prov:Agent .
 
 :ns a owl:Ontology ;
-    rdfs:label "Nanomaterials Ontology" ;
-    dcterms:contributor <https://tw.rpi.edu/instances/AlexanderOgren>,
+    rdfs:label "Materialsmine Ontology" ;
+    dc:contributor <https://tw.rpi.edu/instances/AlexanderOgren>,
         <https://tw.rpi.edu/instances/BingyinYu>,
         <https://tw.rpi.edu/instances/BoranMa>,
         <https://tw.rpi.edu/instances/CateBrinson>,
@@ -59,6 +60,163 @@
     owl:imports bibo:,
         <http://semanticscience.org/ontology/sio-subset-labels.owl>,
         <http://www.nanopub.org/nschema#> .
+
+materialsmine:Air a owl:Class ;
+    rdfs:label "Air" ;
+    skos:definition "Gaseous medium surrounding the solid boundaries of a material." .
+
+materialsmine:BandGap a owl:Class ;
+    rdfs:label "Band Gap",
+        "Band Gap Type" ;
+    skos:definition "A band of frequencies for which there do not exist eigenfrequency solutions in the dispersion relation (for any wavevector).",
+        "If the band gap is particular to a specific type of mode, which type of mode?" .
+
+materialsmine:BandGapIndex a owl:Class ;
+    rdfs:label "Band Gap Index" ;
+    skos:definition "Integer rank of a band gap." .
+
+materialsmine:BandGapLocation a owl:Class ;
+    rdfs:label "Band Gap Location" ;
+    skos:definition "The center of the band gap." .
+
+materialsmine:BandGapSize a owl:Class ;
+    rdfs:label "Band Gap Size" ;
+    skos:definition "The upper bound of the band gap." .
+
+materialsmine:BrillouinContour a owl:Class ;
+    rdfs:label "Brillouin Contour" .
+
+materialsmine:CMatrix a owl:Class ;
+    rdfs:label "C Matrix" ;
+    skos:definition "The material stiffness matrix of a linear elastic material defines the relationship between the stress and strain vector such that $\\sigma = C\\epsilon$, where $\\sigma$ = ..." .
+
+materialsmine:CMatrixElement a owl:Class ;
+    rdfs:label "C Matrix Element" ;
+    skos:definition "An element within a material stiffness matrix." .
+
+materialsmine:CMatrixIndexI a owl:Class ;
+    rdfs:label "C Matrix Index I" ;
+    skos:definition "The corresponding row of an element within a stiffness matrix (Voigt notation)." .
+
+materialsmine:CMatrixIndexJ a owl:Class ;
+    rdfs:label "C Matrix Index J" ;
+    skos:definition "The corresponding column of an element within a stiffness matrix (Voigt notation)." .
+
+materialsmine:CMatrixIndicesIJ a owl:Class ;
+    rdfs:label "C Matrix Indices I J" ;
+    skos:definition "The location of an element within a material stiffness matrix, in the form of the full string IJ (Voigt notation)." .
+
+materialsmine:CTensor a owl:Class ;
+    rdfs:label "Material Stiffness Tensor" ;
+    skos:definition "The material stiffness tensor of a linear elastic material defines the relationship between the stress and strain tensors such that $\\sigma = C\\epsilon$, where $\\sigma$ is the Cauchy stress tensor (a second order tensor), and $\\epsilon$ is the infinitesimal strain tensor (a second order tensor)." .
+
+materialsmine:CTensorElement a owl:Class ;
+    rdfs:label "C Tensor Element" ;
+    skos:definition "An element within a material stiffness tensor." .
+
+materialsmine:CTensorIndexI a owl:Class ;
+    rdfs:label "C Tensor Index I" ;
+    skos:definition "The i component of an element's location within a material stiffness tensor." .
+
+materialsmine:CTensorIndexJ a owl:Class ;
+    rdfs:label "C Tensor Index J" ;
+    skos:definition "The j component of an element's location within a material stiffness tensor." .
+
+materialsmine:CTensorIndexK a owl:Class ;
+    rdfs:label "C Tensor Index K" ;
+    skos:definition "The k component of an element's location within a material stiffness tensor." .
+
+materialsmine:CTensorIndexL a owl:Class ;
+    rdfs:label "C Tensor Index L" ;
+    skos:definition "The l component of an element's location within a material stiffness tensor." .
+
+materialsmine:CTensorIndicesIJKL a owl:Class ;
+    rdfs:label "C Tensor Indices I J K L" ;
+    skos:definition "The location of an element within a material stiffness tensor, in the form of the full string IJKL." .
+
+materialsmine:Condition a owl:Class ;
+    rdfs:label "Condition" ;
+    skos:definition "The approximation, such as Plane Stress or Plane Strain, used to calculate the stress state of the material." .
+
+materialsmine:Dispersion2DCurve a owl:Class ;
+    rdfs:label "2D Dispersion Relation" ;
+    skos:definition "A 2D curve that represents the propogation of wave modes found in a specific geometry" .
+
+materialsmine:Dispersion3DCurve a owl:Class ;
+    rdfs:label "3D Dispersion Relation" ;
+    skos:definition "A 3D curve that represents the propogation of wave modes found in a specific geometry" .
+
+materialsmine:Eigenfrequency a owl:Class ;
+    rdfs:label "Eigenfrequency" ;
+    skos:definition "The eigenvalue associated with a solution to the wave equation. This is the inverse time component of the dispersion relation." .
+
+materialsmine:Eigenvector a owl:Class ;
+    rdfs:label "Eigenvector" ;
+    skos:definition "The mode shape associated a solution to the wave equation for a particular eigenvalue." .
+
+materialsmine:Geometry a owl:Class ;
+    rdfs:label "Geometry" ;
+    skos:definition "Representation of the spatial extent and form of an object." .
+
+materialsmine:GeometryEncoding a owl:Class ;
+    rdfs:label "Geometry Encoding" ;
+    skos:definition "The string-based representation scheme for a geometric arrangement." .
+
+materialsmine:LinearElastic a owl:Class ;
+    rdfs:label "Linear Elastic" ;
+    skos:definition "If a material is linear elastic, it means that it can be well-modeled by the theory of linear elasiticity. This means that deformations and strains are linearly proportional to loads. It also means that the technique of superposition can be applied." .
+
+materialsmine:Metamaterial a owl:Class ;
+    rdfs:label "Metamaterial" ;
+    skos:definition "A material which has a structure above the atomic scale, but below the macroscopic scale." .
+
+materialsmine:Pixel a owl:Class ;
+    rdfs:label "Pixel" ;
+    skos:definition "A discretized, symbolic representation of a material substance in 2D space." .
+
+materialsmine:PlaneStrain a owl:Class ;
+    rdfs:label "Plane Strain" ;
+    skos:definition "A state of strain where the out of plane component of strain is zero." .
+
+materialsmine:PlaneStress a owl:Class ;
+    rdfs:label "Plane Stress" ;
+    skos:definition "A state of stress where the out of plane component of stress is zero." .
+
+materialsmine:Symmetry a owl:Class ;
+    rdfs:label "Symmetry" ;
+    skos:definition "Symmetry group? Bravais lattice? (wondering if we need to separate out into more specific terms)" .
+
+materialsmine:TangoBlack a owl:Class ;
+    rdfs:label "Tango Black" ;
+    skos:definition "A specific 3D printable material." .
+
+materialsmine:UnitCellExtent_X a owl:Class ;
+    rdfs:label "Unit Cell Extent X" ;
+    skos:definition "Extent of the unit cell in the x direction (requires units, such as mm:Pixel)" .
+
+materialsmine:UnitCellExtent_Y a owl:Class ;
+    rdfs:label "Unit Cell Extent Y" ;
+    skos:definition "Extent of the unit cell in the y direction (requires units, such as mm:Pixel)" .
+
+materialsmine:UnitCellExtent_Z a owl:Class ;
+    rdfs:label "Unit Cell Extent Z" ;
+    skos:definition "Extent of the unit cell in the z direction (requires units, such as mm:Pixel)" .
+
+materialsmine:VeroWhite a owl:Class ;
+    rdfs:label "Vero White" ;
+    skos:definition "A specific 3D printable material." .
+
+materialsmine:Voxel a owl:Class ;
+    rdfs:label "Voxel" ;
+    skos:definition "A discretized, symbolic representation of a material substance in 3D space." .
+
+materialsmine:Wavenumber a owl:Class ;
+    rdfs:label "Wavenumber" ;
+    skos:definition "The wavenumber of a wave is the inverse of the wavelength. This is the inverse space component of the dispersion relation for a one-dimensional analysis." .
+
+materialsmine:Wavevector a owl:Class ;
+    rdfs:label "Wavevector" ;
+    skos:definition "The wavevector is the multi-dimensional generalization of wavenumber. The wavevector of a wave is the inverse of the wavelength in each of the spatial directions. It also points in the same direction as the phase velocity of the wave." .
 
 nanomine:AC_DielectricConstant a owl:Class ;
     rdfs:label "AC Dielectric Constant" ;
@@ -260,6 +418,9 @@ nanomine:Cooling a owl:Class ;
     rdfs:label "Cooling" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:AmbientCondition ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom sio:TimeInterval ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
@@ -267,9 +428,6 @@ nanomine:Cooling a owl:Class ;
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom <obo:PATO_0001025> ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:AmbientCondition ],
         sio:Procedure .
 
 nanomine:Copolymer a owl:Class ;
@@ -370,14 +528,14 @@ nanomine:DifferentialScanningCalorimetry a owl:Class ;
     rdfs:label "Differential Scanning Calorimetry" ;
     nanomine:hasSelector "//Differential_Scanning_Calorimetry" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty prov:generated ;
+            owl:someValuesFrom nanomine:ThermalProperty ],
+        [ a owl:Restriction ;
             owl:onProperty prov:used ;
             owl:someValuesFrom nanomine:HeatingRate ],
         [ a owl:Restriction ;
             owl:onProperty prov:used ;
             owl:someValuesFrom nanomine:CoolingRate ],
-        [ a owl:Restriction ;
-            owl:onProperty prov:generated ;
-            owl:someValuesFrom nanomine:ThermalProperty ],
         sio:Measuring ;
     skos:definition "Measurement of heat required to increase unit temperature in a material" .
 
@@ -393,16 +551,16 @@ nanomine:Drying-Evaporation a owl:Class ;
     rdfs:label "Drying Evaporation" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom <obo:PATO_0001025> ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom sio:TimeInterval ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom <obo:PATO_0000146> ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom <obo:PATO_0001025> ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:AmbientCondition ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom sio:TimeInterval ],
         sio:Procedure ;
     skos:definition "Process for drying and evaporation of liquid solutions" .
 
@@ -715,9 +873,6 @@ nanomine:Heating a owl:Class ;
     rdfs:label "Heating" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom <obo:PATO_0000146> ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:AmbientCondition ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
@@ -725,6 +880,9 @@ nanomine:Heating a owl:Class ;
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom sio:TimeInterval ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom <obo:PATO_0000146> ],
         sio:Procedure ;
     skos:definition "Process for applying heat" .
 
@@ -985,10 +1143,10 @@ nanomine:OpticalMicroscopy a owl:Class ;
     nanomine:hasSelector "//OpticalMicroscopy" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty prov:generated ;
-            owl:someValuesFrom nanomine:ViscoelasticProperty ],
+            owl:someValuesFrom nanomine:MechanicalProperty ],
         [ a owl:Restriction ;
             owl:onProperty prov:generated ;
-            owl:someValuesFrom nanomine:MechanicalProperty ],
+            owl:someValuesFrom nanomine:ViscoelasticProperty ],
         sio:Measuring ;
     skos:definition "Magnification of small objects with visible light" .
 
@@ -1176,9 +1334,6 @@ nanomine:ScanningElectronMicroscopy a owl:Class ;
     nanomine:hasSelector "//Scanning_Electron_Microscopy" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty prov:used ;
-            owl:someValuesFrom nanomine:Magnification ],
-        [ a owl:Restriction ;
-            owl:onProperty prov:used ;
             owl:someValuesFrom nanomine:AcceleratingVoltage ],
         [ a owl:Restriction ;
             owl:onProperty prov:used ;
@@ -1187,11 +1342,14 @@ nanomine:ScanningElectronMicroscopy a owl:Class ;
             owl:onProperty prov:used ;
             owl:someValuesFrom nanomine:ExposureTime ],
         [ a owl:Restriction ;
-            owl:onProperty prov:generated ;
-            owl:someValuesFrom nanomine:ElectricalProperty ],
+            owl:onProperty prov:used ;
+            owl:someValuesFrom nanomine:Magnification ],
         [ a owl:Restriction ;
             owl:onProperty prov:used ;
             owl:someValuesFrom nanomine:EmissionCurrent ],
+        [ a owl:Restriction ;
+            owl:onProperty prov:generated ;
+            owl:someValuesFrom nanomine:ElectricalProperty ],
         sio:Measuring ;
     skos:definition "Scanning electron microscopy for obtaining microstructure at microscale" .
 
@@ -1515,23 +1673,23 @@ nanomine:TransmissionElectronMicroscopy a owl:Class ;
     rdfs:label "Transmission Electron Microscopy" ;
     nanomine:hasSelector "//Transmission_Electron_Microscopy" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty prov:used ;
-            owl:someValuesFrom nanomine:AcceleratingVoltage ],
-        [ a owl:Restriction ;
             owl:onProperty prov:generated ;
             owl:someValuesFrom nanomine:ElectricalProperty ],
         [ a owl:Restriction ;
             owl:onProperty prov:used ;
-            owl:someValuesFrom nanomine:WorkingDistance ],
+            owl:someValuesFrom nanomine:AcceleratingVoltage ],
         [ a owl:Restriction ;
             owl:onProperty prov:used ;
-            owl:someValuesFrom nanomine:EmissionCurrent ],
+            owl:someValuesFrom nanomine:WorkingDistance ],
         [ a owl:Restriction ;
             owl:onProperty prov:used ;
             owl:someValuesFrom nanomine:ExposureTime ],
         [ a owl:Restriction ;
             owl:onProperty prov:used ;
             owl:someValuesFrom nanomine:Magnification ],
+        [ a owl:Restriction ;
+            owl:onProperty prov:used ;
+            owl:someValuesFrom nanomine:EmissionCurrent ],
         sio:Measuring ;
     skos:definition "Transmission electron microscopy for obtaining microstructure at nanoscale" .
 
@@ -1723,6 +1881,11 @@ sio:Publication a owl:Class ;
 sio:Rotation a owl:Class ;
     rdfs:label "Rotation" ;
     rdfs:subClassOf sio:Quantity .
+
+sio:URL a owl:Class ;
+    rdfs:label "URL" ;
+    skos:definition "A Uniform Resource Locator or Universal Resource Locator (URL) is a specific character string that constitutes a reference to an Internet resource." ;
+    prov:wasQuotedFrom "https://raw.githubusercontent.com/micheldumontier/semanticscience/master/ontology/sio/release/sio-release.owl" .
 
 sio:Week a sio:UnitOfMeasurement ;
     rdfs:label "Week" ;
@@ -1992,11 +2155,21 @@ sio:Depth a owl:Class ;
     rdfs:subClassOf nanomine:Dimension,
         <http://semanticscience.org/resource/1DExtentQuantity> .
 
+sio:DimensionalQuantity a owl:Class ;
+    rdfs:label "Dimensional Quantity" ;
+    skos:definition "A dimensional quantity is a quantity that has an associated unit." ;
+    prov:wasQuotedFrom "https://raw.githubusercontent.com/micheldumontier/semanticscience/master/ontology/sio/release/sio-release.owl" .
+
 sio:Frequency a owl:Class ;
     rdfs:label "Frequency" ;
     nanomine:hasPreferredUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hertz> ;
     rdfs:subClassOf sio:RateOfChange ;
     skos:definition "The rate of occurrence of some periodic event." .
+
+sio:MaterialEntity a owl:Class ;
+    rdfs:label "Material Entity" ;
+    skos:definition "A material entity is a physical entity that is spatially extended, exists as a whole at any point in time and has mass." ;
+    prov:wasQuotedFrom "https://raw.githubusercontent.com/micheldumontier/semanticscience/master/ontology/sio/release/sio-release.owl" .
 
 sio:SurfaceArea a owl:Class ;
     rdfs:label "Surface Area" ;
@@ -2112,22 +2285,34 @@ nanomine:Extruder a owl:Class ;
     rdfs:label "Extruder" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:FlightClearance ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:Throughput ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:DLRatio ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:ExtrusionTemperature ],
+            owl:someValuesFrom nanomine:ChannelsPerScrew ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:MeltTemperature ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:FlightWidth ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:Throughput ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:ScrewLead ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:FlightClearance ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:Torque ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:PressureAtDie ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:ResidenceTime ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:InnerBarrelDiameter ],
@@ -2136,37 +2321,25 @@ nanomine:Extruder a owl:Class ;
             owl:someValuesFrom nanomine:ScrewDiameter ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:ExtrusionTemperature ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:ScrewChannelWidth ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
+            owl:someValuesFrom nanomine:ChannelDepth ],
+        [ a owl:Restriction ;
+            owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:Amperage ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:Dimension ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:ResidenceTime ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:Voltage ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:ScrewLead ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:ScrewChannelWidth ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:ChannelsPerScrew ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:PressureAtDie ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom nanomine:ScrewLength ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:ChannelDepth ],
-        [ a owl:Restriction ;
-            owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:MeltTemperature ],
+            owl:someValuesFrom nanomine:Voltage ],
         sio:Device .
 
 nanomine:FlexuralCreep a owl:Class ;
@@ -2194,11 +2367,11 @@ nanomine:Rheometery a owl:Class ;
     rdfs:label "Rheometry" ;
     nanomine:hasSelector "//Rheometery" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty prov:generated ;
-            owl:someValuesFrom nanomine:ViscoelasticProperty ],
-        [ a owl:Restriction ;
             owl:onProperty prov:used ;
             owl:someValuesFrom nanomine:CapillarySize ],
+        [ a owl:Restriction ;
+            owl:onProperty prov:generated ;
+            owl:someValuesFrom nanomine:ViscoelasticProperty ],
         sio:Measuring ;
     skos:definition "Measurement of the quantitative and qualitative relationships between deformations and stresses and their derivatives" .
 
@@ -2271,7 +2444,7 @@ nanomine:Molding a owl:Class ;
     rdfs:label "Molding" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom sio:TimeInterval ],
+            owl:someValuesFrom nanomine:AmbientCondition ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
             owl:someValuesFrom <obo:PATO_0000146> ],
@@ -2280,7 +2453,7 @@ nanomine:Molding a owl:Class ;
             owl:someValuesFrom <obo:PATO_0001025> ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:AmbientCondition ],
+            owl:someValuesFrom sio:TimeInterval ],
         sio:Procedure ;
     skos:definition "Methods to shape final composite" .
 
@@ -2338,10 +2511,10 @@ nanomine:Mixing a owl:Class ;
             owl:someValuesFrom <obo:PATO_0000146> ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom sio:TimeInterval ],
+            owl:someValuesFrom nanomine:RotationalFrequency ],
         [ a owl:Restriction ;
             owl:onProperty sio:hasAttribute ;
-            owl:someValuesFrom nanomine:RotationalFrequency ],
+            owl:someValuesFrom sio:TimeInterval ],
         sio:Procedure ;
     skos:definition "Processes for mixing of multiple substances" .
 

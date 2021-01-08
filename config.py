@@ -169,6 +169,7 @@ Config = dict(
         )
     ],
     inferencers = {
+	"SDDAgent": autonomic.SDDAgent(),
         "SETLr": autonomic.SETLr(),
         "SETLMaker": autonomic.SETLMaker(),
         "CacheUpdater" : autonomic.CacheUpdater(),
