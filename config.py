@@ -137,12 +137,6 @@ Config = dict(
     default_language = 'en',
     namespaces = [
         importer.LinkedData(
-            prefix = LOD_PREFIX+'/sio/',
-            url = 'http://semanticscience.org/resource/%s',
-            headers={'Accept':'text/turtle'},
-            format='turtle'
-        ),
-        importer.LinkedData(
             prefix = LOD_PREFIX+'/dcat/',
             url = 'http://www.w3.org/ns/dcat#%s',
             headers={'Accept':'text/turtle'},
