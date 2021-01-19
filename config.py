@@ -246,8 +246,8 @@ Config = dict(
         "CacheUpdater" : autonomic.CacheUpdater(),
         "UnitConverter": converter.UnitConverter(),
 #        "HTML2Text" : nlp.HTML2Text(),
-#        "EntityExtractor" : nlp.EntityExtractor(),
-#        "EntityResolver" : nlp.EntityResolver(),
+        "EntityExtractor" : nlp.EntityExtractor(),
+        "EntityResolver" : nlp.EntityResolver(),
 #        "TF-IDF Calculator" : nlp.TFIDFCalculator(),
 #        "SKOS Crawler" : autonomic.Crawler(predicates=[skos.broader, skos.narrower, skos.related])
     },
