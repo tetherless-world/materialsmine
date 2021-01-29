@@ -17,7 +17,7 @@
 @prefix dc:               <http://purl.org/dc/elements/1.1/>.
 @prefix api_vocab: <http://purl.org/linked-data/api/vocab#>.
 
-@prefix :              <http://nanomine.org/setl/xml/> .
+@prefix :              <http://materialsmine.org/setl/xml/> .
 
 @prefix nanopub: <http://www.nanopub.org/nschema#> .
 
@@ -67,16 +67,16 @@ result = units.set_index(units.code)
 :xml a setl:XML;
   prov:wasGeneratedBy [
      a setl:Extract;
-     prov:used [ a <http://nanomine.org/ns/NanomineXMLFile> ];
+     prov:used [ a <http://materialsmine.org/ns/materialsmineXMLFile> ];
   ].
 
 
-:NanomineXMLImport rdfs:subClassOf setl:SemanticETLScript;
-  rdfs:label "Nanomine XML Import SETL Script";
-  setl:hasTemplatePrefix "http://nanomine.org/setl/xml/";
+:materialsmineXMLImport rdfs:subClassOf setl:SemanticETLScript;
+  rdfs:label "materialsmine XML Import SETL Script";
+  setl:hasTemplatePrefix "http://materialsmine.org/setl/xml/";
   rdfs:subClassOf [ a owl:Restriction;
     owl:onProperty prov:used;
-    owl:someValuesFrom <http://nanomine.org/ns/NanomineXMLFile>
+    owl:someValuesFrom <http://materialsmine.org/ns/materialsmineXMLFile>
   ].
 
 :get_uuid a owl:Class, prov:SoftwareAgent, setl:PythonScript;
@@ -88,7 +88,7 @@ def result():
 '''.
 
 :nanopubs a void:Dataset, dcat:Dataset;
-  prov:wasGeneratedBy [a :NanomineXMLImport], [
+  prov:wasGeneratedBy [a :materialsmineXMLImport], [
     a setl:Transform, setl:JSLDT;
     prov:used :xml;
     prov:qualifiedUsage [ a prov:Usage; prov:entity :property_classes_table; prov:hadRole [ dcterms:identifier "properties"]];
@@ -106,21 +106,21 @@ def result():
   "prov" :    "http://www.w3.org/ns/prov#",
   "rdfs" :    "http://www.w3.org/2000/01/rdf-schema#",
   "doi" :    "http://dx.doi.org/",
-  "nanomine" :    "http://nanomine.org/ns/",
-  "unit" :    "http://nanomine.org/ns/unit/",
-  "author" :    "http://nanomine.org/author/",
-  "publication" :    "http://nanomine.org/publication/",
+  "materialsmine" :    "http://materialsmine.org/ns/",
+  "unit" :    "http://materialsmine.org/ns/unit/",
+  "author" :    "http://materialsmine.org/author/",
+  "publication" :    "http://materialsmine.org/publication/",
   "bibo" : "http://purl.org/ontology/bibo/",
   "authorList" : {"@id" : "bibo:authorList", "@container": "@list"},
   "foaf" : "http://xmlns.com/foaf/0.1/",
   "nanopub" :    "http://www.nanopub.org/nschema#",
-  "entry" :    "http://nanomine.org/entry/",
-  "nanominenp" :    "http://nanomine.org/nanpub/",
-  "sample" :    "http://nanomine.org/sample/",
-  "article" :    "http://nanomine.org/article/",
-  "compound" :    "http://nanomine.org/compound/",
-  "location" :    "http://nanomine.org/location/",
-  "lang" :    "http://nanomine.org/language/",
+  "entry" :    "http://materialsmine.org/entry/",
+  "materialsminenp" :    "http://materialsmine.org/nanpub/",
+  "sample" :    "http://materialsmine.org/sample/",
+  "article" :    "http://materialsmine.org/article/",
+  "compound" :    "http://materialsmine.org/compound/",
+  "location" :    "http://materialsmine.org/location/",
+  "lang" :    "http://materialsmine.org/language/",
   "void" :    "http://rdfs.org/ns/void#",
   "dcat" : "http://www.w3.org/ns/dcat#",
   "pubchem" : "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID",
@@ -131,12 +131,12 @@ def result():
     "@for": "id in row.findall('ID')",
     "@do": {
         "@if": "id.text.replace(' ','') is not None",
-        "@id": "nanominenp:{{id.text.replace(' ','')}}",
+        "@id": "materialsminenp:{{id.text.replace(' ','')}}",
         "@graph": [{
-            "@id": "nanominenp:{{id.text.replace(' ','')}}",
+            "@id": "materialsminenp:{{id.text.replace(' ','')}}",
             "@type": "nanopub:Nanopublication",
             "nanopub:hasAssertion": {
-                "@id": "nanominenp:{{id.text.replace(' ','')}}_assertion",
+                "@id": "materialsminenp:{{id.text.replace(' ','')}}_assertion",
                 "@type": "nanopub:Assertion",
                 "@graph": [
                     {
@@ -153,7 +153,7 @@ def result():
                     {
                         "@id": "sample:{{slugify(id.text.replace(' ',''))}}",
                         "@type": [
-                            "nanomine:PolymerNanocomposite"
+                            "materialsmine:PolymerNanocomposite"
                         ],
                         "rdfs:label" : "{{row.find('MATERIALS/Filler/FillerComponent/ChemicalName').text}} in {{row.find('MATERIALS/Matrix/MatrixComponent/ChemicalName').text}}"
                     },
@@ -204,7 +204,7 @@ def result():
                                         }
                                     ],
                                     "sio:hasRole": {
-                                        "@type": "nanomine:Filler",
+                                        "@type": "materialsmine:Filler",
                                         "sio:inRelationTo": {
                                             "@id": "sample:{{slugify(id.text.replace(' ',''))}}"
                                         }
@@ -222,13 +222,13 @@ def result():
                                                     "@if" : "fraction.find('source') is not None",
                                                     "@value" : "{{fraction.find('source').text}}"
                                                 }],
-                                                "@type": "nanomine:{{fraction.tag.title()}}Fraction"
+                                                "@type": "materialsmine:{{fraction.tag.title()}}Fraction"
                                             }
                                         },
                                         {
                                             "@for": "density in part.findall('Density')",
                                             "@do": {
-                                                "@type": "nanomine:Density",
+                                                "@type": "materialsmine:Density",
                                                 "sio:hasValue": {
                                                     "@value": "{{density.find('value').text}}",
                                                     "@type": "xsd:double"
@@ -249,7 +249,7 @@ def result():
                                             "@if": "part.find('SurfaceArea').find('specific') is not None",
                                             "@for": "area in part.findall('SurfaceArea')",
                                             "@do": {
-                                                "@type": "nanomine:SpecificSurfaceArea",
+                                                "@type": "materialsmine:SpecificSurfaceArea",
                                                 "sio:hasValue": {
                                                     "@value": "{{area.find('.//value').text}}",
                                                     "@type": "xsd:double"
@@ -352,13 +352,13 @@ def result():
                                             "@for": "phase in part.findall('CrystalPhase')",
                                             "@do": {
                                                 "@type": [
-                                                    "nanomine:CrystalPhase",
+                                                    "materialsmine:CrystalPhase",
                                                     {
-                                                        "@id": "nanomine:{{camelcase(phase.text)}}",
+                                                        "@id": "materialsmine:{{camelcase(phase.text)}}",
                                                         "@type": "owl:Class",
                                                         "rdfs:label": "{{phase.text}}",
                                                         "rdfs:subClassOf": {
-                                                            "@id": "nanomine:CrystalPhase"
+                                                            "@id": "materialsmine:CrystalPhase"
                                                         }
                                                     }
                                                 ]
@@ -368,7 +368,7 @@ def result():
                                             "@for": "shape in part.findall('NonSphericalShape')",
                                             "@do": {
                                                 "sio:hasAttribute": [{
-                                                        "@type": "nanomine:NonSpherical",
+                                                        "@type": "materialsmine:NonSpherical",
                                                         "@id": "sio:Shape"
                                                     },
                                                     {
@@ -530,13 +530,13 @@ def result():
                                                     "@if": "surface.find('ManufacturerOrSourceName') is not None",
                                                     "@for": "manufacturer in surface.findall('ManufacturerOrSourceName')",
                                                     "@do": {
-                                                        "@type": "nanomine:ManufacturerOrSourceName",
+                                                        "@type": "materialsmine:ManufacturerOrSourceName",
                                                         "sio:hasValue": "{{manufacturer.text}}"
                                                     }
                                                 }
                                             ],
                                             "sio:hasRole": {
-                                                "@type": "nanomine:SurfaceTreatment",
+                                                "@type": "materialsmine:SurfaceTreatment",
                                                 "sio:inRelationTo": {
                                                     "@id": "sample:{{slugify(id.text.replace(' ',''))}}"
                                                 }
@@ -587,7 +587,7 @@ def result():
                                         }
                                     ],
                                     "sio:hasRole": {
-                                        "@type": "nanomine:Matrix",
+                                        "@type": "materialsmine:Matrix",
                                         "sio:inRelationTo": {
                                             "@id": "sample:{{slugify(id.text.replace(' ',''))}}"
                                         }
@@ -596,7 +596,7 @@ def result():
                                     {
                                         "@for": "density in part.findall('Density')",
                                         "@do": {
-                                            "@type": "nanomine:Density",
+                                            "@type": "materialsmine:Density",
                                             "sio:hasValue": {
                                                 "@value": "{{density.find('value').text}}",
                                                 "@type": "xsd:double"
@@ -617,7 +617,7 @@ def result():
                                         "@if": "part.find('ManufacturerOrSourceName') is not None",
                                         "@for": "manufacturer in part.findall('ManufacturerOrSourceName')",
                                         "@do": {
-                                            "@type": "nanomine:ManufacturerOrSourceName",
+                                            "@type": "materialsmine:ManufacturerOrSourceName",
                                             "sio:hasValue": "{{manufacturer.text}}"
                                         }
                                     },
@@ -625,7 +625,7 @@ def result():
                                         "@if": "part.find('TradeName') is not None",
                                         "@for": "tradename in part.findall('TradeName')",
                                         "@do":{
-                                            "@type": "nanomine:TradeName",
+                                            "@type": "materialsmine:TradeName",
                                             "sio:hasValue": "{{tradename.text}}"
                                         }
                                     },
@@ -633,7 +633,7 @@ def result():
                                         "@if": "part.find('Abbreviation') is not None",
                                         "@for": "abbrev in part.findall('Abbreviation')",
                                         "@do":{
-                                            "@type": "nanomine:Abbreviation",
+                                            "@type": "materialsmine:Abbreviation",
                                             "sio:hasValue": "{{abbrev.text}}"
                                         }
                                     }]
@@ -697,7 +697,7 @@ def result():
                                                           },
                                                           {
                                                               "@if": "isempty(property.curveDependentVar) and row.find('../../../AxisLabel/yName') is not None",
-                                                              "@id": "nanomine:{{camelcase(row.find('../../../AxisLabel/yName').text)}}",
+                                                              "@id": "materialsmine:{{camelcase(row.find('../../../AxisLabel/yName').text)}}",
                                                               "@type": "owl:Class",
                                                               "rdfs:subClassOf": {
                                                                   "@id": "sio:Quantity"
@@ -722,7 +722,7 @@ def result():
                                                               },
                                                               {
                                                                   "@if": "isempty(property.curveIndependentVar) and row.find('../../../AxisLabel/xName') is not None",
-                                                                  "@id": "nanomine:{{camelcase(row.find('../../../AxisLabel/xName').text)}}",
+                                                                  "@id": "materialsmine:{{camelcase(row.find('../../../AxisLabel/xName').text)}}",
                                                                   "@type": "owl:Class",
                                                                   "rdfs:subClassOf": {
                                                                       "@id": "sio:Quantity"
@@ -764,18 +764,18 @@ def result():
                                         "sio:Image",
                                         {
                                              "@if" : "image.find('Type') is not None" ,
-                                             "@id" : "nanomine:{{image.find('Type').text.title()}}Image",
+                                             "@id" : "materialsmine:{{image.find('Type').text.title()}}Image",
                                              "rdfs:label" : "{{image.find('Type').text.title()}} Image"
                                         }
                                     ],
                                     "foaf:depiction": "{{image.find('File').text.strip()}}",
                                     "prov:wasGeneratedBy" : {
                                         "@type" : [
-                                            "nanomine:Microscopy",
+                                            "materialsmine:Microscopy",
                                             "prov:Activity",
                                             {
                                                 "@if" : "image.find('MicroscopyType') is not None",
-                                                "@id" : "nanomine:{{image.find('MicroscopyType').text}}Microscopy",
+                                                "@id" : "materialsmine:{{image.find('MicroscopyType').text}}Microscopy",
                                                 "rdfs:label" : "{{image.find('MicroscopyType').text}} Microscopy"
                                             }
                                         ],
@@ -790,24 +790,24 @@ def result():
                 ]
             },
             "nanopub:hasPublicationInfo": {
-                "@id": "nanominenp:{{id.text.replace(' ','')}}_pubinfo",
+                "@id": "materialsminenp:{{id.text.replace(' ','')}}_pubinfo",
                 "@type": "nanopub:PublicationInfo",
                 "@graph": [
                     {
                         "@for": "citation in row.findall('DATA_SOURCE/Citation')",
                         "@do": {
-                            "@id": "nanominenp:{{id.text.replace(' ','')}}_assertion",
+                            "@id": "materialsminenp:{{id.text.replace(' ','')}}_assertion",
                             "prov:generatedAtTime": [{
                                 "@if": "citation.find('CommonFields/DateOfCitation')",
                                 "@type": "xsd:date",
                                 "@value": "{{citation.find('CommonFields/DateOfCitation').text"
                             }],
                             "prov:wasQuotedFrom": [{
-                                "@id": "{%if citation.find('CommonFields/DOI') != None %}doi:{{citation.find('CommonFields/DOI').text.replace('<','%3C').replace('>','%3E')}}{%else%}nanominenp:{{id.text.replace(' ','-')}}{%endif%}",
+                                "@id": "{%if citation.find('CommonFields/DOI') != None %}doi:{{citation.find('CommonFields/DOI').text.replace('<','%3C').replace('>','%3E')}}{%else%}materialsminenp:{{id.text.replace(' ','-')}}{%endif%}",
                                 "@type": [
                                     "dcterms:BibliographicResource",
                                     {
-                                        "@id": "{{ {'research article':'nanomine:ResearchArticle','conference proceeding':'nanomine:ProceedingsArticle','communication':'nanomine:Communication','review':'nanomine:ReviewArticle','letter':'bibo:Letter','technical comment':'nanomine:TechnicalComment'}[citation.find('CommonFields/CitationType').text] }}"
+                                        "@id": "{{ {'research article':'materialsmine:ResearchArticle','conference proceeding':'materialsmine:ProceedingsArticle','communication':'materialsmine:Communication','review':'materialsmine:ReviewArticle','letter':'bibo:Letter','technical comment':'materialsmine:TechnicalComment'}[citation.find('CommonFields/CitationType').text] }}"
                                     }
                                 ],
                                 "dcterms:title": "{{citation.find('CommonFields/Title').text}}",
@@ -889,7 +889,7 @@ def result():
                 ]
             },
             "nanopub:hasProvenance": {
-                "@id": "nanominenp:{{id.text.replace(' ','')}}_provenance",
+                "@id": "materialsminenp:{{id.text.replace(' ','')}}_provenance",
                 "@type": "nanopub:Provenance",
                 "@graph": [
                     {
@@ -1007,7 +1007,7 @@ def result():
                         "@for": "characterization in row.findall('CHARACTERIZATION')",
                         "@do":
                         {
-                            "@id": "nanominenp:{{id.text.replace(' ','')}}_assertion",
+                            "@id": "materialsminenp:{{id.text.replace(' ','')}}_assertion",
                             "prov:wasGeneratedBy": [{
                                 "@for": "i, method in methods.iterrows()",
                                 "@do": {
@@ -1028,7 +1028,7 @@ def result():
                                             "@for": "equipment in list(value.findall('./Equipment')) + list(value.findall('./EquipmentUsed'))",
                                             "@do": {
                                                 "@type": [{
-                                                        "@id": "nanomine:{{slugify(equipment.text)}}",
+                                                        "@id": "materialsmine:{{slugify(equipment.text)}}",
                                                         "@type": "owl:Class",
                                                         "rdfs:subClassOf": {
                                                             "@id": "sio:Device"
