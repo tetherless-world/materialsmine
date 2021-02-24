@@ -15,7 +15,7 @@
 @prefix pv:            <http://purl.org/net/provenance/ns#>.
 @prefix bibo:          <http://purl.org/ontology/bibo/>.
 
-@prefix :              <http://nanomine.org/setl/> .
+@prefix :              <http://materialsmine.org/setl/> .
 
 
 :imports_table a csvw:Table, setl:Table;
@@ -42,7 +42,7 @@
     prov:used <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=1806836834>;
   ].
 
- :processing_classes_table a csvw:Table, setl:Table;
+:processing_classes_table a csvw:Table, setl:Table;
     prov:wasGeneratedBy [
       a setl:Extract;
       prov:used <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=1751784944>;
@@ -60,23 +60,27 @@
     prov:used <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=798992913>;
   ].
 
-
 :units_table a csvw:Table, setl:Table;
     prov:wasGeneratedBy [
       a setl:Extract;
       prov:used <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=1871720821>;
     ].
 
+:materialsmine_table a csvw:Table, setl:Table;
+    prov:wasGeneratedBy [
+      a setl:Extract;
+      prov:used <https://docs.google.com/spreadsheets/d/1hDqbUzgJ2menVFhkjAvZs5uWgVoO-lxi7nxOh6W2QiA/export?exportFormat=csv&gid=1119107488>;
+    ].
+
 :ontology a setl:SemanticETLScript;
-  rdfs:label "Nanomine Ontology SETL Script".
+  rdfs:label "Materialsmine Ontology SETL Script".
 
-
-:nanomine_ontology a void:Dataset;
+:materialsmine_ontology a void:Dataset;
   prov:wasGeneratedBy :ontology, [
     a setl:Transform, setl:JSLDT;
     prov:used :imports_table;
     setl:hasContext '''{
-  "@vocab" :  "http://nanomine.org/",
+  "@vocab" :  "http://materialsmine.org/",
   "owl": "http://www.w3.org/2002/07/owl#",
   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
   "sio" :     "http://semanticscience.org/resource/",
@@ -87,19 +91,19 @@
   "cmo"  :    "http://purl.org/twc/ontologies/cmo.owl#",
   "rdfs" :    "http://www.w3.org/2000/01/rdf-schema#",
   "bibo" :    "http://purl.org/ontology/bibo/",
-  "nanomine" :    "http://nanomine.org/ns/"
+  "materialsmine" : "http://materialsmine.org/ns/"
 }''';
     prov:value '''[{
-	"@id": "http://nanomine.org/ns",
+	"@id": "http://materialsmine.org/ns",
 	"@graph": [{
-		"@id": "http://nanomine.org/ns",
+		"@id": "http://materialsmine.org/ns",
 		"owl:imports": {"@id": "{{row.uri}}", "rdfs:label": "{{row.label}}"}
 	}]
 }]'''], [
     a setl:Transform, setl:JSLDT;
     prov:used :ontology_annotations_table;
     setl:hasContext '''{
-  "@vocab" :  "http://nanomine.org/",
+  "@vocab" :  "http://materialsmine.org/",
   "sio" :     "http://semanticscience.org/resource/",
   "chear" :   "http://hadatac.org/ont/chear#",
   "skos" :    "http://www.w3.org/2004/02/skos/core#",
@@ -110,12 +114,12 @@
   "owl": "http://www.w3.org/2002/07/owl#",
   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
   "rdfs" :    "http://www.w3.org/2000/01/rdf-schema#",
-  "nanomine" :    "http://nanomine.org/ns/"
+  "materialsmine" : "http://materialsmine.org/ns/"
 }''';
     prov:value '''[{
-	"@id": "http://nanomine.org/ns",
+	"@id": "http://materialsmine.org/ns",
 	"@graph": [{
-		"@id": "http://nanomine.org/ns",
+		"@id": "http://materialsmine.org/ns",
                 "@type" : "owl:Ontology",
 		"{{row.annotation}}": [
                     { "@if" : "not isempty(row.URI)", "@id" : "{{row.URI}}"},
@@ -126,7 +130,7 @@
     a setl:Transform, setl:JSLDT;
     prov:used :publication_classes_table;
     setl:hasContext '''{
-  "@vocab" :  "http://nanomine.org/",
+  "@vocab" :  "http://materialsmine.org/",
   "sio" :     "http://semanticscience.org/resource/",
   "chear" :   "http://hadatac.org/ont/chear#",
   "skos" :    "http://www.w3.org/2004/02/skos/core#",
@@ -137,11 +141,10 @@
   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
   "rdfs" :    "http://www.w3.org/2000/01/rdf-schema#",
   "bibo" :    "http://purl.org/ontology/bibo/",
-
-  "nanomine" :    "http://nanomine.org/ns/"
+  "materialsmine" : "http://materialsmine.org/ns/"
 }''';
     prov:value '''[{
-	"@id": "http://nanomine.org/ns",
+	"@id": "http://materialsmine.org/ns",
 	"@graph": [{
 		"@id": "{{row.uri}}",
                 "@type" : "owl:Class",
@@ -159,7 +162,7 @@
     a setl:Transform, setl:JSLDT;
     prov:used :property_classes_table;
     setl:hasContext '''{
-  "@vocab" :  "http://nanomine.org/",
+  "@vocab" :  "http://materialsmine.org/",
   "sio" :     "http://semanticscience.org/resource/",
   "chear" :   "http://hadatac.org/ont/chear#",
   "skos" :    "http://www.w3.org/2004/02/skos/core#",
@@ -169,16 +172,16 @@
   "owl": "http://www.w3.org/2002/07/owl#",
   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
   "rdfs" :    "http://www.w3.org/2000/01/rdf-schema#",
-  "nanomine" :    "http://nanomine.org/ns/"
+  "materialsmine" : "http://materialsmine.org/ns/"
 }''';
     prov:value '''[{
-	"@id": "http://nanomine.org/ns",
+	"@id": "http://materialsmine.org/ns",
 	"@graph": [{
 		"@id": "{{row.uri}}",
                 "@type" : "owl:Class",
                 "rdfs:label" : "{{row.label}}",
                 "skos:definition" : [ { "@if" : "not isempty(row.definition)", "@value": "{{row.definition}}" }],
-                "nanomine:hasPreferredUnit" : [ { "@if" : "not isempty(row.preferredUnit)", "@id" : "{{row.preferredUnit}}"} ],
+                "materialsmine:hasPreferredUnit" : [ { "@if" : "not isempty(row.preferredUnit)", "@id" : "{{row.preferredUnit}}"} ],
                 "rdfs:subClassOf" : [
                     { "@if" : "not isempty(row.subClassOf)",
                       "@for" : "superClass in row.subClassOf.split(', ')",
@@ -187,7 +190,7 @@
                     { "@if" : "not isempty(row.unit)",
                       "@type" : "owl:Restriction",
                       "owl:onProperty" : { "@id":"sio:hasUnit"},
-                      "owl:hasValue" : { "@id": "nanomine:unit/{{slugify(row.unit)}}", "rdfs:label" : "{{row.unit}}", "@type" : "sio:UnitOfMeasurement" }
+                      "owl:hasValue" : { "@id": "materialsmine:unit/{{slugify(row.unit)}}", "rdfs:label" : "{{row.unit}}", "@type" : "sio:UnitOfMeasurement" }
                     }
                 ]
 	}]
@@ -195,7 +198,7 @@
     a setl:Transform, setl:JSLDT;
     prov:used :processing_classes_table;
     setl:hasContext '''{
-  "@vocab" :  "http://nanomine.org/",
+  "@vocab" :  "http://materialsmine.org/",
   "sio" :     "http://semanticscience.org/resource/",
   "chear" :   "http://hadatac.org/ont/chear#",
   "skos" :    "http://www.w3.org/2004/02/skos/core#",
@@ -205,10 +208,10 @@
   "owl": "http://www.w3.org/2002/07/owl#",
   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
   "rdfs" :    "http://www.w3.org/2000/01/rdf-schema#",
-  "nanomine" :    "http://nanomine.org/ns/"
+  "materialsmine" : "http://materialsmine.org/ns/"
 }''';
     prov:value '''[{
-	"@id": "http://nanomine.org/ns",
+	"@id": "http://materialsmine.org/ns",
 	"@graph": [{
 		"@id": "{{row.uri}}",
                 "@type" : "owl:Class",
@@ -224,7 +227,7 @@
                     { "@if" : "not isempty(row.unit)",
                       "@type" : "owl:Restriction",
                       "owl:onProperty" : { "@id":"sio:hasUnit"},
-                      "owl:hasValue" : { "@id": "nanomine:unit/{{slugify(row.unit)}}", "rdfs:label" : "{{row.unit}}", "@type" : "sio:UnitOfMeasurement" }
+                      "owl:hasValue" : { "@id": "materialsmine:unit/{{slugify(row.unit)}}", "rdfs:label" : "{{row.unit}}", "@type" : "sio:UnitOfMeasurement" }
                     },
                     { "@if" : "not isempty(row.hasInput)",
                         "@for" : "input in row.hasInput.split(', ')",
@@ -256,7 +259,7 @@
     a setl:Transform, setl:JSLDT;
     prov:used :material_classes_table;
     setl:hasContext '''{
-  "@vocab" :  "http://nanomine.org/",
+  "@vocab" :  "http://materialsmine.org/",
   "sio" :     "http://semanticscience.org/resource/",
   "chear" :   "http://hadatac.org/ont/chear#",
   "skos" :    "http://www.w3.org/2004/02/skos/core#",
@@ -266,10 +269,10 @@
   "owl": "http://www.w3.org/2002/07/owl#",
   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
   "rdfs" :    "http://www.w3.org/2000/01/rdf-schema#",
-  "nanomine" :    "http://nanomine.org/ns/"
+  "materialsmine" : "http://materialsmine.org/ns/"
 }''';
     prov:value '''[{
-	"@id": "http://nanomine.org/ns",
+	"@id": "http://materialsmine.org/ns",
 	"@graph": [{
 		"@id": "{{row.uri}}",
                 "@type" : "owl:Class",
@@ -285,7 +288,7 @@
                     { "@if" : "not isempty(row.unit)",
                       "@type" : "owl:Restriction",
                       "owl:onProperty" : { "@id":"sio:hasUnit"},
-                      "owl:hasValue" : { "@id": "nanomine:unit/{{slugify(row.unit)}}", "rdfs:label" : "{{row.unit}}", "@type" : "sio:UnitOfMeasurement" }
+                      "owl:hasValue" : { "@id": "materialsmine:unit/{{slugify(row.unit)}}", "rdfs:label" : "{{row.unit}}", "@type" : "sio:UnitOfMeasurement" }
                     }
                 ]
 	}]
@@ -293,7 +296,7 @@
     a setl:Transform, setl:JSLDT;
     prov:used :units_table;
     setl:hasContext '''{
-        "@vocab" :  "http://nanomine.org/",
+        "@vocab" :  "http://materialsmine.org/",
         "sio" :     "http://semanticscience.org/resource/",
         "chear" :   "http://hadatac.org/ont/chear#",
         "skos" :    "http://www.w3.org/2004/02/skos/core#",
@@ -304,15 +307,15 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "rdfs" :    "http://www.w3.org/2000/01/rdf-schema#",
         "bibo" :    "http://purl.org/ontology/bibo/",
-        "nanomine" :    "http://nanomine.org/ns/"
+        "materialsmine" : "http://materialsmine.org/ns/"
     }''';
     prov:value '''[{
-        "@id": "http://nanomine.org/ns",
+        "@id": "http://materialsmine.org/ns",
         "@graph": [{
             "@id": "{{row.uri}}",
             "@type" : [
                 "sio:UnitOfMeasurement",
-                {"@if" : "row.absolute == 'y'", "@id" : "nanomine:AbsoluteUnitOfMeasurement"}
+                {"@if" : "row.absolute == 'y'", "@id" : "materialsmine:AbsoluteUnitOfMeasurement"}
             ],
             "rdfs:label" : "{{row.label}}",
             "skos:notation" : [ { "@if" : "not isempty(row.notation)", "@value": "{{row.notation}}" }],
@@ -323,7 +326,7 @@
     a setl:Transform, setl:JSLDT;
     prov:used :characterization_classes_table;
     setl:hasContext '''{
-  "@vocab" :  "http://nanomine.org/",
+  "@vocab" :  "http://materialsmine.org/",
   "sio" :     "http://semanticscience.org/resource/",
   "chear" :   "http://hadatac.org/ont/chear#",
   "skos" :    "http://www.w3.org/2004/02/skos/core#",
@@ -333,10 +336,10 @@
   "owl": "http://www.w3.org/2002/07/owl#",
   "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
   "rdfs" :    "http://www.w3.org/2000/01/rdf-schema#",
-  "nanomine" :    "http://nanomine.org/ns/"
+  "materialsmine" : "http://materialsmine.org/ns/"
 }''';
     prov:value '''[{
-	"@id": "http://nanomine.org/ns",
+	"@id": "http://materialsmine.org/ns",
         "@context": "https://raw.githubusercontent.com/jimmccusker/ontext/master/owl-context.jsonld",
 	"@graph": [
             {
@@ -346,7 +349,7 @@
                 "skos:altLabel" : [ { "@if" : "not isempty(row.altLabel)", "@value": "{{row.altLabel}}" }],
                 "skos:definition" : [ { "@if" : "not isempty(row.definition)", "@value": "{{row.definition}}" }],
                 "prov:wasQuotedFrom" : [ { "@if" : "not isempty(row.wasQuotedFrom)", "@value": "{{row.wasQuotedFrom}}" }],
-                "nanomine:hasSelector" : [ { "@if" : "not isempty(row.xpath)", "@value": "{{row.xpath}}" }],
+                "materialsmine:hasSelector" : [ { "@if" : "not isempty(row.xpath)", "@value": "{{row.xpath}}" }],
                 "rdfs:subClassOf" : [
                     { "@if" : "not isempty(row.subClassOf)",
                       "@for" : "superClass in row.subClassOf.split(', ')",
@@ -371,19 +374,56 @@
                 ]
 	    }
         ]
+}]'''],[
+    a setl:Transform, setl:JSLDT;
+    prov:used :materialsmine_table;
+    setl:hasContext '''{
+  "@vocab" :  "http://materialsmine.org/",
+  "sio" :     "http://semanticscience.org/resource/",
+  "chear" :   "http://hadatac.org/ont/chear#",
+  "skos" :    "http://www.w3.org/2004/02/skos/core#",
+  "prov" :    "http://www.w3.org/ns/prov#",
+  "dc"   :    "http://purl.org/dc/terms/",
+  "cmo"  :    "http://purl.org/twc/ontologies/cmo.owl#",
+  "owl": "http://www.w3.org/2002/07/owl#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "rdfs" :    "http://www.w3.org/2000/01/rdf-schema#",
+  "materialsmine" : "http://materialsmine.org/ns/"
+}''';
+    prov:value '''[{
+	"@id": "http://materialsmine.org/ns",
+	"@graph": [{
+		"@id": "{{row.uri}}",
+                "@type" : "owl:Class",
+                "rdfs:label" : "{{row.label}}",
+                "skos:altLabel" : [ { "@if" : "not isempty(row.altLabel)", "@value": "{{row.altLabel}}" }],
+                "skos:definition" : [ { "@if" : "not isempty(row.definition)", "@value": "{{row.definition}}" }],
+                "prov:wasQuotedFrom" : [ { "@if" : "not isempty(row.wasQuotedFrom)", "@value": "{{row.wasQuotedFrom}}" }],
+                "rdfs:subClassOf" : [
+                    { "@if" : "not isempty(row.subClassOf)",
+                      "@for" : "superClass in row.subClassOf.split(', ')",
+                      "@do" : { "@id": "{{superClass}}" }
+                    },
+                    { "@if" : "not isempty(row.unit)",
+                      "@type" : "owl:Restriction",
+                      "owl:onProperty" : { "@id":"sio:hasUnit"},
+                      "owl:hasValue" : { "@id": "materialsmine:unit/{{slugify(row.unit)}}", "rdfs:label" : "{{row.unit}}", "@type" : "sio:UnitOfMeasurement" }
+                    }
+                ]
+	}]
 }]'''].
 
 
-#<nanomine.trig> a pv:File;
+#<materialsmine.trig> a pv:File;
 #    dcterms:format "application/trig";
 #    prov:wasGeneratedBy [
 #      a setl:Load;
-#      prov:used <http://nanomine.org/ns> ;
+#      prov:used <http://materialsmine.org/ns> ;
 #    ].
 
-<nanomine.ttl> a pv:File;
+<materialsmine.ttl> a pv:File;
     dcterms:format "text/turtle";
     prov:wasGeneratedBy [
       a setl:Load;
-      prov:used :nanomine_ontology ;
+      prov:used :materialsmine_ontology ;
     ].

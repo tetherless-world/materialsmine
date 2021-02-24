@@ -7,6 +7,8 @@ setup(name='Nanomine',
       description='Nanomine project configuration file',
       author='rui',
       packages=[
+#               'git+https://github\.com/roryschadler/whyis_unit_converter\.git#egg=whyis_unit_converter'
+#               'git+git://github.com/roryschadler/whyis_unit_converter.git#egg=whyis_unit_converter'
 #              'pymongo'
           ],
      )
