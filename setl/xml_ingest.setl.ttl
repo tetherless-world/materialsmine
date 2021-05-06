@@ -189,6 +189,16 @@ def result():
                                                     "@value" : "{{part.find('TradeName').text}}"
                                                 }
                                             ],
+                                            "sio:hasAttribute": [
+                                                {
+                                                    "@if": "part.find('ManufacturerOrSourceName') is not None",
+                                                    "@for": "manufacturer in part.findall('ManufacturerOrSourceName')",
+                                                    "@do": {
+                                                        "@type": "materialsmine:ManufacturerOrSourceName",
+                                                        "sio:hasValue": "{{manufacturer.text}}"
+                                                    }
+                                                }
+                                            ],
                                             "skos:notation" : [
                                                 {
                                                     "@if" : "part.find('Abbreviation') is not None",
