@@ -67,16 +67,16 @@ result = units.set_index(units.code)
 :xml a setl:XML;
   prov:wasGeneratedBy [
      a setl:Extract;
-     prov:used [ a <http://materialsmine.org/ns/materialsmineXMLFile> ];
+     prov:used [ a <http://nanomine.org/ns/NanomineXMLFile> ];
   ].
 
 
 :materialsmineXMLImport rdfs:subClassOf setl:SemanticETLScript;
   rdfs:label "materialsmine XML Import SETL Script";
-  setl:hasTemplatePrefix "http://materialsmine.org/setl/xml/";
+  setl:hasTemplatePrefix "http://nanomine.org/setl/xml/";
   rdfs:subClassOf [ a owl:Restriction;
     owl:onProperty prov:used;
-    owl:someValuesFrom <http://materialsmine.org/ns/materialsmineXMLFile>
+    owl:someValuesFrom <http://nanomine.org/ns/NanomineXMLFile>
   ].
 
 :get_uuid a owl:Class, prov:SoftwareAgent, setl:PythonScript;
@@ -106,6 +106,7 @@ def result():
   "prov" :    "http://www.w3.org/ns/prov#",
   "rdfs" :    "http://www.w3.org/2000/01/rdf-schema#",
   "doi" :    "http://dx.doi.org/",
+  "nanomine": "http://nanomine.org/ns/",
   "materialsmine" :    "http://materialsmine.org/ns/",
   "unit" :    "http://materialsmine.org/ns/unit/",
   "author" :    "http://materialsmine.org/author/",
