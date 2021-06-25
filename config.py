@@ -14,16 +14,22 @@ from datetime import datetime
 
 
 # Set to be custom for your project
-LOD_PREFIX = 'http://nanomine.org'
+LOD_PREFIX = os.environ.get('NM_GRAPH_LOD_PREFIX','http://nanomine.org')
+
 #os.getenv('lod_prefix') if os.getenv('lod_prefix') else 'http://hbgd.tw.rpi.edu'
 
 skos = rdflib.Namespace("http://www.w3.org/2004/02/skos/core#")
 
 from nanomine.agent import *
 
+import whyis_unit_converter.unit_converter_agent as converter
+
 from authenticator import JWTAuthenticator
 
-import whyis_unit_converter.unit_converter_agent as converter
+authenticator_config = [] # set into config dict later
+authenticator_secret = os.environ.get('NM_GRAPH_AUTH_SECRET', None)
+if authenticator_secret:
+    authenticator_config.append(JWTAuthenticator(key=authenticator_secret))
 
 # base config class; extend it to your needs.
 Config = dict(
@@ -50,10 +56,6 @@ Config = dict(
     SECRET_KEY = "VOJ12a53NB9HOURFLNDOIWQZZ8YuFpMc",
 
     base_rate_probability = 0.8,
-
-    nanopub_archive = {
-        #'depot.storage_path' : "/data/nanopublications",
-    },
 
     file_archive = {
         #'depot.backend': 'depot.io.gridfs.GridFSStorage',
@@ -115,15 +117,14 @@ Config = dict(
 
     knowledge_queryEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
     knowledge_updateEndpoint = 'http://localhost:8080/blazegraph/namespace/knowledge/sparql',
+
+    authenticators = authenticator_config,
+
     #knowledge_useBlazeGraphBulkLoad = True,
     #knowledge_bulkLoadEndpoint = 'http://localhost:8080/blazegraph/dataloader',
     #knowledge_BlazeGraphProperties = '/apps/whyis/knowledge.properties',
     #load_dir = '/data/loaded',
     #knowledge_bulkLoadNamespace = 'knowledge',
-
-    authenticators = [
-#        JWTAuthenticator(key=os.environ['NM_AUTH_SECRET'])
-    ],
 
     LOGIN_USER_TEMPLATE = "auth/login.html",
     CELERY_BROKER_URL = 'redis://localhost:6379/0',
@@ -136,11 +137,17 @@ Config = dict(
     default_language = 'en',
     namespaces = [
         importer.LinkedData(
+            prefix = LOD_PREFIX+'/dcat/',
+            url = 'http://www.w3.org/ns/dcat#%s',
+            headers={'Accept':'text/turtle'},
+            format='turtle'
+        ),
+        importer.LinkedData(
             prefix = LOD_PREFIX+'/doi/',
             url = 'http://dx.doi.org/%s',
             headers={'Accept':'text/turtle'},
             format='turtle',
-            postprocess_update= '''insert {
+            postprocess_update= ['''insert {
                 graph ?g {
                     ?pub a <http://purl.org/ontology/bibo/AcademicArticle>.
                 }
@@ -148,8 +155,72 @@ Config = dict(
                 graph ?g {
                     ?pub <http://purl.org/ontology/bibo/doi> ?doi.
                 }
+            }''',
+            '''delete {
+              ?author <http://www.w3.org/2002/07/owl#sameAs> ?orcid.
+            } insert {
+                graph ?g {
+                    ?author <http://www.w3.org/ns/prov#specializationOf> ?orcid.
+                }
+            } where {
+                graph ?g {
+                    ?author a <http://xmlns.com/foaf/0.1/Person>;
+                      <http://www.w3.org/2002/07/owl#sameAs> ?orcid.
+                }
             }
+            ''']
+        ),
+        importer.LinkedData(
+            prefix = LOD_PREFIX+'/orcid/',
+            url = 'http://orcid.org/%s',
+            headers={'Accept':'application/ld+json'},
+            format='json-ld',
+            replace=[
+                ('\\"http:\\/\\/schema\\.org\\",', '{"@vocab" : "http://schema.org/"},'),
+                ('https://doi.org/', 'http://dx.doi.org/'),
+                ('https://', 'http://'),
+            ],
+            postprocess_update= ['''delete {
+              ?org ?p ?o.
+              ?s ?p ?org.
+            } insert {
+                graph ?g {
+                    ?s ?p ?o.
+                }
+            } where {
+                graph ?g {
+                    {
+                    ?org a <http://schema.org/Organization>;
+                      <http://schema.org/identifier> [
+                          a <http://schema.org/PropertyValue>;
+                          <http://schema.org/propertyID> ?propertyID;
+                          <http://schema.org/value> ?idValue;
+                      ].
+                      ?org ?p ?o.
+                      bind(IRI(concat("%s/organization/", str(?propertyID),"/",str(?idValue))) as ?s)
+                    } union {
+                    ?org a <http://schema.org/Organization>;
+                      <http://schema.org/identifier> [
+                          a <http://schema.org/PropertyValue>;
+                          <http://schema.org/propertyID> ?propertyID;
+                          <http://schema.org/value> ?idValue;
+                      ].
+                      ?s ?p ?org.
+                      bind(IRI(concat("%s/organization/", str(?propertyID),"/",str(?idValue))) as ?o)
+                    }
+                }
+            }'''  % (LOD_PREFIX, LOD_PREFIX) ,
             '''
+            insert {
+                graph ?g {
+                    ?s <http://schema.org/name> ?name.
+                }
+            } where {
+                graph ?g {
+                    ?s <http://schema.org/alternateName> ?name.
+                }
+            }
+            ''']
         ),
         importer.LinkedData(
             prefix = LOD_PREFIX+'/dbpedia/',
@@ -169,13 +240,14 @@ Config = dict(
         )
     ],
     inferencers = {
+	"SDDAgent": autonomic.SDDAgent(),
         "SETLr": autonomic.SETLr(),
         "SETLMaker": autonomic.SETLMaker(),
         "CacheUpdater" : autonomic.CacheUpdater(),
         "UnitConverter": converter.UnitConverter(),
 #        "HTML2Text" : nlp.HTML2Text(),
-#        "EntityExtractor" : nlp.EntityExtractor(),
-#        "EntityResolver" : nlp.EntityResolver(),
+        "EntityExtractor" : nlp.EntityExtractor(),
+        "EntityResolver" : nlp.EntityResolver(),
 #        "TF-IDF Calculator" : nlp.TFIDFCalculator(),
 #        "SKOS Crawler" : autonomic.Crawler(predicates=[skos.broader, skos.narrower, skos.related])
     },
