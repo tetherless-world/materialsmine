@@ -71,9 +71,9 @@ result = units.set_index(units.code)
   ].
 
 
-:materialsmineXMLImport rdfs:subClassOf setl:SemanticETLScript;
-  rdfs:label "materialsmine XML Import SETL Script";
-  setl:hasTemplatePrefix "http://nanomine.org/setl/xml/";
+:MaterialsmineXMLImport rdfs:subClassOf setl:SemanticETLScript;
+  rdfs:label "Materialsmine XML Import SETL Script";
+  setl:hasTemplatePrefix "http://materialsmine.org/setl/xml/";
   rdfs:subClassOf [ a owl:Restriction;
     owl:onProperty prov:used;
     owl:someValuesFrom <http://nanomine.org/ns/NanomineXMLFile>
@@ -88,7 +88,7 @@ def result():
 '''.
 
 :nanopubs a void:Dataset, dcat:Dataset;
-  prov:wasGeneratedBy [a :materialsmineXMLImport], [
+  prov:wasGeneratedBy [a :MaterialsmineXMLImport], [
     a setl:Transform, setl:JSLDT;
     prov:used :xml;
     prov:qualifiedUsage [ a prov:Usage; prov:entity :property_classes_table; prov:hadRole [ dcterms:identifier "properties"]];
@@ -134,7 +134,7 @@ def result():
         "@if": "id.text.replace(' ','') is not None",
         "@id": "materialsminenp:{{id.text.replace(' ','')}}",
         "@graph": [{
-            "@id": "materialsminenp:{{id.text.replace(' ','')}}",
+            "@id": "materialsminenp:{{id.text.replace(' ','')}}_nanopub",
             "@type": "nanopub:Nanopublication",
             "nanopub:hasAssertion": {
                 "@id": "materialsminenp:{{id.text.replace(' ','')}}_assertion",
