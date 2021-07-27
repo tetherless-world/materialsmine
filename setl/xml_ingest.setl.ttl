@@ -222,6 +222,14 @@ def result():
                                     },
                                     "sio:hasAttribute": [
                                         {
+                                            "@if": "part.find('ManufacturerOrSourceName') is not None",
+                                            "@for": "manufacturer in part.findall('ManufacturerOrSourceName')",
+                                            "@do": {
+                                                "@type": "materialsmine:ManufacturerOrSourceName",
+                                                "sio:hasValue": "{{manufacturer.text}}"
+                                            }
+                                        },                                        
+                                        {
                                             "@for": "fraction in part.findall('../FillerComposition/Fraction/*')",
                                             "@do": {
                                                 "@id": "sample:{{slugify(id.text.replace(' ',''))}}_filler_{{pi}}_{{fraction.tag}}_fraction",
