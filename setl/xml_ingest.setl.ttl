@@ -198,6 +198,14 @@ def result():
                                                         "@type": "materialsmine:ManufacturerOrSourceName",
                                                         "sio:hasValue": "{{manufacturer.text}}"
                                                     }
+                                                },
+                                                {
+                                                    "@if": "part.find('TradeName') is not None",
+                                                    "@for": "tradename in part.findall('TradeName')",
+                                                    "@do":{
+                                                        "@type": "materialsmine:TradeName",
+                                                        "sio:hasValue": "{{tradename.text}}"
+                                                    }
                                                 }
                                             ],
                                             "skos:notation" : [
@@ -228,7 +236,15 @@ def result():
                                                 "@type": "materialsmine:ManufacturerOrSourceName",
                                                 "sio:hasValue": "{{manufacturer.text}}"
                                             }
-                                        },                                        
+                                        },
+                                        {
+                                            "@if": "part.find('TradeName') is not None",
+                                            "@for": "tradename in part.findall('TradeName')",
+                                            "@do":{
+                                                "@type": "materialsmine:TradeName",
+                                                "sio:hasValue": "{{tradename.text}}"
+                                            }
+                                        },                           
                                         {
                                             "@for": "fraction in part.findall('../FillerComposition/Fraction/*')",
                                             "@do": {
@@ -551,6 +567,14 @@ def result():
                                                     "@do": {
                                                         "@type": "materialsmine:ManufacturerOrSourceName",
                                                         "sio:hasValue": "{{manufacturer.text}}"
+                                                    }
+                                                },
+                                                {
+                                                    "@if": "surface.find('TradeName') is not None",
+                                                    "@for": "tradename in surface.findall('TradeName')",
+                                                    "@do":{
+                                                        "@type": "materialsmine:TradeName",
+                                                        "sio:hasValue": "{{tradename.text}}"
                                                     }
                                                 }
                                             ],
