@@ -14,4 +14,8 @@ python manage.py load -f turtle -i /apps/nanomine-graph/nanomine.ttl
 python manage.py load -f turtle -i /apps/nanomine-graph/nanomine-files.ttl
 python manage.py load -i /apps/nanomine-graph/setl/xml_ingest.setl.ttl -f turtle
 
+for query_file in /apps/nanomine-graph/data/parameterized_queries/*.ttl ; do
+	python manage.py load -f turtle -i "$query_file"
+done
+
 popd
