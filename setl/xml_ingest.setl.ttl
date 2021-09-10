@@ -190,24 +190,6 @@ def result():
                                                     "@value" : "{{part.find('TradeName').text}}"
                                                 }
                                             ],
-                                            "sio:hasAttribute": [
-                                                {
-                                                    "@if": "part.find('ManufacturerOrSourceName') is not None",
-                                                    "@for": "manufacturer in part.findall('ManufacturerOrSourceName')",
-                                                    "@do": {
-                                                        "@type": "materialsmine:ManufacturerOrSourceName",
-                                                        "sio:hasValue": "{{manufacturer.text}}"
-                                                    }
-                                                },
-                                                {
-                                                    "@if": "part.find('TradeName') is not None",
-                                                    "@for": "tradename in part.findall('TradeName')",
-                                                    "@do":{
-                                                        "@type": "materialsmine:TradeName",
-                                                        "sio:hasValue": "{{tradename.text}}"
-                                                    }
-                                                }
-                                            ],
                                             "skos:notation" : [
                                                 {
                                                     "@if" : "part.find('Abbreviation') is not None",
@@ -244,7 +226,31 @@ def result():
                                                 "@type": "materialsmine:TradeName",
                                                 "sio:hasValue": "{{tradename.text}}"
                                             }
-                                        },                           
+                                        },
+                                        {
+                                            "@if": "part.find('ChemicalName') is not None",
+                                            "@for": "name in part.findall('ChemicalName')",
+                                            "@do": {
+                                                "@type": "materialsmine:ChemicalName",
+                                                "sio:hasValue": "{{name.text}}"
+                                            }
+                                        },
+                                        {
+                                            "@if": "part.find('Abbreviation') is not None",
+                                            "@for": "abbreviation in part.findall('Abbreviation')",
+                                            "@do": {
+                                                "@type": "materialsmine:Abbreviation",
+                                                "sio:hasValue": "{{abbreviation.text}}"
+                                            }
+                                        },
+                                        {
+                                            "@if": "part.find('PubChemRef') is not None",
+                                            "@for": "ref in part.findall('PubChemRef')",
+                                            "@do": {
+                                                "@type": "materialsmine:PubChemReference",
+                                                "sio:hasValue": "{{ref.text}}"
+                                            }
+                                        },                         
                                         {
                                             "@for": "fraction in part.findall('../FillerComposition/Fraction/*')",
                                             "@do": {
@@ -576,6 +582,91 @@ def result():
                                                         "@type": "materialsmine:TradeName",
                                                         "sio:hasValue": "{{tradename.text}}"
                                                     }
+                                                },
+                                                {
+                                                    "@if": "surface.find('ChemicalName') is not None",
+                                                    "@for": "name in surface.findall('ChemicalName')",
+                                                    "@do": {
+                                                        "@type": "materialsmine:ChemicalName",
+                                                        "sio:hasValue": "{{name.text}}"
+                                                    }
+                                                },
+                                                {
+                                                    "@if": "surface.find('Abbreviation') is not None",
+                                                    "@for": "abbreviation in surface.findall('Abbreviation')",
+                                                    "@do": {
+                                                        "@type": "materialsmine:Abbreviation",
+                                                        "sio:hasValue": "{{abbreviation.text}}"
+                                                    }
+                                                },
+                                                {
+                                                    "@for": "density in surface.findall('Density')",
+                                                    "@do": {
+                                                        "@type": "materialsmine:Density",
+                                                        "sio:hasValue": {
+                                                            "@value": "{{density.find('value').text}}",
+                                                            "@type": "xsd:double"
+                                                        },
+                                                        "dc:description" : [ {
+                                                            "@if" : "density.find('source') is not None",
+                                                            "@value" : "{{density.find('source').text}}"
+                                                        }],
+                                                        "sio:hasUnit": [
+                                                          {
+                                                            "@if": "density.find('unit') is not None and density.find('unit').text in units.index",
+                                                            "@id": "{{units.loc[density.find('unit').text].uri}}"
+                                                          }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "@for": "gdensity in surface.findall('GraftDensity')",
+                                                    "@do": {
+                                                        "@type": "materialsmine:GraftDensity",
+                                                        "sio:hasValue": {
+                                                            "@value": "{{gdensity.find('value').text}}",
+                                                            "@type": "xsd:double"
+                                                        },
+                                                        "dc:description" : [ {
+                                                            "@if" : "gdensity.find('source') is not None",
+                                                            "@value" : "{{gdensity.find('source').text}}"
+                                                        }],
+                                                        "sio:hasUnit": [
+                                                          {
+                                                            "@if": "gdensity.find('unit') is not None and gdensity.find('unit').text in units.index",
+                                                            "@id": "{{units.loc[gdensity.find('unit').text].uri}}"
+                                                          }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "@for": "mw in surface.findall('MolecularWeight')",
+                                                    "@do": {
+                                                        "@type": [{
+                                                            "@id": 
+                                                                "{% if mw.find('description') is not none and mw.find('description').text == 'weight average (Mw)'%}materialsmine:MolecularWeight_Mw
+                                                                {% elif mw.find('description') is not none and mw.find('description').text == 'number average (Mn)'%}materialsmine:MolecularWeight_Mn
+                                                                {% elif mw.find('description') is not none and mw.find('description').text == 'z-average'%}materialsmine:MolecularWeight_zAverage
+                                                                {% else %}materialsmine:MolecularWeight
+                                                                {% endif %}",
+                                                            "@type": "owl:Class"
+                                                            }
+                                                        ],
+                                                        "sio:hasValue": {
+                                                            "@value": "{{mw.find('value').text}}",
+                                                            "@type": "xsd:double"
+                                                        },
+                                                        "dc:description" : [ {
+                                                            "@if" : "mw.find('description') is not None",
+                                                            "@value" : "{{mw.find('description').text}}"
+                                                        }],
+                                                        "sio:hasUnit": [
+                                                            {
+                                                              "@if": "mw.find('unit') is not None and mw.find('unit').text in units.index",
+                                                              "@id": "{{units.loc[mw.find('unit').text].uri}}"
+                                                            }
+                                                        ]
+                                                    }
                                                 }
                                             ],
                                             "sio:hasRole": {
@@ -635,6 +726,36 @@ def result():
                                             "@id": "sample:{{slugify(id.text.replace(' ',''))}}"
                                         }
                                     },
+                                    "sio:hasComponentPart": [
+                                    {
+                                        "@if": "part.find('Hardener') is not None",
+                                        "@for": "hardener in part.findall('Hardener')",
+                                        "@do": {
+                                            "@type": "materialsmine:Hardener",
+                                            "sio:hasValue": "{{hardener.text}}"
+                                        }
+                                    },
+                                    {
+                                        "@for": "additive in part.findall('Additive')",
+                                        "@do": {
+                                            "@type": "materialsmine:Additive",
+                                            "sio:hasValue": {
+                                                "@value": "{{additive.find('value').text}}",
+                                                "@type": "xsd:double"
+                                            },
+                                            "dc:description" : [ {
+                                                "@if" : "additive.find('description') is not None",
+                                                "@value" : "{{additive.find('description').text}}"
+                                            }],
+                                            "sio:hasUnit": [
+                                                {
+                                                  "@if": "additive.find('unit') is not None and additive.find('unit').text in units.index",
+                                                  "@id": "{{units.loc[additive.find('unit').text].uri}}"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                    ],
                                     "sio:hasAttribute": [
                                     {
                                         "@for": "density in part.findall('Density')",
@@ -673,13 +794,119 @@ def result():
                                         }
                                     },
                                     {
-                                        "@if": "part.find('Abbreviation') is not None",
-                                        "@for": "abbrev in part.findall('Abbreviation')",
-                                        "@do":{
-                                            "@type": "materialsmine:Abbreviation",
-                                            "sio:hasValue": "{{abbrev.text}}"
+                                        "@if": "part.find('ChemicalName') is not None",
+                                        "@for": "name in part.findall('ChemicalName')",
+                                        "@do": {
+                                            "@type": "materialsmine:ChemicalName",
+                                            "sio:hasValue": "{{name.text}}"
                                         }
-                                    }]
+                                    },
+                                    {
+                                        "@if": "part.find('Abbreviation') is not None",
+                                        "@for": "abbreviation in part.findall('Abbreviation')",
+                                        "@do": {
+                                            "@type": "materialsmine:Abbreviation",
+                                            "sio:hasValue": "{{abbreviation.text}}"
+                                        }
+                                    },
+                                    {
+                                        "@if": "part.find('PubChemRef') is not None",
+                                        "@for": "ref in part.findall('PubChemRef')",
+                                        "@do": {
+                                            "@type": "materialsmine:PubChemReference",
+                                            "sio:hasValue": "{{ref.text}}"
+                                        }
+                                    },
+                                    {
+                                        "@if": "part.find('PlasticType') is not None",
+                                        "@for": "plastic in part.findall('PlasticType')",
+                                        "@do": {
+                                            "@type": "materialsmine:Plastic",
+                                            "sio:hasValue": "{{plastic.text}}"
+                                        }
+                                    },
+                                    {
+                                        "@if": "part.find('PolymerClass') is not None",
+                                        "@for": "polymerC in part.findall('PolymerClass')",
+                                        "@do": {
+                                            "@type": "materialsmine:PolymerNanocomposite",
+                                            "sio:hasValue": "{{polymerC.text}}"
+                                        }
+                                    },
+                                    {
+                                        "@if": "part.find('PolymerType') is not None",
+                                        "@for": "polymer in part.findall('PolymerType')",
+                                        "@do": {
+                                            "@type": "sio:Polymer",
+                                            "sio:hasValue": "{{polymer.text}}"
+                                        }
+                                    },
+                                    {
+                                        "@for": "mw in part.findall('MolecularWeight')",
+                                        "@do": {
+                                            "@type": [{
+                                                "@id": 
+                                                    "{% if mw.find('description') is not none and mw.find('description').text == 'weight average (Mw)'%}materialsmine:MolecularWeight_Mw
+                                                    {% elif mw.find('description') is not none and mw.find('description').text == 'number average (Mn)'%}materialsmine:MolecularWeight_Mn
+                                                    {% elif mw.find('description') is not none and mw.find('description').text == 'z-average'%}materialsmine:MolecularWeight_zAverage
+                                                    {% else %}materialsmine:MolecularWeight
+                                                    {% endif %}",
+                                                "@type": "owl:Class"
+                                                }
+                                            ],
+                                            "sio:hasValue": {
+                                                "@value": "{{mw.find('value').text}}",
+                                                "@type": "xsd:double"
+                                            },
+                                            "dc:description" : [ {
+                                                "@if" : "mw.find('description') is not None",
+                                                "@value" : "{{mw.find('description').text}}"
+                                            }],
+                                            "sio:hasUnit": [
+                                                {
+                                                  "@if": "mw.find('unit') is not None and mw.find('unit').text in units.index",
+                                                  "@id": "{{units.loc[mw.find('unit').text].uri}}"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "@if": "part.find('Polydispersity') is not None",
+                                        "@for": "polydispersity in part.findall('Polydispersity')",
+                                        "@do": {
+                                            "@type": "materialsmine:Polydispersity",
+                                            "sio:hasValue": "{{polydispersity.text}}"
+                                        }
+                                    },
+                                    {
+                                        "@if": "part.find('Tacticity') is not None",
+                                        "@for": "tacticity in part.findall('Tacticity')",
+                                        "@do": {
+                                            "@type": "materialsmine:Tacticity",
+                                            "sio:hasValue": "{{tacticity.text}}"
+                                        }
+                                    },
+                                    {
+                                        "@for": "viscosity in part.findall('Viscosity')",
+                                        "@do": {
+                                            "@type": "materialsmine:Viscosity",
+                                            "sio:hasValue": {
+                                                "@value": "{{viscosity.find('value').text}}",
+                                                "@type": "xsd:double"
+                                            },
+                                            "dc:description" : [ {
+                                                "@if" : "viscosity.find('source') is not None",
+                                                "@value" : "{{viscosity.find('source').text}}"
+                                            }],
+                                            "sio:hasUnit": [
+                                                {
+                                                  "@if": "viscosity.find('unit') is not None and viscosity.find('unit').text in units.index",
+                                                  "@id": "{{units.loc[viscosity.find('unit').text].uri}}"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                    ]
                                 }
                             }],
 "sio:hasAttribute": [
