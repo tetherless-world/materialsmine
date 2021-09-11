@@ -643,15 +643,9 @@ def result():
                                                     "@for": "mw in surface.findall('MolecularWeight')",
                                                     "@do": {
                                                         "@type": [{
-                                                            "@id": 
-                                                                "{% if mw.find('description') is not none and mw.find('description').text == 'weight average (Mw)'%}materialsmine:MolecularWeight_Mw
-                                                                {% elif mw.find('description') is not none and mw.find('description').text == 'number average (Mn)'%}materialsmine:MolecularWeight_Mn
-                                                                {% elif mw.find('description') is not none and mw.find('description').text == 'z-average'%}materialsmine:MolecularWeight_zAverage
-                                                                {% else %}materialsmine:MolecularWeight
-                                                                {% endif %}",
+                                                            "@id": "{% if mw.find('description') is not none and mw.find('description').text == 'weight average (Mw)' %}materialsmine:MolecularWeight_Mw{% elif mw.find('description') is not none and mw.find('description').text == 'number average (Mn)' %}materialsmine:MolecularWeight_Mn{% elif mw.find('description') is not none and mw.find('description').text == 'z-average' %}materialsmine:MoleculeWeight_zAverage{% else %}materialsmine:MolecularWeight{% endif %}",
                                                             "@type": "owl:Class"
-                                                            }
-                                                        ],
+                                                        }],
                                                         "sio:hasValue": {
                                                             "@value": "{{mw.find('value').text}}",
                                                             "@type": "xsd:double"
@@ -829,7 +823,7 @@ def result():
                                         "@if": "part.find('PolymerClass') is not None",
                                         "@for": "polymerC in part.findall('PolymerClass')",
                                         "@do": {
-                                            "@type": "materialsmine:PolymerNanocomposite",
+                                            "@type": "materialsmine:Polymer",
                                             "sio:hasValue": "{{polymerC.text}}"
                                         }
                                     },
@@ -845,15 +839,9 @@ def result():
                                         "@for": "mw in part.findall('MolecularWeight')",
                                         "@do": {
                                             "@type": [{
-                                                "@id": 
-                                                    "{% if mw.find('description') is not none and mw.find('description').text == 'weight average (Mw)'%}materialsmine:MolecularWeight_Mw
-                                                    {% elif mw.find('description') is not none and mw.find('description').text == 'number average (Mn)'%}materialsmine:MolecularWeight_Mn
-                                                    {% elif mw.find('description') is not none and mw.find('description').text == 'z-average'%}materialsmine:MolecularWeight_zAverage
-                                                    {% else %}materialsmine:MolecularWeight
-                                                    {% endif %}",
+                                                "@id": "{% if mw.find('description') is not none and mw.find('description').text == 'weight average (Mw)' %}materialsmine:MolecularWeight_Mw{% elif mw.find('description') is not none and mw.find('description').text == 'number average (Mn)' %}materialsmine:MolecularWeight_Mn{% elif mw.find('description') is not none and mw.find('description').text == 'z-average' %}materialsmine:MoleculeWeight_zAverage{% else %}materialsmine:MolecularWeight{% endif %}",
                                                 "@type": "owl:Class"
-                                                }
-                                            ],
+                                            }],
                                             "sio:hasValue": {
                                                 "@value": "{{mw.find('value').text}}",
                                                 "@type": "xsd:double"
