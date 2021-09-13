@@ -156,7 +156,7 @@ def result():
                         "@type": [
                             "materialsmine:PolymerNanocomposite"
                         ],
-                        "rdfs:label" : "{{row.find('MATERIALS/Filler/FillerComponent/ChemicalName').text}} in {{row.find('MATERIALS/Matrix/MatrixComponent/ChemicalName').text}}"
+                        "rdfs:label" : "{{row.find('MATERIALS/Filler/FillerComponent/ChemicalName').text}} ({{row.find('MATERIALS/Filler/FillerComponent/FillerComposition/Fraction/Volume/value')",}}) in {{row.find('MATERIALS/Matrix/MatrixComponent/ChemicalName').text}}"
                     },
                     {
                         "@for": "material in row.findall('MATERIALS')",
@@ -797,7 +797,7 @@ def result():
                         "@for": "microstructure in row.findall('MICROSTRUCTURE')",
                         "@do": {
                             "@id": "sample:{{slugify(id.text.replace(' ',''))}}",
-                            "sio:isRepresentedBy" : [
+                            "foaf:depiction" : [
                                 {
                                 "@for" : "image in microstructure.findall('ImageFile')",
                                 "@do" : {
