@@ -64,6 +64,14 @@
 result = units.set_index(units.code)
 '''.
 
+:reverse a owl:Class, prov:SoftwareAgent, setl:PythonScript;
+  rdfs:subClassOf prov:Activity;
+  prov:value '''
+def result(l):
+    l.reverse()
+    return l
+'''.
+
 :xml a setl:XML;
   prov:wasGeneratedBy [
      a setl:Extract;
@@ -96,6 +104,7 @@ def result():
     prov:qualifiedUsage [ a prov:Usage; prov:entity :processing_methods_table; prov:hadRole [dcterms:identifier "processing"]];
     prov:qualifiedUsage [ a prov:Usage; prov:entity :materials_table; prov:hadRole [dcterms:identifier "materials"]];
     prov:qualifiedUsage [ a prov:Usage; prov:entity :units; prov:hadRole [ dcterms:identifier "units"]];
+    prov:qualifiedUsage [ a prov:Usage; prov:entity :reverse; prov:hadRole [ dcterms:identifier "reverse"]];
     prov:qualifiedUsage [ a prov:Usage; prov:entity :microstructure_descriptors_table; prov:hadRole [ dcterms:identifier "microstructures"]];
     prov:qualifiedUsage [ a prov:Usage; prov:entity :get_uuid; prov:hadRole [ dcterms:identifier "get_uuid"]];
     setl:hasContext """{
@@ -823,16 +832,28 @@ def result():
                                         "@if": "part.find('PolymerClass') is not None",
                                         "@for": "polymerC in part.findall('PolymerClass')",
                                         "@do": {
-                                            "@type": "materialsmine:Polymer",
+                                            "@type": [{
+                                                "@id": "materialsmine:{{camelcase(polymerC.text)}}",
+                                                "@type": "owl:Class",
+                                                "rdfs:subClassOf": {
+                                                    "@id": "sio:Polymer"
+                                                 }
+                                            }],
                                             "sio:hasValue": "{{polymerC.text}}"
                                         }
                                     },
                                     {
                                         "@if": "part.find('PolymerType') is not None",
-                                        "@for": "polymer in part.findall('PolymerType')",
+                                        "@for": "polymerT in part.findall('PolymerType')",
                                         "@do": {
-                                            "@type": "sio:Polymer",
-                                            "sio:hasValue": "{{polymer.text}}"
+                                            "@type": [{
+                                                "@id": "materialsmine:{{camelcase(polymerT.text)}}",
+                                                "@type": "owl:Class",
+                                                "rdfs:subClassOf": {
+                                                    "@id": "materialsmine:PolymerMixture"
+                                                 }
+                                            }],
+                                            "sio:hasValue": "{{polymerT.text}}"
                                         }
                                     },
                                     {
@@ -1083,6 +1104,12 @@ def result():
                                     "@value": "{{citation.find('CommonFields/Volume').text}}",
                                     "@type": "xsd:integer"
                                 },
+                                "prov:atLocation": {
+                                    "@if": "citation.find('CommonFields/Location').text",
+                                    "@type": "dcterms:Location",
+                                    "@id": "location:{{slugify(citation.find('CommonFields/Location').text)}}",
+                                    "rdfs:label": "{{citation.find('CommonFields/Location').text}}"
+                                },
                                 "dcterms:language": {
                                     "@if": "citation.find('CommonFields/Language').text",
                                     "@id": "lang:{{slugify(citation.find('CommonFields/Language').text)}}",
@@ -1090,13 +1117,13 @@ def result():
                                     "rdfs:label": "{{citation.find('CommonFields/Language').text}}"
                                 },
                                 "authorList": [{
-                                    "@for": "author in citation.findall('CommonFields/Author')",
+                                    "@for": "author in reverse(citation.findall('CommonFields/Author'))",
                                     "@do": {
                                         "@id": "author:{{slugify(author.text)}}"
                                     }
                                 }],
                                 "dcterms:creator": [{
-                                    "@for": "author in citation.findall('CommonFields/Author')",
+                                    "@for": "author in reverse(citation.findall('CommonFields/Author'))",
                                     "@do": {
                                         "@id": "author:{{slugify(author.text)}}",
                                         "@type": "prov:Agent",
@@ -1116,13 +1143,7 @@ def result():
                                     "dcterms:publisher": {
                                         "@if": "citation.find('CommonFields/Publisher').text",
                                         "@id": "publisher:{{slugify(citation.find('CommonFields/Publisher').text)}}",
-                                        "rdfs:label": "{{citation.find('CommonFields/Publisher').text}}",
-                                        "prov:atLocation": {
-                                            "@if": "citation.find('CommonFields/Location').text",
-                                            "@type": "dcterms:Location",
-                                            "@id": "location:{{slugify(citation.find('CommonFields/Location').text)}}",
-                                            "rdfs:label": "{{citation.find('CommonFields/Location').text}}"
-                                        }
+                                        "rdfs:label": "{{citation.find('CommonFields/Publisher').text}}"
                                     }
                                 },
                                 "sio:hasPart": {
