@@ -14,7 +14,7 @@ from datetime import datetime
 
 
 # Set to be custom for your project
-LOD_PREFIX = os.environ.get('NM_GRAPH_LOD_PREFIX','http://nanomine.org')
+LOD_PREFIX = os.environ.get('NM_GRAPH_LOD_PREFIX','http://materialsmine.org')
 
 #os.getenv('lod_prefix') if os.getenv('lod_prefix') else 'http://hbgd.tw.rpi.edu'
 
