@@ -165,7 +165,7 @@ def result():
                         "@type": [
                             "materialsmine:PolymerNanocomposite"
                         ],
-                        "rdfs:label" : "{{row.find('MATERIALS/Filler/FillerComponent/ChemicalName').text}} ({{row.find('MATERIALS/Filler/FillerComponent/FillerComposition/Fraction/Volume/value')",}}) in {{row.find('MATERIALS/Matrix/MatrixComponent/ChemicalName').text}}"
+                        "rdfs:label" : "{{row.find('MATERIALS/Filler/FillerComponent/ChemicalName').text}} in {{row.find('MATERIALS/Matrix/MatrixComponent/ChemicalName').text}}"
                     },
                     {
                         "@for": "material in row.findall('MATERIALS')",
@@ -213,6 +213,12 @@ def result():
                                             ]
                                         }
                                     ],
+                                    "rdfs:label": [
+                                        {
+                                            "@if" : "part.find('ChemicalName') is not None",
+                                            "@value" : "{{part.find('ChemicalName').text}}"
+                                        }
+                                    ],
                                     "sio:hasRole": {
                                         "@type": "materialsmine:Filler",
                                         "sio:inRelationTo": {
@@ -234,14 +240,6 @@ def result():
                                             "@do":{
                                                 "@type": "materialsmine:TradeName",
                                                 "sio:hasValue": "{{tradename.text}}"
-                                            }
-                                        },
-                                        {
-                                            "@if": "part.find('ChemicalName') is not None",
-                                            "@for": "name in part.findall('ChemicalName')",
-                                            "@do": {
-                                                "@type": "materialsmine:ChemicalName",
-                                                "sio:hasValue": "{{name.text}}"
                                             }
                                         },
                                         {
@@ -723,6 +721,12 @@ def result():
                                             ]
                                         }
                                     ],
+                                    "rdfs:label": [
+                                        {
+                                            "@if" : "part.find('ChemicalName') is not None",
+                                            "@value" : "{{part.find('ChemicalName').text}}"
+                                        }
+                                    ],
                                     "sio:hasRole": {
                                         "@type": "materialsmine:Matrix",
                                         "sio:inRelationTo": {
@@ -794,14 +798,6 @@ def result():
                                         "@do":{
                                             "@type": "materialsmine:TradeName",
                                             "sio:hasValue": "{{tradename.text}}"
-                                        }
-                                    },
-                                    {
-                                        "@if": "part.find('ChemicalName') is not None",
-                                        "@for": "name in part.findall('ChemicalName')",
-                                        "@do": {
-                                            "@type": "materialsmine:ChemicalName",
-                                            "sio:hasValue": "{{name.text}}"
                                         }
                                     },
                                     {
