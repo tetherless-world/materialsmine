@@ -165,7 +165,7 @@ def result():
                         "@type": [
                             "materialsmine:PolymerNanocomposite"
                         ],
-                        "rdfs:label" : "{{row.find('MATERIALS/Filler/FillerComponent/ChemicalName').text}} in {{row.find('MATERIALS/Matrix/MatrixComponent/ChemicalName').text}}"
+                        "rdfs:label" : "{% if row.find('MATERIALS/Filler/FillerComposition/Fraction/volume/value') is not none %}{{row.find('MATERIALS/Filler/FillerComponent/ChemicalName').text}} ({{row.find('MATERIALS/Filler/FillerComposition/Fraction/volume/value').text}} volume fraction) in {{row.find('MATERIALS/Matrix/MatrixComponent/ChemicalName').text}}{% else %}{{row.find('MATERIALS/Filler/FillerComponent/ChemicalName').text}} in {{row.find('MATERIALS/Matrix/MatrixComponent/ChemicalName').text}}{% endif %}"
                     },
                     {
                         "@for": "material in row.findall('MATERIALS')",
@@ -719,6 +719,33 @@ def result():
                                                     "@id" : "pubchem:{{part.find('PubChemRef').text.replace(' ','')}}"
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "@if": "part.find('PlasticType') is not None",
+                                            "@for": "plasticT in part.findall('PlasticType')",
+                                            "@do": {
+                                                "@id": "materialsmine:{{camelcase(plasticT.text)}}",
+                                                "@type": "owl:Class",
+                                                "rdfs:label": "{{camelcase(plasticT.text)}}"
+                                            }
+                                        },
+                                        {
+                                            "@if": "part.find('PolymerClass') is not None",
+                                            "@for": "polymerC in part.findall('PolymerClass')",
+                                            "@do": {
+                                                "@id": "materialsmine:{{camelcase(polymerC.text)}}",
+                                                "@type": "owl:Class",
+                                                "rdfs:label": "{{camelcase(polymerC.text)}}"
+                                            }
+                                        },
+                                        {
+                                            "@if": "part.find('PolymerType') is not None",
+                                            "@for": "polymerT in part.findall('PolymerType')",
+                                            "@do": {
+                                                "@id": "materialsmine:{{camelcase(polymerT.text)}}",
+                                                "@type": "owl:Class",
+                                                "rdfs:label": "{{camelcase(polymerT.text)}}"
+                                            }
                                         }
                                     ],
                                     "rdfs:label": [
@@ -814,42 +841,6 @@ def result():
                                         "@do": {
                                             "@type": "materialsmine:PubChemReference",
                                             "sio:hasValue": "{{ref.text}}"
-                                        }
-                                    },
-                                    {
-                                        "@if": "part.find('PlasticType') is not None",
-                                        "@for": "plastic in part.findall('PlasticType')",
-                                        "@do": {
-                                            "@type": "materialsmine:Plastic",
-                                            "sio:hasValue": "{{plastic.text}}"
-                                        }
-                                    },
-                                    {
-                                        "@if": "part.find('PolymerClass') is not None",
-                                        "@for": "polymerC in part.findall('PolymerClass')",
-                                        "@do": {
-                                            "@type": [{
-                                                "@id": "materialsmine:{{camelcase(polymerC.text)}}",
-                                                "@type": "owl:Class",
-                                                "rdfs:subClassOf": {
-                                                    "@id": "sio:Polymer"
-                                                 }
-                                            }],
-                                            "sio:hasValue": "{{polymerC.text}}"
-                                        }
-                                    },
-                                    {
-                                        "@if": "part.find('PolymerType') is not None",
-                                        "@for": "polymerT in part.findall('PolymerType')",
-                                        "@do": {
-                                            "@type": [{
-                                                "@id": "materialsmine:{{camelcase(polymerT.text)}}",
-                                                "@type": "owl:Class",
-                                                "rdfs:subClassOf": {
-                                                    "@id": "materialsmine:PolymerMixture"
-                                                 }
-                                            }],
-                                            "sio:hasValue": "{{polymerT.text}}"
                                         }
                                     },
                                     {
