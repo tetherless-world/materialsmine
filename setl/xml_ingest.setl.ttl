@@ -165,7 +165,7 @@ def result():
                         "@type": [
                             "materialsmine:PolymerNanocomposite"
                         ],
-                        "rdfs:label" : "{% if row.find('MATERIALS/Filler/FillerComposition/Fraction/volume/value') is not none %}{{row.find('MATERIALS/Filler/FillerComponent/ChemicalName').text}} ({{row.find('MATERIALS/Filler/FillerComposition/Fraction/volume/value').text}} volume fraction) in {{row.find('MATERIALS/Matrix/MatrixComponent/ChemicalName').text}}{% else %}{{row.find('MATERIALS/Filler/FillerComponent/ChemicalName').text}} in {{row.find('MATERIALS/Matrix/MatrixComponent/ChemicalName').text}}{% endif %}"
+                        "rdfs:label" : "{{row.find('MATERIALS/Filler/FillerComponent/ChemicalName').text}} in {{row.find('MATERIALS/Matrix/MatrixComponent/ChemicalName').text}}"
                     },
                     {
                         "@for": "material in row.findall('MATERIALS')",
