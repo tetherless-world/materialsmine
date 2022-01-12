@@ -394,7 +394,13 @@
 	"@id": "http://materialsmine.org/ns",
 	"@graph": [{
 		"@id": "{{row.uri}}",
-                "@type" : "owl:Class",
+                "@type" : [
+                    "owl:Class",
+                    { 
+                        "@if" : "not isempty(row.hasType)", 
+                        "@id" : "row.hasType"
+                    }
+                ],
                 "rdfs:label" : "{{row.label}}",
                 "skos:altLabel" : [ { "@if" : "not isempty(row.altLabel)", "@value": "{{row.altLabel}}" }],
                 "skos:definition" : [ { "@if" : "not isempty(row.definition)", "@value": "{{row.definition}}" }],

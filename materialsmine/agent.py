@@ -1,13 +1,11 @@
-import autonomic
+import whyis.autonomic
 from rdflib import *
 from slugify import slugify
-import nanopub
+import whyis.nanopub
 
 sioc_types = Namespace("http://rdfs.org/sioc/types#")
 sioc = Namespace("http://rdfs.org/sioc/ns#")
 sio = Namespace("http://semanticscience.org/resource/")
 dc = Namespace("http://purl.org/dc/terms/")
-prov = autonomic.prov
-whyis = autonomic.whyis
-
-        
+prov = whyis.autonomic.prov
+whyis = whyis.autonomic.whyis
