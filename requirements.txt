@@ -48,7 +48,7 @@ isodate==0.6.0
 itsdangerous==1.1.0
 Jinja2==2.11.3
 jinja2-time==0.2.0
-joblib==1.1.0
+joblib==1.2.0
 keepalive==0.1.1
 keyring==23.4.0
 kombu==5.2.2
