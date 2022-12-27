@@ -92,7 +92,7 @@ sadi==0.5.7
 scipy==1.7.3
 sdd2rdf==0.1.6
 setlr==0.2.18
-setuptools==60.3.1
+setuptools==65.5.1
 six==1.16.0
 soupsieve==2.3.1
 speaklater==1.3
