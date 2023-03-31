@@ -81,7 +81,7 @@ pytz==2021.3
 rdflib==6.0.2
 rdflib-jsonld==0.6.2
 readme-renderer==32.0
-redis==4.0.2
+redis==4.4.4
 redislite==6.0.674960
 regex==2021.11.10
 requests==2.26.0
