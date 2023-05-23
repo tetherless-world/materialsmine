@@ -84,7 +84,7 @@ readme-renderer==32.0
 redis==4.0.2
 redislite==6.0.674960
 regex==2021.11.10
-requests==2.26.0
+requests==2.31.0
 requests-testadapter==0.3.0
 requests-toolbelt==0.9.1
 rfc3986==1.5.0
