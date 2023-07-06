@@ -89,7 +89,7 @@ requests-testadapter==0.3.0
 requests-toolbelt==0.9.1
 rfc3986==1.5.0
 sadi==0.5.7
-scipy==1.7.3
+scipy==1.10.0
 sdd2rdf==0.1.6
 setlr==0.2.18
 setuptools==60.3.1
