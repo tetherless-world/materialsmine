@@ -69,7 +69,7 @@ pkginfo==1.8.2
 poyo==0.5.0
 prompt-toolkit==3.0.23
 psutil==5.8.0
-Pygments==2.10.0
+Pygments==2.15.0
 PyJWT==2.3.0
 pyparsing==3.0.6
 pyshp==2.1.3
